@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Remarkable Mark</title>
+        <!-- include Skeleton -->
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+        <!-- media query support for IE 8 and older -->
+        <!--[if lte IE 8]>
+        	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" />
+        <![endif]-->
+        <!-- include custom styles -->
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    </head>
+    <body>
+        <img class="headshot" src="assets/img/headshot-sm.png" alt="A remarkable headshot of Mark's face" />
+        <div class="container">
+            <h1>REMARKABLE MARK</h1>
+        </div>
+        
+        <!-- include VisualNarrator plugin -->
+        <script type="text/javascript" src="assets/js/visual-narrator.js"></script>
+        <!-- custom script -->
+        <script type="text/javascript">
+            var message =
+                "<h3><span>Hi, my name is Mark and I'm pretty <em>remarkable</em>.</span></h3><delay>100</delay>" +
+                "<h3><span>Although I code for a living, I consider myself a <strong>philosopher</strong> <em>first</em>,<delay>200</delay> <strong>designer</strong> <em>second</em>,<delay>200</delay> and <strong>programmer</strong> <em>third</em>.</span></h3><delay>100</delay>" +
+                "<h3><span>But in the end,<delay>100</delay> my <em>greatest</em> asset is my ability to <strong>learn</strong>. <delay>200</delay>Why?<delay>200</delay> Because <strong>education</strong> is my <em>passion</em>.</span></h3><delay>100</delay>" +
+                "<h3><span>Here, I want to share with you my projects, experiences, and what's on my mind! &#9786;</span></h3>";
+            
+            visualNarrator({
+                message: message,
+                container: document.getElementsByClassName("container")[0]
+            });
+        </script>
+    </body>
+</html>

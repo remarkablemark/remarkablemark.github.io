@@ -1,0 +1,35 @@
+body {
+    background-color: #eee;
+}
+h1 {
+    background-color: #444;
+    /* background-color: #ca5252; */
+    color: #f8f8f8;
+    letter-spacing: 0.1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+h3 {
+    color: #666;
+    letter-spacing: -0.01rem;
+    margin: 3rem 0;
+}
+h3 > span {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+h3 strong {
+    color: #555;
+}
+.headshot {
+    bottom: 0;
+    left: 50%;
+    max-width: 100%;
+    position: fixed;
+    transform: translateX(-50%);
+}
+@media only screen and (min-width: 500px) {
+    .headshot {
+        height: 50%;
+    }
+}
