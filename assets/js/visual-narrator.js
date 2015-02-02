@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 
-// Visual Narrator | Copyright (c) 2015 Menglin "Mark" Xu | mark.is.remarkable@gmail.com
+// Visual Narrator | Copyright (c) 2015 Menglin "Mark" Xu | mark@remarkablemark.org
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -45,7 +45,7 @@
         var delay = arguments[0].delay || 50;
         var callback = arguments[0].callback;
         
-        // Return error if message or container is in valid
+        // Return error if message or container is invalid
         if (typeof message !== "string") {
             console.log("Error: message is either invalid or not found");
             return false;
@@ -55,92 +55,95 @@
             return false;
         }
         
-        // First check that message is not empty
-        if (message.length) {
-            // Display after delay
-            setTimeout(function() {
-                // Retrieve the first letter of message
-                var letter = message.substring(0, 1);
-                // Slice the beginning of the message
-                var messagePart = message.substring(0, longestTag.length);
-                // Find matches based on regular expressions
-                var foundTags = messagePart.match(htmlTags);
-                var foundSpecialTags = messagePart.match(specialTags);
-                var foundEntities = messagePart.match(htmlEntities);
-                // Set the node to either the element or the container
-                var node = (elements.length > 0) ? elements[elements.length - 1] : container;
-                
-                // If tag is found in beginning of string
-                if (foundTags && letter === "<") {
-                    // Left trim tag from message string
-                    message = message.substring(message.indexOf(">") + 1);
-                    // If the tag is a closing tag
-                    if (foundTags[0].toLowerCase() === "</" + node.tagName.toLowerCase() + ">") {
-                        // Remove the last element in elements array
-                        elements.pop(1);
-                    }
-                    // If tag is an opening tag, then create and append the new element within the current node
-                    else {
-                        var childElement = document.createElement( foundTags[0].replace(/<|>/g, "") );
-                        node.appendChild(childElement);
-                        // Add element to the elements array
-                        elements.push(childElement);
-                    }
-                }
-                // If special tag is found in the beginning of the string
-                else if (foundSpecialTags && letter === "<") {
-                    // Special delay tag
-                    if (foundSpecialTags[0].toLowerCase() === "<delay>") {
-                        // Extract and format the number in between the tags
-                        var specialDelay = Number(message.substring(0, message.indexOf("</delay>") + "</delay>".length).match("<delay>(.*)</delay>")[1]);
-                        // Use default delay time if not a number
-                        specialDelay = specialDelay || delay;
-                        // Trim out the delay tag from the message string
-                        message = message.substring(message.indexOf("</delay") + "</delay>".length);
-                        // Execute special delay function
-                        return setTimeout(function() {
-                            visualNarrator({
-                                message: message,
-                                container: container,
-                                delay: delay,
-                                elements: elements,
-                                callback: callback
-                            });
-                        }, specialDelay);
-                    }
-                }
-                // If html entity is found in the beginning of the string
-                else if (foundEntities && letter === "&") {
-                    // Update display output and trim the entity from the message string
-                    letter = foundEntities[0];
-                    message = message.substring(letter.length);
-                    // Display letter within current node
-                    node.innerHTML += letter;
-                }
-                // If the tag is not found in the beginning of the string
-                else {
-                    // Display letter within current node
-                    node.innerHTML += letter;
-                    // Remove the first letter from the message
-                    message = message.substring(1);
-                }
-                
-                // Continue the recursion synchronously
-                visualNarrator({
-                    message: message,
-                    container: container,
-                    delay: delay,
-                    elements: elements,
-                    callback: callback
-                });
-            }, delay);
-        }
-        // Call callbacks if found
-        else {
+        // If message is empty
+        if (!message.length) {
+            // Execute callback if it exists
             if (typeof callback === "function") {
                 callback();
             }
+            // Otherwise end the recursion
+            else {
+                return;
+            }
         }
+        
+        // Display after delay
+        setTimeout(function() {
+            // Retrieve the first letter of message
+            var letter = message.substring(0, 1);
+            // Slice the beginning of the message
+            var messagePart = message.substring(0, longestTag.length);
+            // Find matches based on regular expressions
+            var foundTags = messagePart.match(htmlTags);
+            var foundSpecialTags = messagePart.match(specialTags);
+            var foundEntities = messagePart.match(htmlEntities);
+            // Set the node to either the element or the container
+            var node = (elements.length > 0) ? elements[elements.length - 1] : container;
+            
+            // If tag is found in beginning of string
+            if (foundTags && letter === "<") {
+                // Left trim tag from message string
+                message = message.substring(message.indexOf(">") + 1);
+                // If the tag is a closing tag
+                if (foundTags[0].toLowerCase() === "</" + node.tagName.toLowerCase() + ">") {
+                    // Remove the last element in elements array
+                    elements.pop(1);
+                }
+                // If tag is an opening tag, then create and append the new element within the current node
+                else {
+                    var childElement = document.createElement( foundTags[0].replace(/<|>/g, "") );
+                    node.appendChild(childElement);
+                    // Add element to the elements array
+                    elements.push(childElement);
+                }
+            }
+            // If special tag is found in the beginning of the string
+            else if (foundSpecialTags && letter === "<") {
+                // Special delay tag
+                if (foundSpecialTags[0].toLowerCase() === "<delay>") {
+                    // Extract and format the number in between the tags
+                    var specialDelay = Number(message.substring(0, message.indexOf("</delay>") + "</delay>".length).match("<delay>(.*)</delay>")[1]);
+                    // Use default delay time if not a number
+                    specialDelay = specialDelay || delay;
+                    // Trim out the delay tag from the message string
+                    message = message.substring(message.indexOf("</delay") + "</delay>".length);
+                    // Execute special delay function
+                    return setTimeout(function() {
+                        visualNarrator({
+                            message: message,
+                            container: container,
+                            delay: delay,
+                            elements: elements,
+                            callback: callback
+                        });
+                    }, specialDelay);
+                }
+            }
+            // If html entity is found in the beginning of the string
+            else if (foundEntities && letter === "&") {
+                // Update display output and trim the entity from the message string
+                letter = foundEntities[0];
+                message = message.substring(letter.length);
+                // Display letter within current node
+                node.innerHTML += letter;
+            }
+            // If the tag is not found in the beginning of the string
+            else {
+                // Display letter within current node
+                node.innerHTML += letter;
+                // Remove the first letter from the message
+                message = message.substring(1);
+            }
+            
+            // Continue the recursion synchronously
+            visualNarrator({
+                message: message,
+                container: container,
+                delay: delay,
+                elements: elements,
+                callback: callback
+            });
+        }, delay);
     }
     
     window.visualNarrator = visualNarrator;

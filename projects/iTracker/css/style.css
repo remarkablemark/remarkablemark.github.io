@@ -1,0 +1,59 @@
+textarea,
+.text {
+    width: 100%;
+}
+textarea {
+    font-size: 1em;
+    font-size: 1.5rem;
+    height: 18em;
+    line-height: 1.5;
+}
+.text {
+    color: #ddd;
+    font-size: 1.35em;
+    font-size: 2rem;
+    letter-spacing: 0.05px;
+    line-height: 1.5;
+    margin-bottom: 8em; /* give some space so reading controls does not cover */
+}
+.text > .active {
+    color: #000;
+}
+.formatted-section {
+    display: none;
+}
+/* make controls into a sticky footer */
+.reading-controls {
+    background: #fff;
+    border-top: 1px solid #eee;
+    bottom: 0;
+    left: 0;
+    padding-top: 1em;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+/* read button */
+.read:hover {
+    border: 1px solid #33C3F0;
+}
+/* format button */
+.format:hover {
+    border: 1px solid #33C3F0;
+    color: #22aeda;
+}
+/* reformat button */
+.reformat {
+    opacity: 0.5;
+}
+.reformat:hover {
+    border: 1px solid #ffaeae;
+    color: #df5e5e;
+    opacity: 1;
+}
+/* disabled buttons */
+.button[disabled],
+.button[disabeld]:hover {
+    border: 1px solid #bbb;
+    opacity: 0.5;
+}
