@@ -1,4 +1,4 @@
-SITE OF REMARKABLE MARK
-=======================
+Mark's Remarkable Site
+======================
 
-This site is indeed *remarkable*!
+Come check the [site](http://remarkablemark.org/) out!

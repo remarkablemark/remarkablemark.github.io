@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 
-// Visual Narrator | Copyright (c) 2015 Menglin "Mark" Xu | mark@remarkablemark.org
+// VisualNarrator.js | Copyright (c) 2015 Menglin "Mark" Xu | mark@remarkablemark.org
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,12 +22,16 @@
 
 (function(){
     // Regular expressions for html tags
-    var htmlTags = /<span>|<\/span>|<em>|<\/em>|<strong>|<\/strong>|<i>|<\/i>|<b>|<\/b>|<p>|<\/p>|<div>|<\/div>|<h1>|<\/h1>|<h2>|<\/h2>|<h3>|<\/h3>|<h4>|<\/h4>|<h5>|<\/h5>|<h6>|<\/h6>|<section>|<\/section>|<ul>|<\/ul>|<ol>|<\/ol>|<li>|<\/li>/gi;
-    var longestTag = "</section>";
-    // Regular expressions for made-up tags
-    var specialTags = /<delay>|<\/delay>/gi;
+    var htmlTags = /<\/?([a-zA-Z]+[0-9]*?)>/i;
+    var longestTag = "</blockquote>";
     // Regular expressions for html entities
-    var htmlEntities = /&#9786;/g;
+    var htmlEntities = /&.+;/;
+    
+    // Checks if a tag name is valid html
+    function isHTMLTag(tagName) {
+        var el = document.createElement(tagName);
+        return el.constructor.name !== "HTMLUnknownElement";
+    }
     
     // Prints a message to container letter-by-letter
     function visualNarrator() {
@@ -74,53 +78,55 @@
             // Slice the beginning of the message
             var messagePart = message.substring(0, longestTag.length);
             // Find matches based on regular expressions
-            var foundTags = messagePart.match(htmlTags);
-            var foundSpecialTags = messagePart.match(specialTags);
-            var foundEntities = messagePart.match(htmlEntities);
+            var foundTags = messagePart.match(htmlTags) || [];
+            var foundEntities = messagePart.match(htmlEntities) || [];
             // Set the node to either the element or the container
             var node = (elements.length > 0) ? elements[elements.length - 1] : container;
             
             // If tag is found in beginning of string
-            if (foundTags && letter === "<") {
-                // Left trim tag from message string
-                message = message.substring(message.indexOf(">") + 1);
-                // If the tag is a closing tag
-                if (foundTags[0].toLowerCase() === "</" + node.tagName.toLowerCase() + ">") {
-                    // Remove the last element in elements array
-                    elements.pop(1);
+            if (letter === "<" && foundTags.length) {
+                // If tag is valid html
+                if (isHTMLTag(foundTags[1])) {
+                    // Left trim tag from message string
+                    message = message.substring(message.indexOf(">") + 1);
+                    // If the tag is a closing tag
+                    if (foundTags[1].toLowerCase() === node.tagName.toLowerCase()) {
+                        // Remove the last element in elements array
+                        elements.pop(1);
+                    }
+                    // If tag is an opening tag, then create and append the new element within the current node
+                    else {
+                        var childElement = document.createElement(foundTags[1]);
+                        node.appendChild(childElement);
+                        // Add element to the elements array
+                        elements.push(childElement);
+                    }
                 }
-                // If tag is an opening tag, then create and append the new element within the current node
+                // If tag is not valid html
                 else {
-                    var childElement = document.createElement( foundTags[0].replace(/<|>/g, "") );
-                    node.appendChild(childElement);
-                    // Add element to the elements array
-                    elements.push(childElement);
-                }
-            }
-            // If special tag is found in the beginning of the string
-            else if (foundSpecialTags && letter === "<") {
-                // Special delay tag
-                if (foundSpecialTags[0].toLowerCase() === "<delay>") {
-                    // Extract and format the number in between the tags
-                    var specialDelay = Number(message.substring(0, message.indexOf("</delay>") + "</delay>".length).match("<delay>(.*)</delay>")[1]);
-                    // Use default delay time if not a number
-                    specialDelay = specialDelay || delay;
-                    // Trim out the delay tag from the message string
-                    message = message.substring(message.indexOf("</delay") + "</delay>".length);
-                    // Execute special delay function
-                    return setTimeout(function() {
-                        visualNarrator({
-                            message: message,
-                            container: container,
-                            delay: delay,
-                            elements: elements,
-                            callback: callback
-                        });
-                    }, specialDelay);
+                    // Check if it is a special delay tag
+                    if (foundTags[1] === "delay") {
+                        // Extract and format the number in between the tags
+                        var specialDelay = Number(message.substring(0, message.indexOf("</delay>") + "</delay>".length).match("<delay>(.*)</delay>")[1]);
+                        // Use default delay time if not a number
+                        specialDelay = specialDelay || delay;
+                        // Trim out the delay tag from the message string
+                        message = message.substring(message.indexOf("</delay") + "</delay>".length);
+                        // Execute special delay function
+                        return setTimeout(function() {
+                            visualNarrator({
+                                message: message,
+                                container: container,
+                                delay: delay,
+                                elements: elements,
+                                callback: callback
+                            });
+                        }, specialDelay);
+                    }
                 }
             }
             // If html entity is found in the beginning of the string
-            else if (foundEntities && letter === "&") {
+            else if (letter === "&" && foundEntities.length) {
                 // Update display output and trim the entity from the message string
                 letter = foundEntities[0];
                 message = message.substring(letter.length);

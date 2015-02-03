@@ -29,7 +29,7 @@
         <script type="text/javascript">
             // hide the headshot image and slide it up when it has loaded
             var headshot = document.getElementsByClassName("headshot")[0];
-            headshot.style.display = "none";
+            headshot.style.bottom = "-100%";
             // load higher quality image for larger screen sizes
             if (window.innerWidth > 1080) {
                 headshot.src = "assets/img/headshot-lg.png";
@@ -39,14 +39,14 @@
             }
             var isHeadshotLoaded = setInterval(function() {
                 if (headshot.complete) {
-                    headshot.className += " slide-head-up";
-                    headshot.style.display = "block";
+                    headshot.className += " slide-up";
+                    headshot.style.bottom = 0;
                     clearInterval(isHeadshotLoaded);
                 }
-            });
+            }, 100);
         </script>
         <!-- include Visual Narrator plugin -->
-        <script type="text/javascript" src="assets/js/visual-narrator.js"></script>
+        <script type="text/javascript" src="assets/js/VisualNarrator.js"></script>
         <!-- custom script -->
         <script type="text/javascript">
             // introduction message using visual narrator

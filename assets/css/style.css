@@ -42,42 +42,7 @@ h3 strong {
         height: 50%;
     }
 }
-/* slide head up animation */
-.slide-head-up {
-    -moz-animation-name: slideHeadUp;
-    -moz-animation-iteration-count: 1;
-    -moz-animation-timing-function: ease-in;
-    -moz-animation-duration: 500ms;
-    -webkit-animation-name: slideHeadUp;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-timing-function: ease-in;
-    -webkit-animation-duration: 500ms;
-    animation-name: slideHeadUp;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    animation-duration: 500ms;
-}
-@-moz-keyframes slideHeadUp {
-    0% {
-        -moz-transform: translateY(100%);
-    }
-    100% {
-        -moz-transform: translateY(0);
-    }
-}
-@-webkit-keyframes slideHeadUp {
-    0% {
-        -webkit-transform: translateY(100%);
-    }
-    100% {
-        -webkit-transform: translateY(0);
-    }
-}
-@keyframes slideHeadUp {
-    0% {
-        transform: translateY(100%);
-    }
-    100% {
-        transform: translateY(0);
-    }
+/* slide up animation */
+.slide-up {
+    transition: bottom 800ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
 }
