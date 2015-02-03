@@ -12,10 +12,24 @@
         <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     </head>
     <body>
+        <input type="checkbox" id="nav-toggle" />
+        <nav class="nav noselect">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><label for="nav-toggle"><span class="close-button">&#x2715;</span></label></li>
+            </ul>
+        </nav>
         <div class="wrap">
-            <nav class="nav">REMARKABLE MARK</nav>
+            <label class="header noselect" for="nav-toggle">
+                <div class="container">
+                    <span class="logo">M</span>
+                </div>
+            </label>
             <img class="headshot" src="assets/img/headshot-sm.png" alt="A remarkable headshot of Mark's face" title="Peekaboo!" />
-            <div class="container">
+            <div class="container" id="message">
                 <noscript>
                     <h3><span>Hi, my name is Mark and I'm pretty <em>remarkable</em>.</span></h3>
                     <h3><span>Although I code for a living, I consider myself a <strong>philosopher</strong> <em>first</em>, <strong>designer</strong> <em>second</em>, and <strong>programmer</strong> <em>third</em>.</span></h3>
@@ -37,11 +51,10 @@
             else if (window.innerWidth > 720) {
                 headshot.src = "assets/img/headshot-md.png";
             }
-            var isHeadshotLoaded = setInterval(function() {
+            var checkHeadshotLoaded = setInterval(function() {
                 if (headshot.complete) {
-                    headshot.className += " slide-up";
                     headshot.style.bottom = 0;
-                    clearInterval(isHeadshotLoaded);
+                    clearInterval(checkHeadshotLoaded);
                 }
             }, 100);
         </script>
@@ -58,7 +71,7 @@
             
             visualNarrator({
                 message: message,
-                container: document.getElementsByClassName("container")[0]
+                container: document.getElementById("message")
             });
         </script>
         
