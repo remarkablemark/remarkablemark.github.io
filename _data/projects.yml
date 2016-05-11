@@ -1,0 +1,19 @@
+- name: Link-Detective
+  description: Search for missing or dead links.
+  link: https://github.com/remarkablemark/link-detective
+
+- name: Jam-Session
+  description: A realtime web application for musical jam sessions.
+  link: https://github.com/remarkablemark/jam-session
+
+- name: Calendar.js
+  description: A calendar exercise.
+  link: https://github.com/remarkablemark/Calendar.js
+
+- name: iTracker Reading App
+  description: A speed reading app.
+  link: https://github.com/remarkablemark/iTracker
+
+- name: VisualNarrator
+  description: Visually narrate text.
+  link: https://github.com/remarkablemark/VisualNarrator.js
