@@ -11,7 +11,7 @@ google_analytics_id: UA-59233605-1
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 sass:
     style: :compressed
 permalink: /blog/:title/
