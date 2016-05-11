@@ -1,0 +1,102 @@
+/**
+ * NAVIGATION + WRAP
+ */
+.nav {
+    background-color: #222;
+    height: 100%;
+    position: fixed;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 1;
+
+    // fixed transition value
+    left: -250px;
+    width: 250px;
+
+    // menu items
+    .nav-list {
+        list-style: none;
+        margin-left: 0;
+
+        > li {
+            margin: 0;
+
+            > a {
+                border-bottom: 1px solid #555;
+                color: #eee;
+                display: block;
+                font-size: 1.2em;
+                padding: 1em 0;
+                text-decoration: none;
+
+                &:hover {
+                    background-color: #f0f0f0;
+                    color: #111;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    // close button
+    .close-button {
+        background: #ddd;
+        color: #333;
+        display: none; // hide the close button by default
+        margin: 0 auto;
+
+        // important values for styling the button
+        border-radius: 50%;
+        font-size: 18px;
+        line-height: 36px;
+        position: absolute;
+        top: 0;
+        right: -18px; /* 1/2 width */
+        width: 36px; height: 36px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    label:hover .close-button {
+        background-color: #fff;
+        color: #111;
+    }
+}
+
+/**
+ * TOGGLE ANIMATION
+ */
+.wrap {
+    // necessary for transition animation
+    position: relative;
+    left: 0;
+}
+
+.nav,
+.wrap {
+    // transition animation
+    -webkit-transition: left 500ms;
+    -moz-transition: left 500ms;
+    -o-transition: left 500ms;
+    transition: left 500ms;
+}
+
+#nav-toggle {
+    display: none; // checkbox input will always stay hidden
+
+    &:checked {
+        ~ .nav {
+            left: 0;
+
+            // show the close button when the nav is toggled
+            .close-button {
+                display: block;
+            }
+        }
+        ~ .wrap {
+            left: 250px; // fixed transition value
+        }
+    }
+}
