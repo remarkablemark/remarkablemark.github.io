@@ -14,5 +14,5 @@ markdown: kramdown
 highlighter: rouge
 sass:
     style: :compressed
-permalink: /blog/:title/
+permalink: /blog/:year/:month/:day/:title/
 encoding: utf-8
