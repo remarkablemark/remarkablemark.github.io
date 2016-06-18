@@ -6,7 +6,7 @@
 
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+    <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}" />
 
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 
@@ -22,6 +22,11 @@
     <!--[if lte IE 8]>
         <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" />
     <![endif]-->
+
+    <!-- HTML5 shiv -->
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
 
     <!-- custom styles -->
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}" />
