@@ -10,10 +10,7 @@
 
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 
-    <!-- favicon -->
-    <link rel="shortcut icon" href="{{ "/assets/img/favicon.ico" | prepend: site.baseurl }}" />
-    <link rel="icon" type="image/gif" href="{{ "/assets/img/animated-favicon.gif" | prepend: site.baseurl }}" />
-    <link rel="apple-touch-icon" href="{{ "/assets/img/apple-touch-icon.png" | prepend: site.baseurl }}" />
+    {% include favicon.html %}
 
     <!-- Skeleton -->
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
