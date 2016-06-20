@@ -1,3 +1,7 @@
+- name: Universal React Tutorial
+  description: A tutorial on building a universal web application with React.js.
+  link: https://github.com/remarkablemark/universal-react-tutorial
+
 - name: Link-Detective
   description: Search for missing or dead links.
   link: https://github.com/remarkablemark/link-detective
