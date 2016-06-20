@@ -1,8 +1,37 @@
+$code-background-color: #fafafa;
+$code-border-color: #999;
+
 /**
- * Syntax highlighting styles
+ * Code formatting
+ */
+pre,
+code {
+    font-size: 15px;
+    border: 1px solid $code-border-color;
+    border-radius: 3px;
+}
+
+code {
+    background-color: $code-background-color;
+    padding: 1px 5px;
+}
+
+pre {
+    padding: 8px 12px;
+
+    > code {
+        border: 0;
+        overflow-x: auto;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+/**
+ * Syntax highlighting
  */
 .highlight {
-    background: #fff;
+    background-color: $code-background-color;
     @extend %vertical-rhythm;
 
     .c     { color: #998; font-style: italic } // Comment
