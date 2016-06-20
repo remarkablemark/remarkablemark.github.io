@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Projects
+excerpt: A collection of remarkablemark projects.
 permalink: /projects/
 ---
 <div class="container">
