@@ -1,7 +1,9 @@
 /**
- * CONTENT
+ * Content
  */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     letter-spacing: -0.01rem;
     line-height: 1.37;
     margin: 3rem 0;
@@ -21,7 +23,7 @@ h3 {
 }
 
 /**
- * HEADSHOT
+ * Headshot
  */
 .headshot {
     bottom: 0;
@@ -44,7 +46,7 @@ h3 {
 }
 
 /**
- * BLOG
+ * Post
  */
 .post-list {
     list-style: none;
@@ -79,5 +81,11 @@ h3 {
 
     hr {
         margin: 1em 0;
+    }
+
+    // center images
+    p > img {
+        display: block;
+        margin: 0 auto;
     }
 }
