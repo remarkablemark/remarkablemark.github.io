@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Blog
+excerpt: Mark's remarkable blog where he writes about code, ideas, and other musings.
 permalink: /blog/
-excerpt: "A remarkable blog where Mark writes about code, ideas, and other musings."
 ---
 <div class="container">
     <ul class="post-list">

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Projects
-excerpt: A collection of remarkablemark projects.
+excerpt: Mark's remarkable projects.
 permalink: /projects/
 ---
 <div class="container">

@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Home
 ---
 <img class="headshot" src="{{ "/images/headshot/small.png" | prepend: site.assets_path }}" alt="A remarkable headshot of Mark's face" title="Hello there!" />
 
