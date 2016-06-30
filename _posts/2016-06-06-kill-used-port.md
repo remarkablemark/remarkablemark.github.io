@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Freeing a port already in use
-date: 2016-06-06 17:15:00
+date: 2016-06-06 21:15:00 -4000
 excerpt: Learn how to free a port already in use by killing the process associated with the port.
 categories: bash port kill server
 ---

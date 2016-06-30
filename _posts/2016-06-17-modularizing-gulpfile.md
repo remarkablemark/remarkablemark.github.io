@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Modularizing gulpfile
-date: 2016-06-17 15:49:00
+date: 2016-06-17 19:49:00 -4000
 excerpt: To modularize your gulpfile, create a separate module for each gulp task.
 categories: gulp task gulpfile javascript workflow automation
 ---

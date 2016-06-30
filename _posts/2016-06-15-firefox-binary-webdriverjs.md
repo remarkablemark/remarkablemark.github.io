@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Setting the binary for WebDriverJS
-date: 2016-06-15 21:08:00
+date: 2016-06-16 01:08:00 -4000
 excerpt: Learn how to set the browser binary for Selenium WebDriver for Node.js. Firefox will be used in this WebDriverJS example.
 categories: selenium-webdriver webdriverjs firefox binary node javascript
 ---

@@ -16,4 +16,5 @@ highlighter: rouge
 sass:
     style: :compressed
 permalink: /blog/:year/:month/:day/:title/
+timezone: America/New_York
 encoding: utf-8

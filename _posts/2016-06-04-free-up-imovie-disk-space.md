@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to free up iMovie disk space
-date: 2016-06-04 19:32:00
+date: 2016-06-04 23:32:00 -4000
 excerpt: Learn how to free up disk space by cleaning up iMovie render files.
 categories: iMovie disk space render files bash code
 ---

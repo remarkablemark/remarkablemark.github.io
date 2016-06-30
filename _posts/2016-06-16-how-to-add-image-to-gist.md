@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to add an image to a GitHub gist"
-date: 2016-06-16 23:57:00
+date: 2016-06-17 03:57:00 -4000
 excerpt: "How to add an image to a GitHub gist. The trick is to use gist like a Git repository."
 categories: gist git GitHub image
 ---
