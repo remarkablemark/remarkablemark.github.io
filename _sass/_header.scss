@@ -1,5 +1,5 @@
 /**
- * HEADER
+ * Header general
  */
 .header {
     background-color: #333;
@@ -20,18 +20,18 @@
 }
 
 /**
- * HAMBURGER
+ * Header menu
  */
 .hamburger {
-    color: #111;
+    color: #ddd;
 
      &:hover {
-        color: #eee;
+        color: #fff;
      }
 }
 
 /**
- * LOGO
+ * Header logo
  */
 .logo {
     background-color: #555;
