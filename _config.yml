@@ -18,6 +18,7 @@ sass:
 permalink: /blog/:year/:month/:day/:title/
 timezone: America/New_York
 encoding: utf-8
+exclude: [Gemfile, CNAME, README.md]
 gems:
     - jekyll-seo-tag
     - jekyll-sitemap
