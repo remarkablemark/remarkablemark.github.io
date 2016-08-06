@@ -34,7 +34,7 @@ title: Home
 </script>
 
 {% comment %}<!-- VisualNarrator -->{% endcomment %}
-<script type="text/javascript" src="{{ "/VisualNarrator.js/VisualNarrator.js" | prepend: site.url }}"></script>
+<script type="text/javascript" src="{{ "/VisualNarrator.js/VisualNarrator.js" | prepend: site.url | remove: 'http:' }}"></script>
 <script type="text/javascript">
     (function(VisualNarrator){
         var contentContainer = document.getElementById("content");
