@@ -6,8 +6,14 @@ excerpt: Where does confidence come from? Does it come from mastery or does it c
 categories: confidence philosophy psychology reflection essay
 ---
 
-I used to wonder where confidence came from. I did a lot of research and read a few books and came to the conclusion that confidence came from mastery. Mastery came from preparation and practice. The ability to replicate a result consistently and within the context of correctness forms the basis of confidence. But over time, I've come to the realize that there's more to confidence than mastery.
+I used to wonder where confidence came from. I did some research and came to the conclusion that confidence comes from mastery.
 
-It turns out that the belief of mastery also determines confidence. What this means, is that one doesn't necessarily need to be good at something to still feel confident in it. One just needs to know that they can if they try.
+Mastery comes from preparation and practice. The ability to replicate a result consistently and within a definition of correctness forms the basis of confidence. But over time, I've come to realize that there's more to confidence than just mastery.
 
-My real life example is that I've been programming for some time now. When I first started, I wasn't too confident in my abilities especially when I went to hackathons or coding events. But now, I'm confident even if I'm working with a language or framework for the first time. This confidence stems from my belief that I can figure out anything with enough time and perseverance. As a result, this disqualifies my previous assumption that one needs to be good in order to feel confident. One just needs to believe that mastery is possible and that's good enough. In the end, confidence is a feeling. And the feeling is how well we manage and deal with the uncertain.
+It turns out that the belief of mastery also determines confidence. What this means is that one doesn't necessarily need to know or be good at something in order to feel confident. One just needs to know that he or she can get good at something if time and effort are put in.
+
+My real life example revolves around my growth as a programmer. When I first started, I wasn't too confident in my abilities, especially during hackathons and other coding events.
+
+But now, I'm confident even if I'm not working with a language or framework I'm familiar with. This confidence stems from my belief that I can figure out anything with enough time and perseverance. In other words, I'm confident that I can become good instead of already being good.
+
+As a result, this disqualifies my previous assumption because it demonstrates that a person's mastery isn't the only factor that determines confidence. One just needs to believe that mastery is possible for him or herself. In the end, confidence is just a feeling, and it's a feeling of how well we deal with uncertainty.
