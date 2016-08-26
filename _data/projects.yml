@@ -2,6 +2,10 @@
   description: A tutorial on building a universal web application with React.js.
   link: https://github.com/remarkablemark/universal-react-tutorial
 
+- name: html-react-parser
+  description: An HTML to React parser.
+  link: https://www.npmjs.com/package/html-react-parser
+
 - name: Link-Detective
   description: Search for missing or dead links.
   link: https://github.com/remarkablemark/link-detective
