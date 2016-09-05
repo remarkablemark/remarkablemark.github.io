@@ -6,6 +6,10 @@
   description: An HTML to React parser.
   link: https://www.npmjs.com/package/html-react-parser
 
+- name: REON
+  description: REON is JSON for React.
+  link: https://www.npmjs.com/package/reon-core
+
 - name: Link-Detective
   description: Search for missing or dead links.
   link: https://github.com/remarkablemark/link-detective
