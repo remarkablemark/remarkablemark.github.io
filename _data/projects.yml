@@ -10,6 +10,10 @@
   description: REON is JSON for React.
   link: https://www.npmjs.com/package/reon-core
 
+- name: CORSmirror
+  description: RESTful API that mirrors websites with CORS enabled.
+  link: http://www.corsmirror.com
+
 - name: npm package name checker
   description: Checks the availability of an npm package name.
   link: http://remarkablemark.org/npm-package-name-checker/
