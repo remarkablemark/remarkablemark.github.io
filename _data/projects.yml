@@ -1,13 +1,13 @@
 - name: Universal React Tutorial
-  description: A tutorial on building a universal web application with React.js.
+  description: Tutorial on building a universal web application with React.
   link: https://github.com/remarkablemark/universal-react-tutorial
 
 - name: html-react-parser
-  description: An HTML to React parser.
+  description: HTML to React parser.
   link: https://www.npmjs.com/package/html-react-parser
 
 - name: REON
-  description: REON is JSON for React.
+  description: JSON for React.
   link: https://www.npmjs.com/package/reon-core
 
 - name: CORSmirror
@@ -23,17 +23,17 @@
   link: https://github.com/remarkablemark/link-detective
 
 - name: Jam-Session
-  description: A realtime web application for musical jam sessions.
+  description: Make music with others in real-time.
   link: https://github.com/remarkablemark/jam-session
 
 - name: Calendar.js
-  description: A calendar exercise.
+  description: Simple calendar with zero dependencies.
   link: https://github.com/remarkablemark/Calendar.js
 
 - name: iTracker Reading App
-  description: A speed reading app.
+  description: Speed reading web app.
   link: https://github.com/remarkablemark/iTracker
 
 - name: VisualNarrator
-  description: Visually narrate text.
+  description: Narrate text visually.
   link: https://github.com/remarkablemark/VisualNarrator.js
