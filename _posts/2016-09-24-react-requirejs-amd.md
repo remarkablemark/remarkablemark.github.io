@@ -53,4 +53,6 @@ requirejs(['react', 'react-dom'], function(React, ReactDOM) {
 });
 ```
 
-Check out this [fiddle](https://jsfiddle.net/remarkablemark/mejyoLk6/) to see a working example.
+Check out this [fiddle](https://jsfiddle.net/remarkablemark/mejyoLk6/) to see a working example:
+
+<script async src="//jsfiddle.net/remarkablemark/mejyoLk6/embed/js,html,result/dark/"></script>
