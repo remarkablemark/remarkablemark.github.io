@@ -92,3 +92,5 @@ var array = ['one', 'two', 'three'];
 delete array[2];
 array; // [ 'one', 'two', undefined ]
 ```
+
+What to learn more about [array methods]({% post_url 2016-10-18-javascript-array-methods %})? Check out the post for more information.
