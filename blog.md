@@ -10,7 +10,7 @@ permalink: /blog/
             <li>
                 <span class="post-meta">
                     {{ post.date | date: "%b %d, %Y" }}:
-                </span>&nbsp;
+                </span>
                 <span class="post-title">
                     <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
                         {{ post.title }}

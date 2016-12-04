@@ -48,11 +48,6 @@ h3 {
 /**
  * Post
  */
-.post-list {
-    list-style: none;
-    margin-left: 0.25em;
-}
-
 .post-meta {
     color: #666;
 }
@@ -69,6 +64,21 @@ h3 {
     }
 }
 
+// list page
+.post-list {
+    list-style: none;
+    margin-left: 0.25em;
+
+    // keep date separated from title in list view
+    .post-meta {
+        margin-right: 0.25em;
+        @include media-query($on-palm) {
+            display: block;
+        }
+    }
+}
+
+// post page
 .post {
     .post-title {
         line-height: 1.15;
