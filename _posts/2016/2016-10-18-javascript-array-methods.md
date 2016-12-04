@@ -6,7 +6,7 @@ excerpt: JavaScript array methods.
 categories: javascript array
 ---
 
-If you don't know what JavaScript arrays are, check out this [introduction]({% post_url 2016-10-10-javascript-array-introduction %}).
+If you don't know what JavaScript arrays are, check out this [introduction]({% post_url 2016/2016-10-10-javascript-array-introduction %}).
 
 ### Array.indexOf()
 
@@ -130,7 +130,7 @@ var result = array.slice();
 result; // [ 'one', 'two', 'three' ]
 ```
 
-Because the method returns a shallow copy of the array, this means that [objects are passed by reference]({% post_url 2016-08-23-javascript-object-reference %}).
+Because the method returns a shallow copy of the array, this means that [objects are passed by reference]({% post_url 2016/2016-08-23-javascript-object-reference %}).
 
 ### Array.splice()
 

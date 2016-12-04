@@ -24,7 +24,7 @@ $ brew install chromedriver
 
 ### Building your driver
 
-Now you want to start building your driver. See how it's done [here]({% post_url 2016-11-25-webdriverjs-launch-browser %}).
+Now you want to start building your driver. See how it's done [here]({% post_url 2016/2016-11-25-webdriverjs-launch-browser %}).
 
 Don't forget to swap `firefox` with `chrome`:
 

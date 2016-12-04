@@ -16,4 +16,4 @@ $ brew install geckodriver
 
 If you didn't install with brew, you'll need to make sure that the **geckodriver executable** is found in `PATH`.
 
-Now you can [launch a Firefox browser]({% post_url 2016-11-25-webdriverjs-launch-browser %}) with Selenium.
+Now you can [launch a Firefox browser]({% post_url 2016/2016-11-25-webdriverjs-launch-browser %}) with Selenium.

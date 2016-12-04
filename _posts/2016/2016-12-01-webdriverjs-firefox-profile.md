@@ -24,7 +24,7 @@ $ brew install geckodriver
 
 ### Building your driver
 
-Now you want to start building your driver. See how it's done [here]({% post_url 2016-11-25-webdriverjs-launch-browser %}).
+Now you want to start building your driver. See how it's done [here]({% post_url 2016/2016-11-25-webdriverjs-launch-browser %}).
 
 ### Firefox options
 
@@ -37,7 +37,7 @@ const options = new firefox.Options();
 options.setProfile('/path/to/profile');
 ```
 
-**_Note:_** Unlike [ChromeDriver]({% post_url 2016-11-26-webdriverjs-chrome-profile %}), the profile must be valid otherwise the driver will fail to build. To create and manage Firefox profiles, see the official [documentation](https://support.mozilla.org/kb/profile-manager-create-and-remove-firefox-profiles).
+**_Note:_** Unlike [ChromeDriver]({% post_url 2016/2016-11-26-webdriverjs-chrome-profile %}), the profile must be valid otherwise the driver will fail to build. To create and manage Firefox profiles, see the official [documentation](https://support.mozilla.org/kb/profile-manager-create-and-remove-firefox-profiles).
 
 Now let's update the builder so WebDriverJS launches Firefox based on the specified profile:
 

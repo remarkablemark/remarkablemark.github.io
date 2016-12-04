@@ -44,7 +44,7 @@ driver.getTitle().then(title => console.log(title));
 driver.quit();
 ```
 
-If you're using Firefox 48+, you'll also need to [install geckodriver]({% post_url 2016-11-06-selenium-geckodriver %}).
+If you're using Firefox 48+, you'll also need to [install geckodriver]({% post_url 2016/2016-11-06-selenium-geckodriver %}).
 
 Now you can run your script:
 
