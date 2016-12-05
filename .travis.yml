@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+    - 2.2
+cache: bundler
+env:
+    global:
+        # speeds up installation of html-proofer
+        - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+script:
+    - bundle exec jekyll build --safe
+    - bundle exec htmlproofer _site
