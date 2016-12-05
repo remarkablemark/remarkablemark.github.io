@@ -28,7 +28,7 @@ Now you want to start building your driver. See how it's done [here]({% post_url
 
 ### Firefox options
 
-Before instantiating the driver, you want to set the profile in the [Firefox options](http://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/firefox_exports_Options.html):
+Before instantiating the driver, you want to set the profile in the [Firefox options](http://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/firefox/index_exports_Options.html):
 
 ```js
 const firefox = require('selenium-webdriver/firefox');

@@ -20,7 +20,7 @@ In such a situation, the recommended approach is to use [dangerously set innerHT
 
 But what about other alternatives?
 
-[html-react-parser](https://github.com/remarkablemark/html-react-parser) is one and it converts a string of HTML into [React Elements](https://facebook.gitnub.io/react/blog/2015/12/18/react-components-elements-and-instances.html#elements-describe-the-tree).
+[html-react-parser](https://github.com/remarkablemark/html-react-parser) is one and it converts a string of HTML into [React Elements](https://facebook.github.io/react/docs/react-api.html#creating-react-elements).
 
 Let's go over the basics of how to use it.
 
