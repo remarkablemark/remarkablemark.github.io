@@ -6,9 +6,9 @@ excerpt: An alternative to React's dangerouslySetInnerHTML is html-react-parser,
 categories: react javascript babel html npm
 ---
 
-There may be occasions when you're using [React](https://facebook.github.io/react/) that you need to render an HTML string.
+There may be an occasion that you need to render an HTML string when using [React](https://facebook.github.io/react/).
 
-In such a situation, the recommended approach is to use [dangerously set innerHTML](https://facebook.github.io/react/tips/dangerously-set-inner-html.html):
+In most situations, [dangerouslySetInnerHTML](https://facebook.github.io/react/docs/dom-elements.html#dangerouslysetinnerhtml) should suffice:
 
 {% raw %}
 ```js
@@ -18,18 +18,16 @@ In such a situation, the recommended approach is to use [dangerously set innerHT
 ```
 {% endraw %}
 
-But what about other alternatives?
+But are there any other alternatives?
 
-[html-react-parser](https://github.com/remarkablemark/html-react-parser) is one and it converts a string of HTML into [React Elements](https://facebook.github.io/react/docs/react-api.html#creating-react-elements).
+There are, and one of them is called [html-react-parser](https://github.com/remarkablemark/html-react-parser).
 
-Let's go over the basics of how to use it.
+### Usage
 
-#### Usage
-
-First install the [npm package](https://www.npmjs.com/package/html-react-parser):
+First install the [package](https://www.npmjs.com/package/html-react-parser) and its dependencies:
 
 ```sh
-$ npm install html-react-parser # `react` is a peer dependency
+$ npm install html-react-parser react react-dom
 ```
 
 Now you can do something like this:
@@ -42,7 +40,7 @@ Now you can do something like this:
 </div>
 ```
 
-When parsing the string, you can even replace HTML elements with your own custom React elements:
+When parsing the HTML string, you can even replace HTML elements with your own custom React elements:
 
 ```js
 import Parser from 'html-react-parser';
@@ -58,6 +56,6 @@ import Parser from 'html-react-parser';
 </div>
 ```
 
-Want to play with it some more? Check out this [fiddle](https://jsfiddle.net/remarkablemark/7v86d800/):
+Want to play with it some more? Check out the [repository](https://github.com/remarkablemark/html-react-parser) and this [fiddle](https://jsfiddle.net/remarkablemark/7v86d800/):
 
 <script async src="//jsfiddle.net/remarkablemark/7v86d800/embed/js,html,result/dark/"></script>
