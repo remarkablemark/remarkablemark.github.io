@@ -51,4 +51,4 @@ And now you can run the server:
 $ node server.js
 ```
 
-Your site should be up at [http://localhost:3000](http://localhost:3000) (open the url in a browser). And that's it!
+Your site should be up at <a href="http://localhost:3000" target="_blank" data-proofer-ignore>http://localhost:3000</a> (open the url in a browser). And that's it!
