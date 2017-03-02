@@ -26,17 +26,21 @@ First, uninstall `chromedriver` if it's already installed:
 $ brew rm chromedriver
 ```
 
-Then find the [formula](https://github.com/Homebrew/homebrew-core/tree/master/Formula) in [homebrew-core](https://github.com/Homebrew/homebrew-core).
+Now find the [formula](https://github.com/Homebrew/homebrew-core/tree/master/Formula) in [homebrew-core](https://github.com/Homebrew/homebrew-core):
+
+![Find chromedriver formula]({{ "/images/2017/2017-02-03-brew-chromedriver-formula.png" | prepend: site.assets_path }})
 
 The formula filename should be `chromedriver.rb`.
 
 Open the [file](https://github.com/Homebrew/homebrew-core/blob/master/Formula/chromedriver.rb) in GitHub and click **History**.
 
-Use the commit messages as a reference to find the version that you desire.
+Use the _commit message_ as a reference to find the version that you desire:
 
-Open the [commit](https://github.com/Homebrew/homebrew-core/commit/14c7f7415bd2feaf49def7ad53fe5f6eb32f9265#diff-02e6b7e4ca2e4ea227e6dcd6bca1cd3a) and click on **View** to view the entire [file](https://github.com/Homebrew/homebrew-core/blob/14c7f7415bd2feaf49def7ad53fe5f6eb32f9265/Formula/chromedriver.rb) and not just the difference.
+![Browse chromedriver history]({{ "/images/2017/2017-02-03-brew-chromedriver-history.png" | prepend: site.assets_path }})
 
-Finally, click on the **Raw** button to get the url of the raw file.
+Open the [file](https://github.com/Homebrew/homebrew-core/blob/14c7f7415bd2feaf49def7ad53fe5f6eb32f9265/Formula/chromedriver.rb) at that point in history.
+
+Finally, click on **Raw** to get the url of the raw file.
 
 Copy it and paste it after `brew install`:
 
