@@ -2,30 +2,32 @@
 layout: post
 title: How to create a symlink
 date: 2016-09-16 22:29:00 -4000
-excerpt: How to create a symlink (symbolic link) in a Unix-like operating system.
-categories: symlink command-line terminal unix posix
+excerpt: How to create a symbolic link (symlink).
+categories: symlink symbolic link
 ---
 
-Sometimes we want to have an existing file/directory but in another location.
+Use a **symlink** (symbolic link) to create a reference to another file or directory:
 
-One solution is to **copy** it to the destination path but this results in redundant data and inconsistencies if the source changes.
+```sh
+$ ln -s <source> <destination>
+```
 
-A better solution is to use **symbolic links** or **symlinks** for short. Think of them as _aliases_ or _shortcuts_ that point to the actual file/directory.
+### Example
 
-Let's go over how to create one. Given the following directory structure:
+Given the following directory structure:
 
 ```sh
 $ tree
 .
 └── path
     └── to
-        └── source.file
+        └── source
 ```
 
 You can create a symlink like below:
 
 ```sh
-$ ln -s path/to/source.file path/to/target.file
+$ ln -s path/to/source path/to/target
 ```
 
 You will now have the following:
@@ -35,22 +37,30 @@ $ tree
 .
 └── path
     └── to
-        ├── target.file -> path/to/source.file
-        └── source.file
+        ├── target -> path/to/source
+        └── source
 ```
 
 But what if the target file already exists?
 
 ```sh
-$ ln -s path/to/source.file path/to/target.file
-ln: path/to/target.file: File exists
+$ ln -s path/to/source path/to/target
+ln: path/to/target: File exists
 ```
 
-You can pass the `-f` option to force an override:
+You can force an override with the `-f` option:
 
 ```sh
-$ ln -s -f path/to/source.file path/to/target.file
+$ ln -sf path/to/source path/to/target
 ```
+
+Also, if you don't want the symlink to be relative, then make the path absolute:
+
+```sh
+$ ln -s "$(pwd)/path/to/source" path/to/target
+```
+
+This ensures the symlink still points to the expected location even if it's moved.
 
 For more information, check out the manual page for the `ln` command:
 
