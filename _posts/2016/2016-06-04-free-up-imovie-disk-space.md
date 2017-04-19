@@ -3,12 +3,14 @@ layout: post
 title: How to free up iMovie disk space
 date: 2016-06-04 23:32:00 -4000
 excerpt: You can free up disk space by deleting iMovie render files.
-categories: iMovie disk space
+categories: iMovie disk storage space
 ---
+
+> **Update 2017-04-18**: As of iMovie version 10.1.3, you can delete Render Files within iMovie Preferences ([credit](https://disq.us/p/1hwltqm)).
 
 As we create more iMovie projects, our disk space starts to diminish.
 
-What if we want to recover all that hard drive space?
+What if we want to recover all that storage space?
 
 One approach is to delete the **Render Files** of projects you're no longer working on.
 
