@@ -2,35 +2,39 @@
 layout: post
 title: How to free up iMovie disk space
 date: 2016-06-04 23:32:00 -4000
-excerpt: Learn how to free up disk space by cleaning up iMovie render files.
-categories: iMovie disk space render files bash code
+excerpt: You can free up disk space by deleting iMovie render files.
+categories: iMovie disk space
 ---
 
-As we create more and more iMovie projects, we may notice that our disk space starts to diminish.
+As we create more iMovie projects, our disk space starts to diminish.
 
-Is there a way to recover all that precious hard drive space? You betcha.
+What if we want to recover all that hard drive space?
 
-The simplest strategy is to delete the `Render Files` of projects you're no longer working on.
+One approach is to delete the **Render Files** of projects you're no longer working on.
 
-Now before we continue, I want to throw a **disclaimer** that although the operation _should_ be safe, _I am not liable if anything goes wrong_.
+### Code Deletion
 
-With that out of the way, open `Terminal`, copy-and-paste the code below, and hit `Enter`:
+> **Disclaimer**: although the operation should be safe, I'm not liable if anything goes wrong.
 
-(_**Warning:** This operation cannot be undone._)
+Open `Terminal` and run the following line of code (**this operation cannot be undone**):
 
 ```sh
 find ~/Movies/iMovie\ Library.imovielibrary -path "*/Render Files" -type d -exec rm -r {} +
 ```
 
-What the bash script does is it finds all the `Render Files` directories in your `iMovie Library` and executes a recursive remove on them.
+What the above does is it looks in `iMovie Library` and finds and removes all directories named `Render Files`.
 
-If you're not so confident about running this code, you can also delete the `Render Files` manually.
+If you're not sure about running this code, you can also clean up the files manually.
 
-Open `Finder` and go to `~/Movies/`. Now open your **iMovie Library Package Contents** (right click and select the option).
+### Manual Deletion
+
+Open `Finder` and go to `~/Movies/`.
+
+Then open `iMovie Library` **Package Contents** (right click and select the option):
 
 ![iMovie Show Package Contents]({{ "/images/2016/06-04-imovie-show-package-contents.png" | prepend: site.assets_path }})
 
-Go inside each project folder and delete the `Render Files` folder.
+Go inside each project folder and delete the `Render Files` folder:
 
 ![iMovie Render Files]({{ "/images/2016/06-04-imovie-delete-render-files.png" | prepend: site.assets_path }})
 
