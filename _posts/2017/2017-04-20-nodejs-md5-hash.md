@@ -23,3 +23,7 @@ console.log(hash);
 As a reminder, you probably don't want to use the MD5 algorithm for encryption as it can be easily [brute-forced](https://wikipedia.org/wiki/Brute-force_attack).
 
 However, it does serve as a useful checksum to verify data integrity.
+
+Here's a module that calculates MD5 hashes:
+
+{% gist ef52f3fb1c16cf7aaf8aae1fc81aceca %}
