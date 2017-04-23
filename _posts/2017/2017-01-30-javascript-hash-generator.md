@@ -8,22 +8,24 @@ categories: javascript hash
 
 There are a few ways to generate a hash with JavaScript.
 
-One quick and easy way is to convert a number to **base 36** with [toString()](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number/toString).
-
-You can generate that number using [Math.random()](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Math/random):
+One approach is to use [toString()](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number/toString) to convert a **number to base 36**:
 
 ```js
-Math.random().toString(36);
-// '0.t8422kr67xeufojkb4piizfr'
+(19440).toString(36); // 'f00'
 ```
 
-Or, you can get the current [milliseconds since the UNIX epoch](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/now):
+You can generate the number using [Math.random()](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Math/random):
 
 ```js
-Date.now().toString(36);
-// 'iyl0uscb'
+Math.random().toString(36); // '0.t8422kr67xeufojkb4piizfr'
 ```
 
-However, the above solutions don't guarantee **_unique_** hashes if used multiple times simultaneously.
+Or get the current [milliseconds since the UNIX epoch](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/now):
 
-In such a case, I recommend checking out [uuid](https://www.npmjs.com/package/uuid) and [shortid](https://www.npmjs.com/package/shortid).
+```js
+Date.now().toString(36); // 'iyl0uscb'
+```
+
+However, the above solutions don't guarantee _uniqueness_ because `Math.random` could return the same number and `Date.now` will return the same value if time hasn't changed.
+
+As a result, I recommend checking out [uuid](https://www.npmjs.com/package/uuid) and [shortid](https://www.npmjs.com/package/shortid). Also, there's a way to generate an [MD5 hash]({% post_url 2017/2017-04-20-nodejs-md5-hash %}) with Node.js.
