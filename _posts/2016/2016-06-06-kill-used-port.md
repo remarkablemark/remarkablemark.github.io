@@ -1,39 +1,35 @@
 ---
 layout: post
-title: Freeing a port already in use
+title: Freeing a port that's already in use
 date: 2016-06-06 21:15:00 -4000
-excerpt: Learn how to free a port already in use by killing the process associated with the port.
-categories: bash port kill server
+excerpt: Learn how to free a port that's already in use by killing the process associated with the port.
+categories: bash process kill port
 ---
 
-Sometimes when you're running multiple web servers on your local machine, you may encounter the following error:
+When running multiple servers, you may encounter the error:
 
 ```
 > Error: Address already in use
 > Error: listen EADDRINUSE
 ```
 
-Huh? What does this error even mean? Well, it means that when you tried to start your web server on a given port, there's already an _existing **process** bound to that **port**_.
+The error comes from trying to start a server when there's already a running process bound to that port.
 
-Thus, you have 2 options:
+You have 2 options:
 
-1. you can either have your server listen on a different port or
-2. free the current port by killing the process associated with it.
+1. You can start your server on a different port.
+2. Or you can free the current port by killing the process associated with it.
 
-Of course, if you do decide to kill the process, _make sure that it's not running something important_. Only you can be the judge on that.
+Of course, if you choose the second option, **make sure it's not running anything important**.
 
-Run the following command to free a port:
+### Example
+
+To kill processes associated with port `8888`:
 
 ```sh
-# make sure to replace `$PORT` with the port number
+# Mac
+$ sudo lsof -t -i tcp:8888 | xargs kill -9
 
-# for Mac
-sudo lsof -t -i tcp:$PORT | xargs kill -9
-
-# for Linux
-fuser -k $PORT/tcp
+# Linux
+$ fuser -k 8888/tcp
 ```
-
-You can see my example [here](https://gist.github.com/remarkablemark/2c2e0aed96fee28b8d8db8cc70654aa2):
-
-<script src="https://gist.github.com/remarkablemark/2c2e0aed96fee28b8d8db8cc70654aa2.js"></script>
