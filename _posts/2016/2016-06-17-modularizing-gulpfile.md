@@ -2,62 +2,64 @@
 layout: post
 title: Modularizing gulpfile
 date: 2016-06-17 19:49:00 -4000
-excerpt: To modularize your gulpfile, create a separate module for each gulp task.
-categories: gulp task gulpfile javascript workflow automation
+excerpt: A gulpfile can be modularized by splitting each task into its own file.
+categories: gulp
 ---
 
-When you open `gulpfile.js`, do you feel overwhelmed by its size and complexity?
+Modularizing `gulpfile.js` is as easy as separating each gulp task into its own file.
 
-If so, then it's time to refactor the file. Luckily, modularizing our gulpfile shouldn't be difficult.
-
-If you have the following file:
+Imagine you have the following:
 
 ```js
 // gulpfile.js
+
 var gulp = require('gulp');
 
 gulp.task('task1', function() {
-    return console.log('task1');
+    return console.log('running task1');
 });
 
 gulp.task('task2', function() {
-    return console.log('task2');
+    return console.log('running task2');
 });
 ```
 
-You can easily create separate modules and require them inside `gulpfile.js`:
+You can modularize the file like so:
 
 ```js
 // task1.js
+
 var gulp = require('gulp');
 
 gulp.task('task1', function() {
-    return console.log('task1');
+    return console.log('running task1');
 });
 ```
 
 ```js
 // task2.js
+
 var gulp = require('gulp');
 
 gulp.task('task2', function() {
-    return console.log('task2');
+    return console.log('running task2');
 });
 ```
 
 ```js
 // gulpfile.js
-require('./task1.js');
-require('./task2.js');
 
-// make sure you have gulp installed globally and locally: npm i -g gulp & npm i gulp
-// run `gulp -T` to see your tasks
+require('./task1');
+require('./task2');
+
+// make sure you have gulp installed globally and locally:
+// `npm i -g gulp & npm i gulp`
+
+// to see all tasks, run `gulp -T`
 ```
 
-You can even organize your modules in a folder. Since the gulp working directory is dictated by where `gulpfile.js` is located, you don't have to update the path in `gulp.src` and `gulp.dest`. Isn't that awesome?
+You can even organize them in a directory. Because the gulp working directory is determined by where `gulpfile.js` is located, `gulp.src` and `gulp.dest` still works as expected.
 
-Check out my [example](https://gist.github.com/remarkablemark/3b0ba33f50deda729e9b82d2e6fa0d6c) below:
+See [example](https://gist.github.com/remarkablemark/3b0ba33f50deda729e9b82d2e6fa0d6c):
 
-<script src="https://gist.github.com/remarkablemark/3b0ba33f50deda729e9b82d2e6fa0d6c.js"></script>
-
-
+{% gist 3b0ba33f50deda729e9b82d2e6fa0d6c %}
