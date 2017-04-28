@@ -2,8 +2,8 @@
 layout: post
 title: "WebDriverJS: Launch a browser"
 date: 2016-11-26 03:21:00 -4000
-excerpt: How to launch a browser with WebDriverJS (Selenium for Node.js).
-categories: webdriverjs node javascript selenium firefox
+excerpt: How to launch a browser or driver with WebDriverJS, Selenium for Node.js.
+categories: selenium webdriverjs nodejs firefox
 ---
 
 If you want to automate browsers, [Selenium](http://www.seleniumhq.org) is your tool of choice.
@@ -26,30 +26,34 @@ $ npm install selenium-webdriver
 
 Make sure that the version you install is [supported](https://www.npmjs.com/package/selenium-webdriver#user-content-node-support-policy) by your version of node.
 
-### Script
+I'll be assuming that you have a browser like [Firefox](https://www.mozilla.org/firefox) installed. With Firefox 48+, you'll need [geckodriver]({% post_url 2016/2016-11-06-selenium-geckodriver %}) installed additionally in order to control the browser.
+
+### Code
 
 Launching a browser is very simple:
 
 ```js
-// main.js
+// launch-driver.js
 
 const webdriver = require('selenium-webdriver');
 
+// instantiate the firefox browser
 const builder = new webdriver.Builder();
 builder.forBrowser('firefox');
 const driver = builder.build();
 
+// go to the url
 driver.get('http://example.com');
+
+// print the title
 driver.getTitle().then(title => console.log(title));
+
+// close the browser
 driver.quit();
 ```
-
-If you're using Firefox 48+, you'll also need to [install geckodriver]({% post_url 2016/2016-11-06-selenium-geckodriver %}).
 
 Now you can run your script:
 
 ```sh
-$ node main.js
+$ node launch-driver.js
 ```
-
-You'll see Firefox open, go to [example.com](http://example.com), and then close. Nice!
