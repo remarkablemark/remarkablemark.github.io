@@ -17,17 +17,23 @@ Install [Syntastic](https://github.com/scrooloose/syntastic#installation) if you
 Afterwards, you'll want to install [eslint](https://www.npmjs.com/package/eslint) globally:
 
 ```sh
-$ npm install -g eslint
+$ npm install eslint --global
 ```
 
-Then add it as a Syntastic JavaScript checker in your `.vimrc`:
+And add it as a Syntastic JavaScript checker in your `.vimrc`:
 
 ```vim
 " .vimrc
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers=['eslint']
 ```
 
-At this point, you're set for any project that uses [ECMAScript 5](https://en.wikipedia.org/wiki/ECMAScript).
+Reload your `.vimrc` after saving the changes:
+
+```vim
+:source $MYVIMRC
+```
+
+Now you're set for any project that uses [ECMAScript 5](https://wikipedia.org/wiki/ECMAScript).
 
 ### Advanced
 
@@ -47,7 +53,7 @@ You'll need to install them in order for your linter to work.
 
 #### Option 1
 
-One approach is to install them all globally:
+One approach is to install them globally:
 
 ```sh
 $ npm install -g eslint-config-airbnb \
@@ -55,15 +61,19 @@ $ npm install -g eslint-config-airbnb \
                  eslint-plugin-react
 ```
 
-But this can get tiresome real fast when projects have varying ESLint dependencies.
+But this can get tiresome real fast when different projects have different ESLint dependencies.
 
 #### Option 2
 
-The alternative (so you don't have to keep polluting the global `node_modules`) is to have Syntastic use the project-specific binary of `eslint`:
+If you don't want to keep polluting global `node_modules`, the alternative is to have Syntastic use the project-specific binary of `eslint`:
 
 ```vim
 " .vimrc
-let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
+let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 ```
 
-Now as long all the ESLint dependencies are installed locally in your project, Vim will have no problem linting JavaScript!
+This means that `eslint` and its parser and plugin dependencies must be installed locally in your project:
+
+```sh
+$ npm install eslint # and related dependencies
+```
