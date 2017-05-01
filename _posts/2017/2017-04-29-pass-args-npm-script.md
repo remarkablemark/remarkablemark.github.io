@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Passing arguments to npm scripts
-date: 2017-04-29 00:00:00 -4000
+date: 2017-04-29 20:42:06 -4000
 excerpt: How to pass arguments on the command-line to an npm script.
 categories: npm script cli
 ---
