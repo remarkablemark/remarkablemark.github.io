@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Requiring CSS with webpack
+title: Bundling CSS with webpack@1
 date: 2016-10-06 19:59:00 -4000
-excerpt: How to use webpack to load a required CSS file in a JavaScript module.
-categories: webpack css node javascript
+excerpt: How to require and bundle CSS files with webpack@1.
+categories: webpack css stylesheet nodejs
 ---
 
-Let's say you have `style.css`:
+Given `style.css`:
 
 ```css
 /* style.css */
@@ -15,22 +15,26 @@ Let's say you have `style.css`:
 }
 ```
 
-And you decide you want to require it in a JavaScript module:
+If you see it being required in a Node.js module:
 
 ```js
 // entry.js
 require('./style.css');
 ```
 
-"_Heresy_," you say, "Node can't possibly do that!"
+Your reaction would be, "_That doesn't work!_"
 
-You're right. Node can't. But a module bundler like [webpack](https://webpack.github.io) can.
+You're right. But if you're building a browser bundle, then it's possible with [webpack](https://webpack.github.io).
 
-Install [webpack](https://www.npmjs.com/package/webpack) globally if you haven't already:
+### Webpack
+
+First, install [webpack](https://www.npmjs.com/package/webpack) globally:
 
 ```sh
-$ npm install webpack -g
+$ npm install -g webpack@1
 ```
+
+### Loader
 
 In order to require `.css` files, you'll need to install the the respective [loader](https://github.com/webpack/css-loader):
 
@@ -54,7 +58,7 @@ module.exports = {
 };
 ```
 
-Build your output file using the [webpack CLI](https://github.com/webpack/docs/wiki/cli):
+Use the [webpack CLI](https://github.com/webpack/docs/wiki/cli) to build the output:
 
 ```sh
 $ webpack entry.js output.js
@@ -77,17 +81,19 @@ console.log(style); // [ Array[3] ]
 console.log(style.toString()); // the styles as a string
 ```
 
-What if you're requiring _multiple_ `.css` files and you'd like to bundle them into a _single_ stylesheet?
+### Plugin
 
-You can use [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin).
+What if you want to require _**multiple**_ `.css` files but bundle them in a _**single**_ stylesheet?
 
-You'll need both the [package](https://www.npmjs.com/package/extract-text-webpack-plugin) and [webpack](https://www.npmjs.com/package/webpack) locally installed in this case:
+You can do so with [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin).
+
+Install both the [plugin](https://www.npmjs.com/package/extract-text-webpack-plugin) and [webpack](https://www.npmjs.com/package/webpack) locally in this case:
 
 ```sh
-$ npm install extract-text-webpack-plugin webpack
+$ npm install extract-text-webpack-plugin webpack@1
 ```
 
-You'll also need to update your webpack configuration to make use of the plugin:
+Now update your webpack configuration:
 
 ```js
 // webpack.config.js
@@ -112,7 +118,7 @@ module.exports = {
 };
 ```
 
-Now webpack will generate a **JavaScript bundle** as well as a **CSS bundle**:
+Webpack will generate a **JavaScript bundle** as well as a **CSS bundle**:
 
 ```sh
 $ webpack entry.js output.js
