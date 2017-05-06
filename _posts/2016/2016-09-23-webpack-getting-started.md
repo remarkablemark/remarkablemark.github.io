@@ -102,3 +102,21 @@ Enable the [production](https://github.com/webpack/docs/wiki/cli#production-shor
 ```sh
 $ webpack main.js bundle.js -p
 ```
+
+### Configuration
+
+Creating a [webpack.config.js](https://webpack.github.io/docs/configuration.html) is the alternative to passing options to the CLI command:
+
+```js
+// webpack.config.js
+module.exports = {
+  entry: './main.js',
+  output: 'bundle.js'
+};
+```
+
+Now you can run `webpack` without any arguments:
+
+```sh
+$ webpack
+```
