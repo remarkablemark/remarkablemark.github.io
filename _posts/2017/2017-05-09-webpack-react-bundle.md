@@ -128,3 +128,62 @@ Update `index.html` with the new file path:
 ```
 
 When you refresh the page, the app now loads.
+
+### ES6
+
+But what if you want to use [ES6](https://babeljs.io/learn-es2015/) syntax?
+
+You'll need [babel-preset-es2015](https://www.npmjs.com/package/babel-preset-es2015):
+
+```sh
+$ npm install babel-preset-es2015
+```
+
+Add the preset to your webpack config:
+
+```js
+// webpack.config.js
+module.exports = {
+  entry: './main.js',
+  output: {
+    path: __dirname,
+    filename: 'bundle.js'
+  },
+  module: {
+    loaders: [
+      {
+        loader: 'babel-loader',
+        query: {
+          // add `es2015` to presets
+          presets: ['react', 'es2015']
+        },
+        test: /\.js$/,
+        exclude: /node_modules/
+      }
+    ]
+  }
+};
+```
+
+Now you can refactor `main.js` with ES6:
+
+```js
+// main.js
+import React from 'react';
+import { render } from 'react-dom';
+
+const Component = ({ name }) => {
+  return <h1>Hello, {name}!</h1>;
+};
+
+render(
+  <Component name='Mark' />,
+  document.getElementById('root')
+);
+```
+
+Don't forget to rebuild your bundle before refreshing the page:
+
+```sh
+$ npm run build
+```
