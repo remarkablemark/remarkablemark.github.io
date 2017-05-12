@@ -3,7 +3,7 @@ layout: post
 title: Bundle a React app with webpack@1
 date: 2017-05-09 23:52:01 -4000
 excerpt: How to build a React bundle using webpack@1.
-categories: webpack babel react jsx
+categories: webpack babel react jsx es6
 ---
 
 Imagine you have a React project with the following `package.json`:
@@ -144,11 +144,7 @@ Add the preset to your webpack config:
 ```js
 // webpack.config.js
 module.exports = {
-  entry: './main.js',
-  output: {
-    path: __dirname,
-    filename: 'bundle.js'
-  },
+  // ...
   module: {
     loaders: [
       {
@@ -157,8 +153,7 @@ module.exports = {
           // add `es2015` to presets
           presets: ['react', 'es2015']
         },
-        test: /\.js$/,
-        exclude: /node_modules/
+        // ...
       }
     ]
   }
@@ -172,9 +167,7 @@ Now you can refactor `main.js` with ES6:
 import React from 'react';
 import { render } from 'react-dom';
 
-const Component = ({ name }) => {
-  return <h1>Hello, {name}!</h1>;
-};
+const Component = ({ name }) => <h1>Hello, {name}!</h1>;
 
 render(
   <Component name='Mark' />,
@@ -186,4 +179,35 @@ Don't forget to rebuild your bundle before refreshing the page:
 
 ```sh
 $ npm run build
+```
+
+### .babelrc
+
+Alternatively, you can keep your babel presets in [.babelrc](https://babeljs.io/docs/usage/babelrc/):
+
+```json
+{
+  "presets": ["react", "es2015"]
+}
+```
+
+Instead of defining them in your webpack config:
+
+```js
+// webpack.config.js
+module.exports = {
+  // ...
+  module: {
+    loaders: [
+      {
+        loader: 'babel-loader',
+        // query: {
+        //   presets: ['react', 'es2015']
+        // },
+        test: /\.js$/,
+        exclude: /node_modules/
+      }
+    ]
+  }
+};
 ```
