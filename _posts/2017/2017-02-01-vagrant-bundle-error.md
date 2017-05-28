@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Vagrant bundle error
-date: 2017-02-02 02:23:00 -4000
+date: 2017-02-01 22:23:00 -4000
 excerpt: How to deal with the vagrant bundle error on Mac.
 categories: vagrant bundle error
 ---

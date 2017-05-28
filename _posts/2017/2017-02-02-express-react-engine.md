@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Express template engine based on React
-date: 2017-02-03 03:36:00 -4000
+date: 2017-02-02 23:36:00 -4000
 excerpt: Developing an Express template engine based on React.
 categories: express template react
 ---

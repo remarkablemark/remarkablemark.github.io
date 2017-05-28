@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Test GitHub Pages for broken links
-date: 2017-02-01 01:43:00 -4000
+date: 2017-01-31 21:43:00 -4000
 excerpt: Set up Travis CI for your site hosted by GitHub Pages.
 categories: travis github-pages html-proofer
 ---

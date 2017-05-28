@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mocha glob pattern
-date: 2017-02-08 01:09:00 -4000
+date: 2017-02-07 21:09:00 -4000
 excerpt: How to specify a glob pattern for Mocha tests.
 categories: mocha glob test
 ---

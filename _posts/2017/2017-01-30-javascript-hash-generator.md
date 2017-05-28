@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JavaScript hash generator
-date: 2017-01-31 03:31:00 -4000
+date: 2017-01-30 23:31:00 -4000
 excerpt: Several ways of generating a simple hash with JavaScript.
 categories: javascript hash
 ---

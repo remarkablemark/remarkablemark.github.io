@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WebDriverJS: Setting the binary"
-date: 2016-06-16 01:08:00 -4000
+date: 2016-06-15 21:08:00 -4000
 excerpt: To instantiate a WebDriver from a specific path, you can set the browser binary before building the driver. In this tutorial, we'll be using Firefox as our driver.
 categories: selenium webdriverjs firefox binary nodejs
 ---

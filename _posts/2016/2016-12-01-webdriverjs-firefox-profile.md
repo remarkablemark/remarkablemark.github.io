@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WebDriverJS: Firefox profile"
-date: 2016-12-02 03:55:00 -4000
+date: 2016-12-01 23:55:00 -4000
 excerpt: How to set the Firefox profile path when working with WebDriverJS (Selenium for Node.js).
 categories: webdriverjs firefox node javascript selenium
 ---

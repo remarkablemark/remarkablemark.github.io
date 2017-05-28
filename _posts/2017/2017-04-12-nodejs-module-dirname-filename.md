@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Node.js module filename and dirname
-date: 2017-04-13 00:49:00 -4000
+date: 2017-04-12 20:49:00 -4000
 excerpt: To get the filename or directory name of a module in Node.js, use the globals `__filename` and `__dirname`.
 categories: nodejs filename dirname
 ---

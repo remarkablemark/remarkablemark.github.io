@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Installing an older homebrew package
-date: 2017-02-04 03:53:00 -4000
+date: 2017-02-03 23:53:00 -4000
 excerpt: How to install an older or specific version of a homebrew package.
 categories: homebrew package
 ---

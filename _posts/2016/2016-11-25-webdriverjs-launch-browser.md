@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WebDriverJS: Launch a browser"
-date: 2016-11-26 03:21:00 -4000
+date: 2016-11-25 23:21:00 -4000
 excerpt: How to launch a browser or driver with WebDriverJS, Selenium for Node.js.
 categories: selenium webdriverjs nodejs firefox
 ---

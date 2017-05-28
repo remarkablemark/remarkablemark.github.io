@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Node.js process exit
-date: 2017-04-14 03:18:00 -4000
+date: 2017-04-14 04:18:00 -4000
 excerpt: To perform an action right before a Node.js script exits, you can listen to the process exit event.
 categories: nodejs process
 ---

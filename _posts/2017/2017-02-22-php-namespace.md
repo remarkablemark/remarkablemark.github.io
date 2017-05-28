@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Namespacing in PHP
-date: 2017-02-23 03:55:00 -4000
+date: 2017-02-22 23:55:00 -4000
 excerpt: PHP namespaces allows you to prevent name collisions.
 categories: php namespace
 ---

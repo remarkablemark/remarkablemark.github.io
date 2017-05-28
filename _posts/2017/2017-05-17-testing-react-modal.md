@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to write tests for react-modal
-date: 2017-05-18 00:25:00 -4000
+date: 2017-05-17 20:25:00 -4000
 excerpt: How to write unit tests for react-modal.
 categories: react modal test enzyme
 ---

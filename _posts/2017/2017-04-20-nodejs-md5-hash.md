@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Create MD5 hash with Node.js
-date: 2017-04-21 03:45:00 -4000
+date: 2017-04-20 23:45:00 -4000
 excerpt: How to calculate an MD5 hash of a string with Node.js.
 categories: nodejs md5 hash
 ---

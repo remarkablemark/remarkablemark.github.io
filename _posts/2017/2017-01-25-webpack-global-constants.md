@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Creating global constants with webpack
-date: 2017-01-26 01:26:00 -4000
+date: 2017-01-25 21:26:00 -4000
 excerpt: How to create global constants with webpack.
 categories: webpack global constants javascript
 ---
