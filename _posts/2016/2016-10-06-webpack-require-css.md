@@ -15,34 +15,41 @@ Given `style.css`:
 }
 ```
 
-If you see it being required in a Node.js module:
+Can you run the following in Node.js?
 
 ```js
 // entry.js
 require('./style.css');
 ```
 
-Your reaction would be, "_That doesn't work!_"
+No, you can't.
 
-You're right. But if you're building a browser bundle, then it's possible with [webpack](https://webpack.github.io).
+But what you can do is build a browser bundle with [webpack](https://webpack.github.io).
 
 ### Webpack
 
-First, install [webpack](https://www.npmjs.com/package/webpack) globally:
+Install [webpack](https://www.npmjs.com/package/webpack) if you haven't already:
 
 ```sh
-$ npm install -g webpack@1
+$ npm install webpack@1 --global
+```
+
+Or you can install a local version of webpack and use the local binary:
+
+```sh
+$ npm install webpack
+# ./node_modules/.bin/webpack
 ```
 
 ### Loader
 
-In order to require `.css` files, you'll need to install the the respective [loader](https://github.com/webpack/css-loader):
+The [css-loader](https://github.com/webpack/css-loader) comes handy here:
 
 ```sh
 $ npm install css-loader
 ```
 
-Now create your [webpack configuration](https://webpack.github.io/docs/configuration.html):
+Create your [webpack configuration](https://webpack.github.io/docs/configuration.html):
 
 ```js
 // webpack.config.js
@@ -72,22 +79,65 @@ output.js  3.3 kB       0  [emitted]  main
     + 2 hidden modules
 ```
 
-The exports of `style.css` is an array:
+The exports of `style.css` is an array with the method `.toString()`:
 
 ```js
 // entry.js
 var style = require('./style.css');
 console.log(style); // [ Array[3] ]
-console.log(style.toString()); // the styles as a string
+console.log(style.toString()); // css string
+```
+
+### Style
+
+But how would load the styles to your document?
+
+One approach is to insert it with JavaScript:
+
+```js
+// entry.js
+var css = require('./style.css').toString();
+var style = document.createElement('style');
+if (style.styleSheet) {
+  style.styleSheet.cssText = css;
+} else {
+  style.appendChild(document.createTextNode(css));
+}
+document.head.appendChild(style);
+```
+
+Another approach is to use [style-loader](https://github.com/webpack-contrib/style-loader):
+
+```sh
+$ npm install style-loader
+```
+
+Now add the loader to your webpack config:
+
+```js
+// webpack.config.js
+module.exports = {
+  module: {
+    loaders: [
+      {
+        test: /\.css$/,
+        // chained loaders are applied right to left
+        loaders: ['style-loader', 'css-loader']
+        // an alternative syntax:
+        // loader: 'style-loader!css-loader'
+      }
+    ]
+  }
+};
 ```
 
 ### Plugin
 
-What if you want to require _**multiple**_ `.css` files but bundle them in a _**single**_ stylesheet?
+What if you have **multiple** `.css` files and you want to combine them into a **single** stylesheet?
 
-You can do so with [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin).
+Here, you'll want to use [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin).
 
-Install both the [plugin](https://www.npmjs.com/package/extract-text-webpack-plugin) and [webpack](https://www.npmjs.com/package/webpack) locally in this case:
+Install both the [plugin](https://www.npmjs.com/package/extract-text-webpack-plugin) and [webpack](https://www.npmjs.com/package/webpack) locally (if you haven't already):
 
 ```sh
 $ npm install extract-text-webpack-plugin webpack@1
