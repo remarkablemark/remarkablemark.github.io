@@ -37,7 +37,7 @@ const options = new firefox.Options();
 options.setProfile('/path/to/profile');
 ```
 
-**_Note:_** Unlike [ChromeDriver]({% post_url 2016/2016-11-26-webdriverjs-chrome-profile %}), the profile must be valid otherwise the driver will fail to build. To create and manage Firefox profiles, see the official [documentation](https://support.mozilla.org/t5/Install-and-Update/Use-the-Profile-Manager-to-create-and-remove-Firefox-profiles/ta-p/2914).
+**_Note:_** Unlike [ChromeDriver]({% post_url 2016/2016-11-27-webdriverjs-chrome-profile %}), the profile must be valid otherwise the driver will fail to build. To create and manage Firefox profiles, see the official [documentation](https://support.mozilla.org/t5/Install-and-Update/Use-the-Profile-Manager-to-create-and-remove-Firefox-profiles/ta-p/2914).
 
 Now let's update the builder so WebDriverJS launches Firefox based on the specified profile:
 
