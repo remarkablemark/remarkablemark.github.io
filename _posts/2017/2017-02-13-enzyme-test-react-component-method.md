@@ -1,74 +1,106 @@
 ---
 layout: post
-title: "Enzyme: call a React component method"
+title: "Enzyme: calling a component method"
 date: 2017-02-13 19:50:00 -4000
-excerpt: How to use enzyme to test that a React component method is called.
-categories: enzyme react sinon spy method test
+excerpt: How to use Enzyme and Jasmine to test that a React component method is called.
+categories: react enzyme jasmine spy method test
 ---
 
-Imagine you have the following component:
+Given the component:
 
 ```js
-class Component extends React.Component {
+// MyComponent.js
+import React, { Component } from 'react';
+
+class MyComponent extends Component {
   constructor() {
-    this.method = this.method.bind(this);
+    super();
+    this._method = this._method.bind(this);
   }
-  method() {
-    console.log('method called');
+  _method() {
+    return true;
   }
   render() {
     return null;
   }
 }
+
+export default MyComponent;
 ```
 
-How can you call `method` in your test?
+When writing tests, how can we check that `_method` can be called?
 
-With [enzyme](https://github.com/airbnb/enzyme), you can get the method from the [component instance](http://airbnb.io/enzyme/docs/api/ReactWrapper/instance.html):
+### Instance
+
+With [enzyme](https://github.com/airbnb/enzyme), you can access the component methods from the component [instance](http://airbnb.io/enzyme/docs/api/ReactWrapper/instance.html):
 
 ```js
+// __spec__/MyComponent.spec.js
+import React from 'react';
 import { shallow } from 'enzyme';
+import MyComponent from './MyComponent';
 
-const wrapper = shallow(<Component />);
-const instance = wrapper.instance();
-instance.method(); // 'method called'
+const wrapper = shallow(<MyComponent />);
+console.log(wrapper.instance()._method()); // true
 ```
 
-Then with [sinon](http://sinonjs.org), you can spy on `method`:
+### Spy
+
+If you're using [Jasmine](https://jasmine.github.io/), you can even [spy](https://jasmine.github.io/2.0/introduction.html#section-Spies) on `_method`:
 
 ```js
-import sinon from 'sinon';
+// ...
 
-const spy = sinon.spy(Component.prototype, 'method');
-const wrapper = shallow(<Component />);
+describe('MyComponent.prototype._method', () => {
+  it('returns true when called', () => {
+    // make sure to spy on the method before rendering
+    spyOn(MyComponent.prototype, '_method').and.callThrough();
 
-wrapper.instance().method();
-sinon.assert.calledOnce(spy);
+    const wrapper = shallow(<MyComponent />);
+    expect(wrapper.instance()._method()).toBe(true);
+    expect(MyComponent.prototype._method).toHaveBeenCalled();
+  });
+});
 ```
 
-If you're using [class property transform](https://babeljs.io/docs/plugins/transform-class-properties/) (stage-2 feature):
+### Arrow Function
+
+But what if you're using [arrow functions as class methods](https://babeljs.io/docs/plugins/transform-class-properties/)?
 
 ```js
-class Component2 extends React.Component {
-  method = () => {
-    console.log('method called');
+// MyComponent2.js
+import React, { Component } from 'react';
+
+class MyComponent2 extends Component {
+  _method = () => {
+    return true;
   };
   render() {
     return null;
   }
 }
+
+export default MyComponent2;
 ```
 
-Then you'll need to update your approach since `method` is no longer on `prototype`:
+Unfortunately, `_method` is no longer on the component prototype. You'll need to spy on the instance `_method`:
 
 ```js
-const wrapper = shallow(<Component2 />);
-const instance = wrapper.instance();
-const spy = sinon.spy(Component, 'method');
+// __spec__/MyComponent2.spec.js
+import React from 'react';
+import { shallow } from 'enzyme';
+import MyComponent2 from '../MyComponent2';
 
-// method is not available until component is updated
-instance.forceUpdate();
+describe('MyComponent2._method', () => {
+  it('returns true when called', () => {
+    const wrapper = shallow(<MyComponent2 />);
+    const instance = wrapper.instance();
 
-instance.method();
-sinon.assert.calledOnce(spy);
+    // spy on the instance instead of the component
+    spyOn(instance, '_method').and.callThrough();
+
+    expect(instance._method()).toBe(true);
+    expect(instance._method).toHaveBeenCalled();
+  });
+});
 ```
