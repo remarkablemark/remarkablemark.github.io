@@ -14,6 +14,11 @@ You can install geckodriver [here](https://github.com/mozilla/geckodriver/releas
 $ brew install geckodriver
 ```
 
-If you didn't install with brew, you'll need to make sure that the **geckodriver executable** is found in `PATH`.
+If you installed without homebrew, you'll need to make sure that the [executable is found in the system path](https://developer.mozilla.org/docs/Mozilla/QA/Marionette/WebDriver#Add_executable_to_system_path):
+
+```sh
+# append to your bash config file (e.g., `~/.bashrc`)
+export PATH=$PATH:/path/to/geckodriver
+```
 
 Now you can [launch a Firefox browser]({% post_url 2016/2016-11-25-webdriverjs-launch-browser %}) with Selenium.
