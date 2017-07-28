@@ -12,7 +12,7 @@ categories: webpack build umd javascript
 
 For JavaScript modules, webpack can be used to build a bundle for the browser and/or the server.
 
-As a result, this means that you can generate a [UMD](https://github.com/umdjs/umd) build with webpack. This **Universal Module Definition** format allows JavaScript modules to be loaded via [CommonJS](https://webpack.github.io/docs/commonjs.html), [AMD](http://requirejs.org/docs/whyamd.html#amd), or [script tag](http://www.html5rocks.com/en/tutorials/speed/script-loading/#toc-first-script).
+As a result, this means that you can generate a [UMD](https://github.com/umdjs/umd) build with webpack. This **Universal Module Definition** format allows JavaScript modules to be loaded via [CommonJS](https://webpack.github.io/docs/commonjs.html), [AMD](http://requirejs.org/docs/whyamd.html#amd), or [script tag](https://www.html5rocks.com/en/tutorials/speed/script-loading/#toc-first-script).
 
 Let's learn how to use webpack to output UMD.
 
