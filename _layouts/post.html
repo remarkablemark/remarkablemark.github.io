@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-<main class="container post">
-    <header class="post-header">
+<main role="main" class="container post">
+    <header role="header" class="post-header">
         <h1 class="post-title">{{ page.title }}</h1>
         <h6 class="post-meta">
             {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %} •
