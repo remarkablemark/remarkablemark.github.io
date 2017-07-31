@@ -4,52 +4,43 @@
 .header {
     background-color: #333;
     color: #f8f8f8;
-    cursor: pointer;
     font-size: 2.65em;
     font-size: 4rem;
     letter-spacing: 0.1rem;
+    line-height: 2em;
+    height: 2em;
     text-align: center;
 
-    // header height
-    height: 2em;
-    line-height: 2em;
-
-    > .container {
+    // container
+    .container {
         height: 100%;
+        label {
+            margin: 0; // remove additional margins coming from skeleton
+        }
     }
-}
 
-/**
- * Header menu
- */
-.hamburger {
-    color: #ddd;
+    // hamburger menu
+    .menu {
+        color: #ddd;
+        cursor: pointer;
 
-     &:hover {
-        color: #fff;
-     }
-}
+        &:hover, &:focus {
+            color: #fff;
+        }
+    }
 
-/**
- * Header logo
- */
-.logo {
-    background-color: #555;
-    border-radius: 6px;
-    color: #333;
-    display: inline;
-    padding: 0 8px;
-}
-
-.header:hover {
+    // "M" logo
     .logo {
-        background-color: #a32c2c;
-        color: #4c0000;
-    }
-
-    // reset logo animation when hamburger icon is hovered
-    ~ .logo {
         background-color: #555;
+        border-radius: 6px;
         color: #333;
+        display: inline;
+        padding: 0 8px;
+
+        &:hover, &:focus {
+            background-color: #a32c2c;
+            color: #4c0000;
+            text-decoration: none;
+        }
     }
 }
