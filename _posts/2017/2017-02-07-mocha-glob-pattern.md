@@ -6,24 +6,26 @@ excerpt: How to specify a glob pattern for Mocha tests.
 categories: mocha glob test
 ---
 
-[Mocha](https://mochajs.org) by default looks for test files in the `./test/` directory:
+By default, [mocha](https://mochajs.org) looks for files in the `test` directory:
 
 ```sh
 $ tree
 .
 0 directories, 0 files
+```
 
+```sh
 $ mocha
 Error: cannot resolve path (or pattern) 'test'
 ```
 
-If you have test files in _subdirectories_, you'll need to pass the **recursive** flag:
+If you have files in subdirectories of `test`, you'll need to pass the **recursive** flag:
 
 ```sh
 $ mocha --recursive
 ```
 
-So what if you want to specify tests in a different directory?
+What if you want to specify tests in a different directory?
 
 You can pass the directory as a CLI argument:
 
@@ -31,26 +33,31 @@ You can pass the directory as a CLI argument:
 $ mocha another/directory
 ```
 
-And what about running tests on all files similar to `test/foo.spec.js` and `test/bar.spec.js`?
+## Glob
 
-Easy! Use a glob pattern:
+Now what if you want to match files like `test/foo.spec.js` and `test/bar.spec.js`?
+
+Easy! Use a glob expression:
 
 ```sh
 $ mocha "./test/*.spec.js"
+```
 
-# recurse through all nested directories
+And if you need to recurse through all nested directories:
+
+```sh
 $ mocha "./test/**/*.spec.js"
 ```
 
-Now what if you want to run tests in all files in the default directory except for `exclude.js`?
+But what if you want to match all files in `test` except for `exclude.js`?
 
-You will need to use this glob pattern:
+You'll need to negate the filename in the pattern:
 
 ```sh
 $ mocha "./test/**/!(exclude).js"
 ```
 
-Finally, if you want to match all files in the current directory with the `*.spec.js` pattern but ignore `node_modules` directory, you can do this:
+Finally, if you need to ignore `node_modules` and match files like `baz.spec.js` and `qux.spec.js` in the project root:
 
 ```sh
 $ mocha "./{,!(node_modules)/**/}*.spec.js"
