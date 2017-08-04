@@ -1,13 +1,19 @@
 <input type="checkbox" id="nav-toggle" />
 <nav role="nav" class="nav noselect">
     <ul class="nav-list">
+        <li>
+            <label for="nav-toggle" class="close-button">
+                &#x2715;
+            </label>
+        </li>
         <li><a href="/">Home</a></li>
         <li><a href="/blog/">Blog</a></li>
         <li><a href="/projects/">Projects</a></li>
         <li><a href="https://b.remarkabl.org/_github_" target="_blank">GitHub</a></li>
         <li><a href="https://b.remarkabl.org/___youtube" target="_blank">YouTube</a></li>
         <li><a href="https://b.remarkabl.org/__medium" target="_blank">Medium</a></li>
-        <li><script type="text/javascript">
+        <li>
+<script>
 {% comment %}/* http://hivelogic.com/enkoder */{% endcomment %}
 //<![CDATA[
 <!--
@@ -28,7 +34,7 @@ while(x=eval(x));
 })();
 //-->
 //]]>
-		</script></li>
-        <li><label for="nav-toggle"><span class="close-button">&#x2715;</span></label></li>
+</script>
+        </li>
     </ul>
 </nav>

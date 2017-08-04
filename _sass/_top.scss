@@ -29,7 +29,7 @@
                 padding: 1em 0;
                 text-decoration: none;
 
-                &:hover {
+                &:hover, &:focus {
                     background-color: #f0f0f0;
                     color: #111;
                     cursor: pointer;
@@ -40,7 +40,7 @@
 
     // close button
     .close-button {
-        background: #ddd;
+        background-color: #ddd;
         color: #333;
         display: none; // hide the close button by default
         margin: 0 auto;
@@ -54,14 +54,11 @@
         right: -18px; /* 1/2 width */
         width: 36px; height: 36px;
 
-        &:hover {
+        &:hover, &:focus {
+            background-color: #fff;
             cursor: pointer;
+            color: #111;
         }
-    }
-
-    label:hover .close-button {
-        background-color: #fff;
-        color: #111;
     }
 }
 
