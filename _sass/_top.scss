@@ -1,6 +1,5 @@
-/**
- * NAVIGATION + WRAP
- */
+$nav-width: 250px;
+
 .nav {
     background-color: #222;
     height: 100%;
@@ -10,8 +9,8 @@
     z-index: 1;
 
     // fixed transition value
-    left: -250px;
-    width: 250px;
+    left: -$nav-width;
+    width: $nav-width;
 
     // menu items
     .nav-list {
@@ -62,9 +61,6 @@
     }
 }
 
-/**
- * TOGGLE ANIMATION
- */
 .wrap {
     // necessary for transition animation
     position: relative;
@@ -93,7 +89,7 @@
             }
         }
         ~ .wrap {
-            left: 250px; // fixed transition value
+            left: $nav-width; // fixed transition value
         }
     }
 }
