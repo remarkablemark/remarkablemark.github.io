@@ -25,6 +25,7 @@ $nav-width: 250px;
                 color: #eee;
                 display: block;
                 font-size: 1.2em;
+                outline: 0;
                 padding: 1em 0;
                 text-decoration: none;
 
@@ -39,8 +40,8 @@ $nav-width: 250px;
 
     // close button
     .close-button {
-        background-color: #ddd;
-        color: #333;
+        background-color: #ccc;
+        color: #444;
         display: none; // hide the close button by default
         margin: 0 auto;
 
@@ -48,6 +49,7 @@ $nav-width: 250px;
         border-radius: 50%;
         font-size: 18px;
         line-height: 36px;
+        outline: 0;
         position: absolute;
         top: 0;
         right: -18px; /* 1/2 width */
@@ -55,8 +57,8 @@ $nav-width: 250px;
 
         &:hover, &:focus {
             background-color: #fff;
+            color: #000;
             cursor: pointer;
-            color: #111;
         }
     }
 }
