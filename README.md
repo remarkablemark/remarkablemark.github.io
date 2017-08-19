@@ -1,7 +1,7 @@
-# Mark's Remarkable Site
+# [remarkablemark.org](http://remarkablemark.org)
 
-My personal [site](http://remarkablemark.org) served by [GitHub Pages](https://pages.github.com) and [Jekyll](https://jekyllrb.com). Come check the [site](http://remarkablemark.org) out!
+Personal [site](http://remarkablemark.org) built with [Jekyll](https://jekyllrb.com) and served by [GitHub Pages](https://pages.github.com).
 
-### License
+## License
 
 Copyright © Menglin "Mark" Xu.
