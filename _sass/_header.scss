@@ -38,8 +38,8 @@
         padding: 0 8px;
 
         &:hover, &:focus {
-            background-color: #a32c2c;
-            color: #4c0000;
+            background-color: $red-medium;
+            color: $red-dark;
             text-decoration: none;
         }
     }
