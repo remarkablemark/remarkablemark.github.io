@@ -17,6 +17,21 @@ And [Bundler](http://bundler.io/):
 $ bundler --version
 ```
 
+## Installation
+
+Clone the repository:
+
+```sh
+$ git clone https://github.com/remarkablemark/remarkablemark.github.io.git
+$ cd remarkablemark.github.io
+```
+
+Then install gem dependencies:
+
+```sh
+$ bundle install
+```
+
 ## License
 
 Copyright © Menglin "Mark" Xu.
