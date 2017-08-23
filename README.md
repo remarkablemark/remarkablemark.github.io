@@ -32,6 +32,16 @@ Then install gem dependencies:
 $ bundle install
 ```
 
+## Update
+
+You should update your gem dependencies from time-to-time:
+
+```sh
+# git checkout master
+$ git pull
+$ bundle update
+```
+
 ## License
 
 Copyright © Menglin "Mark" Xu.
