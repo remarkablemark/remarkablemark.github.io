@@ -42,6 +42,26 @@ $ git pull
 $ bundle update
 ```
 
+## Run
+
+### Development server:
+
+```sh
+$ bundle exec jekyll serve
+```
+
+The server will be running at [`http://127.0.0.1:4000/`](http://127.0.0.1:4000/).
+
+Press `CTRL-C` to stop the server.
+
+### Production build:
+
+```sh
+$ bundle exec jekyll build
+```
+
+Your site will be generated at `./_site/`.
+
 ## License
 
 Copyright © Menglin "Mark" Xu.
