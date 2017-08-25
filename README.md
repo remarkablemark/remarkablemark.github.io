@@ -62,6 +62,15 @@ $ bundle exec jekyll build
 
 Your site will be generated at `./_site/`.
 
+## Testing
+
+Use [HTMLProofer](https://github.com/gjtorikian/html-proofer) to validate HTML output (see [post](http://remarkablemark.org/blog/2017/01/31/travis-github-pages/)):
+
+```sh
+$ bundle exec jekyll build
+$ bundle exec htmlproofer _site
+```
+
 ## License
 
 Copyright © Menglin "Mark" Xu.
