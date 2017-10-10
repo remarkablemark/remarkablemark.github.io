@@ -14,8 +14,8 @@ import React, { Component } from 'react';
 import ReactModal from 'react-modal';
 
 export default class ModalContainer extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       isModalOpen: false
     };
@@ -49,7 +49,7 @@ How would you test the modal in this component?
 
 ### [Enzyme](https://github.com/airbnb/enzyme)
 
-With [`.find`](http://airbnb.io/enzyme/docs/api/ReactWrapper/find.html), you can easily confirm that `react-modal` is rendered:
+With [`.find`](http://airbnb.io/enzyme/docs/api/ReactWrapper/find.html), you can easily confirm that the `react-modal` component is rendered:
 
 ```js
 // ModalContainer.spec.js
@@ -91,9 +91,9 @@ But what if you want to confirm that the content is rendered when the modal is o
 // ...
 ```
 
-Unfortunately, the last assertion fails because the modal children is rendered in a separate **portal element**.
+Unfortunately, the last assertion fails because the modal children is rendered in a separate **portal** element.
 
-As a result, you must find a way to use the `.portal` property of your rendered modal.
+As a result, you must figure out a way to use the `.portal` property of your rendered modal.
 
 ### [findDOMNode](https://facebook.github.io/react/docs/react-dom.html#finddomnode)
 
@@ -123,9 +123,9 @@ import { findDOMNode } from 'react-dom';
 // ...
 ```
 
-### [ReactWrapper](http://airbnb.io/enzyme/GLOSSARY.html#wrapper)
+### [ReactWrapper](https://github.com/airbnb/enzyme/blob/master/packages/enzyme/src/ReactWrapper.js)
 
-An alternative method is to wrap the portal node with enzyme's wrapper class:
+An alternative approach is to wrap the portal node with enzyme's wrapper class:
 
 ```js
 // ...
