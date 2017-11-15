@@ -1,8 +1,7 @@
 # Site settings
 title: remarkablemark
 email: mark@remarkablemark.org
-description: > # this means to ignore newlines until "baseurl:"
-    Mark's remarkable site.
+description: Site of remarkablemark.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: http://remarkablemark.org # the base hostname & protocol for your site
 github_username: remarkablemark
@@ -15,18 +14,18 @@ assets_path: //remarkablemark.org/assets
 markdown: kramdown
 highlighter: rouge
 sass:
-    style: :compressed
+  style: :compressed
 permalink: /blog/:year/:month/:day/:title/
 timezone: America/New_York
 encoding: utf-8
 exclude:
-    - Gemfile
-    - Gemfile.lock
-    - CNAME
-    - .travis.yml
-    - vendor
-    - README.md
-gems:
-    - jekyll-seo-tag
-    - jekyll-sitemap
-    - jekyll-feed
+  - Gemfile
+  - Gemfile.lock
+  - CNAME
+  - .travis.yml
+  - vendor
+  - README.md
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
