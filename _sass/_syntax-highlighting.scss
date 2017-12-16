@@ -147,3 +147,12 @@ pre {
     }
   }
 }
+
+/**
+ * Gist styling
+ */
+.gist {
+  td {
+    border: inherit; // fix Skeleton override
+  }
+}
