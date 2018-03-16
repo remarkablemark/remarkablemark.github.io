@@ -1,22 +1,60 @@
 ---
 layout: post
-title: "How to add an image to a GitHub gist"
+title: How to add an image to a GitHub gist
 date: 2016-06-16 23:57:00 -4000
-excerpt: "How to add an image to a GitHub gist. The trick is to use gist like a Git repository."
-categories: gist git GitHub image
+excerpt: How to add images or other static files to a GitHub gist. The trick is to use gist like a Git repository.
+categories: gist git GitHub image static file
 ---
 
-Have you ever wondered how to add an image to a gist?
+Did you know you can upload images (and other static files) to a [gist](https://gist.github.com) simply because it's a Git repository?
 
-Well until GitHub allows us to directly upload images, the approach as of now is to use gists like Git repositories:
+### Instructions
 
-1. Create a [gist](https://gist.github.com) (if you haven't already).
-2. Clone your gist (make sure to update `<hash>` with your gist hash):
-   - with SSH: `git clone https://gist.github.com/<hash>.git`
-   - or with HTTPS: `git clone https://gist.github.com/<hash>.git`
-3. Add the image to your gist's repository: `git add image.jpg`
-4. Commit the file: `git commit -m "Add image"`
-5. Update remote gist: `git push origin master`
-6. Now you can view the **Raw** image at: `https://gist.github.com/<username>/<hash>`
+First you need to make sure you're logged in to your GitHub [account](https://github.com/login).
 
-Check out my [example](https://gist.github.com/remarkablemark/feff40b0a522f0c41c4eff0b77ea1d47).
+1. Create or find a [gist](https://gist.github.com) that you own.
+2. Clone your gist (replace `<hash>` with your gist's hash):
+   ```sh
+   # with ssh
+   git clone git@gist.github.com:<hash>.git mygist
+
+   # or with https
+   git clone https://gist.github.com/<hash>.git mygist
+   ```
+
+3. Change to your gist's directory:
+   ```sh
+   cd mygist
+   ```
+
+4. Add and commit the image:
+   ```sh
+   git add image.jpg
+   git commit -m "Add image to gist"
+   ```
+
+5. Update remote:
+   ```sh
+   git push origin master
+   ```
+
+And voilà you can view the image in your gist:
+
+```sh
+open https://gist.github.com/<username>/<hash>
+```
+
+If you inspect the **Raw** file, you'll get something like the following:
+
+```
+https://gist.githubusercontent.com/<username>/<gist-sha>/raw/<commit-sha>/image.jpg
+```
+
+> **Note**: One disadvantage of gist is it doesn't support directories.
+> This means all files live in the root folder of the repository.
+
+### Example
+
+See [gist](https://gist.github.com/remarkablemark/feff40b0a522f0c41c4eff0b77ea1d47):
+
+{% gist feff40b0a522f0c41c4eff0b77ea1d47 %}
