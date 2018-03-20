@@ -1,62 +1,64 @@
 ---
 layout: post
-title: Check if Git head is dirty
+title: Check if Git working tree is dirty
 date: 2017-10-12 20:15:17 -4000
-excerpt: How to check if Git index is dirty or has changed or new files.
-categories: git diff status bash cli
+excerpt: How to check if Git working tree is dirty or has new untracked files.
+categories: git repository diff status bash cli
 ---
 
 ## git diff
 
-If you want to check that files in the working tree or index are modified (and don't care about untracked files):
+`git diff` can be used to check if the working directory is dirty (assuming you don't care about untracked files):
 
 ```sh
 $ git diff HEAD
 ```
 
-Then to check programmatically:
+If files are modified, then it will output text. If the working directory is clean, then it will output nothing.
+
+Using the conditional if statement:
 
 ```sh
-#!/usr/bin/bash
-
-git diff --quiet HEAD || echo 'dirty'
-
-# or
-if [[ $(git diff --quiet HEAD) ]]; then
+#!/bin/bash
+if [[ $(git diff --stat) != '' ]]; then
   echo 'dirty'
 else
   echo 'clean'
 fi
 ```
 
+Or a logical operator:
+
+```sh
+$ git diff --quiet || echo 'dirty'
+```
+
 ## git status
 
-But what if you want to check for the presence of untracked files as well?
+But to check for the presence of untracked files, you'll need `git status`:
 
 ```sh
 $ git status --short
 ```
 
-For example, if you modified `README` and created `LICENSE`:
+For example, if `LICENSE` is created and `README.md` is modified:
 
 ```sh
 $ git status -s
-M  README
+M  README.md
 ?? LICENSE
 ```
 
-And to check programmatically:
+Using a logical operator to check if working tree has modified/untracked files (`-z` tests if the string is null or empty):
 
 ```sh
-#!/usr/bin/bash
-
-# if index has modified/untracked files
-# `-z` tests if the string is null or empty
-[[ -z $(git status -s) ]] || echo 'modified/untracked'
-
-# if index is clean
-# `-n` tests if the string is not empty
-[[ -n $(git status -s) ]] || echo 'clean'
+$ [[ -z $(git status -s) ]] || echo 'modified/untracked'
 ```
 
-FYI, there's also a `--porcelain` option which formats the output like `--short`, but it's a high level command that's been known to be slow for larger repositories.
+And using a logical operator to check if working tree is clean (`-n` tests if the string is not empty):
+
+```sh
+$ [[ -n $(git status -s) ]] || echo 'clean'
+```
+
+Also, there's the option `--porcelain` which formats the output like `--short`. But because it's a high level command, it's known to be slow for larger repositories.
