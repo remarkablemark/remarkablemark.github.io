@@ -165,3 +165,10 @@ blockquote {
     -ms-user-select: none;
     user-select: none;
 }
+
+/**
+ * Ensure main works in IE 9-11.
+ */
+main {
+    display: block;
+}
