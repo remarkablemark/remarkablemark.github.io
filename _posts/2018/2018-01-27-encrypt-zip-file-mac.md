@@ -1,19 +1,19 @@
 ---
 layout: post
-title: Encrypt zip files in Mac
+title: Encrypt zip files on Mac OS
 date: 2018-01-27 18:13:49 -4000
-excerpt: How to encrypt and decrypt zip files and archives in Mac.
+excerpt: How to encrypt and decrypt zip files and archives on Mac OS.
 categories: zip encrypt decrypt password mac bash cli
 ---
 
-> ###### TL;DR
+> ###### TL;DR:
 >
 > ```sh
 > # zip file with password
-> $ zip -e path/to/archive.zip path/to/file
+> $ zip -e archive.zip file
 >
 > # zip folder with password
-> $ zip -er path/to/archive.zip path/to/folder
+> $ zip -er archive.zip folder/
 > ```
 
 ### Example
