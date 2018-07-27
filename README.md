@@ -1,6 +1,6 @@
-# [remarkablemark.org](http://remarkablemark.org)
+# [remarkablemark.org](https://remarkablemark.org)
 
-Personal [site](http://remarkablemark.org) built with [Jekyll](https://jekyllrb.com) and served by [GitHub Pages](https://pages.github.com).
+[Site](https://remarkablemark.org) of [remarkablemark](https://github.com/remarkablemark). Built with [Jekyll](https://jekyllrb.com) and hosted on [GitHub Pages](https://pages.github.com).
 
 ## Requirements
 
@@ -10,7 +10,7 @@ You need [Ruby](https://www.ruby-lang.org/en/downloads/) 2.1.0 or higher:
 $ ruby --version
 ```
 
-And [Bundler](http://bundler.io/):
+And [Bundler](http://bundler.io):
 
 ```sh
 # gem install bundler
@@ -64,7 +64,7 @@ Your site will be generated at `./_site/`.
 
 ## Testing
 
-Use [HTMLProofer](https://github.com/gjtorikian/html-proofer) to validate HTML output (see [post](http://remarkablemark.org/blog/2017/01/31/travis-github-pages/)):
+Use [HTMLProofer](https://github.com/gjtorikian/html-proofer) to validate HTML output (see [post](https://remarkablemark.org/blog/2017/01/31/travis-github-pages/)):
 
 ```sh
 $ bundle exec jekyll build
