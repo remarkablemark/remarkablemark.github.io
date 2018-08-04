@@ -1,18 +1,18 @@
 ---
 layout: default
 ---
-<main role="main" class="container post">
-    <header role="header" class="post-header">
-        <h1 class="post-title">{{ page.title }}</h1>
-        <h6 class="post-meta">
-            {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %} •
-            <a href="/blog/">Blog</a> •
-            <a href="{{ site.github.repository_url }}/blob/master/{{ page.relative_path }}" target="_blank">Edit</a>
-        </h6>
-    </header>
-    <hr>
-    <article class="post-content">{{ content }}</article>
-    <br>
-    {% include disqus.html %}
-    <br>
+<main class="container post" role="main">
+  <header class="post-header" role="header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <h6 class="post-meta">
+      {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %} •
+      <a href="/blog/">Blog</a> •
+      <a href="{{ site.github.repository_url }}/blob/master/{{ page.relative_path }}" target="_blank">Edit</a>
+    </h6>
+  </header>
+  <hr>
+  <article class="post-content">{{ content }}</article>
+  <br>
+  {% include disqus.html %}
+  <br>
 </main>
