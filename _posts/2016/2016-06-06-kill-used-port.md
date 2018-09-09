@@ -1,35 +1,50 @@
 ---
 layout: post
-title: Freeing a port that's already in use
+title: Free a port that's in use
 date: 2016-06-06 21:15:00 -4000
-excerpt: Learn how to free a port that's already in use by killing the process associated with the port.
-categories: bash process kill port
+excerpt: Learn how to free an address that is already in use by killing the process associated with the port.
+categories: bash process kill port address
 ---
 
-When running multiple servers, you may encounter the error:
-
+The following error can be encountered when running multiple servers:
 ```
 > Error: Address already in use
 > Error: listen EADDRINUSE
 ```
 
-The error comes from trying to start a server when there's already a running process bound to that port.
+This is because the port has already been bound to a running server and now another server is trying to listen on that port.
 
-You have 2 options:
+There are 2 things that can be done:
+1. Start your server on a different port.
+2. Or free the port by killing the process associated with it.
 
-1. You can start your server on a different port.
-2. Or you can free the current port by killing the process associated with it.
+**_Warning_**: If you choose the 2nd option, make sure you're not killing anything important.
 
-Of course, if you choose the second option, **make sure it's not running anything important**.
+### Getting the pid
 
-### Example
-
-To kill processes associated with port `8888`:
-
+Use [`lsof`](https://wikipedia.org/wiki/Lsof) to get the process id (pid) associated with the port:
 ```sh
-# Mac
-$ sudo lsof -t -i tcp:8888 | xargs kill -9
+$ lsof -ti :<PORT> # replace <PORT> with the port number
+```
 
-# Linux
-$ fuser -k 8888/tcp
+### Killing the pid
+
+To [kill](http://manpages.ubuntu.com/manpages/precise/man1/kill.1.html) the process associated with the port:
+```sh
+$ kill $(lsof -ti :<PORT>) # replace <PORT> with the port number
+```
+
+There may be a scenario where you'll need to pass the `SIGKILL` [signal](https://wikipedia.org/wiki/Signal_%28computing%29) to stop and kill the process immediately:
+```sh
+$ kill -9 $(lsof -ti :<PORT>)
+```
+
+Use `sudo` if you don't have permissions:
+```sh
+$ sudo kill -9 $(lsof -ti :<PORT>)
+```
+
+And Unix users can accomplish the same thing with [`fuser`](https://wikipedia.org/wiki/Fuser_(Unix)):
+```sh
+$ fuser -k <PORT>/tcp # replace <PORT> with the port number
 ```
