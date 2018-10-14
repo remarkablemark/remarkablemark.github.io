@@ -121,11 +121,11 @@ To minimize unexpected side effects due to future changes, we can refactor the l
 // ...
 
 class CountStore extends EventEmitter {
-  addChangeListener(listener) {
-    this.on('change', listener);
+  addChangeListener(callback) {
+    this.on('change', callback);
   }
-  removeChangeListener(listener) {
-    this.off('change', listener);
+  removeChangeListener(callback) {
+    this.off('change', callback);
   }
   // ...
 }
@@ -320,6 +320,7 @@ import { INCREMENT, DECREMENT } from './constants';
 class CountStore extends EventEmitter {
   constructor() {
     super();
+    // the token can be used to wait or synchronize with the other stores
     this.dispatchToken = dispatcher.register(action => {
       switch (action.type) {
         case INCREMENT:
