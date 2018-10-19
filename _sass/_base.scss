@@ -172,3 +172,25 @@ blockquote {
 main {
     display: block;
 }
+
+/**
+ * Skip link.
+ *
+ * http://web-accessibility.carnegiemuseums.org/code/skip-link/
+ */
+.skip-link {
+  height: 1px;
+  left: -999px;
+  position: absolute;
+  top: auto;
+  width: 1px;
+}
+
+.skip-link:active,
+.skip-link:focus {
+  display: inline-block;
+  height: auto;
+  margin: auto;
+  position: static;
+  width: auto;
+}
