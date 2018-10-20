@@ -1,97 +1,98 @@
 $nav-width: 250px;
 
 .nav {
-    background-color: #222;
-    height: 100%;
-    position: fixed;
-    text-align: center;
-    text-transform: uppercase;
-    z-index: 1;
+  background-color: #222;
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 1;
 
-    // fixed transition value
-    left: -$nav-width;
-    width: $nav-width;
+  // fixed transition value
+  left: -$nav-width;
+  width: $nav-width;
 
-    // menu items
-    .nav-list {
-        list-style: none;
-        margin-left: 0;
+  // menu items
+  .nav-list {
+    list-style: none;
+    margin-left: 0;
 
-        > li {
-            margin: 0;
+    > li {
+      margin: 0;
 
-            > a {
-                border-bottom: 1px solid #555;
-                color: #eee;
-                display: block;
-                font-size: 1.2em;
-                outline: 0;
-                padding: 1em 0;
-                text-decoration: none;
-
-                &:hover, &:focus {
-                    background-color: #f0f0f0;
-                    color: #111;
-                    cursor: pointer;
-                }
-            }
-        }
-    }
-
-    // close button
-    .close-button {
-        background-color: #ccc;
-        color: #444;
-        display: none; // hide the close button by default
-        margin: 0 auto;
-
-        // important values for styling the button
-        border-radius: 50%;
-        font-size: 18px;
-        line-height: 36px;
+      > a {
+        border-bottom: 1px solid #555;
+        color: #eee;
+        display: block;
+        font-size: 1.2em;
         outline: 0;
-        position: absolute;
-        top: 0;
-        right: -18px; /* 1/2 width */
-        width: 36px; height: 36px;
+        padding: 1em 0;
+        text-decoration: none;
 
         &:hover, &:focus {
-            background-color: #fff;
-            color: #000;
-            cursor: pointer;
+          background-color: #f0f0f0;
+          color: #111;
+          cursor: pointer;
         }
+      }
     }
+  }
+
+  // close button
+  .close-button {
+    background-color: #ccc;
+    color: #444;
+    display: none; // hide the close button by default
+    margin: 0 auto;
+
+    // important values for styling the button
+    border-radius: 50%;
+    font-size: 18px;
+    line-height: 36px;
+    outline: 0;
+    position: absolute;
+    top: 0;
+    right: -18px; /* 1/2 width */
+    width: 36px; height: 36px;
+
+    &:hover, &:focus {
+      background-color: #fff;
+      color: #000;
+      cursor: pointer;
+    }
+  }
 }
 
 .wrap {
-    // necessary for transition animation
-    position: relative;
-    left: 0;
+  // necessary for transition animation
+  position: relative;
+  left: 0;
 }
 
 .nav,
 .wrap {
-    // transition animation
-    -webkit-transition: left 500ms;
-    -moz-transition: left 500ms;
-    -o-transition: left 500ms;
-    transition: left 500ms;
+  // transition animation
+  -webkit-transition: left 500ms;
+  -moz-transition: left 500ms;
+  -o-transition: left 500ms;
+  transition: left 500ms;
 }
 
 #nav-toggle {
-    display: none; // checkbox input will always stay hidden
+  display: none; // checkbox input will always stay hidden
 
-    &:checked {
-        ~ .nav {
-            left: 0;
+  &:checked {
+    ~ .nav {
+      left: 0;
 
-            // show the close button when the nav is toggled
-            .close-button {
-                display: block;
-            }
-        }
-        ~ .wrap {
-            left: $nav-width; // fixed transition value
-        }
+      // show the close button when the nav is toggled
+      .close-button {
+        display: block;
+      }
     }
+
+    ~ .wrap {
+      left: $nav-width; // fixed transition value
+    }
+  }
 }

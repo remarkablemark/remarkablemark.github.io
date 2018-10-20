@@ -1,46 +1,48 @@
 /**
- * Header general
+ * Header.
  */
 .header {
-    background-color: #333;
-    color: #f8f8f8;
-    font-size: 2.65em;
-    font-size: 4rem;
-    letter-spacing: 0.1rem;
-    line-height: 2em;
-    height: 2em;
-    text-align: center;
+  background-color: #333;
+  color: #f8f8f8;
+  font-size: 2.65em;
+  font-size: 4rem;
+  letter-spacing: 0.1rem;
+  line-height: 2em;
+  height: 2em;
+  text-align: center;
 
-    // container
-    .container {
-        height: 100%;
-        label {
-            margin: 0; // remove additional margins coming from skeleton
-        }
+  // container
+  .container {
+    height: 100%;
+    label {
+      margin: 0; // remove additional margins coming from skeleton
     }
+  }
 
-    // hamburger menu
-    .menu {
-        color: #ddd;
-        cursor: pointer;
+  // hamburger menu
+  .menu {
+    color: #ddd;
+    cursor: pointer;
 
-        &:hover, &:focus {
-            color: #fff;
-        }
+    &:hover,
+    &:focus {
+      color: #fff;
     }
+  }
 
-    // "M" logo
-    .logo {
-        background-color: #555;
-        border-radius: 6px;
-        color: #333;
-        display: inline;
-        padding: 0 8px;
+  // "M" logo
+  .logo {
+    background-color: #555;
+    border-radius: 6px;
+    color: #333;
+    display: inline;
+    padding: 0 8px;
 
-        &:hover, &:focus {
-            background-color: $red-medium;
-            color: $red-dark;
-            text-decoration: none;
-        }
+    &:hover,
+    &:focus {
+      background-color: $red-medium;
+      color: $red-dark;
+      text-decoration: none;
     }
+  }
 }

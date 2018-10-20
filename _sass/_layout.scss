@@ -1,101 +1,104 @@
 /**
- * Content
+ * Headings.
  */
 h1,
 h2,
 h3 {
-    letter-spacing: -0.01rem;
-    line-height: 1.37;
-    margin: 3rem 0;
+  letter-spacing: -0.01rem;
+  line-height: 1.37;
+  margin: 3rem 0;
 }
 
 h3 {
-    color: #666;
+  color: #666;
 
-    > span {
-        background-color: #fff;
-        background-color: rgba(255, 255, 255, 0.9);
-    }
+  > span {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
 
-    strong {
-        color: #555;
-    }
+  strong {
+    color: #555;
+  }
 }
 
 /**
- * Headshot
+ * Headshot.
  */
 .headshot {
-    bottom: 0;
-    left: 0; right: 0; // center horizontally
-    margin: 0 auto; // ditto
-    max-width: 100%;
-    position: fixed;
+  bottom: 0;
+  // center horizontally
+  left: 0;
+  right: 0;
+  margin: 0 auto; // ditto
+  max-width: 100%;
+  position: fixed;
 
-    // slide up animation
-    -webkit-transition: bottom 800ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
-    -moz-transition: bottom 800ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
-    -o-transition: bottom 800ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
-    transition: bottom 800ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  // slide up animation
+  -webkit-transition: bottom 800ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  -moz-transition: bottom 800ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  -o-transition: bottom 800ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  transition: bottom 800ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
 }
 
 @media only screen and (min-width: 500px) {
-    .headshot {
-        height: 50%;
-    }
+  .headshot {
+    height: 50%;
+  }
 }
 
 /**
- * Post
+ * Post.
  */
 .post-meta {
-    color: #666;
+  color: #666;
 }
 
 .post-link {
-    font-size: 1.2em;
+  font-size: 1.2em;
 
-    &, &:hover {
-        color: #e22a2a;
-    }
+  &,
+  &:hover {
+    color: #e22a2a;
+  }
 
-    &:visited {
-        color: #666;
-    }
+  &:visited {
+    color: #666;
+  }
 }
 
 // list page
 .post-list {
-    list-style: none;
-    margin-left: 0.25em;
+  list-style: none;
+  margin-left: 0.25em;
 
-    // keep date separated from title in list view
-    .post-meta {
-        margin-right: 0.25em;
-        @include media-query($on-palm) {
-            display: block;
-        }
+  // keep date separated from title in list view
+  .post-meta {
+    margin-right: 0.25em;
+    @include media-query($on-palm) {
+      display: block;
     }
+  }
 }
 
 // post page
 .post {
-    .post-title {
-        line-height: 1.15;
-        margin-bottom: 0.25em;
-    }
+  .post-title {
+    line-height: 1.15;
+    margin-bottom: 0.25em;
+  }
 
-    .post-meta {
-        margin-top: 5px;
-    }
+  .post-meta {
+    margin-top: 5px;
+  }
 
-    hr {
-        margin: 1em 0;
-    }
+  hr {
+    margin: 1em 0;
+  }
 
-    // center images
-    p > img {
-        display: block;
-        margin: 0 auto;
-    }
+  // center images
+  p > img {
+    display: block;
+    margin: 0 auto;
+  }
 }
