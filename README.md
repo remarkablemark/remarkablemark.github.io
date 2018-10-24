@@ -47,7 +47,7 @@ $ bundle update
 ### Development server:
 
 ```sh
-$ bundle exec jekyll serve
+$ bundle exec jekyll serve --livereload # --incremental --limit_posts 1
 ```
 
 The server will be running at [`http://127.0.0.1:4000/`](http://127.0.0.1:4000/).
