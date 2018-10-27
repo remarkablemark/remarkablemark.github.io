@@ -23,31 +23,6 @@ h3 {
 }
 
 /**
- * Headshot.
- */
-.headshot {
-  bottom: 0;
-  // center horizontally
-  left: 0;
-  right: 0;
-  margin: 0 auto; // ditto
-  max-width: 100%;
-  position: fixed;
-
-  // slide up animation
-  -webkit-transition: bottom 800ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
-  -moz-transition: bottom 800ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
-  -o-transition: bottom 800ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
-  transition: bottom 800ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
-}
-
-@media only screen and (min-width: 500px) {
-  .headshot {
-    height: 50%;
-  }
-}
-
-/**
  * Post.
  */
 .post-meta {
