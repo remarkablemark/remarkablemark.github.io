@@ -1,0 +1,23 @@
+<img id="headshot" src="{{ "/images/headshot/small.png" | prepend: site.assets_path }}" alt="Headshot of remarkablemark" title="Hello world!" />
+
+{% comment %}<!-- test -->{% endcomment %}
+<script type="text/javascript">
+  (function() {
+    // hide the headshot image initially
+    // and then slide it up when the image has loaded
+    var headshot = document.getElementById('headshot');
+    headshot.style.bottom = '-100%';
+    // load higher quality image for larger screen sizes
+    if (window.innerWidth > 1080) {
+      headshot.src = "{{ '/images/headshot/large.png' | prepend: site.assets_path }}";
+    } else if (window.innerWidth > 720) {
+      headshot.src = "{{ '/images/headshot/medium.png' | prepend: site.assets_path }}";
+    }
+    var headshotHasLoaded = setInterval(function() {
+      if (headshot.complete) {
+        headshot.style.bottom = 0;
+        clearInterval(headshotHasLoaded);
+      }
+    }, 100);
+  })();
+</script>
