@@ -1,6 +1,6 @@
-# [remarkablemark.org](https://remarkablemark.org)
+# [remarkablemark.org](https://b.remarkabl.org/mark)
 
-[Site](https://remarkablemark.org) of [remarkablemark](https://github.com/remarkablemark). Built with [Jekyll](https://jekyllrb.com) and hosted on [GitHub Pages](https://pages.github.com).
+[Site](https://b.remarkabl.org/mark) of [@remarkablemark](https://b.remarkabl.org/github). Built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/).
 
 ## Requirements
 
@@ -10,7 +10,7 @@ You need [Ruby](https://www.ruby-lang.org/en/downloads/) 2.1.0 or higher:
 $ ruby --version
 ```
 
-And [Bundler](http://bundler.io):
+And [Bundler](http://bundler.io/):
 
 ```sh
 # gem install bundler
@@ -50,7 +50,11 @@ $ bundle update
 $ bundle exec jekyll serve --livereload # --incremental --limit_posts 1
 ```
 
-The server will be running at [`http://127.0.0.1:4000/`](http://127.0.0.1:4000/).
+The server will be running at `127.0.0.1:4000`:
+
+```sh
+$ open http://127.0.0.1:4000
+```
 
 Press `CTRL-C` to stop the server.
 
