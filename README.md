@@ -2,15 +2,17 @@
 
 [Site](https://b.remarkabl.org/mark) of [@remarkablemark](https://b.remarkabl.org/github). Built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/).
 
+If you found the site helpful, please consider [**supporting**](#support) it!
+
 ## Requirements
 
-You need [Ruby](https://www.ruby-lang.org/en/downloads/) 2.1.0 or higher:
+[Ruby](https://www.ruby-lang.org/en/downloads/) 2+:
 
 ```sh
 $ ruby --version
 ```
 
-And [Bundler](http://bundler.io/):
+[Bundler](http://bundler.io/):
 
 ```sh
 # gem install bundler
@@ -26,7 +28,7 @@ $ git clone https://github.com/remarkablemark/remarkablemark.github.io.git
 $ cd remarkablemark.github.io
 ```
 
-Then install gem dependencies:
+Install dependencies:
 
 ```sh
 $ bundle install
@@ -34,7 +36,7 @@ $ bundle install
 
 ## Update
 
-You should update your gem dependencies from time-to-time:
+To update the gem dependencies:
 
 ```sh
 # git checkout master
@@ -44,27 +46,27 @@ $ bundle update
 
 ## Run
 
-### Development server:
+### Development server
 
 ```sh
 $ bundle exec jekyll serve --livereload # --incremental --limit_posts 1
 ```
 
-The server will be running at `127.0.0.1:4000`:
+The server will be running at http://127.0.0.1:4000/:
 
 ```sh
-$ open http://127.0.0.1:4000
+$ open http://127.0.0.1:4000/
 ```
 
 Press `CTRL-C` to stop the server.
 
-### Production build:
+### Production build
 
 ```sh
 $ bundle exec jekyll build
 ```
 
-Your site will be generated at `./_site/`.
+The site will be generated at `./_site/`.
 
 ## Testing
 
@@ -74,6 +76,18 @@ Use [HTMLProofer](https://github.com/gjtorikian/html-proofer) to validate HTML o
 $ bundle exec jekyll build
 $ bundle exec htmlproofer _site
 ```
+
+## Support
+
+Donations are welcome:
+
+- [Patreon](https://b.remarkabl.org/patreon)
+- [Ko-fi](https://b.remarkabl.org/ko-fi)
+- [Liberapay](https://b.remarkabl.org/liberapay)
+
+We also have merch:
+
+- [Teepsring](https://b.remarkabl.org/teespring)
 
 ## License
 
