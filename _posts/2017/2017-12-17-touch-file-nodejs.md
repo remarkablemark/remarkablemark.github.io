@@ -1,12 +1,15 @@
 ---
 layout: post
 title: How to touch a file in Node.js
-date: 2017-12-17 16:44:13 -4000
-excerpt: How to touch a file in Node.js using synchronous and asynchronous fs.
-categories: touch file fs promise nodejs javascript
+date: 2017-12-17 16:44:13
+updated: 2019-07-20 23:08:43
+excerpt: How to touch a file in Node.js using synchronous and asynchronous `fs` methods.
+categories: touch file nodejs javascript
 ---
 
-To synchronously touch (or create an empty) a file in Node.js:
+## Create file
+
+To create an empty file in [Node.js](https://nodejs.org/):
 
 ```js
 const fs = require('fs');
@@ -14,28 +17,51 @@ const filename = 'file.txt';
 fs.closeSync(fs.openSync(filename, 'w'));
 ```
 
-But what if we don't want to block the event loop? We could convert it to the asynchronous callback style:
+Here, a (blank) file is written with [fs.openSync](https://nodejs.org/api/fs.html#fs_fs_opensync_path_flags_mode) and then closed with [fs.closeSync](https://nodejs.org/api/fs.html#fs_fs_closesync_fd).
+
+## touch file
+
+To `touch` a file, however, requires a bit more work (_credit [boutell](http://disq.us/p/21rurrt)_):
 
 ```js
-// ...
-fs.open(filename, 'w', (err, fd) => {
-  if (err) throw err;
-  fs.close(fd, err => { if (err) throw err; });
+const fs = require('fs');
+const filename = 'file.txt';
+const time = new Date();
+
+try {
+  fs.utimesSync(filename, time, time);
+} catch (err) {
+  fs.closeSync(fs.openSync(filename, 'w'));
+}
+```
+
+[fs.utimesSync](https://nodejs.org/api/fs.html#fs_fs_utimessync_path_atime_mtime) is used here to prevent existing file contents from being overwritten.
+
+It also updates the last modification timestamp of the file, which is consistent with what POSIX `touch` does.
+
+### Callback
+
+To do this asynchronously, we can use the non-blocking methods [fs.close](https://nodejs.org/api/fs.html#fs_fs_close_fd_callback), [fs.open](https://nodejs.org/api/fs.html#fs_fs_open_path_flags_mode_callback), [fs.utimes](https://nodejs.org/api/fs.html#fs_fs_utimes_path_atime_mtime_callback):
+
+```js
+const fs = require('fs');
+const filename = 'file.txt';
+const time = new Date();
+
+fs.utimes(filename, time, time, err => {
+  if (err) {
+    fs.open(filename, 'w', (err, fd) => {
+      if (err) throw err;
+      fs.close(fd, err => {
+        if (err) throw err;
+      });
+    });
+  }
 });
 ```
 
-And for those who prefer the promise syntax:
+## Examples
 
-```js
-// ...
-const { promisify } = require('util');
-const open = promisify(fs.open);
-const close = promisify(fs.close);
-open(filename, 'w').then(close);
-```
-
-[`promisify`](https://nodejs.org/api/util.html#util_util_promisify_original) is available in Node.js 8+.
-
-You can find a list of approaches below:
+You can find a list of approaches in the [Gist](https://gist.github.com/remarkablemark/17c9c6a22a41510b2edfa3041ccca95a) below:
 
 {% gist 17c9c6a22a41510b2edfa3041ccca95a %}
