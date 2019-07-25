@@ -1,9 +1,10 @@
 ---
 layout: page
 title: Blog
-excerpt: Mark's remarkable blog where he writes about code, ideas, and other musings.
+excerpt: remarkablemark's blog.
 permalink: /blog/
 ---
+
 <div class="container">
   <ul class="post-list">
     {% for post in site.posts %}
