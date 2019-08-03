@@ -14,7 +14,7 @@ github_username: remarkablemark
 repository: remarkablemark/remarkablemark.github.io
 google_analytics_id: UA-59233605-1
 disqus_shortname: remarkablemark
-assets_path: //remarkablemark.org/assets
+assets_path: /assets
 
 # Build settings
 markdown: kramdown
