@@ -6,13 +6,10 @@
         &#x2715;
       </label>
     </li>
-    <li><a href="/">Home</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/projects/">Projects</a></li>
-    <li><a href="https://b.remarkabl.org/github" target="_blank">GitHub</a></li>
-    <li><a href="https://b.remarkabl.org/games" target="_blank">Games</a></li>
-    <li><a href="https://b.remarkabl.org/youtube" target="_blank">YouTube</a></li>
-    <li><a href="https://b.remarkabl.org/medium" target="_blank">Medium</a></li>
-    <li><a href="mailto:mark@remarkablemark.org">Contact</a></li>
+    {% for nav in site.data.nav %}
+      <li>
+        <a href="{{ nav.link }}"{% if nav.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ nav.text }}</a>
+      </li>
+    {% endfor %}
   </ul>
 </nav>

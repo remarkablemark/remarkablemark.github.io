@@ -1,0 +1,27 @@
+- text: Home
+  link: /
+
+- text: Blog
+  link: /blog
+
+- text: Projects
+  link: /projects
+
+- text: GitHub
+  link: https://b.remarkabl.org/github
+  external: true
+
+- text: Games
+  link: https://b.remarkabl.org/games
+  external: true
+
+- text: YouTube
+  link: https://b.remarkabl.org/youtube
+  external: true
+
+- text: Medium
+  link: https://b.remarkabl.org/medium
+  external: true
+
+- text: Contact
+  link: mailto:mark@remarkablemark.org
