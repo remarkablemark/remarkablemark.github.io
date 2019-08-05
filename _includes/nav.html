@@ -1,4 +1,5 @@
 <input type="checkbox" id="nav-toggle">
+
 <nav role="nav" class="nav noselect">
   <ul class="nav-list">
     <li>
@@ -13,3 +14,11 @@
     {% endfor %}
   </ul>
 </nav>
+
+<script>
+  function toggleNav(e) {
+    if ([13, 32].indexOf(e.keyCode) === -1) return;
+    e.preventDefault();
+    e.target.click();
+  }
+</script>
