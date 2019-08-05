@@ -3,9 +3,7 @@
 <nav role="nav" class="nav noselect">
   <ul class="nav-list">
     <li>
-      <label for="nav-toggle" class="close-button" role="button" onkeypress="toggleNav(event)">
-        &#x2715;
-      </label>
+      <label class="close-button" aria-label="Hide navigation" for="nav-toggle" role="button" tabindex="0" onkeypress="toggleNav(event)">&#x2715;</label>
     </li>
     {% for nav in site.data.nav %}
       <li>
