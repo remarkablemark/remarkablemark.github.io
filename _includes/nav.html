@@ -3,7 +3,7 @@
 <nav role="nav" class="nav noselect">
   <ul class="nav-list">
     <li>
-      <label class="close-button" aria-label="Hide navigation" for="nav-toggle" role="button" tabindex="0" onkeypress="toggleNav(event)">&#x2715;</label>
+      <label class="close-button" aria-label="Hide navigation" for="nav-toggle" role="button" tabindex="0" onkeypress="rmk.toggleNav(event)">&#x2715;</label>
     </li>
     {% for nav in site.data.nav %}
       <li>
@@ -14,9 +14,12 @@
 </nav>
 
 <script>
-  function toggleNav(e) {
+(function(){
+  window.rmk = window.rmk || {};
+  window.rmk.toggleNav = function(e) {
     if ([13, 32].indexOf(e.keyCode) === -1) return;
     e.preventDefault();
     e.target.click();
-  }
+  };
+})();
 </script>
