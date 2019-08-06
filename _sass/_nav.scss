@@ -29,7 +29,8 @@ $nav-width: 250px;
         padding: 1em 0;
         text-decoration: none;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           background-color: #f0f0f0;
           color: #111;
           cursor: pointer;
@@ -39,24 +40,28 @@ $nav-width: 250px;
   }
 
   // close button
-  .close-button {
-    background-color: #ccc;
-    color: #444;
+  #nav-close {
+    background-color: #333;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    color: #fafafa;
+    font-size: 18px;
     display: none; // hide the close button by default
     margin: 0 auto;
-
-    // important values for styling the button
-    border-radius: 50%;
-    font-size: 18px;
-    line-height: 36px;
     outline: 0;
     position: absolute;
     top: 0;
-    right: -18px; /* 1/2 width */
-    width: 36px; height: 36px;
 
-    &:hover, &:focus {
+    // dimensions
+    line-height: 32px;
+    right: -18px; // 36 / 2
+    width: 32px; // width + border = 36
+    height: 32px;
+
+    &:hover,
+    &:focus {
       background-color: #fff;
+      border-color: #fff;
       color: #000;
       cursor: pointer;
     }
@@ -85,8 +90,8 @@ $nav-width: 250px;
     ~ .nav {
       left: 0;
 
-      // show the close button when the nav is toggled
-      .close-button {
+      // show the close button when the nav is open
+      #nav-close {
         display: block;
       }
     }
