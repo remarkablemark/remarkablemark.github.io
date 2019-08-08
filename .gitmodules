@@ -1,3 +1,3 @@
 [submodule "assets"]
 	path = assets
-	url = git@github.com:remarkablemark/assets.git
+	url = https://github.com/remarkablemark/assets.git
