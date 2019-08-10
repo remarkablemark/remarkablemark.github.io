@@ -21,20 +21,11 @@ $ bundler --version
 
 ## Installation
 
-Clone the repository with SSH:
+Clone the repository:
 
 ```sh
-$ git clone --recursive git@github.com:remarkablemark/remarkablemark.github.io.git
+$ git clone --recursive https://github.com/remarkablemark/remarkablemark.github.io.git
 $ cd remarkablemark.github.io
-```
-
-Or clone the repository with HTTPS:
-
-```sh
-$ git clone https://github.com/remarkablemark/remarkablemark.github.io.git
-$ cd remarkablemark.github.io
-$ sed -i '' 's/:/\//; s/git@/https:\/\//' .gitmodules
-$ git submodule update --init --recursive
 ```
 
 Install the dependencies:
