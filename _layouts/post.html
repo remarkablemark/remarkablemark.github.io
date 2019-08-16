@@ -1,18 +1,17 @@
 ---
 layout: default
 ---
+
 <main class="container post" id="main" role="main">
   <header class="post-header" role="header">
     <h1 class="post-title">{{ page.title }}</h1>
     <h6 class="post-meta">
-      {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %} •
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>
+      {% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %} •
       <a href="/blog/">Blog</a> •
-      <a href="{{ site.github.repository_url }}/blob/master/{{ page.relative_path }}" target="_blank">Edit</a>
+      <a href="{{ site.github.repository_url }}/blob/master/{{ page.relative_path }}" target="_blank" rel="noopener noreferrer">Edit</a>
     </h6>
-  </header>
-  <hr>
+  </header><hr>
   <article class="post-content">{{ content }}</article>
-  <br>
-  {% include disqus.html %}
-  <br>
+  <br>{% include disqus.html %}<br>
 </main>
