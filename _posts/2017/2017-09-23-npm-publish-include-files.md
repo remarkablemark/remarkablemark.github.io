@@ -1,34 +1,49 @@
 ---
 layout: post
-title: Including files in npm publish
-date: 2017-09-23 20:36:38 -4000
-excerpt: How to include and exclude files during npm publish.
-categories: npm publish
+title: 'npm publish: include or exclude files'
+date: 2017-09-23 20:36:38
+updated: 2019-08-25 14:16:02
+excerpt: How to include (whitelist) or exclude (blacklist) files/directories during npm publish.
+categories: npm publish git
 ---
 
-npm looks at [`.gitignore`](https://git-scm.com/docs/gitignore) to figure out what files/directories to blacklist when a [package is being published](https://docs.npmjs.com/getting-started/publishing-npm-packages) to the registry.
+## .gitignore
 
-But what if there are files/directories specified in `.gitignore` that you want to include in the publish?
+By default, [`.gitignore`](https://git-scm.com/docs/gitignore) is used to determine what gets _blacklisted_ during [npm publish](https://docs.npmjs.com/cli/publish).
 
 ```
 # .gitignore
 dist/
-build/
+.env*
 ```
 
-You can whitelist the directories (as well as any other files) in `package.json`:
+## .npmignore
+
+But if [`.npmignore`](https://docs.npmjs.com/misc/developers#keeping-files-out-of-your-package) exists, then it takes _precedence_ over `.gitignore`:
+
+```
+# .npmignore
+dist/
+```
+
+> **Note**: Do make sure all ignored files are included. Otherwise, you may [accidentally publish things you did not intend](https://medium.com/@jdxcode/for-the-love-of-god-dont-use-npmignore-f93c08909d8d).
+
+In the example above, `.env*` is in `.gitignore` but not in `.npmignore`. This means files matching the `.env*` pattern _will_ get published.
+
+## files
+
+Ultimately, it's better to _whitelist_ what gets published with `package.json`'s [files](https://docs.npmjs.com/files/package.json#files):
 
 ```json
 {
-  "files": [
-    "dist/",
-    "build/"
-  ]
+  "files": ["index.js", "/lib"]
 }
 ```
 
-Alternatively, you can create an empty [`.npmignore`](https://docs.npmjs.com/misc/developers) because it takes precedence over `.gitignore`:
+## test
+
+To check what gets published, a local [tarball can be generated](https://docs.npmjs.com/misc/developers#keeping-files-out-of-your-package#testing-whether-your-npmignore-or-files-config-works):
 
 ```sh
-$ touch .npmignore
+$ npm pack
 ```
