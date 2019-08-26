@@ -2,11 +2,12 @@
 layout: default
 ---
 
+{% assign date = page.updated | default: page.date %}
 <main class="container post" id="main" role="main">
   <header class="post-header" role="header">
     <h1 class="post-title">{{ page.title }}</h1>
     <h6 class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>
+      <time datetime="{{ date | date_to_xmlschema }}">{{ date | date: "%b %d, %Y" }}</time>
       {% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %} •
       <a href="/blog/">Blog</a> •
       <a href="{{ site.github.repository_url }}/blob/master/{{ page.relative_path }}" target="_blank" rel="noopener noreferrer">Edit</a>
