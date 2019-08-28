@@ -1,60 +1,81 @@
 ---
 layout: post
-title: "WebDriverJS: Chrome profile"
-date: 2016-11-27 22:30:00 -4000
-excerpt: How to set the Chrome profile path when working with WebDriverJS (Selenium for Node.js).
-categories: webdriverjs chrome node javascript selenium
+title: 'WebDriverJS: Chrome profile'
+date: 2016-11-27 22:30:00
+updated: 2019-08-28 14:06:27
+excerpt: How to open a Chrome profile using WebDriverJS (Selenium for Node.js).
+categories: webdriverjs chrome browser chromedriver nodejs javascript selenium webdriver
 ---
 
-How do we set the Chrome profile for [WebDriverJS](https://github.com/SeleniumHQ/selenium/wiki/WebDriverJs) (_Selenium for Node.js_)?
+## Motivation
 
-### Prerequisites
+[WebDriverJS](https://github.com/SeleniumHQ/selenium/wiki/WebDriverJs), by default, initializes browsers _without_ any profile data. This is to ensure a _pristine state_.
 
-First, you'll need [Chrome](https://www.google.com/chrome/browser/) and [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) (you can following this [video](https://www.youtube.com/watch?v=5lWOV0rnYRo) if you're on Mac OS).
+But did you know, there's a way to initialize a driver _with_ a browser profile. In this tutorial, we'll learn how to do that with Chrome.
 
-If you have [homebrew installed](https://www.youtube.com/watch?v=44FhlEiMEpU), you can run the following:
+## Prerequisites
+
+You need the following installed:
+
+- [Chrome browser](https://www.google.com/chrome/)
+- [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
+
+If you're on Mac OS and have [homebrew](https://brew.sh/) installed (see [video](https://www.youtube.com/watch?v=44FhlEiMEpU) if you don't have it installed), you can do the following:
 
 ```sh
-# install the browser
+# install Chrome browser
 $ brew cask install google-chrome
-
-# install the driver
-$ brew install chromedriver
 ```
 
-### Building your driver
+```sh
+# install ChromeDriver
+$ brew cask install chromedriver
+```
 
-Now you want to start building your driver. See how it's done [here]({% post_url 2016/2016-11-25-webdriverjs-launch-browser %}).
+These steps are covered in this [video](https://www.youtube.com/watch?v=5lWOV0rnYRo).
 
-Don't forget to swap `firefox` with `chrome`:
+## Build driver
+
+To build your driver:
 
 ```js
+const { Builder } = require('selenium-webdriver');
+
+const builder = new Builder();
 builder.forBrowser('chrome');
-```
-
-### Chrome options
-
-Before instantiating the driver, you want to pass the profile as an argument in [Chrome options](http://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/chrome_exports_Options.html):
-
-```js
-const chrome = require('selenium-webdriver/chrome');
-const options = new chrome.Options();
-// replace `path/to/profile`
-options.addArguments('user-data-dir=path/to/profile');
-```
-
-**_Note:_** ChromeDriver expects `path/to/profile/Default/`. If that's not found, it will create the `Default` directory.
-
-Now let's update the builder so WebDriverJS launches Chrome based on the specified profile:
-
-```js
-builder.forBrowser('chrome');
-builder.setChromeOptions(options);
-```
-
-To confirm that the profile is correct, you can check the path in `chrome://version`:
-
-```js
 const driver = builder.build();
+```
+
+Check out article [WebDriverJS: Launch a browser]({% post_url 2016/2016-11-25-webdriverjs-launch-browser %}) for more details.
+
+## Chrome options
+
+Before initializing the driver, add argument `user-data-dir` or `--user-data-dir` to [Chrome options](http://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/chrome_exports_Options.html):
+
+```js
+const { Options } = require('selenium-webdriver/chrome');
+
+const options = new Options();
+// replace `./path/to/profile` with your Chrome profile path
+options.addArguments('user-data-dir=./path/to/profile');
+```
+
+> **Note**: ChromeDriver expects `./path/to/profile/Default/` to exist. If it doesn't exist, it'll create the `Default/` directory for your profile path.
+
+Set the Chrome options to your builder before building the driver:
+
+```js
+// ...
+builder.setChromeOptions(options);
+const driver = builder.build();
+```
+
+You can verify the profile path is correct by opening `chrome://version` in your WebDriver browser:
+
+```js
 driver.get('chrome://version');
 ```
+
+## Addendum
+
+You can find all code examples (as well as others), in my [webdriverjs-recipes](https://github.com/remarkablemark/webdriverjs-recipes) repository.
