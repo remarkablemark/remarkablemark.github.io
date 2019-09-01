@@ -7,21 +7,11 @@
 - text: Projects
   link: /projects
 
-- text: GitHub
-  link: https://b.remarkabl.org/github
-  external: true
+- text: Social
+  link: /social
 
-- text: Games
-  link: https://b.remarkabl.org/games
-  external: true
-
-- text: YouTube
-  link: https://b.remarkabl.org/youtube
-  external: true
-
-- text: Medium
-  link: https://b.remarkabl.org/medium
-  external: true
+- text: Support
+  link: /support
 
 - text: Contact
   link: mailto:mark@remarkablemark.org
