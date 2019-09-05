@@ -5,6 +5,8 @@ excerpt: remarkablemark's blog.
 permalink: /blog/
 ---
 
+# Blog
+
 <ul class="post-list">
   {% for post in site.posts %}
     <li>

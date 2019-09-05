@@ -10,6 +10,8 @@ permalink: /support/
   #main img:active, #main img:focus, #main img:hover { opacity: .7; }
 </style>
 
+# Support
+
 - [![Become a Patron!](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://b.remarkabl.org/be-patron)
 - [![Buy Me a Coffee at ko-fi.com](https://az743702.vo.msecnd.net/cdn/kofi1.png?v=2)](https://b.remarkabl.org/ko-fi)
 - [![Donate using Liberapay](https://liberapay.com/assets/widgets/donate.svg)](https://b.remarkabl.org/liberapay)

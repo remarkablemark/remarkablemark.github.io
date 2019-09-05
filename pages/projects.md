@@ -5,6 +5,8 @@ excerpt: remarkablemark's projects.
 permalink: /projects/
 ---
 
+# Projects
+
 | Name                       | Description                                           |
 | -------------------------- | ----------------------------------------------------- |
 | [remarkablegames]          | Games that are remarkable                             |
