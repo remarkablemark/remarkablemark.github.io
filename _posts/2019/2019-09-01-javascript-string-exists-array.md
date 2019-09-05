@@ -1,8 +1,9 @@
 ---
 layout: post
-title: 'JavaScript: check if string exists in array'
+title: Check if string exists in JS array
 date: 2019-09-01 21:32:51
-excerpt: How to check if a string exists in an array of strings using JavaScript.
+updated: 2019-09-04 22:35:17
+excerpt: How to check if a string exists in a JavaScript array.
 categories: javascript array string includes indexOf for-loop trie trieste
 ---
 
@@ -11,6 +12,13 @@ Given an array of strings:
 ```js
 const strings = ['foo', 'bar', 'baz'];
 ```
+
+The ways to check if a string exists in a JavaScript array are:
+
+- [includes](#includes)
+- [indexOf](#indexof)
+- [for-loop](#for-loop)
+- [trie](#trie)
 
 ## includes
 
@@ -54,7 +62,7 @@ for (let i = 0, len = strings.length, i < len; i++) {
 stringExists; // true
 ```
 
-The benefit of `for` statements over [`forEach`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) or [`map`](http://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/map) is the ability to [`break`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/break) (return early).
+The main benefit of `for` statements (instead of [`forEach`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) or [`map`](http://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/map)) is the ability to [`break`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/break) or return early.
 
 ## trie
 
