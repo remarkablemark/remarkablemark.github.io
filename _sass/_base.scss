@@ -85,12 +85,6 @@ ol {
   margin-left: $spacing-unit;
 }
 
-li {
-  > ul, > ol {
-    margin-bottom: 0;
-  }
-}
-
 /**
  * Headings.
  */
@@ -161,7 +155,7 @@ blockquote {
  */
 %clearfix {
   &:after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
   }

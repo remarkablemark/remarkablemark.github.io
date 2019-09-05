@@ -76,4 +76,18 @@ h3 {
     display: block;
     margin: 0 auto;
   }
+
+  // remove extra spacing for lists and items
+  ol ol,
+  ol ul,
+  ul ol,
+  ul ul {
+    font-size: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  li {
+    margin-bottom: 0;
+  }
 }
