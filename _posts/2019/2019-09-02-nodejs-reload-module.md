@@ -1,7 +1,8 @@
 ---
 layout: post
-title: 'Node.js: reload module'
+title: How to reload a Node.js module
 date: 2019-09-02 21:39:07
+updated: 2019-09-04 22:38:25
 excerpt: How to reload (delete and re-require) a Node.js module during testing.
 categories: nodejs module javascript mocha jest
 ---
@@ -47,4 +48,4 @@ it('imports the same module but as a separate instance', () => {
 });
 ```
 
-For module isolation, there's also [`jest.isolateModules`](https://jestjs.io/docs/en/jest-object.html#jestisolatemodulesfn) which creates a sandbox registry for modules loaded inside a callback function.
+For module isolation, there's [`jest.isolateModules`](https://jestjs.io/docs/en/jest-object.html#jestisolatemodulesfn) which creates a sandbox registry for modules loaded inside a callback function.
