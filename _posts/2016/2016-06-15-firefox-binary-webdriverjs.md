@@ -1,37 +1,41 @@
 ---
 layout: post
-title: "WebDriverJS: Setting the binary"
-date: 2016-06-15 21:08:00 -4000
-excerpt: To instantiate a WebDriver from a specific path, you can set the browser binary before building the driver. In this tutorial, we'll be using Firefox as our driver.
-categories: selenium webdriverjs firefox binary nodejs
+title: 'WebDriverJS: Setting the binary'
+date: 2016-06-15 21:08:00
+updated: 2019-09-07 22:53:40
+excerpt: How to initialize a WebDriver by setting the browser binary or executable using WebDriverJS (Selenium for Node.js).
+categories: webdriverjs selenium webdriver firefox binary nodejs javascript
 ---
 
-Is it possible to build a WebDriver using a browser that's not installed in its default location?
+[WebDriverJS](https://github.com/SeleniumHQ/selenium/wiki/WebDriverJs) uses the _default_ browser binary (or executable) to initialize a driver.
 
-You can by [setting the binary](http://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/firefox/binary_exports_Binary.html).
+## setBinary
 
-This is useful if you want to use a different version or executable of a browser.
+To initialize a browser with a _different_ binary, use [Options](https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/firefox_exports_Options.html) [`setBinary`](https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/firefox_exports_Options.html#setBinary).
 
-Here's how it's done for Firefox with the [WebDriverJS API](http://seleniumhq.github.io/selenium/docs/api/javascript/index.html):
+The following example builds a _FirefoxDriver_ with a specified binary:
 
 ```js
-// set-binary-driver.js
+const { Builder } = require('selenium-webdriver');
+const { Options } = require('selenium-webdriver/firefox');
 
-var webdriver = require('selenium-webdriver');
-var firefox = require('selenium-webdriver/firefox');
-var builder = new webdriver.Builder().forBrowser('firefox');
+// replace `path/to/binary` with your binary path
+const options = new Options().setBinary('path/to/binary');
 
-// path to binary
-var binaryPath = '/path/to/firefox/binary';
-builder.setFirefoxOptions(
-  new firefox.Options().setBinary(binaryPath)
-);
+const driver = new Builder()
+  .forBrowser('firefox')
+  .setFirefoxOptions(options)
+  .build();
+
+driver.start();
 ```
 
-> If you're not familiar with Selenium for Node.js, check out my post [WebDriverJS: Launch a browser]({% post_url 2016/2016-11-25-webdriverjs-launch-browser %}).
+This is useful if you installed multiple browser executables and wanted to specify an executable.
 
-This can be done for browsers like Chrome, IE, Opera, and PhantomJS since WebDriverJS allows us to configure the driver [options](http://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/firefox/index_exports_Options.html).
+## Code
 
-See complete [example](https://gist.github.com/remarkablemark/e56ce969c4d5fe81f7a639f519cb417b):
+Check out the [Gist](https://gist.github.com/remarkablemark/e56ce969c4d5fe81f7a639f519cb417b) for the full example:
 
 {% gist e56ce969c4d5fe81f7a639f519cb417b %}
+
+For more information on Selenium for Node.js, check out my post [WebDriverJS: Launch a browser]({% post_url 2016/2016-11-25-webdriverjs-launch-browser %}).
