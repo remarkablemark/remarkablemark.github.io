@@ -1,30 +1,39 @@
 ---
 layout: post
-title: Setting up Flux
-date: 2018-10-01 19:43:27 -4000
-excerpt: How to set up Facebook Flux for a React app.
+title: Setting up Flux in a React app
+date: 2018-10-01 19:43:27
+updated: 2019-09-08 20:20:59
+excerpt: How to set up Flux in a React app.
 categories: flux react javascript
 ---
 
-The following example shows how to wire up a React component with [Facebook Flux](http://facebook.github.io/flux/).
+This post will go over how to set up [Flux](http://facebook.github.io/flux/) in a React app.
 
 ## View
 
-Starting with the component:
+Starting with the _component_:
+
 ```jsx
-// Counter.jsx
+// Counter.js
 import React, { Component } from 'react';
 
 export default class Counter extends Component {
   state = {
     count: 0,
   };
+
   increment = () => {
-    this.setState({ count: this.state.count + 1 });
+    this.setState({
+      count: this.state.count + 1,
+    });
   };
+
   decrement = () => {
-    this.setState({ count: this.state.count - 1 });
+    this.setState({
+      count: this.state.count - 1,
+    });
   };
+
   render() {
     return (
       <div>
@@ -37,18 +46,20 @@ export default class Counter extends Component {
 }
 ```
 
-Application changes can be described by the diagram:
+The _data flow_ can be described by the diagram:
+
 ```
  ---------------      ----------------      ------------------      --------------
 | button (view) | -> | click (action) | -> | setState (store) | -> | count (view) |
  ---------------      ----------------      ------------------      --------------
 ```
 
-When the view components start sharing the same state, that's when a store should be added.
+When view components _share state_, then it's a good time to add a _store_.
 
 ## Store
 
 Create a store that extends [`EventEmitter`](https://nodejs.org/api/events.html#events_class_eventemitter):
+
 ```js
 // countStore.js
 import { EventEmitter } from 'events';
@@ -59,13 +70,14 @@ class CountStore extends EventEmitter {
   getCount() {
     return count;
   }
-  // class properties ensure `this` is bound to the instance
+
   increment = () => {
-    count += 1;
+    count++;
     this.emit('change');
   };
+
   decrement = () => {
-    count -= 1;
+    count--;
     this.emit('change');
   };
 }
@@ -73,32 +85,37 @@ class CountStore extends EventEmitter {
 export default new CountStore();
 ```
 
-`EventEmitter` enables a [pub/sub (publish-subscribe)](https://wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) messaging pattern.
+`EventEmitter` is used to set up a [publish-subscribe (pub/sub)](https://en.wikipedia.org/wiki/Publish%e2%80%93subscribe_pattern) messaging pattern.
 
-You should notice that when `increment` or `decrement` is called, the `"change"` event is emitted.
+When `increment` or `decrement` is called, the `'change'` event is emitted.
 
 Wire up the component state with the store state:
+
 ```jsx
-// Counter.jsx
+// Counter.js
 // ...
-import countStore from './countStore.js';
+import countStore from './countStore';
 
 export default class Counter extends Component {
   state = {
     count: countStore.getCount(),
   };
+
   componentDidMount() {
     countStore.on('change', this.updateCount);
   }
+
   componentWillUnmount() {
-    // remove the listener otherwise there will be memory leaks
+    // remove or else there will be memory leaks
     countStore.off('change', this.updateCount);
   }
+
   updateCount = () => {
     this.setState({
       count: countStore.getCount(),
     });
   };
+
   render() {
     return (
       <div>
@@ -111,38 +128,39 @@ export default class Counter extends Component {
 }
 ```
 
-[`componentDidMount`](https://reactjs.org/docs/react-component.html#componentdidmount) adds the change listener whereas [`componentWillUnmount`](https://reactjs.org/docs/react-component.html#componentwillunmount) removes the change listener. This is to ensure there are no memory leaks.
+[`componentDidMount`](https://reactjs.org/docs/react-component.html#componentdidmount) adds the change listener and [`componentWillUnmount`](https://reactjs.org/docs/react-component.html#componentwillunmount) removes the change listener.
 
-To minimize unexpected side effects due to future changes, we can refactor the listeners into helper methods:
+To minimize _unexpected side effects_ when the code is changed, refactor the listeners into _helper methods_:
+
 ```js
 // countStore.js
 // ...
 
-// ...
-
 class CountStore extends EventEmitter {
+  /** @param {Function} callback */
   addChangeListener(callback) {
     this.on('change', callback);
   }
+
+  /** @param {Function} callback */
   removeChangeListener(callback) {
     this.off('change', callback);
   }
   // ...
 }
-
-// ...
 ```
 
-Now the listeners look more consistent when used inside components:
+Update the listeners in the component:
+
 ```jsx
 // Counter.jsx
 // ...
 
 export default class Counter extends Component {
-  // ...
   componentDidMount() {
     countStore.addChangeListener(this.updateCount);
   }
+
   componentWillUnmount() {
     countStore.removeChangeListener(this.updateCount);
   }
@@ -150,28 +168,27 @@ export default class Counter extends Component {
 }
 ```
 
-So when do we add a dispatcher?
-
-When the number of stores increase&mdash;that's when having a single dispatcher to dispatch actions to stores will be useful.
+We can add a _dispatcher_ next. However, the best time to add one is when the number of _stores increase_. This is so a _single_ dispatcher dispatches _all_ actions to the stores.
 
 ## Dispatcher
 
-Create a [dispatcher](https://facebook.github.io/flux/docs/dispatcher.html) instance from [`flux`](https://www.npmjs.com/package/flux):
+Instantiate a [dispatcher](https://facebook.github.io/flux/docs/dispatcher/) from [`flux`](https://www.npmjs.com/package/flux):
+
 ```js
 // dispatcher.js
 import { Dispatcher } from 'flux';
+
 export default new Dispatcher();
 ```
 
-The dispatcher will broadcast payloads to registered callbacks.
+The dispatcher _broadcasts payloads_ to its _registered callbacks_.
 
-Hence, register the dispatcher in the store:
+Thus, register the dispatcher in the store:
+
 ```js
 // countStore.js
 // ...
 import dispatcher from './dispatcher';
-
-// ...
 
 class CountStore extends EventEmitter {
   constructor() {
@@ -191,19 +208,18 @@ class CountStore extends EventEmitter {
   }
   // ...
 }
-
-// ...
 ```
 
-You'll notice that `dispatcher.dispatch` receives an argument `action`, which is an object.
+The `dispatch` method receives an argument `action`. In our example, it's simply an _object_.
 
-The object can contain any kind of property, but `type` is used here as convention.
+The `action` object can contain _any_ type of property, but `type` is used here as per _convention_.
 
-You can pass any additional data via properties like `payload`.
+Additional data can be passed via the property `payload`, which is also named as per convention.
 
-Now replace the store methods with dispatch:
+Replace the store methods with `dispatch`:
+
 ```jsx
-// Counter.jsx
+// Counter.js
 // ...
 
 export default class Counter extends Component {
@@ -224,13 +240,14 @@ export default class Counter extends Component {
 }
 ```
 
-It may seem that the dispatch calls are getting repetitive.
+It seems that the dispatch calls are getting _repetitive_.
 
-So for the next step, we'll create action creators so we don't have to call the dispatcher directly in our component.
+For the next step, we'll add _action creators_ so we don't have to call the dispatcher _directly_ in our component.
 
 ## Actions
 
-Create the actions:
+Create the _actions_:
+
 ```js
 // actions.js
 import dispatcher from './dispatcher';
@@ -253,9 +270,10 @@ export default {
 };
 ```
 
-And replace them with the dispatcher:
+Replace them with the dispatcher:
+
 ```jsx
-// Counter.jsx
+// Counter.js
 // ...
 import actions from './actions';
 
@@ -273,22 +291,22 @@ export default class Counter extends Component {
 }
 ```
 
-By now, you should notice that we're using the same action types in multiple files.
-
-To keep our code [DRY](https://wikipedia.org/wiki/Don%27t_repeat_yourself), we'll turn our action types into constants.
+Since we're using the same action types in multiple files, we can refactor them into _constants_ to keep the code [DRY](https://en.wikipedia.org/wiki/Don't_repeat_yourself).
 
 ## Constants
 
-The action types are just strings:
+Action types are simply _strings_:
+
 ```js
 // constants.js
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 ```
 
-The convention is to use uppercase.
+The convention is to use the _uppercase_ string of the variable name.
 
-Now replace the hardcoded strings with the constants:
+Now update actions with the constants:
+
 ```js
 // actions.js
 // ...
@@ -305,17 +323,14 @@ export const decrement = () => {
     type: DECREMENT,
   });
 };
-
-// ...
 ```
 
-And don't forget to update the store as well:
+And update the store as well:
+
 ```js
 // countStore.js
 // ...
 import { INCREMENT, DECREMENT } from './constants';
-
-// ...
 
 class CountStore extends EventEmitter {
   constructor() {
@@ -336,8 +351,6 @@ class CountStore extends EventEmitter {
   }
   // ...
 }
-
-// ...
 ```
 
-At last, we've wired up our React app with Flux!
+At last, we have successfully wired up our React app with Flux!
