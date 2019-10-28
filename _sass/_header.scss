@@ -1,48 +1,45 @@
+$header-height: 85px;
+
 /**
  * Header.
  */
 .header {
   background-color: #333;
-  color: #f8f8f8;
-  font-size: 2.65em;
+  border-bottom: 4px solid $grey-color-dark;
+  font-size: 2em;
   font-size: 4rem;
-  letter-spacing: 0.1rem;
-  line-height: 2em;
-  height: 2em;
-  text-align: center;
 
-  // container
   .container {
-    height: 100%;
-    label {
-      margin: 0; // remove additional margins coming from skeleton
-    }
+    text-align: center; // center logo
+    overflow: hidden; // cut out logo on active/focus/hover
   }
 
-  // hamburger menu
+  // hamburger icon
   .menu {
-    color: #ddd;
-    cursor: pointer;
+    color: #fff;
+    line-height: $header-height;
+    margin: 0; // remove additional margins coming from skeleton
+    position: absolute; // ensure the logo is centered
 
-    &:hover,
-    &:focus {
-      color: #fff;
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: $grey-color-light;
+      color: #000;
+      cursor: pointer;
+      outline: 0;
     }
   }
 
-  // "M" logo
+  // remarkablemark headshot
   .logo {
-    background-color: #555;
-    border-radius: 6px;
-    color: #333;
-    display: inline;
-    padding: 0 8px;
+    height: $header-height;
 
-    &:hover,
-    &:focus {
-      background-color: $red-medium;
-      color: $red-dark;
-      text-decoration: none;
+    &:active,
+    &:focus,
+    &:hover {
+      outline: 0;
+      transform: translate(0, 2px);
     }
   }
 }
