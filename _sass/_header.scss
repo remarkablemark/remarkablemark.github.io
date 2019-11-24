@@ -35,11 +35,8 @@ $header-height: 85px;
   .logo {
     height: $header-height;
 
-    &:active,
-    &:focus,
     &:hover {
-      outline: 0;
-      transform: translate(0, 2px);
+      transform: translate(0, 4px);
     }
   }
 }
