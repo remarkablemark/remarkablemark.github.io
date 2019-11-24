@@ -1,5 +1,5 @@
 {::nomarkdown}
-<img id="headshot" src="{{ '/images/headshot/small.png' | prepend: site.assets_path }}" alt="remarkablemark">
+<img id="headshot" src="{{ '/images/logo/360.png' | prepend: site.assets_path }}" alt="remarkablemark">
 {:/}
 
 <script>
@@ -10,9 +10,9 @@
 
   // load higher quality image for larger screen sizes
   if (innerWidth > 1080) {
-    element.src = '{{ "/images/headshot/large.png" | prepend: site.assets_path }}';
+    element.src = '{{ "/images/logo/1080.png" | prepend: site.assets_path }}';
   } else if (innerWidth > 720) {
-    element.src = '{{ "/images/headshot/medium.png" | prepend: site.assets_path }}';
+    element.src = '{{ "/images/logo/720.png" | prepend: site.assets_path }}';
   }
 
   var interval = setInterval(function() {
