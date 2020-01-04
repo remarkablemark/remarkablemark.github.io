@@ -1,11 +1,12 @@
 $header-height: 85px;
+$header-border-height: 2px;
 
 /**
  * Header.
  */
 .header {
   background-color: #333;
-  border-bottom: 4px solid $grey-color-dark;
+  border-bottom: $header-border-height solid $grey-color-dark;
   font-size: 2em;
   font-size: 4rem;
 
@@ -31,12 +32,26 @@ $header-height: 85px;
     }
   }
 
+  .logo-link {
+    display: table;
+    height: $header-height - $header-border-height;
+
+    &:active,
+    &:focus,
+    &:hover {
+      .logo {
+        transform: translate(0, 4px);
+      }
+    }
+  }
+
   // remarkablemark headshot
   .logo {
-    height: $header-height;
-
-    &:hover {
-      transform: translate(0, 4px);
-    }
+    bottom: 0;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    width: 85px;
   }
 }
