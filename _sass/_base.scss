@@ -82,7 +82,9 @@ figcaption {
  */
 ul,
 ol {
-  margin-left: $spacing-unit;
+  // override Skeleton styling
+  list-style: disc outside;
+  margin-left: 2.3rem;
 }
 
 /**
