@@ -1,24 +1,39 @@
 ---
 layout: post
-title: How to get package.json version
-date: 2018-08-14 19:25:22 -4000
-excerpt: How to get the version from a package.json using package.json vars, jq, node script, and awk.
-categories: package.json npm jq node awk
+title: How to access package.json fields
+date: 2018-08-14 19:25:22
+updated: 2020-03-08 20:22:00
+excerpt: package.json fields like "version" can be accessed via package.json vars (npm environment variables), jq, node, and awk.
+categories: package json npm environment variable jq node awk bash cli
 ---
 
-## [package.json vars](https://docs.npmjs.com/misc/scripts#packagejson-vars)
+Here are the ways to get "version" from `package.json`:
 
-In [package scripts](https://docs.npmjs.com/cli/run-script), you can reference the environment variable `$npm_package_version`:
-```json
+- [package.json vars](#packagejson-vars)
+- [jq](#jq)
+- [node](#node)
+- [awk](#awk)
+
+## package.json vars
+
+There are [npm environment variables](https://docs.npmjs.com/misc/scripts#packagejson-vars) for each `package.json` field:
+
+```sh
+$ npm run env | grep npm_package_
+```
+
+This means you can access `version` in a [run-script](https://docs.npmjs.com/cli/run-script):
+
+```js
+// package.json
 {
+  "version": "1.2.3",
   "scripts": {
     "get-version": "echo $npm_package_version"
-  },
-  "version": "1.2.3"
+  }
 }
 ```
 
-Run the script to get the version:
 ```sh
 $ npm run get-version
 
@@ -28,76 +43,100 @@ $ npm run get-version
 1.2.3
 ```
 
-## [jq](https://stedolan.github.io/jq/)
+If you ever need to access npm environment variables outside the scope of run-scripts, you can parse the variables with bash:
 
-`jq` is a powerful program for filtering [JSON](https://www.json.org/) (if you have it installed):
-```json
+```sh
+$ npm run env | grep npm_package_version | cut -d '=' -f 2
+```
+
+## jq
+
+[jq](https://stedolan.github.io/jq/) is a powerful tool for filtering [JSON](https://www.json.org/):
+
+```sh
+$ jq -r .version package.json
+```
+
+The `-r` option outputs the _raw string_ (so it's `1.2.3` instead of `"1.2.3"`).
+
+This means you can add a script like so:
+
+```js
+// package.json
 {
+  "version": "1.2.3",
   "scripts": {
-    "get-version": "jq -r '.version' package.json"
-  },
-  "version": "1.2.3"
+    "get-version": "jq -r .version package.json"
+  }
 }
 ```
 
-The option `-r` outputs the **raw string** (`1.2.3` instead of `"1.2.3"`).
-
-Run the script to get the version:
 ```sh
 $ npm run get-version
 
 > @1.2.3 get-version path/to/package
-> jq -r '.version' package.json
+> jq -r .version package.json
 
 1.2.3
 ```
 
-## node script
+## node
 
-With [Node.js](https://nodejs.org/) installed, you can eval a script with the option [`-e`](https://nodejs.org/dist/latest-v8.x/docs/api/cli.html#cli_e_eval_script):
-```json
-{
-  "scripts": {
-    "get-version": "node -e \"console.log(require('./package.json').version)\""
-  },
-  "version": "1.2.3"
-}
-```
+With [Node.js](https://nodejs.org/), you can evaluate a script with the [`-e`](https://nodejs.org/api/cli.html#cli_e_eval_script) option:
 
-Run the script to get the version:
 ```sh
-$ npm run get-version
-
-> @1.2.3 get-version path/to/package
-> node -e "console.log(require('./package.json').version)"
-
-1.2.3
+$ node -e "console.log(require('./package.json').version)"
 ```
 
-To shorten the script, you can pass the option [`-p`](https://nodejs.org/dist/latest-v8.x/docs/api/cli.html#cli_p_print_script) to print the evaluation:
-```json
+Furthermore, you can simplify the script by using the [`-p`](https://nodejs.org/api/cli.html#cli_p_print_script) option to print the evaluation:
+
+```sh
+$ node -p "require('./package').version"
+```
+
+Thus, your script will look like so:
+
+```js
+// package.json
 {
+  "version": "1.2.3",
   "scripts": {
     "get-version": "node -p \"require('./package').version\""
   }
 }
 ```
 
-## [awk](https://www.gnu.org/software/gawk/manual/gawk.html)
+```sh
+$ npm run get-version
 
-And you can always process text with [awk](https://www.gnu.org/software/gawk/manual/gawk.html#Getting-Started):
-```json
+> @1.2.3 get-version path/to/package
+> node -p "require('./package').version"
+
+1.2.3
+```
+
+## awk
+
+You can always use [awk](https://www.gnu.org/software/gawk/manual/gawk.html#Getting-Started) to process text:
+
+```sh
+$ awk -F'"' '/"version": ".+"/{ print $4; exit; }' package.json
+```
+
+We're matching `package.json` against the regex pattern `/"version": ".+"/` and printing the 4th field of the first result.
+
+The script will be as follows:
+
+```js
+// package.json
 {
+  "version": "1.2.3",
   "scripts": {
     "get-version": "awk -F'\"' '/\"version\": \".+\"/{ print $4; exit; }' package.json"
-  },
-  "version": "1.2.3"
+  }
 }
 ```
 
-Here we're matching `package.json` against the regex pattern `/"version": ".+"/` and printing the 4th field of the first result.
-
-Run the script to get the version:
 ```sh
 $ npm run get-version
 
@@ -107,4 +146,6 @@ $ npm run get-version
 1.2.3
 ```
 
-What approach do you use to retrieve the package version? Let me know in the comments below.
+## Conclusion
+
+Which approach worked for you? Tell us in the comments below!
