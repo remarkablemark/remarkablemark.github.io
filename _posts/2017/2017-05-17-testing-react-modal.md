@@ -1,151 +1,119 @@
 ---
 layout: post
-title: How to write tests for react-modal
-date: 2017-05-17 20:25:00 -4000
-excerpt: How to write unit tests for react-modal.
-categories: react modal test enzyme
+title: How to test react-modal
+date: 2017-05-17 20:25:00
+updated: 2020-03-12 21:19:43
+excerpt: Writing unit tests for react-modal using jest and enzyme.
+categories: react react-dom react-modal modal jest test enzyme jsx javascript
 ---
 
-Let's say you built the following component with [react-modal](https://github.com/reactjs/react-modal):
+Let's say you have a component `ModalContainer` that renders [react-modal](https://github.com/reactjs/react-modal):
 
-```js
+```jsx
 // ModalContainer.js
 import React, { Component } from 'react';
-import ReactModal from 'react-modal';
+import Modal from 'react-modal';
 
-export default class ModalContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isModalOpen: false
-    };
-    this.toggleModal = this.toggleModal.bind(this);
-  }
+class ModalContainer extends Component {
+  state = {
+    isModalOpen: false,
+  };
 
-  toggleModal() {
+  toggleModal = () => {
     this.setState({
-      isModalOpen: !this.state.isModalOpen
+      isModalOpen: !this.state.isModalOpen,
     });
-  }
+  };
 
   render() {
     return (
       <div>
-        <button onClick={this.toggleModal}>
-          Open Modal
-        </button>
-        <ReactModal
-          {...this.props}
+        <button onClick={this.toggleModal}>Open Modal</button>
+        <Modal
           isOpen={this.state.isModalOpen}
           onRequestClose={this.toggleModal}
-        />
+        >
+          {this.props.children}
+        </Modal>
       </div>
     );
   }
 }
+
+export default ModalContainer;
 ```
 
-How would you test the modal in this component?
+How would you write a test for this component?
 
-### [Enzyme](https://github.com/airbnb/enzyme)
+## Enzyme find
 
-With [`.find`](http://airbnb.io/enzyme/docs/api/ReactWrapper/find.html), you can easily confirm that the `react-modal` component is rendered:
+You can use [enzyme's](https://github.com/airbnb/enzyme) [`.find()`](https://enzymejs.github.io/enzyme/docs/api/ReactWrapper/find.html) to verify that `react-modal` is rendered:
 
-```js
-// ModalContainer.spec.js
-import React from 'react';
-import ReactModal from 'react-modal';
-import ModalContainer from './ModalContainer';
+```jsx
+// ModalContainer.test.js
 import { shallow } from 'enzyme';
+import Modal from 'react-modal';
+import ModalContainer from './ModalContainer';
+import React from 'react';
 
-describe('<ModalContainer>', () => {
-  it('renders <ReactModal>', () => {
-    const wrapper = shallow(<ModalContainer />);
-    expect(wrapper.find(ReactModal).length).toEqual(1);
-  });
+it('renders react-modal', () => {
+  const wrapper = shallow(<ModalContainer />);
+  expect(wrapper.find(Modal)).toHaveLength(1);
+});
 
-  it('opens modal when button is clicked', () => {
-    const wrapper = shallow(<ModalContainer />);
-    wrapper.find('button').simulate('click');
-    expect(wrapper.find(ReactModal).prop('isOpen')).toEqual(true);
-  });
-
-  // ...
+it('opens modal when button is clicked', () => {
+  const wrapper = shallow(<ModalContainer />);
+  wrapper.find('button').simulate('click');
+  expect(wrapper.find(Modal).prop('isOpen')).toBe(true);
 });
 ```
 
-But what if you want to confirm that the content is rendered when the modal is opened?
+But what if you want to confirm that the modal content is rendered when the modal is opened?
 
-```js
-// ...
-  it('renders children when modal is open', () => {
-    const wrapper = shallow(
-      <ModalContainer>
-        modal content
-      </ModalContainer>
-    );
-    // ensure modal is open, otherwise content is not rendered
-    wrapper.find('button').simulate('click');
-    expect(wrapper.find(ReactModal).text()).toEqual('modal content');
-  });
-// ...
+```jsx
+it('renders content when modal is open', () => {
+  const wrapper = shallow(<ModalContainer>modal content</ModalContainer>);
+  wrapper.find('button').simulate('click');
+  expect(wrapper.find(Modal).text()).toBe('modal content');
+});
 ```
 
-Unfortunately, the last assertion fails because the modal children is rendered in a separate **portal** element.
+However, the last assertion fails because the modal children is rendered in a separate **portal** element.
 
-As a result, you must figure out a way to use the `.portal` property of your rendered modal.
+As a result, you must make use of the `.portal` property of the modal element for this test to work.
 
-### [findDOMNode](https://facebook.github.io/react/docs/react-dom.html#finddomnode)
+## ReactDOM findDOMNode
 
-One approach is to use `findDOMNode` to get the actual DOM node:
+One approach is to use ReactDOM's [`findDOMNode()`](https://reactjs.org/docs/react-dom.html#finddomnode):
 
-```js
+```jsx
 // ...
-import { shallow, mount } from 'enzyme';
 import { findDOMNode } from 'react-dom';
+import { mount } from 'enzyme';
 
-// ...
-  it('renders children when modal is open', () => {
-    // mount is necessary for `findDOMNode` to work
-    const wrapper = mount(
-      <ModalContainer>
-        modal content
-      </ModalContainer>
-    );
-    wrapper.find('button').simulate('click');
+it('renders content when modal is open', () => {
+  // mount is necessary for findDOMNode
+  const wrapper = mount(<ModalContainer>modal content</ModalContainer>);
+  wrapper.find('button').simulate('click');
 
-    const portalNode = findDOMNode(
-      wrapper.find(ReactModal).node.portal
-    );
-    // this works
-    expect(portalNode.innerText).toEqual('modal content');
-  });
-// ...
+  const portalNode = findDOMNode(wrapper.find(Modal).node.portal);
+  expect(portalNode.innerText).toBe('modal content');
+});
 ```
 
-### [ReactWrapper](https://github.com/airbnb/enzyme/blob/master/packages/enzyme/src/ReactWrapper.js)
+## Enzyme ReactWrapper
 
-An alternative approach is to wrap the portal node with enzyme's wrapper class:
+Alternatively, you can instantiate the portal node with enzyme's [ReactWrapper](https://github.com/airbnb/enzyme/blob/master/packages/enzyme/src/ReactWrapper.js):
 
-```js
+```jsx
 // ...
-import { shallow, mount, ReactWrapper } from 'enzyme';
+import { ReactWrapper } from 'enzyme';
 
-// ...
-  it('renders children when modal is open', () => {
-    // mount is still necessary here
-    const wrapper = mount(
-      <ModalContainer>
-        modal content
-      </ModalContainer>
-    );
-    wrapper.find('button').simulate('click');
+it('renders content when modal is open', () => {
+  const wrapper = mount(<ModalContainer>modal content</ModalContainer>);
+  wrapper.find('button').simulate('click');
 
-    // this allows you to continue using the enzyme wrapper API
-    const portalWrapper = new ReactWrapper(
-      wrapper.find(ReactModal).node.portal, true
-    );
-    expect(portalWrapper.text()).toEqual('modal content');
-  });
-// ...
+  const portalWrapper = new ReactWrapper(wrapper.find(Modal).node.portal, true);
+  expect(portalWrapper.text()).toBe('modal content');
+});
 ```
