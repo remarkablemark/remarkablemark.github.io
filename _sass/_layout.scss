@@ -56,17 +56,13 @@ h3 {
   }
 }
 
+.post-title {
+  line-height: 1.15;
+  margin-bottom: 0.25em;
+}
+
 // post page
 .post {
-  .post-title {
-    line-height: 1.15;
-    margin-bottom: 0.25em;
-  }
-
-  .post-meta {
-    margin-top: 5px;
-  }
-
   hr {
     margin: 1em 0;
   }
@@ -89,5 +85,21 @@ h3 {
 
   li {
     margin-bottom: 0;
+  }
+}
+
+.post-content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    > a {
+      &,
+      &:visited {
+        color: inherit;
+      }
+    }
   }
 }
