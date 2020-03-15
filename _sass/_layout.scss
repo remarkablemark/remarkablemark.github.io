@@ -89,16 +89,37 @@ h3 {
 }
 
 .post-content {
+  .anchor-icon {
+    bottom: 0;
+    color: $grey-color;
+    display: none;
+    font-size: 0.75em;
+    left: -1em;
+    position: absolute;
+  }
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
+    position: relative;
+
     > a {
       &,
       &:visited {
         color: inherit;
+      }
+
+      @media only screen and (min-width: $on-palm) {
+        &:active,
+        &:focus,
+        &:hover {
+          + .anchor-icon {
+            display: inline-block;
+          }
+        }
       }
     }
   }
