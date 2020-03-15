@@ -21,7 +21,10 @@ layout: default
       .forEach(function(heading) {
         if (heading.id)
           heading.innerHTML =
-            '<a href="#' + heading.id + '">' + heading.innerText + '</' + 'a>';
+            '<a href="#' + heading.id + '">' +
+              heading.innerText +
+            '<\/a>' +
+            '<span class="anchor-icon">§<\/span>';
       });
   </script>
   <br>{% include support.html %}<br>
