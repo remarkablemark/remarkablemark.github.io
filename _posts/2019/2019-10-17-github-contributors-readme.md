@@ -77,4 +77,4 @@ Or include the Markdown below which does the same thing:
 
 Here's the output:
 
-[![](https://github.com/remarkablemark.png?size=50)](https://github.com/remarkablemark)
+[![remarkablemark](https://github.com/remarkablemark.png?size=50)](https://github.com/remarkablemark)
