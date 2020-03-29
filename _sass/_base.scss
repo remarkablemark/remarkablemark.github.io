@@ -82,9 +82,12 @@ figcaption {
  */
 ul,
 ol {
-  // override Skeleton styling
-  list-style: disc outside;
+  list-style-position: outside;
   margin-left: 2.3rem;
+}
+
+ul {
+  list-style-type: disc;
 }
 
 /**
