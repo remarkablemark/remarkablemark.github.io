@@ -2,6 +2,7 @@
 layout: post
 title: Migrate TSLint to ESLint
 date: 2020-05-22 18:30:43
+updated: 2020-05-22 19:32:45
 excerpt: How to replace TSLint with ESLint.
 categories: tslint eslint lint npm
 ---
@@ -18,13 +19,13 @@ I expect your project to contain the files:
 
 ## Uninstall
 
-First, uninstall TSLint dependencies from `package.json`:
+First, uninstall [tslint](https://www.npmjs.com/package/tslint) from `package.json`:
 
 ```sh
-$ npm remove tslint tslib
+$ npm remove tslint
 ```
 
-Make sure [typescript](https://www.npmjs.com/package/typescript) is still there:
+Verify [typescript](https://www.npmjs.com/package/typescript) is still present:
 
 ```sh
 $ npm list typescript
