@@ -9,7 +9,7 @@ categories: npm package site nato phonetic alphabet converter
 
 [Phonetic Alphabet Converter](https://remarkablemark.org/phonetic-alphabet-converter/) parses a string into a list of [NATO phonetic alphabet](https://en.wikipedia.org/wiki/NATO_phonetic_alphabet) words.
 
-<iframe src="https://remarkablemark.org/phonetic-alphabet-converter/" frameBorder="0" width="100%" height="275px"></iframe>
+<iframe src="https://remarkablemark.org/phonetic-alphabet-converter/" frameBorder="0" width="100%" height="300px"></iframe>
 
 ## Installation
 
@@ -18,7 +18,7 @@ You can download `phonetic-alphabet-converter` from:
 [npm](https://www.npmjs.com/package/phonetic-alphabet-converter)
 
 ```sh
-$ npm install --save phonetic-alphabet-converter
+$ npm install phonetic-alphabet-converter
 ```
 
 [yarn](https://yarnpkg.com/package/phonetic-alphabet-converter)
