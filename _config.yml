@@ -26,21 +26,21 @@ timezone: America/New_York
 encoding: utf-8
 safe: true
 plugins:
-- jekyll-feed
-- jekyll-seo-tag
-- jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
-# Exclude from processing.
+# Exclude from processing
 #
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
 exclude:
-- .travis.yml
-- CNAME
-- Gemfile
-- Gemfile.lock
-- README.md
-- vendor/bundle/
-- vendor/cache/
-- vendor/gems/
-- vendor/ruby/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  # Custom
+  - CNAME
+  - README.md
