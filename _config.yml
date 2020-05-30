@@ -30,6 +30,16 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+# Front Matter defaults
+#
+# https://jekyllrb.com/docs/configuration/#front-matter-defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      # https://jekyll.github.io/jekyll-seo-tag/advanced-usage/#setting-a-default-image
+      image: /assets/images/logo/100.png
+
 # Exclude from processing
 #
 # The following items will not be processed, by default. Create a custom list
