@@ -16,12 +16,14 @@ However, I found updating the template to match CRA to be painful.
 
 As a result, I created [`@descriptive/web-scripts`](https://www.npmjs.com/package/@descriptive/web-scripts), which is similar to [`react-scripts`](https://www.npmjs.com/package/react-scripts), but React dependencies and configs are removed.
 
-If you're using the older version of `web-app-template` (without `web-scripts`), you can migrate to the latest by running:
+## Migration
+
+If you're using an older version of `web-app-template`, you can migrate to the latest by running:
 
 ```sh
 npx https://gist.github.com/remarkablemark/f3644d65665dc07a91d7f7202c5a66b6
 ```
 
-See [gist](https://gist.github.com/remarkablemark/f3644d65665dc07a91d7f7202c5a66b6):
+### Gist
 
 {% gist f3644d65665dc07a91d7f7202c5a66b6 %}
