@@ -70,6 +70,6 @@ const ReactDOM16 = require('react-dom');
 const ReactDOM15 = require('react-dom-core');
 ```
 
-You can even [publish](https://docs.npmjs.com/cli/publish) the package if the [name isn't taken](/npm-package-name-checker/).
+You can even [publish](https://docs.npmjs.com/cli/publish) the package if the [name isn't taken](https://b.remarkabl.org/npm-package-name-checker).
 
 See [`react-dom-core`](https://www.npmjs.com/package/react-dom-core) as an example.
