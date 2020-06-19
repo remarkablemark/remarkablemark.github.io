@@ -77,7 +77,7 @@ END; //
 DELIMITER ;
 ```
 
-See [Gist](https://gist.github.com/remarkablemark/c85817dd98dcb7360f9229aab5537612):
+See [gist](https://gist.github.com/remarkablemark/4fd35e940984440228e127210eb4fbd9):
 
 {% gist 4fd35e940984440228e127210eb4fbd9 %}
 
@@ -95,6 +95,6 @@ END; //
 DELIMITER ;
 ```
 
-See [Gist](https://gist.github.com/remarkablemark/c85817dd98dcb7360f9229aab5537612):
+See [gist](https://gist.github.com/remarkablemark/33635e6694ee90081c9451920547d04d):
 
 {% gist 33635e6694ee90081c9451920547d04d %}
