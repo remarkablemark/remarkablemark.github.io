@@ -2,7 +2,8 @@
 layout: post
 title: Add default to CommonJS require
 date: 2020-06-20 17:13:17
-excerpt: Use the codemod `require-default-codemod` to append `default` property to CommonJS `require`.
+updated: 2020-06-27 18:24:45
+excerpt: To transform `require()` to `require().default`, use the JS codemod `require-default-codemod`.
 categories: javascript jscodeshift codemod npm package commonjs
 ---
 
@@ -19,6 +20,8 @@ To:
 ```js
 require('foo').default;
 ```
+
+> This codemod does not transform existing `require().default`.
 
 ## Solution
 
@@ -44,8 +47,9 @@ This codemod was created using [`jscodeshift`](https://github.com/facebook/jscod
 
 The implementation was pretty straightforward using the [AST explorer](https://astexplorer.net/):
 
-1. Find the `require` identifier and
-2. Replace member expression with `default`.
+1. Find the `require` identifier
+2. Filter out those with `default` property
+3. Replace with an expression that has the original value and the `default` property
 
 ## Code
 
