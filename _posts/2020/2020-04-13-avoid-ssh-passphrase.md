@@ -2,8 +2,9 @@
 layout: post
 title: Avoid SSH passphrase
 date: 2020-04-13 20:27:17
+updated: 2020-06-28 17:59:25
 excerpt: How to avoid entering a passphrase when performing an SSH operation.
-categories: ssh mac
+categories: ssh mac passphrase keychain git
 ---
 
 I recently upgraded my macOS but when I tried to perform an SSH operation, I was asked to enter a passphrase:
@@ -69,9 +70,22 @@ Enter passphrase for /Users/remarkablemark/.ssh/id_rsa:
 Identity added: /Users/remarkablemark/.ssh/id_rsa (/Users/remarkablemark/.ssh/id_rsa)
 ```
 
-Now, you should be able to perform SSH operations without being asked for a passphrase:
+> The `-K` stores the passphrase in your keychain.
+
+Now you should be able to perform SSH operations without being asked for a passphrase:
 
 ```sh
 $ git pull
 Already up to date.
+```
+
+## SSH config
+
+To prevent having to enter a passphrase even after a restart, add the following to your SSH config file `~/.ssh/config`:
+
+```
+Host *
+  UseKeychain yes
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_rsa
 ```
