@@ -2,8 +2,9 @@
 layout: post
 title: Web App Template
 date: 2020-06-06 18:25:13
-excerpt: Web app template is Create React App but with React removed.
-categories: web app template cra gist
+updated: 2020-06-28 20:15:51
+excerpt: Web App Template is Create React App but without React.
+categories: web app template cra npx
 ---
 
 I created [`web-app-template`](https://github.com/remarkablemark/web-app-template) because I liked [Create React App](https://github.com/facebook/create-react-app) (CRA) but wanted to keep it framework agnostic.
@@ -18,12 +19,10 @@ As a result, I created [`@descriptive/web-scripts`](https://www.npmjs.com/packag
 
 ## Migration
 
-If you're using an older version of `web-app-template`, you can migrate to the latest by running:
+If you're using an older version of `web-app-template` (one without `@descriptive/web-scripts`), you can migrate to use `@descriptive/web-scripts` by running:
 
 ```sh
-npx https://gist.github.com/remarkablemark/f3644d65665dc07a91d7f7202c5a66b6
+npx web-scripts-migration
 ```
 
-### Gist
-
-{% gist f3644d65665dc07a91d7f7202c5a66b6 %}
+See [web-scripts-migration](https://www.npmjs.com/package/web-scripts-migration) for more information.
