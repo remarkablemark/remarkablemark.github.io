@@ -22,8 +22,6 @@ Here are some ways to support **remarkablemark**:
 
 [![Get merch from Teespring](https://cdn.joinhoney.com/images/lp/store-logos/teespring-logo.png)](https://b.remarkabl.org/teespring)
 
-<a class="github-button" href="https://github.com/sponsors/remarkablemark" data-icon="octicon-heart" data-size="large" aria-label="Sponsor @remarkablemark on GitHub" style="display: none;">GitHub Sponsors</a>
-
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+<iframe src="https://github.com/sponsors/remarkablemark/button" title="Sponsor remarkablemark" height="35" width="107" style="border: 0;"></iframe>
 
 _Thank you for your support!_
