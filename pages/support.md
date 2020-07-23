@@ -6,8 +6,15 @@ permalink: /support/
 ---
 
 <style>
-  #main img { height: 48px; }
-  #main img:active, #main img:focus, #main img:hover { opacity: .7; }
+  #main img {
+    height: 48px;
+  }
+
+  #main img:active,
+  #main img:focus,
+  #main img:hover {
+    opacity: .7;
+  }
 </style>
 
 # Support
