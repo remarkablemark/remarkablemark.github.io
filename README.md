@@ -2,7 +2,7 @@
 
 [Site](https://b.remarkabl.org/mark) of [@remarkablemark](https://b.remarkabl.org/github). Built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/).
 
-Consider [supporting](#support) the site if you found it useful!
+Any [support](#support) is welcome!
 
 ## Prerequisites
 
@@ -92,13 +92,14 @@ $ bundle exec htmlproofer _site
 
 ## Support
 
-Donations are welcome:
+Support me here:
 
+- [GitHub Sponsors](https://b.remarkabl.org/github-sponsors)
 - [Patreon](https://b.remarkabl.org/patreon)
 - [Ko-fi](https://b.remarkabl.org/ko-fi)
 - [Liberapay](https://b.remarkabl.org/liberapay)
 
-Check out our merch:
+Check out my merch:
 
 - [Teepsring](https://b.remarkabl.org/teespring)
 
