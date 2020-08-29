@@ -2,6 +2,7 @@
 layout: post
 title: Transcribe audio to text
 date: 2020-08-24 21:41:26
+updated: 2020-08-29 18:07:50
 excerpt: Convert audio to text using Python SpeechRecognition or JavaScript Web Speech API.
 categories: python javascript web speech audio text api
 ---
@@ -67,6 +68,8 @@ See [guide](https://realpython.com/python-speech-recognition/) for more details.
 [Repl.it](https://repl.it/@remarkablemark/Speech-Recognition):
 
 <iframe height="500px" width="100%" src="https://repl.it/@remarkablemark/Speech-Recognition?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+See [GitHub repository](https://github.com/remarkablemark/speech-recognition-demo) for more details.
 
 ## Web
 
