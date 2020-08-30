@@ -2,8 +2,8 @@
 layout: post
 title: Transcribe audio to text
 date: 2020-08-24 21:41:26
-updated: 2020-08-29 18:07:50
-excerpt: Convert audio to text using Python SpeechRecognition or JavaScript Web Speech API.
+updated: 2020-08-30 16:03:09
+excerpt: How to convert audio to text using Python's SpeechRecognition library or the JavaScript Web Speech API.
 categories: python javascript web speech audio text api
 ---
 
@@ -73,6 +73,6 @@ See [GitHub repository](https://github.com/remarkablemark/speech-recognition-dem
 
 ## Web
 
-If you can [input audio to your microphone](https://rogueamoeba.com/loopback/), you can use the [JavaScript Web Speech API](https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API):
+If the audio can be [inputted to your microphone](https://www.vb-audio.com/Cable/), then you can use the [JavaScript Web Speech API](https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API):
 
 <iframe height="400px" width="100%" src="https://www.google.com/intl/en/chrome/demos/speech.html" scrolling="no" frameborder="no" allow="microphone"></iframe>
