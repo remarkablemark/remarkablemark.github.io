@@ -1,12 +1,17 @@
 ---
 layout: post
-title: How to upload your podcast for free
+title: How to publish a podcast for free
 date: 2020-09-08 20:19:29
-excerpt: How to upload your podcast for free on SoundCloud, Apple, Spotify, Google, Stitcher, and TuneIn.
+updated: 2020-09-12 15:48:36
+excerpt: How to upload and publish a podcast for free on SoundCloud, Apple, Spotify, Google, Stitcher, and TuneIn.
 categories: podcast soundcloud apple spotify google stitcher tunein
 ---
 
-- [Upload to Hosting Platform](#upload-to-hosting-platform)
+I recently published my [first podcast](https://b.remarkabl.org/3ibf5eY) along with its [show notes](https://b.remarkabl.org/2FjE7tI).
+
+This article goes over how to upload a podcast without having to pay anything. It assumes you already have the podcast recorded/edited and the cover artwork completed.
+
+- [Upload to a Hosting Platform](#upload-to-a-hosting-platform)
 - [Submit to Directories](#submit-to-directories)
   - [Apple](#apple)
   - [Spotify](#spotify)
@@ -14,9 +19,7 @@ categories: podcast soundcloud apple spotify google stitcher tunein
   - [Stitcher](#stitcher)
   - [TuneIn](#tunein)
 
-Given you have a recorded and edited a podcast and have finished the cover artwork, this article will go over how to upload your podcast without having to pay anything.
-
-## Upload to Hosting Platform
+## Upload to a Hosting Platform
 
 Upload your podcast to a hosting platform like [SoundCloud](https://soundcloud.com/). It's free as long as you're within the upload limit; otherwise, you can upgrade to the [pro plan](https://checkout.soundcloud.com/pro).
 
@@ -24,15 +27,21 @@ After your podcast is uploaded, you want to [add your track to your RSS feed](ht
 
 Go to your track and click **Edit** > **Permissions** > **Include in RSS feed**:
 
-![Include in RSS feed]({{ "/images/2020/2020-09-08-soundcloud-permissions-include-in-rss-feed.png" | prepend: site.assets_path }})
+![Include SoundCloud track in RSS feed]({{ "/images/2020/2020-09-08-soundcloud-permissions-include-in-rss-feed.png" | prepend: site.assets_path }})
 
-To get the RSS feed URL, go to [Content Settings](http://soundcloud.com/settings/content). The URL will look something like this:
+To get the RSS feed URL, go to [Content Settings](http://soundcloud.com/settings/content).
+
+![SoundCloud RSS feed URL]({{ "/images/2020/2020-09-08-soundcloud-settings-content-rss-feed.png" | prepend: site.assets_path }})
+
+The RSS feed URL will look something like:
 
 ```
-https://feeds.soundcloud.com/users/soundcloud:users:123456789/sounds.rss
+https://feeds.soundcloud.com/users/soundcloud:users:12345678/sounds.rss
 ```
 
-For verification to work when submitting your podcast to other directories, make sure to [display your email address in your RSS feed](https://help.soundcloud.com/hc/en-us/articles/115003447807).
+For verification to work when submitting your podcast to other directories, make sure to [display your email address in your RSS feed](https://help.soundcloud.com/hc/en-us/articles/115003447807):
+
+![SoundCloud email address displayed]({{ "/images/2020/2020-09-08-soundcloud-settings-content-email-address-displayed.png" | prepend: site.assets_path }})
 
 Check out the help article ["Getting started with podcasting"](Getting started with podcasting) for more information.
 
