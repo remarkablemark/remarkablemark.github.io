@@ -2,7 +2,7 @@
 layout: post
 title: How to publish a podcast for free
 date: 2020-09-08 20:19:29
-updated: 2020-09-12 15:48:36
+updated: 2020-09-12 21:47:08
 excerpt: How to upload and publish a podcast for free on SoundCloud, Apple, Spotify, Google, Stitcher, and TuneIn.
 categories: podcast soundcloud apple spotify google stitcher tunein
 ---
@@ -64,6 +64,7 @@ Once your podcast is hosted and the RSS feed is available, you can submit the RS
 2. Submit your podcast to [Spotify](https://podcasters.spotify.com/submit) by adding the link to your podcast's RSS feed.
 3. Verify that you own this podcast and fill out the podcast details.
 4. Once it's submitted, it'll take a few hours for it to show up on Spotify.
+5. Embed the podcast using the [embed generator](https://developer.spotify.com/documentation/widgets/generate/embed/).
 
 ### Google
 
