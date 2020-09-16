@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Projects
-excerpt: remarkablemark's projects.
+excerpt: remarkablemark projects.
 permalink: /projects/
 ---
 
@@ -10,6 +10,7 @@ permalink: /projects/
 | Name                       | Description                                           |
 | -------------------------- | ----------------------------------------------------- |
 | [remarkablegames]          | Games that are remarkable                             |
+| [Remarkable Podcast]       | Podcast on technology and programming.                |
 | [html-react-parser]        | HTML to React parser.                                 |
 | [npm packages]             | npm packages authored by remarkablemark               |
 | [Lit.io]                   | Hackathon project for HackFest 2019                   |
@@ -23,6 +24,7 @@ permalink: /projects/
 | [VisualNarrator]           | Print text to screen                                  |
 
 [remarkablegames]: https://b.remarkabl.org/games
+[remarkable podcast]: https://b.remarkabl.org/remarkable-podcast
 [html-react-parser]: https://b.remarkabl.org/html-react-parser
 [npm packages]: https://www.npmjs.com/~remarkablemark
 [lit.io]: https://github.com/lit-io/lit-io.github.io
