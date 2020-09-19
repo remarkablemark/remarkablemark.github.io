@@ -2,7 +2,7 @@
 layout: post
 title: How to create a podcast
 date: 2020-09-16 20:58:10
-updated: 2020-09-19 13:02:37
+updated: 2020-09-19 15:37:01
 excerpt: A checklist for creating a podcast.
 categories: podcast checklist
 ---
@@ -15,6 +15,10 @@ categories: podcast checklist
   - A detailed script leaves less room for error and nervousness, but the conversation will be less organic and spontaneous
   - Use an outline for more improvised discussions
   - Don't forget that mistakes can be edited out
+- Remember to:
+  - Tell a story
+  - Keep it informative
+  - Stay consistent with your style
 
 ## Tools
 
