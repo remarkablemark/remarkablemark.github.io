@@ -2,8 +2,9 @@
 layout: post
 title: How to create a podcast
 date: 2020-09-16 20:58:10
+updated: 2020-09-19 13:02:37
 excerpt: A checklist for creating a podcast.
-categories: podcast
+categories: podcast checklist
 ---
 
 ## Preparation
@@ -30,31 +31,29 @@ categories: podcast
 
 - Find a good time and place to record
   - Make sure there are no background noises (machines are off, window is shut, etc.)
-- Perform a test recording
-  - Play it back for quality control
+- Perform a test recording and play it back for quality control
 - [Double ender](https://thepodcastersstudio.com/tps-ep-47-recording-a-double-ender-podcast/)
   - Host and guest record audio separately
-- Expect latency on the web
-- Clap at beginning to sync audio
+  - Expect latency on the web
+  - Clap at the beginning to sync the audio
 
 ## Editing
 
 - Audio cleaning
   - Trim unnecessary pauses
   - Cut out fillers like "uhs" and "ums"
-  - Remove backgroud noise
-  - Delete clicks
-    - [iZotope RX De-click](https://www.izotope.com/en/products/rx/features/de-click.html)
-- Normalize audio
+  - Remove background noise
+  - Delete clicks with [iZotope RX De-click](https://www.izotope.com/en/products/rx/features/de-click.html)
+  - Normalize audio
 - Review audio
   - Make sure flow and delivery is good
-  - Listen on multiple devices to verify quality
-    - Cheap/expensive headphones and speakers
+  - Listen on multiple devices to verify quality (cheap/expensive headphones and speakers)
   - Playback at low audio as a litmus test
 
 ## Publish
 
-- [How to publish a podcast for free]({% post_url 2020/2020-09-08-upload-free-podcast %})
-- Transcription tools
-  - Paid versus [free]({% post_url 2020/2020-08-24-python-speech-recognition %}) options
-- Publish an article to improve discoverability
+- See post "[How to publish a podcast for free]({% post_url 2020/2020-09-08-upload-free-podcast %})"
+- For podcast discoverability:
+  - Use social media
+  - Publish a written article (there are [free]({% post_url 2020/2020-08-24-python-speech-recognition %}) and paid transcription tools that can convert your audio into text)
+  - Upload videos
