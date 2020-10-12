@@ -2,8 +2,8 @@
 layout: post
 title: Write Selenium tests that don't suck
 date: 2020-10-10 22:25:05
-excerpt: How to write Selenium tests that don't suck.
-categories: selenium test
+excerpt: Tips on how to write effective Selenium tests, which includes planning, design patterns, development, and runtime best practices.
+categories: selenium testing automation
 ---
 
 ## Planning
