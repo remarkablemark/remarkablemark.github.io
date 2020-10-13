@@ -54,3 +54,4 @@ exclude:
   # Custom
   - CNAME
   - README.md
+  - node_modules/
