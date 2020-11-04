@@ -2,29 +2,36 @@
 layout: post
 title: Build Rollup UMD bundle for CommonJS
 date: 2019-07-12 22:29:55
-excerpt: How to build a Rollup bundle in UMD format for CommonJS modules.
-categories: rollup bundle build commonjs umd javascript nodejs
+updated: 2020-11-03 20:01:00
+excerpt: How to build a Rollup bundle in IIFE, CJS, and UMD formats for CommonJS modules.
+categories: rollup bundle build commonjs umd amd iife javascript nodejs npm
 ---
 
-[Webpack](https://webpack.js.org/) to is great for building **apps** and [Rollup](build://rollupjs.org/) is great for building **libraries**.
+Whereas [Webpack](https://webpack.js.org/) is great for building **apps**, [Rollup](https://rollupjs.org/) is great for building **libraries**.
 
 Rollup supports _ES modules_ out of the box. However, to support _CommonJS_, the following plugins are required:
 
-- [rollup-plugin-commonjs](https://github.com/rollup/rollup-plugin-commonjs)
-- [rollup-plugin-node-resolve](https://github.com/rollup/rollup-plugin-node-resolve)
+- [@rollup/plugin-commonjs](https://github.com/rollup/plugins/tree/master/packages/commonjs)
+- [@rollup/plugin-node-resolve](https://github.com/rollup/plugins/tree/master/packages/node-resolve)
 
 ## Prerequisites
 
-Install [rollup](https://www.npmjs.com/package/rollup) locally (or globally):
+- [Node.js](https://nodejs.org/) and npm
+
+## Setup
+
+Install [rollup](https://www.npmjs.com/package/rollup):
 
 ```sh
-$ npm install rollup # --global
+$ npm install rollup
+$ npx rollup --version
+rollup v2.32.1
 ```
 
-Create main module `index.js` (entry file):
+Create entry file `index.js`:
 
 ```sh
-$ echo "export default 'Hello, world!';" > index.js
+$ echo "export default 'Hello, world!'" > index.js
 ```
 
 Initialize `package.json`:
@@ -43,15 +50,15 @@ Add build script to `package.json`:
 }
 ```
 
-The script will compile `index.js` to `dist/bundle.js`.
+> The script compiles `index.js` to `dist/bundle.js`.
 
-However, when you run the script:
+Run the build script:
 
 ```sh
 $ npm run build
 ```
 
-You'll get the error:
+To get the error:
 
 ```
 Error: You must specify "output.format", which can be one of "amd", "cjs", "system", "esm", "iife" or "umd".
@@ -59,13 +66,13 @@ Error: You must specify "output.format", which can be one of "amd", "cjs", "syst
 
 ## Output Format
 
-When bundling with Rollup, it expects an [output format](https://rollupjs.org/guide/en#output-format). You can follow the general guidelines:
+Rollup expects an [output format](https://rollupjs.org/guide/en#output-format). Here are the general guidelines:
 
 - For browsers, use `iife` ([Immediately Invoked Function Expression](https://developer.mozilla.org/docs/Glossary/IIFE))
 - For Node.js, use `cjs` ([CommonJS](https://wikipedia.org/wiki/CommonJS))
 - For both browsers and Node.js, use `umd` ([Universal Module Definition](https://github.com/umdjs/umd))
 
-See table below for summary:
+See table for summary:
 
 | Environment       | Output Format |
 | ----------------- | ------------- |
@@ -73,7 +80,7 @@ See table below for summary:
 | Node.js           | `cjs`         |
 | Browser + Node.js | `umd`         |
 
-Thus, to generate a UMD bundle with the name of the export as `MyModuleName`:
+To generate a UMD bundle with `MyModuleName` as the export name:
 
 ```sh
 rollup index.js --file dist/bundle.js --format umd --name 'MyModuleName'
@@ -93,7 +100,7 @@ The module can be loaded in the browser with a `<script>` tag:
 
 ### Load with AMD
 
-Or it can be loaded in the browser using [AMD](https://github.com/amdjs/amdjs-api/blob/master/AMD.md#amd) (Asynchronous Module Definition):
+The module can be loaded in the browser using [AMD](https://github.com/amdjs/amdjs-api/blob/master/AMD.md#amd) (Asynchronous Module Definition):
 
 ```html
 <!-- amd.html -->
@@ -107,7 +114,7 @@ Or it can be loaded in the browser using [AMD](https://github.com/amdjs/amdjs-ap
 
 ### Load with CommonJS
 
-Or it can be loaded in Node.js using CommonJS:
+The module can be loaded in Node.js using CommonJS:
 
 ```sh
 $ node
@@ -118,9 +125,18 @@ Hello, world!
 
 ## Config File
 
-Instead of passing the options via the CLI (command-line interface), we can specify them in the configuration file `rollup.config.js`:
+Instead of passing the options via the CLI (command-line interface), you can specify them in the configuration file `rollup.config.js`.
+
+Create the file `rollup.config.js`:
+
+```sh
+$ touch rollup.config.js
+```
+
+And add the config:
 
 ```js
+// rollup.config.js
 const config = {
   input: 'index.js',
   output: {
@@ -133,7 +149,7 @@ const config = {
 export default config;
 ```
 
-Update the build script in `package.json` so it picks up the config:
+Update the build script in `package.json` to use the config file:
 
 ```json
 {
@@ -151,17 +167,18 @@ rollup --config my.config.js
 
 ## CommonJS
 
-To use CommonJS syntax, install [rollup-plugin-commonjs](https://github.com/rollup/rollup-plugin-commonjs):
+To use CommonJS syntax, install [@rollup/plugin-commonjs](https://www.npmjs.com/package/@rollup/plugin-commonjs):
 
 ```sh
-$ npm install rollup-plugin-commonjs
+$ npm install @rollup/plugin-commonjs
 ```
 
 Add the plugin to the rollup config:
 
 ```diff
-+import commonjs from 'rollup-plugin-commonjs';
-
+ // rollup.config.js
++import commonjs from '@rollup/plugin-commonjs';
+ 
  const config = {
    input: 'index.js',
    output: {
@@ -171,7 +188,7 @@ Add the plugin to the rollup config:
    },
 +  plugins: [commonjs()],
  };
-
+ 
  export default config;
 ```
 
@@ -182,16 +199,19 @@ Now you can refactor `index.js`:
 module.exports = 'Hello, world!';
 ```
 
-After running the build, loading the bundle via script, AMD, or CommonJS should still work:
+After building the bundle, loading it via script, AMD, or CommonJS should continue to work:
 
 ```sh
 $ npm run build
 $ open script.html
+$ open amd.html
+$ node -p "require('./dist/bundle')"
+Hello, world!
 ```
 
 ## Node Resolve
 
-Let's say we want to refactor `index.js` and use [lodash](https://lodash.com/):
+Let's say we want to refactor `index.js` and use [lodash](https://www.npmjs.com/package/lodash):
 
 ```sh
 $ npm install lodash
@@ -204,18 +224,19 @@ var compiled = template('Hello, <%= name %>!');
 module.exports = compiled({ name: 'world' });
 ```
 
-In order for rollup to locate 3rd party modules in `node_modules` using [Node's resolution algorithm](https://nodejs.org/api/modules.html#modules_all_together), we need to install [rollup-plugin-node-resolve](https://github.com/rollup/rollup-plugin-node-resolve):
+In order for rollup to locate 3rd party modules in `node_modules` using [Node's resolution algorithm](https://nodejs.org/api/modules.html#modules_all_together), we need to install [@rollup/plugin-node-resolve](https://github.com/rollup/plugins/tree/master/packages/node-resolve):
 
 ```sh
-$ npm install rollup-plugin-node-resolve
+$ npm install @rollup/plugin-node-resolve
 ```
 
 Add the plugin to the rollup config:
 
 ```diff
- import commonjs from 'rollup-plugin-commonjs';
-+import resolve from 'rollup-plugin-node-resolve';
-
+ // rollup.config.js
+ import commonjs from '@rollup/plugin-commonjs';
++import resolve from '@rollup/plugin-node-resolve';
+ 
  const config = {
    input: 'index.js',
    output: {
@@ -226,7 +247,7 @@ Add the plugin to the rollup config:
 -  plugins: [commonjs()],
 +  plugins: [commonjs(), resolve()],
  };
-
+ 
  export default config;
 ```
 
@@ -234,16 +255,89 @@ Building the bundle should still work as expected:
 
 ```sh
 $ npm run build
-$ node
-> require('./dist/bundle');
-'Hello, world!'
+$ node -p "require('./dist/bundle')"
+Hello, world!
 ```
 
-> **_Note:_** If you want the module resolution to respect the ["browser" field](https://github.com/defunctzombie/package-browser-field-spec) in `package.json`, you can set the option `resolve({ browser: true })`.
+> If you want the module resolution to respect the ["browser" field](https://github.com/defunctzombie/package-browser-field-spec) in `package.json`, you can set the option `resolve({ browser: true })`.
+
+## Terser
+
+To minify your bundle with rollup v2, use [terser](https://github.com/terser/terser).
+
+Install [rollup-plugin-terser](https://github.com/TrySound/rollup-plugin-terser):
+
+```sh
+$ npm install rollup-plugin-terser
+```
+
+Add the plugin to the rollup config:
+
+```diff
+ // rollup.config.js
+ import commonjs from '@rollup/plugin-commonjs';
+ import import resolve from '@rollup/plugin-node-resolve';
++import { terser } from 'rollup-plugin-terser';
+ 
+ const config = {
+   input: 'index.js',
+   output: {
+     format: 'umd',
+     name: 'MyModuleName',
+   },
+-  plugins: [commonjs(), resolve()],
++  plugins: [commonjs(), resolve(), terser()],
+ };
+ 
+ export default config;
+```
+
+Use an environment variable to build minified and unminified bundles:
+
+```diff
+ // rollup.config.js
+ import commonjs from '@rollup/plugin-commonjs';
+ import import resolve from '@rollup/plugin-node-resolve';
+ import { terser } from 'rollup-plugin-terser';
+ 
+ const config = {
+   input: 'index.js',
+   output: {
+     format: 'umd',
+     name: 'MyModuleName',
+   },
+-  plugins: [commonjs(), resolve(), terser()],
++  plugins: [commonjs(), resolve()],
+ };
+ 
++if (process.env.NODE_ENV === 'production') {
++  config.plugins.push(terser());
++}
++
+ export default config;
+```
+
+Then set the environment variable before running the build command:
+
+```sh
+NODE_ENV=production npm run build
+```
+
+Or set the environment variable in the `package.json` build script itself:
+
+```json
+{
+  "scripts": {
+    "build": "npm run build:min && npm run build:unmin",
+    "build:min": "NODE_ENV=production rollup --config",
+    "build:unmin": "NODE_ENV=production rollup --config --file dist/bundle.min.js"
+  }
+}
+```
 
 ## Uglify
 
-Lastly, we may want to minify our bundle using [UglifyJS](https://github.com/mishoo/UglifyJS2). Luckily, there's a plugin that does just that.
+To minify your bundle with rollup v1, use [UglifyJS](https://github.com/mishoo/UglifyJS2).
 
 Install [rollup-plugin-uglify](https://github.com/TrySound/rollup-plugin-uglify):
 
@@ -254,10 +348,11 @@ $ npm install rollup-plugin-uglify
 Add the plugin to the rollup config:
 
 ```diff
- import commonjs from 'rollup-plugin-commonjs';
- import import resolve from 'rollup-plugin-node-resolve';
+ // rollup.config.js
+ import commonjs from '@rollup/plugin-commonjs';
+ import import resolve from '@rollup/plugin-node-resolve';
 +import { uglify } from 'rollup-plugin-uglify';
-
+ 
  const config = {
    input: 'index.js',
    output: {
@@ -267,48 +362,6 @@ Add the plugin to the rollup config:
 -  plugins: [commonjs(), resolve()],
 +  plugins: [commonjs(), resolve(), uglify()],
  };
-
+ 
  export default config;
-```
-
-If you want to differentiate the build depending on the environment, you can do the following:
-
-```diff
- import commonjs from 'rollup-plugin-commonjs';
- import import resolve from 'rollup-plugin-node-resolve';
- import { uglify } from 'rollup-plugin-uglify';
-
- const config = {
-   input: 'index.js',
-   output: {
-     format: 'umd',
-     name: 'MyModuleName',
-   },
--  plugins: [commonjs(), resolve(), uglify()],
-+  plugins: [commonjs(), resolve()],
- };
-
-+if (process.env.NODE_ENV === 'production') {
-+  config.plugins.push(uglify());
-+}
-+
- export default config;
-```
-
-You can either pass the environment variable to the build script:
-
-```sh
-NODE_ENV=production npm run build
-```
-
-Or set it in the build script itself:
-
-```json
-{
-  "scripts": {
-    "build": "npm run build:min && npm run build:unmin",
-    "build:min": "NODE_ENV=production rollup --config",
-    "build:unmin": "NODE_ENV=production rollup --config --file dist/bundle.min.js"
-  }
-}
 ```
