@@ -6,6 +6,8 @@ excerpt: How to manage multiple git remote repositories.
 categories: git remote repository cli
 ---
 
+<!--email_off-->
+
 ## Add remote
 
 To track a local repository to a [remote repository](https://docs.github.com/en/free-pro-team@latest/github/using-git/about-remote-repositories):
@@ -101,3 +103,5 @@ $ git remote set-url origin git@bitbucket.org:user/repo.git
 ```
 
 > Here, we're setting the URL of `origin` back to Bitbucket.
+
+<!--/email_off-->
