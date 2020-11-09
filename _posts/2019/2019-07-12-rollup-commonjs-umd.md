@@ -2,12 +2,12 @@
 layout: post
 title: Build Rollup UMD bundle for CommonJS
 date: 2019-07-12 22:29:55
-updated: 2020-11-03 20:01:00
+updated: 2020-11-08 23:27:46
 excerpt: How to build a Rollup bundle in IIFE, CJS, and UMD formats for CommonJS modules.
 categories: rollup bundle build commonjs umd amd iife javascript nodejs npm
 ---
 
-Whereas [Webpack](https://webpack.js.org/) is great for building **apps**, [Rollup](https://rollupjs.org/) is great for building **libraries**.
+Whereas [Webpack](https://b.remarkabl.org/3mI3vKi) is great for building **apps**, [Rollup](https://b.remarkabl.org/2I2FqPB) is great for building **libraries**.
 
 Rollup supports _ES modules_ out of the box. However, to support _CommonJS_, the following plugins are required:
 
@@ -28,7 +28,7 @@ $ npx rollup --version
 rollup v2.32.1
 ```
 
-Create entry file `index.js`:
+Create the entry file `index.js`:
 
 ```sh
 $ echo "export default 'Hello, world!'" > index.js
@@ -40,7 +40,7 @@ Initialize `package.json`:
 $ npm init --yes
 ```
 
-Add build script to `package.json`:
+Add the build script to `package.json`:
 
 ```json
 {
@@ -58,7 +58,7 @@ Run the build script:
 $ npm run build
 ```
 
-To get the error:
+To find that you got the error:
 
 ```
 Error: You must specify "output.format", which can be one of "amd", "cjs", "system", "esm", "iife" or "umd".
@@ -83,12 +83,12 @@ See table for summary:
 To generate a UMD bundle with `MyModuleName` as the export name:
 
 ```sh
-rollup index.js --file dist/bundle.js --format umd --name 'MyModuleName'
+$ npx rollup index.js --file dist/bundle.js --format umd --name 'MyModuleName'
 ```
 
 ### Load with script
 
-The module can be loaded in the browser with a `<script>` tag:
+Load the module in a browser using a `<script>` tag:
 
 ```html
 <!-- script.html -->
@@ -100,7 +100,7 @@ The module can be loaded in the browser with a `<script>` tag:
 
 ### Load with AMD
 
-The module can be loaded in the browser using [AMD](https://github.com/amdjs/amdjs-api/blob/master/AMD.md#amd) (Asynchronous Module Definition):
+Load the module in a browser using [AMD](https://github.com/amdjs/amdjs-api/blob/master/AMD.md#amd) (Asynchronous Module Definition):
 
 ```html
 <!-- amd.html -->
@@ -114,7 +114,7 @@ The module can be loaded in the browser using [AMD](https://github.com/amdjs/amd
 
 ### Load with CommonJS
 
-The module can be loaded in Node.js using CommonJS:
+Load the module in Node.js using CommonJS:
 
 ```sh
 $ node
@@ -133,7 +133,7 @@ Create the file `rollup.config.js`:
 $ touch rollup.config.js
 ```
 
-And add the config:
+Add the config:
 
 ```js
 // rollup.config.js
@@ -162,7 +162,7 @@ Update the build script in `package.json` to use the config file:
 To give the config file a name other than the default, you'll need to specify the custom file location:
 
 ```sh
-rollup --config my.config.js
+$ npx rollup --config my.config.js
 ```
 
 ## CommonJS
@@ -192,14 +192,14 @@ Add the plugin to the rollup config:
  export default config;
 ```
 
-Now you can refactor `index.js`:
+Now refactor `index.js`:
 
 ```js
 // index.js
 module.exports = 'Hello, world!';
 ```
 
-After building the bundle, loading it via script, AMD, or CommonJS should continue to work:
+After rebuilding the bundle, loading it with script, AMD, or CommonJS should continue to work:
 
 ```sh
 $ npm run build
@@ -211,7 +211,7 @@ Hello, world!
 
 ## Node Resolve
 
-Let's say we want to refactor `index.js` and use [lodash](https://www.npmjs.com/package/lodash):
+Let's say you want to use [lodash](https://www.npmjs.com/package/lodash) in `index.js`:
 
 ```sh
 $ npm install lodash
@@ -224,7 +224,7 @@ var compiled = template('Hello, <%= name %>!');
 module.exports = compiled({ name: 'world' });
 ```
 
-In order for rollup to locate 3rd party modules in `node_modules` using [Node's resolution algorithm](https://nodejs.org/api/modules.html#modules_all_together), we need to install [@rollup/plugin-node-resolve](https://github.com/rollup/plugins/tree/master/packages/node-resolve):
+In order for rollup to locate 3rd party modules in `node_modules`, you need to install [@rollup/plugin-node-resolve](https://github.com/rollup/plugins/tree/master/packages/node-resolve):
 
 ```sh
 $ npm install @rollup/plugin-node-resolve
@@ -251,7 +251,7 @@ Add the plugin to the rollup config:
  export default config;
 ```
 
-Building the bundle should still work as expected:
+Build the bundle to verify it still works:
 
 ```sh
 $ npm run build
@@ -292,7 +292,7 @@ Add the plugin to the rollup config:
  export default config;
 ```
 
-Use an environment variable to build minified and unminified bundles:
+Use an environment variable to determine whether you want to build a minified or unminified bundle:
 
 ```diff
  // rollup.config.js
@@ -317,13 +317,13 @@ Use an environment variable to build minified and unminified bundles:
  export default config;
 ```
 
-Then set the environment variable before running the build command:
+Set the environment variable before you run the build command:
 
 ```sh
 NODE_ENV=production npm run build
 ```
 
-Or set the environment variable in the `package.json` build script itself:
+Alternatively, this can be done in the `package.json` build script:
 
 ```json
 {
@@ -337,7 +337,7 @@ Or set the environment variable in the `package.json` build script itself:
 
 ## Uglify
 
-To minify your bundle with rollup v1, use [UglifyJS](https://github.com/mishoo/UglifyJS2).
+To minify the bundle with rollup v1, use [UglifyJS](https://github.com/mishoo/UglifyJS2).
 
 Install [rollup-plugin-uglify](https://github.com/TrySound/rollup-plugin-uglify):
 
@@ -365,3 +365,15 @@ Add the plugin to the rollup config:
  
  export default config;
 ```
+
+Now you can build an uglified bundle:
+
+```sh
+$ npm run build
+$ node -p "require('./dist/bundle')"
+Hello, world!
+```
+
+## Resources
+
+To learn more about Rollup, check out the official [documentation](https://b.remarkabl.org/2I2FqPB).
