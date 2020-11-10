@@ -1,9 +1,10 @@
 ---
 layout: post
-title: Explaining async/await with promises
+title: Explaining async/await using promises
 date: 2020-08-19 21:46:46
-excerpt: Explaining how JavaScript async/await works with promises.
-categories: javascript promises async-await
+updated: 2020-11-09 21:13:08
+excerpt: Comparing how JavaScript async/await works using promises.
+categories: javascript async-await promise
 ---
 
 ## Promise
@@ -14,7 +15,7 @@ Calling [`Promise.resolve`](https://developer.mozilla.org/en-US/docs/Web/JavaScr
 Promise.resolve('value');
 ```
 
-Is the same as instantiating [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) with a _fulfilled_ value in the callback function:
+Is the same as instantiating a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) with a _fulfilled_ value in the callback function:
 
 ```js
 new Promise(resolve => {
@@ -22,11 +23,13 @@ new Promise(resolve => {
 });
 ```
 
-[`Promise.reject`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject) is similar except it's used when a promise is rejected:
+In terms of [`Promise.reject`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject):
 
 ```js
 Promise.reject('reason');
 ```
+
+It's similar except the rejected reason is passed as the 2nd argument of the callback function:
 
 ```js
 new Promise((resolve, reject) => {
@@ -36,20 +39,6 @@ new Promise((resolve, reject) => {
 
 ## Async/Await
 
-### Function
-
-A [no-op](<https://en.wikipedia.org/wiki/NOP_(code)>) function looks like:
-
-```js
-function () {};
-```
-
-Which is similar to the [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions):
-
-```js
-() => {};
-```
-
 ### Async Function
 
 An [async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) is declared with `async` in front of the function:
@@ -58,74 +47,65 @@ An [async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 async function () {};
 ```
 
-Which is similar to the async arrow function:
+Which is similar to the async [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions):
 
 ```js
 async () => {};
 ```
 
-When an async function is called, it returns a `Promise`:
+When an async function is invoked, it returns a `Promise`:
 
 ```js
-const a = async () => {};
-a() instanceof Promise; // true
+(async () => {})() instanceof Promise; // true
 ```
 
 ## Comparison
 
 ### Fulfilled
 
-Async/await is syntactical sugar for promises:
+Async/await is syntactical sugar that makes promises look synchronous (but the code is still async):
 
 ```js
-const promise = Promise.resolve('value');
-
-async () => {
-  const result = await promise;
-  console.log(result);
-};
+(async () => {
+  const result = await Promise.resolve('value');
+  console.log(result); // 'value'
+})();
 ```
 
-The above can be transpiled to the following code using promises:
+This is the same thing as:
 
 ```js
-const promise = Promise.resolve('value');
-
-() => {
-  promise.then(result => {
-    console.log(result);
+(() => {
+  Promise.resolve('value').then(result => {
+    console.log(result); // 'value'
   });
-};
+})();
 ```
 
-Think of `await` as the [`then`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) method in the chain (for a fulfilled promise).
+For a fulfilled promise, you can think of `await` as the [`then`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) in the method chain.
 
 ### Rejected
 
-Rejected promises are handled with [try/catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch):
+When a promise is rejected, it can be handled with an [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) inside an async function:
 
 ```js
-const promise = Promise.reject('reason');
-
-async () => {
+(async () => {
   try {
-    await promise;
+    await Promise.reject('reason');
   } catch (error) {
-    console.log(error);
+    console.error(error); // 'reason'
   }
-};
+})();
 ```
 
-And the above can be transpiled to the following code using promises:
+This is the same thing as:
 
 ```js
-const promise = Promise.reject('reason');
-
-() => {
-  promise.catch(error => {
-    console.log(error);
+(() => {
+  Promise.reject('reason').catch(error => {
+    console.error(error); // 'reason'
   });
-};
+})();
 ```
 
-The difference here is that the async/await `catch` looks synchronous even though the code is asynchronous.
+Even though async/await `catch` looks synchronous, the code is asynchronous.
