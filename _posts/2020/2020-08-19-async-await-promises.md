@@ -2,12 +2,14 @@
 layout: post
 title: Explaining async/await using promises
 date: 2020-08-19 21:46:46
-updated: 2020-11-09 21:13:08
+updated: 2020-11-10 19:15:50
 excerpt: Comparing how JavaScript async/await works using promises.
 categories: javascript async-await promise
 ---
 
 ## Promise
+
+### Resolve
 
 Calling [`Promise.resolve`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve) with a value:
 
@@ -23,13 +25,15 @@ new Promise(resolve => {
 });
 ```
 
-In terms of [`Promise.reject`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject):
+### Reject
+
+Calling [`Promise.reject`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject) with a reason:
 
 ```js
 Promise.reject('reason');
 ```
 
-It's similar except the rejected reason is passed as the 2nd argument of the callback function:
+Is the same as instantiating a `Promise` with a _rejected_ reason in the callback function:
 
 ```js
 new Promise((resolve, reject) => {
@@ -63,7 +67,7 @@ When an async function is invoked, it returns a `Promise`:
 
 ### Fulfilled
 
-Async/await is syntactical sugar that makes promises look synchronous (but the code is still async):
+Async/await is the syntactical sugar that makes promises look synchronous (but it's actually not):
 
 ```js
 (async () => {
@@ -72,28 +76,26 @@ Async/await is syntactical sugar that makes promises look synchronous (but the c
 })();
 ```
 
-This is the same thing as:
+This is equivalent to:
 
 ```js
-(() => {
-  Promise.resolve('value').then(result => {
-    console.log(result); // 'value'
-  });
-})();
+Promise.resolve('value').then(result => {
+  console.log(result); // 'value'
+});
 ```
 
-For a fulfilled promise, you can think of `await` as the [`then`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) in the method chain.
+For a fulfilled promise, you can think of `await` as the [`then()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) method in the promise chain.
 
 ### Rejected
 
-When a promise is rejected, it can be handled with an [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) inside an async function:
+When a promise is rejected inside an async function, you can handle it with a [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch):
 
 ```js
 (async () => {
   try {
     await Promise.reject('reason');
   } catch (error) {
-    console.error(error); // 'reason'
+    console.log(error); // 'reason'
   }
 })();
 ```
@@ -101,11 +103,9 @@ When a promise is rejected, it can be handled with an [try...catch](https://deve
 This is the same thing as:
 
 ```js
-(() => {
-  Promise.reject('reason').catch(error => {
-    console.error(error); // 'reason'
-  });
-})();
+Promise.reject('reason').catch(error => {
+  console.log(error); // 'reason'
+});
 ```
 
-Even though async/await `catch` looks synchronous, the code is asynchronous.
+For a rejected promise, you can think of the `catch` block as the [`catch()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch) method in the promise chain.
