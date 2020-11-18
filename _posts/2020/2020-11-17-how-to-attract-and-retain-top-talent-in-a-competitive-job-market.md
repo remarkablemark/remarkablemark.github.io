@@ -3,7 +3,8 @@ layout: post
 title: How to attract and retain top tech talent in a competitive job market
 author: Artur Meyster
 date: 2020-11-17 22:32:27
-excerpt: How to attract and retain top tech talent in a competitive job market.
+updated: 2020-11-17 22:45:08
+excerpt: Tips and tricks on how to attract and retain top tech talent in a competitive job market. Guest post by Artur Meyster.
 categories: job hiring organization tech
 image: /assets/images/2020/2020-11-17-man-in-suit-carrying-briefcase.jpg
 ---
