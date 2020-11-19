@@ -5,7 +5,7 @@ date: 2020-01-01 20:39:32
 updated: 2020-09-14 19:26:23
 excerpt: A parable that makes the connection between sailing and living.
 categories: sailing parable life self-help story philosophy psychology
-image: /images/2020/01-01-rowboat.jpg
+image: /assets/images/2020/01-01-rowboat.jpg
 ---
 
 If I were to use a metaphor to describe _life_, then it would be the act of _sailing_. We all begin in a small boat with no sails or fancy equipment in the middle of the sea.
