@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 'Git: how to revert merge commit'
+title: Git revert merge commit
 date: 2020-05-20 20:10:50
-excerpt: How to revert a merge commit with Git.
-categories: git bash
+excerpt: How to revert a merge commit in Git.
+categories: git revert commit
 ---
 
 > **TL;DR**: `git revert -m 1 <commit>`
