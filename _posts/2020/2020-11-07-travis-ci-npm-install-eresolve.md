@@ -2,9 +2,14 @@
 layout: post
 title: 'Travis CI: npm install ERESOLVE'
 date: 2020-11-07 21:03:15
+updated: 2020-11-28 15:18:12
 excerpt: How to fix Travis CI build error when npm install fails due to "ERESOLVE unable to resolve dependency tree".
 categories: travis ci build npm error
 ---
+
+<!--email_off-->
+
+## Travis CI
 
 I received an npm install error for my [Travis CI build](https://travis-ci.org/github/remarkablemark/phonetic-alphabet-converter/builds/742165128) after upgrading my dependencies:
 
@@ -55,3 +60,13 @@ So I ended up [disabling npm cache](https://docs.travis-ci.com/user/languages/ja
 cache:
   npm: false
 ```
+
+## Local
+
+To fix this error locally, delete `node_modules` and reinstall:
+
+```sh
+$ rm -rf node_modules && npm i
+```
+
+<!--/email_off-->
