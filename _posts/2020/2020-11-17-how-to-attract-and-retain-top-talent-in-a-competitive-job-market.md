@@ -3,7 +3,7 @@ layout: post
 title: How to attract and retain top tech talent in a competitive job market
 author: Artur Meyster
 date: 2020-11-17 22:32:27
-updated: 2020-11-30 21:35:38
+updated: 2020-11-30 21:42:31
 excerpt: Tips and tricks on how to attract and retain top tech talent in a competitive job market. Guest post by Artur Meyster.
 categories: job hiring organization tech
 image: /assets/images/2020/2020-11-17-man-in-suit-carrying-briefcase.jpg
@@ -28,6 +28,12 @@ Employers will need to come up with strategies to not only attract prospects, bu
 
 ## Be Flexible and Let Employees Work from Home
 
+![MacBook Pro on brown wooden table]({{ "/images/2020/2020-11-30-macbook-pro.jpg" | prepend: site.assets_path }})
+
+{:.credit}
+
+> Photo by [Aleks Marinkovic](https://unsplash.com/@aleks_marinkovic) on [Unsplash](https://unsplash.com/photos/j3aqw_0cNQM)
+
 Flexibility is a perk that can help employees:
 
 - Find work-life balance
@@ -44,6 +50,12 @@ For employers, remote work has become the new norm and companies who embrace it 
 
 ## Make Learning a Part of Your Brand
 
+!["LOVE TO LEARN" pencil signage on wall]({{ "/images/2020/2020-11-30-love-to-learn.jpg" | prepend: site.assets_path }})
+
+{:.credit}
+
+> Photo by [Tim Mossholder](https://unsplash.com/@timmossholder) on [Unsplash](https://unsplash.com/photos/WE_Kv_ZB1l0)
+
 To engage employees, one must make learning a part of the company's brand. It’s never too early or too late to invest in your employees. For tech workers, learning new skills, knowledge, and behaviors are essential. You can provide or sponsor on-site training, [online courses](https://onlinedegreehero.com/), and/or coding bootcamps to help them master new skills.
 
 With a tuition reimbursement program, employees can enroll in workshops and attend conferences. [Coding schools](https://careerkarma.com/locations/) and bootcamps are also an option to pick up skills like cloud computing.
@@ -52,11 +64,23 @@ At bootcamps like [Coding Dojo](https://careerkarma.com/schools/coding-dojo/) an
 
 ## Improve Employees’ Well-Being at the Workplace
 
+![Woman standing surrounded by exercise equipment]({{ "/images/2020/2020-11-30-dumbbell-rack.jpg" | prepend: site.assets_path }})
+
+{:.credit}
+
+> Photo by [Danielle Cerullo](https://unsplash.com/@dncerullo) on [Unsplash](https://unsplash.com/photos/CQfNt66ttZM)
+
 With great responsibility comes pressure and stress. Hence, many companies are seeking to improve employee wellness at the workplace. Google, for example, provides free catering and gym classes to their employees. Other companies, like Samsung, provide spa sessions as a means to help their employees relax.
 
 Ultimately, the perks that you offer should follow your company’s brand and values. It doesn’t have to be grandiose and it can be something as simple as periodic massages. The purpose of perks is to make employees feel cared for and comfortable at the workplace. This can improve employee happiness, which improves retention, and help sell your company to future prospects.
 
 ## Provide Positive Feedback to Make Workers Feel Valued
+
+![Hands in front of a laptop]({{ "/images/2020/2020-11-30-feedback.jpg" | prepend: site.assets_path }})
+
+{:.credit}
+
+> Photo by [Headway](https://unsplash.com/@headwayio) on [Unsplash](https://unsplash.com/photos/5QgIuuBxKwM)
 
 Employees can lose morale when they feel like they’re not being listened to. Don't let that happen to your organization. Listen and encourage feedback whenever possible. When employees are unclear about company goals, their effectiveness will drop. Respect, clarity, and vision are facets that keep employees engaged. When employees feel like they’re part of something larger, they’ll work harder to accomplish those goals. Inevitably, this leads better performance and results.
 
@@ -64,9 +88,21 @@ To make workers feel special, you need to communicate with them on a personal le
 
 ## Create an Environment Conducive to Growth
 
+![Green leafed indoor plant in white vase]({{ "/images/2020/2020-11-30-plant.jpg" | prepend: site.assets_path }})
+
+{:.credit}
+
+> Photo by [Dose Media](https://unsplash.com/@dose) on [Unsplash](https://unsplash.com/photos/viCdVl_PGHc)
+
 Everyone desires a job that’s meaningful. Offering a good salary may increase your hiring rate, but it's the growth opportunities and vision that attracts and keeps the best. Promote employees when they’re ready and don’t make work-life monotonous. Provide training and personal development to help them improve their skills (both hard and soft). Candidates won't think twice about joining you if you can offer them a meaningful opportunity.
 
 ## Involve Tech-Savvy Workers in the Hiring Process
+
+![Two people shaking hands]({{ "/images/2020/2020-11-30-handshake.jpg" | prepend: site.assets_path }})
+
+{:.credit}
+
+> Photo by [Cytonn Photography](https://unsplash.com/@cytonn_photography) on [Unsplash](https://unsplash.com/photos/n95VMLxqM2I)
 
 One way to attract talented people is to involve your engineering team in the hiring process. Hiring is both an art and a science. As a result, you want as much signals as possible to know whether a person's a good fit for your team. It’s cheaper to interview a lot of candidates, than to fire a bad one. Therefore, come up with a strong and replicable hiring process and trust your team to follow and improve it. Another benefit of having your employees conduct interviews is that the interviewees can interact with the people they may work with later on. A successful interview is one where both parties gain something from it.
 
