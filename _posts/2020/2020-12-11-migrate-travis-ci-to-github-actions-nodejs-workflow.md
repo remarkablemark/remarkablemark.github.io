@@ -38,10 +38,10 @@ First, make the directory `.github/workflows`:
 $ mkdir -p .github/workflows
 ```
 
-Create the workflow file `.github/workflows/nodejs.yml`:
+Create the workflow file `.github/workflows/build.yml`:
 
 ```sh
-$ touch .github/workflows/nodejs.yml
+$ touch .github/workflows/build.yml
 ```
 
 Add the Node.js workflow (inspired by the [template](https://docs.github.com/en/free-pro-team@latest/actions/guides/building-and-testing-nodejs#starting-with-the-nodejs-workflow-template)):
@@ -49,7 +49,7 @@ Add the Node.js workflow (inspired by the [template](https://docs.github.com/en/
 {% raw %}
 
 ```yml
-# .github/workflows/nodejs.yml
+# .github/workflows/build.yml
 name: build
 on: [push]
 jobs:
