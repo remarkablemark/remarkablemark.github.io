@@ -2,15 +2,18 @@
 layout: post
 title: Migrate Travis CI to GitHub Actions (Node.js)
 date: 2020-12-11 20:51:00
+updated: 2020-12-12 16:22:54
 excerpt: How to migrate from Travis CI to GitHub Actions for a Node.js workflow.
 categories: travis ci github nodejs npm
 ---
 
-Given a Node.js project on [GitHub](https://github.com/), we'll go over how to migrate the continuous integration from [Travis CI](https://travis-ci.org/) to [GitHub Actions](https://github.com/features/actions).
+<!--email_off-->
+
+Given a Node.js project on [GitHub](https://github.com/), we'll go over how to migrate from [Travis CI](https://travis-ci.org/) to [GitHub Actions](https://github.com/features/actions) for the continuous integration build.
 
 ## Travis CI
 
-Given the `.travis.yml`:
+Given `.travis.yml`:
 
 ```yml
 # .travis.yml
@@ -35,7 +38,7 @@ First, make the directory `.github/workflows`:
 $ mkdir -p .github/workflows
 ```
 
-Then create the workflow file `.github/workflows/nodejs.yml`:
+Create the workflow file `.github/workflows/nodejs.yml`:
 
 ```sh
 $ touch .github/workflows/nodejs.yml
@@ -47,7 +50,7 @@ Add the Node.js workflow (inspired by the [template](https://docs.github.com/en/
 
 ```yml
 # .github/workflows/nodejs.yml
-name: Node.js CI
+name: build
 on: [push]
 jobs:
   build:
@@ -55,8 +58,6 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
-    env:
-      CI: true
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
@@ -86,7 +87,7 @@ Here's a breakdown of what each YAML field does.
 It's optional and you can name it whatever you like:
 
 ```yml
-name: My Node.js Continuous Integration
+name: Node.js CI
 ```
 
 ### on
@@ -143,23 +144,6 @@ strategy:
     node-version: [12.19.0, 14.x, 15]
 ```
 
-### env
-
-[`env`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idenv) sets the environment variables for all steps in a job.
-
-In our example, we set `CI=true` for the `build` job since that's the [default environment variable set in Travis CI](https://docs.travis-ci.com/user/environment-variables/#default-environment-variables):
-
-```yml
-jobs:
-  build:
-    env:
-      CI: true
-```
-
-Here's an additional note from the [official docs](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idenv):
-
-> You can also set environment variables for the entire workflow or an individual step. For more information, see [`env`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#env) and [`jobs.<job_id>.steps.env`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsenv).
-
 ### steps
 
 [`steps`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idsteps) are the tasks of a job.
@@ -213,8 +197,24 @@ steps:
   - run: npm run build --if-present
 ```
 
+### env
+
+[`env`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idenv) sets the environment variables for the entire workflow or an individual step. See [`env`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#env) and [`jobs.<job_id>.steps.env`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsenv).
+
+Although [Travis CI sets default environment variables](https://docs.travis-ci.com/user/environment-variables/#default-environment-variables), we didn't set `CI=true` for our `build` job since `actions/checkout@v2` does it for us:
+
+```yml
+jobs:
+  build:
+    env:
+      CI: true
+```
+
 ## Resources
 
 - [GitHub Actions](https://github.com/features/actions)
 - [Building and testing Node.js](https://docs.github.com/en/free-pro-team@latest/actions/guides/building-and-testing-nodejs)
 - [Actions Marketplace](https://github.com/marketplace?type=actions)
+- [Adding a workflow status badge](https://docs.github.com/en/free-pro-team@latest/actions/managing-workflow-runs/adding-a-workflow-status-badge)
+
+<!--/email_off-->
