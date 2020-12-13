@@ -2,7 +2,7 @@
 layout: post
 title: Lint commit with GitHub Actions
 date: 2020-12-12 17:53:17
-updated: 2020-12-12 19:43:47
+updated: 2020-12-12 19:59:34
 excerpt: How to set up and run commitlint with GitHub Actions.
 categories: commitlint github nodejs git
 ---
@@ -15,8 +15,10 @@ I added the [step](https://docs.github.com/en/free-pro-team@latest/actions/refer
 
 ```yml
 # .github/workflows/build.yml
+on: [push]
 jobs:
   build:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
