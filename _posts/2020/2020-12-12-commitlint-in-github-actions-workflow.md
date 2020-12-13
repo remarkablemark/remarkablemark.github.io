@@ -1,9 +1,10 @@
 ---
 layout: post
-title: Run commitlint in GitHub Actions
+title: Lint commit with GitHub Actions
 date: 2020-12-12 17:53:17
-excerpt: How to set up and run commitlint in GitHub Actions workflow.
-categories: commitlint github nodejs
+updated: 2020-12-12 19:43:47
+excerpt: How to set up and run commitlint with GitHub Actions.
+categories: commitlint github nodejs git
 ---
 
 ## Problem
