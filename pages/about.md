@@ -17,6 +17,8 @@ To submit a blog post, please email [mark@remarkablemark.org](mailto:mark@remark
 
 > We don't accept **sponsored content** and we don't accept **crosslink requests**.
 
+Our technical posts follow the [Google technical writing style](https://developers.google.com/tech-writing).
+
 <style>
   #main img { height: 42px; }
   #main img:active, #main img:focus, #main img:hover { opacity: .7; }
