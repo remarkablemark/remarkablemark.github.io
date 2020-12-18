@@ -2,7 +2,8 @@
 layout: post
 title: React versus Vue comparison
 date: 2020-12-17 17:08:50
-excerpt: Comparison between React, Vue 2, and Vue 3.
+updated: 2020-12-17 22:38:06
+excerpt: Code comparison between React, Vue 2, and Vue 3.
 categories: react vue
 ---
 
@@ -164,7 +165,6 @@ Passing props:
 Component with [data](https://vuejs.org/v2/api/#data):
 
 ```js
-// prop.js
 Vue.component('prop', {
   data() {
     return {
