@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Migrate Travis CI to GitHub Actions (Node.js)
+title: Migrate Travis CI to GitHub Actions for Node.js
 date: 2020-12-11 20:51:00
-updated: 2020-12-12 16:22:54
-excerpt: How to migrate from Travis CI to GitHub Actions for a Node.js workflow.
+updated: 2020-12-12 16:01:08
+excerpt: How to migrate from Travis CI to GitHub Actions for a Node.js project.
 categories: travis ci github nodejs npm
 ---
 
 <!--email_off-->
 
-Given a Node.js project on [GitHub](https://github.com/), we'll go over how to migrate from [Travis CI](https://travis-ci.org/) to [GitHub Actions](https://github.com/features/actions) for the continuous integration build.
+This article will go over how to migrate from [Travis CI](http://b.remarkabl.org/travis-ci) to [GitHub Actions](http://b.remarkabl.org/github-actions) for a [Node.js](http://b.remarkabl.org/nodejs-site) project on [GitHub](http://b.remarkabl.org/github-site).
 
 ## Travis CI
 
@@ -44,7 +44,7 @@ Create the workflow file `.github/workflows/build.yml`:
 $ touch .github/workflows/build.yml
 ```
 
-Add the Node.js workflow (inspired by the [template](https://docs.github.com/en/free-pro-team@latest/actions/guides/building-and-testing-nodejs#starting-with-the-nodejs-workflow-template)):
+And add the Node.js workflow (inspired by the [template](https://docs.github.com/en/free-pro-team@latest/actions/guides/building-and-testing-nodejs#starting-with-the-nodejs-workflow-template)):
 
 {% raw %}
 
@@ -82,9 +82,7 @@ Here's a breakdown of what each YAML field does.
 
 ### name
 
-[`name`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#name) is the workflow name.
-
-It's optional and you can name it whatever you like:
+[`name`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#name) is the workflow name. It's optional and you can name it whatever you like:
 
 ```yml
 name: Node.js CI
@@ -92,15 +90,15 @@ name: Node.js CI
 
 ### on
 
-[`on`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#on) is the event that triggers the workflow.
+[`on`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#on) is the event that triggers the workflow. In our example, git `push` triggers our workflow.
 
-In our example, git `push` triggers our workflow. Accordingly, to add the `pull_request` event:
+To add the `pull_request` event:
 
 ```yml
 on: [push, pull_request]
 ```
 
-Which is equivalent to:
+Which is the same thing as:
 
 ```yml
 on:
@@ -112,9 +110,7 @@ on:
 
 ### jobs
 
-[`jobs`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobs) are the jobs that the workflow runs.
-
-In our example, we have a single job named `build`:
+[`jobs`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobs) are the jobs that the workflow runs. In our example, we have a single job named `build`:
 
 ```yml
 jobs:
@@ -124,9 +120,7 @@ jobs:
 
 ### runs-on
 
-[`runs-on`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on) is the environment that the workflow runs on.
-
-To specify a specific OS version:
+[`runs-on`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on) is the environment that the workflow runs on. To specify an OS version:
 
 ```yml
 runs-on: ubuntu-18.04
@@ -134,9 +128,7 @@ runs-on: ubuntu-18.04
 
 ### strategy.matrix
 
-[`strategy.matrix`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstrategymatrix) is the build matrix.
-
-In our example, we're running a job for a single node version. To run jobs for multiple node versions:
+[`strategy.matrix`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstrategymatrix) is the build matrix. In our example, we're running a job for a single node version. To run jobs for multiple node versions:
 
 ```yml
 strategy:
@@ -146,9 +138,7 @@ strategy:
 
 ### steps
 
-[`steps`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idsteps) are the tasks of a job.
-
-In our example, we're using the GitHub Actions:
+[`steps`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idsteps) are the tasks of a job. In our example, we're using the GitHub Actions:
 
 - [Checkout](https://github.com/marketplace/actions/checkout)
 - [Setup Node.js environment](https://github.com/marketplace/actions/setup-node-js-environment)
@@ -169,7 +159,7 @@ steps:
 
 {% endraw %}
 
-`coverallsapp/github-action` sends the test coverage report to [Coveralls](https://coveralls.io/):
+`coverallsapp/github-action` sends the coverage report to [Coveralls](https://coveralls.io/):
 
 {% raw %}
 
@@ -184,13 +174,11 @@ steps:
 
 ### steps.run
 
-[`steps.run`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsrun) runs the commands.
+[`steps.run`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsrun) runs the commands. The commands can be [npm scripts](https://docs.npmjs.com/cli/v6/commands/npm-run-script/) from `package.json` or other bash commands.
 
-The commands can be [npm scripts](https://docs.npmjs.com/cli/v6/commands/npm-run-script/) from `package.json` or other bash commands.
+> `npm`, `yarn`, and `npx` can be used since we're using `actions/setup-node@v1`.
 
-> `npm`, `yarn`, and `npx` are available to use since we have Node.js set up.
-
-The `--if-present` flag runs the script if it exists and skips it if it doesn't:
+`--if-present` runs the script if it exists:
 
 ```yml
 steps:
@@ -201,7 +189,7 @@ steps:
 
 [`env`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idenv) sets the environment variables for the entire workflow or an individual step. See [`env`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#env) and [`jobs.<job_id>.steps.env`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsenv).
 
-Although [Travis CI sets default environment variables](https://docs.travis-ci.com/user/environment-variables/#default-environment-variables), we didn't set `CI=true` for our `build` job since `actions/checkout@v2` does it for us:
+Although [Travis CI sets default environment variables](https://docs.travis-ci.com/user/environment-variables/#default-environment-variables), we don't have to set `CI=true` for our job since `actions/checkout@v2` does it for us:
 
 ```yml
 jobs:
@@ -212,7 +200,7 @@ jobs:
 
 ## Resources
 
-- [GitHub Actions](https://github.com/features/actions)
+- [GitHub Actions](http://b.remarkabl.org/github-actions)
 - [Building and testing Node.js](https://docs.github.com/en/free-pro-team@latest/actions/guides/building-and-testing-nodejs)
 - [Actions Marketplace](https://github.com/marketplace?type=actions)
 - [Adding a workflow status badge](https://docs.github.com/en/free-pro-team@latest/actions/managing-workflow-runs/adding-a-workflow-status-badge)
