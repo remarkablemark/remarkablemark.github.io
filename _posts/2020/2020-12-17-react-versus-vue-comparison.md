@@ -1,10 +1,10 @@
 ---
 layout: post
-title: React versus Vue comparison
+title: 'React versus Vue: A Code Comparison'
 date: 2020-12-17 17:08:50
-updated: 2020-12-17 22:38:06
+updated: 2020-12-25 15:47:49
 excerpt: Code comparison between React, Vue 2, and Vue 3.
-categories: react vue
+categories: react vue javascript
 ---
 
 Comparison between [React](https://reactjs.org/), [Vue 2](https://vuejs.org/), and [Vue 3](https://v3.vuejs.org/):
@@ -164,6 +164,8 @@ Passing props:
 
 Component with [data](https://vuejs.org/v2/api/#data):
 
+{% raw %}
+
 ```js
 Vue.component('prop', {
   data() {
@@ -175,7 +177,11 @@ Vue.component('prop', {
 });
 ```
 
+{% endraw %}
+
 Component with [props](https://vuejs.org/v2/api/#props):
+
+{% raw %}
 
 ```js
 // prop.js
@@ -184,6 +190,8 @@ Vue.component('prop', {
   template: '<p>Hello, {{ name }}!</p>',
 });
 ```
+
+{% endraw %}
 
 ```html
 <!-- prop.html -->
@@ -194,6 +202,8 @@ Vue.component('prop', {
 
 Component with [data](https://v3.vuejs.org/api/options-data.html#data-2):
 
+{% raw %}
+
 ```js
 Vue.createApp({}).component('prop', {
   data() {
@@ -205,7 +215,11 @@ Vue.createApp({}).component('prop', {
 });
 ```
 
+{% endraw %}
+
 Component with [props](https://v3.vuejs.org/api/options-data.html#props):
+
+{% raw %}
 
 ```js
 // prop.js
@@ -215,12 +229,16 @@ Vue.createApp({}).component('prop', {
 });
 ```
 
+{% endraw %}
+
 ```html
 <!-- prop.html -->
 <prop name="prop"></prop>
 ```
 
 App with data and component with props:
+
+{% raw %}
 
 ```js
 // prop.js
@@ -241,6 +259,8 @@ app.component('prop', {
 
 app.mount('#app');
 ```
+
+{% endraw %}
 
 ```html
 <!-- prop.html -->
@@ -292,6 +312,8 @@ class State extends React.Component {
 
 Updating data:
 
+{% raw %}
+
 ```js
 Vue.component('state', {
   data() {
@@ -303,9 +325,13 @@ Vue.component('state', {
 });
 ```
 
+{% endraw %}
+
 ### Vue 3
 
 Updating [data](https://v3.vuejs.org/guide/data-methods.html#data-properties):
+
+{% raw %}
 
 ```js
 Vue.createApp({}).component('state', {
@@ -317,6 +343,8 @@ Vue.createApp({}).component('state', {
   template: '<button @click="count += 1">Clicks: {{ count }}</button>',
 });
 ```
+
+{% endraw %}
 
 ## Render
 
