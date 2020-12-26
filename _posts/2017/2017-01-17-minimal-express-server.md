@@ -1,54 +1,89 @@
 ---
 layout: post
 title: Minimal Express Server
-date: 2017-01-17 19:06:00 -4000
-excerpt: How to set up a minimal Node.js server using the Express web framework.
+date: 2017-01-17 19:06:00
+updated: 2020-12-26 16:27:31
+excerpt: How to set up a minimal Express web server on Node.js.
 categories: server express web nodejs javascript
 ---
 
-Let's go over how to set up a minimal [Express](https://b.remarkabl.org/express-js) server. You'll need [Node.js installed](https://b.remarkabl.org/1Rpc056).
+This article goes over how to set up a minimal [Express](https://b.remarkabl.org/express-js) web server.
 
-First install [express](https://www.npmjs.com/package/express):
+## Prerequisites
+
+- [Node.js](http://b.remarkabl.org/nodejs-site)
+
+## Setup
+
+Install [express](https://www.npmjs.com/package/express):
 
 ```sh
 $ npm install express
 ```
 
-Then create `server.js`:
+Create `index.js`:
 
 ```sh
-$ touch server.js
+$ touch index.js
 ```
 
-Import the module and initialize your app:
+Require the module:
 
 ```js
-// server.js
-var express = require('express');
-var app = express();
+const express = require('express');
 ```
 
-Then create the index route:
+Then initialize the app:
 
 ```js
-app.get('/', function(request, response, next) {
-    response.send('<h1>Hello, world!</h1>');
+const app = express();
+```
+
+Create the index route:
+
+```js
+app.get('/', (req, res, next) => {
+  res.send('<h1>Hello, Express!</h1>');
 });
 ```
 
-Make sure that your server is listening to a port:
+> `req` and `res` are abbreviations of **request** and **response**, respectively.
+
+Listen on port `3000`:
 
 ```js
-var PORT = 3000;
-app.listen(PORT, function() {
-    console.log('http://localhost:' + PORT);
-});
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Listening on port ${port}`));
 ```
 
-And now you can run the server:
+Run the server:
 
 ```sh
-$ node server.js
+$ node index.js
 ```
 
-Your site should be up at <a href="http://localhost:3000" target="_blank" data-proofer-ignore>http://localhost:3000</a> (open the url in a browser). And that's it!
+Go to <a href="http://localhost:3000" target="_blank" data-proofer-ignore>http://localhost:3000</a> to access the site.
+
+## Code
+
+```js
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res, next) => {
+  res.send('<h1>Hello, Express!</h1>');
+});
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Listening on port ${port}`));
+```
+
+## Demo
+
+<iframe height="400px" width="100%" src="https://repl.it/@remarkablemark/express?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+The [Repl.it](https://repl.it/@remarkablemark/express) includes:
+
+- [morgan](https://www.npmjs.com/package/morgan) (HTTP request logger)
+- route not found (404 error)
+- error handling (500 internal server error)
