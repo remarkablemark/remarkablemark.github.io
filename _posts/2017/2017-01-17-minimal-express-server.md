@@ -2,7 +2,7 @@
 layout: post
 title: Minimal Express Server
 date: 2017-01-17 19:06:00
-updated: 2020-12-26 16:27:31
+updated: 2020-12-26 16:53:31
 excerpt: How to set up a minimal Express web server on Node.js.
 categories: server express web nodejs javascript
 ---
@@ -13,7 +13,7 @@ This article goes over how to set up a minimal [Express](https://b.remarkabl.org
 
 - [Node.js](http://b.remarkabl.org/nodejs-site)
 
-## Setup
+## Server
 
 Install [express](https://www.npmjs.com/package/express):
 
@@ -66,6 +66,18 @@ Go to <a href="http://localhost:3000" target="_blank" data-proofer-ignore>http:/
 
 ## Code
 
+`package.json`:
+
+```json
+{
+  "dependencies": {
+    "express": "latest"
+  }
+}
+```
+
+`index.js`:
+
 ```js
 const express = require('express');
 const app = express();
@@ -82,7 +94,7 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 
 <iframe height="400px" width="100%" src="https://repl.it/@remarkablemark/express?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-The [Repl.it](https://repl.it/@remarkablemark/express) includes:
+The [Repl.it](https://repl.it/@remarkablemark/express) demo includes:
 
 - [morgan](https://www.npmjs.com/package/morgan) (HTTP request logger)
 - route not found (404 error)
