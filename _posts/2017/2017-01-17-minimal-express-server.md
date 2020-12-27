@@ -11,7 +11,7 @@ This article goes over how to set up a minimal [Express](https://b.remarkabl.org
 
 ## Prerequisites
 
-- [Node.js](http://b.remarkabl.org/nodejs-site)
+- [Node.js](https://b.remarkabl.org/nodejs-site)
 
 ## Server
 
