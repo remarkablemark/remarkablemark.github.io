@@ -9,7 +9,7 @@ categories: travis ci github nodejs npm
 
 <!--email_off-->
 
-This article will go over how to migrate from [Travis CI](http://b.remarkabl.org/travis-ci) to [GitHub Actions](http://b.remarkabl.org/github-actions) for a [Node.js](http://b.remarkabl.org/nodejs-site) project on [GitHub](http://b.remarkabl.org/github-site).
+This article will go over how to migrate from [Travis CI](https://b.remarkabl.org/travis-ci) to [GitHub Actions](https://b.remarkabl.org/github-actions) for a [Node.js](https://b.remarkabl.org/nodejs-site) project on [GitHub](https://b.remarkabl.org/github-site).
 
 ## Travis CI
 
@@ -200,7 +200,7 @@ jobs:
 
 ## Resources
 
-- [GitHub Actions](http://b.remarkabl.org/github-actions)
+- [GitHub Actions](https://b.remarkabl.org/github-actions)
 - [Building and testing Node.js](https://docs.github.com/en/free-pro-team@latest/actions/guides/building-and-testing-nodejs)
 - [Actions Marketplace](https://github.com/marketplace?type=actions)
 - [Adding a workflow status badge](https://docs.github.com/en/free-pro-team@latest/actions/managing-workflow-runs/adding-a-workflow-status-badge)
