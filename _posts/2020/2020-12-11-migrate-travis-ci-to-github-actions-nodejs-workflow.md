@@ -2,7 +2,7 @@
 layout: post
 title: Migrate Travis CI to GitHub Actions for Node.js
 date: 2020-12-11 20:51:00
-updated: 2020-12-12 16:01:08
+updated: 2020-12-28 15:10:43
 excerpt: How to migrate from Travis CI to GitHub Actions for a Node.js project.
 categories: travis ci github nodejs npm
 ---
@@ -200,6 +200,7 @@ jobs:
 
 ## Resources
 
+- [Migrating from Travis CI to GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions)
 - [GitHub Actions](https://b.remarkabl.org/github-actions)
 - [Building and testing Node.js](https://docs.github.com/en/free-pro-team@latest/actions/guides/building-and-testing-nodejs)
 - [Actions Marketplace](https://github.com/marketplace?type=actions)
