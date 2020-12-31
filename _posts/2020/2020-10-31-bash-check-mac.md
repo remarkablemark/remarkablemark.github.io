@@ -2,7 +2,8 @@
 layout: post
 title: Check OS is Mac in Bash
 date: 2020-10-31 21:44:56
-excerpt: How to check that your operating system is macOS in Bash or Shell.
+updated: 2020-12-31 16:28:47
+excerpt: How to check that your OS (operating system) is macOS in Bash or Shell.
 categories: bash shell mac
 ---
 
@@ -13,11 +14,11 @@ $ echo $OSTYPE
 darwin18.7.0
 ```
 
-As you can see, it starts with `darwin`.
+You will notice it contains `darwin`.
 
 ## Conditional
 
-To check using an [if statement](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-6.html):
+To check macOS using an [if statement](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-6.html):
 
 ```sh
 if [[ $OSTYPE == 'darwin'* ]]; then
@@ -27,8 +28,17 @@ fi
 
 ## Logical Operator
 
-To check using a one-line logical operator:
+To check macOS using a one-line logical operator:
 
 ```sh
 [[ $OSTYPE == 'darwin'* ]] && echo 'macOS'
+```
+
+## uname
+
+Alternatively, you can check OS type using [`uname`](https://en.wikipedia.org/wiki/Uname):
+
+```sh
+$ uname
+Darwin
 ```
