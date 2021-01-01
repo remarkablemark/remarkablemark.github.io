@@ -2,7 +2,7 @@
 layout: post
 title: Start a static HTTP web server
 date: 2016-09-08 18:48:00
-updated: 2020-12-31 19:18:35
+updated: 2020-12-31 19:27:28
 excerpt: How to start a static HTTP web server using languages like Python, Node.js, Ruby, and PHP.
 categories: http web static http server python node ruby php
 ---
@@ -19,7 +19,8 @@ Did you know it's easy to start an HTTP web server using some of your favorite p
 Create a directory with an HTML file:
 
 ```sh
-mkdir static && cd static
+mkdir static
+cd static
 echo "<h1>Hello, world!</h1>" > index.html
 ```
 
@@ -62,7 +63,7 @@ npx http-server
 View your webpage at `localhost:8080`. To specify the port, use the `-p` flag:
 
 ```sh
-npx http-server -p 1337
+http-server -p 1337
 ```
 
 ## Ruby
