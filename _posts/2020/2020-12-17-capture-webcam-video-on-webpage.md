@@ -2,16 +2,23 @@
 layout: post
 title: Capture webcam video on webpage
 date: 2020-12-17 16:05:23
-excerpt: How to capture webcam video on webpage using HTML5 and JavaScript.
+updated: 2021-01-01 17:05:28
+excerpt: How to capture and stream webcam video on a webpage using HTML5 and JavaScript.
 categories: web video html javascript
 ---
 
-Add [`<video>`](https://developer.mozilla.org/docs/Web/HTML/Element/video) element with the [`autoplay`](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-autoplay) attribute enabled:
+The article goes over how to stream webcam video using HTML5 and JavaScript.
+
+## HTML
+
+Add [`<video>`](https://developer.mozilla.org/docs/Web/HTML/Element/video) with [`autoplay`](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-autoplay) enabled:
 
 ```html
 <!-- index.html -->
 <video autoplay></video>
 ```
+
+## JavaScript
 
 Stream the video media using [`MediaDevices.getUserMedia()`](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia):
 
@@ -24,7 +31,7 @@ navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
 });
 ```
 
-Full example (see [demo](https://webcam-video.remarkablemark.repl.co/) and [code](https://repl.it/@remarkablemark/webcam-video)), which is inspired by the article ["Capture Audio and Video in HTML5"](https://www.html5rocks.com/en/tutorials/getusermedia/intro/):
+## Code
 
 ```html
 <!-- index.html -->
@@ -37,3 +44,29 @@ Full example (see [demo](https://webcam-video.remarkablemark.repl.co/) and [code
   });
 </script>
 ```
+
+## Demo
+
+[Repl.it](https://repl.it/@remarkablemark/webcam-video):
+
+<p>
+<iframe height="400px" width="100%" src="https://repl.it/@remarkablemark/webcam-video?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+</p>
+
+If you get `Requested device not found`, this is because:
+
+- your webcam is disabled.
+
+If you get `Permission denied`, this is because:
+
+- the `<iframe>` isn't able to call `getUserMedia()` due to security permissions, or
+- you [blocked the site from accessing your camera](https://support.google.com/chrome/answer/2693767).
+
+Check out the [demo webpage](https://webcam-video.remarkablemark.repl.co/) instead:
+
+<iframe height="500px" width="100%" src="https://webcam-video.remarkablemark.repl.co/" allow="camera" frameborder="no"></iframe>
+
+## Resources
+
+- [Capture Audio and Video in HTML5](https://www.html5rocks.com/en/tutorials/getusermedia/intro/)
+- [MDN Web Docs: MediaDevices.getUserMedia()](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
