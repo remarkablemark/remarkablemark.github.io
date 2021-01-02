@@ -2,6 +2,7 @@
 layout: post
 title: How to write more
 date: 2020-05-17 21:25:36
+updated: 2021-01-01 21:58:42
 excerpt: Tips and tricks on writing more.
 categories: writing psychology philosophy
 ---
@@ -49,8 +50,8 @@ Find the settings that is conducive to writing and condition yourself to write i
 
 There are two obstacles that every writer faces:
 
-1. [Writer's block](https://en.wikipedia.org/wiki/Writer%27s_block)
-2. [Perfectionism](<https://en.wikipedia.org/wiki/Perfectionism_(psychology)>)
+1. [Writer's block](https://wikipedia.org/wiki/Writer%27s_block)
+2. [Perfectionism](<https://wikipedia.org/wiki/Perfectionism_(psychology)>)
 
 To resolve writer's block, you can:
 
@@ -63,15 +64,15 @@ To overcoming perfectionism, _turn off your self-editing mode_.
 
 > Write first, edit later.
 
-Let your stream of consciousness take over and focus on _quantity over quality_. Follow the [Pareto principle](https://en.wikipedia.org/wiki/Pareto_principle) since most of your writing will suck and that should be a given. However, 20% of your writing will contain gems. So it's a good skill to be able to write more. Set a timer and force yourself to write nonstop.
+Let your stream of consciousness take over and focus on _quantity over quality_. Follow the [Pareto principle](https://wikipedia.org/wiki/Pareto_principle) since most of your writing will suck and that should be a given. However, 20% of your writing will contain gems. So it's a good skill to be able to write more. Set a timer and force yourself to write nonstop.
 
-> "[Perfect is the enemy of the good](https://en.wikipedia.org/wiki/Perfect_is_the_enemy_of_good)"
+> "[Perfect is the enemy of the good](https://wikipedia.org/wiki/Perfect_is_the_enemy_of_good)"
 
 This is something even I struggle with daily (see post "[Perfection and success]({% post_url 2017/2017-02-20-perfection-and-success %})").
 
 ## Work in sprints
 
-This is similar to [quantity over quality](#quantity-over-quality). When you try to do everything at once, it can lead to [perfection paralysis](https://en.wikipedia.org/wiki/Analysis_paralysis). So it's recommended to work in _short bursts_.
+This is similar to [quantity over quality](#quantity-over-quality). When you try to do everything at once, it can lead to [perfection paralysis](https://wikipedia.org/wiki/Analysis_paralysis). So it's recommended to work in _short bursts_.
 
 Some authors who follow this strategy leave their work partially finished so they can come back to it later. This way, _motivation is maintained_ and _burnout is prevented_.
 
@@ -94,7 +95,7 @@ Every individual is unique, so you want to discover the approach that **best fit
 
 ## Gamify the act
 
-[Gamification](https://en.wikipedia.org/wiki/Gamification) can keep us engaged. With the proper rewards and punishments, we can use this technique to keep ourselves committed and on track. Jerry Seinfield does this by forcing himself to [write a joke a day](https://jamesclear.com/stop-procrastinating-seinfeld-strategy).
+[Gamification](https://wikipedia.org/wiki/Gamification) can keep us engaged. With the proper rewards and punishments, we can use this technique to keep ourselves committed and on track. Jerry Seinfeld does this by forcing himself to [write a joke a day](https://jamesclear.com/stop-procrastinating-seinfeld-strategy).
 
 So figure out what your daily activity is going to be and hold yourself accountable so you **don't break the chain**. Write everyday.
 
