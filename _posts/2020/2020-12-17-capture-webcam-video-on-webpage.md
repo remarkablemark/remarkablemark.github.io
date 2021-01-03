@@ -2,7 +2,7 @@
 layout: post
 title: Capture webcam video on webpage
 date: 2020-12-17 16:05:23
-updated: 2021-01-02 20:30:04
+updated: 2021-01-02 20:51:33
 excerpt: How to capture and stream webcam video on a webpage using HTML5 and JavaScript.
 categories: web video html javascript
 ---
@@ -70,3 +70,4 @@ Check out the [demo webpage](https://webcam-video.remarkablemark.repl.co/) inste
 
 - [Capture Audio and Video in HTML5](https://www.html5rocks.com/en/tutorials/getusermedia/intro/)
 - [MDN Web Docs: MediaDevices.getUserMedia()](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
+- [Record microphone audio on webpage]({% post_url 2021/2021-01-02-record-microphone-audio-on-webpage %})
