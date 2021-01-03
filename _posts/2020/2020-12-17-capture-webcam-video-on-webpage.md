@@ -2,7 +2,7 @@
 layout: post
 title: Capture webcam video on webpage
 date: 2020-12-17 16:05:23
-updated: 2021-01-01 17:05:28
+updated: 2021-01-02 20:30:04
 excerpt: How to capture and stream webcam video on a webpage using HTML5 and JavaScript.
 categories: web video html javascript
 ---
@@ -14,7 +14,6 @@ The article goes over how to stream webcam video using HTML5 and JavaScript.
 Add [`<video>`](https://developer.mozilla.org/docs/Web/HTML/Element/video) with [`autoplay`](https://developer.mozilla.org/docs/Web/HTML/Element/video#attr-autoplay) enabled:
 
 ```html
-<!-- index.html -->
 <video autoplay></video>
 ```
 
@@ -23,7 +22,6 @@ Add [`<video>`](https://developer.mozilla.org/docs/Web/HTML/Element/video) with 
 Stream the video media using [`MediaDevices.getUserMedia()`](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia):
 
 ```js
-// script.js
 var constraints = { video: true };
 var video = document.querySelector('video');
 navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
@@ -32,6 +30,8 @@ navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
 ```
 
 ## Code
+
+Full example:
 
 ```html
 <!-- index.html -->
