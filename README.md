@@ -38,7 +38,7 @@ Clone repository:
 
 ```sh
 $ git clone --recursive https://github.com/remarkablemark/remarkablemark.github.io.git
-$ cd $_
+$ cd remarkablemark.github.io.git
 ```
 
 Install dependencies:
