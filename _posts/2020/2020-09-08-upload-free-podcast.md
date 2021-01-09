@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to publish a podcast for free
+title: How to Publish a Podcast for Free
 date: 2020-09-08 20:19:29
 updated: 2020-09-12 21:47:08
 excerpt: How to upload and publish a podcast for free on SoundCloud, Apple, Spotify, Google, Stitcher, and TuneIn.
@@ -43,7 +43,7 @@ For verification to work when submitting your podcast to other directories, make
 
 ![SoundCloud email address displayed]({{ "/images/2020/2020-09-08-soundcloud-settings-content-email-address-displayed.png" | prepend: site.assets_path }})
 
-Check out the help article ["Getting started with podcasting"](Getting started with podcasting) for more information.
+Check out the help article ["Getting started with podcasting"](https://help.soundcloud.com/hc/en-us/articles/115003453807-Getting-started-with-podcasting) for more information.
 
 ## Submit to Directories
 
