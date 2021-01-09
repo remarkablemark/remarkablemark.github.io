@@ -1,8 +1,8 @@
 # [remarkablemark.org](https://b.remarkabl.org/mark)
 
-[Site](https://b.remarkabl.org/mark) of [@remarkablemark](https://b.remarkabl.org/github). Built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/).
+[![Discord](https://img.shields.io/discord/422421589582282752.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/zkS3QDV)
 
-Any [support](#support) is welcome!
+[Site](https://b.remarkabl.org/mark) of [@remarkablemark](https://b.remarkabl.org/github). Built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/). Please [support](#support) this site and join our [Discord](https://discord.gg/zkS3QDV)!
 
 ## Prerequisites
 
@@ -12,14 +12,20 @@ Any [support](#support) is welcome!
 $ ruby --version
 ```
 
-If your version is behind, you can either install ruby with [rbenv](https://github.com/rbenv/rbenv) or [RVM](https://rvm.io/).
+If your version is behind, you can install ruby with [rbenv](https://github.com/rbenv/rbenv) or [RVM](https://rvm.io/).
 
-To install and set up rbenv on macOS:
+### rbenv
+
+Install and set up rbenv on macOS:
 
 ```sh
 $ brew install rbenv
 $ rbenv init
-# restart or open a new shell
+```
+
+Reload or open a new shell:
+
+```sh
 $ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
 $ rbenv install 2.6.0
 $ rbenv local 2.6.0
@@ -38,7 +44,7 @@ Clone repository:
 
 ```sh
 $ git clone --recursive https://github.com/remarkablemark/remarkablemark.github.io.git
-$ cd remarkablemark.github.io.git
+$ cd remarkablemark.github.io
 ```
 
 Install dependencies:
@@ -71,7 +77,7 @@ The server will be running at http://127.0.0.1:4000/:
 $ open http://127.0.0.1:4000/
 ```
 
-Press `CTRL-C` to stop the server.
+To stop the server, press `CTRL-C`.
 
 ### Production Build
 
@@ -92,15 +98,10 @@ $ bundle exec htmlproofer _site
 
 ## Support
 
-Support me here:
-
 - [GitHub Sponsors](https://b.remarkabl.org/github-sponsors)
 - [Patreon](https://b.remarkabl.org/patreon)
 - [Ko-fi](https://b.remarkabl.org/ko-fi)
 - [Liberapay](https://b.remarkabl.org/liberapay)
-
-Check out my merch:
-
 - [Teepsring](https://b.remarkabl.org/teespring)
 
 ## License
