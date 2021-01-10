@@ -6,7 +6,7 @@ excerpt: How to instantiate a PHP class given a fully-qualified class name.
 categories: php
 ---
 
-If you have a variable with a fully qualified [class name](https://www.php.net/manual/en/migration55.new-features.php#migration55.new-features.class-name):
+If you have a variable with a fully qualified [class name](https://www.php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class):
 
 ```php
 $className = MyClass::class;
