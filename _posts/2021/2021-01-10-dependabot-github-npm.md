@@ -2,7 +2,8 @@
 layout: post
 title: Add Dependabot to GitHub for npm
 date: 2021-01-10 15:21:12
-excerpt: How to add Dependabot to automate dependency update for npm project on GitHub.
+updated: 2021-01-10 17:18:57
+excerpt: How to add Dependabot to automate dependency update for npm or Node.js projects on GitHub.
 categories: dependabot github npm
 ---
 
@@ -45,4 +46,4 @@ The commit message will look like:
 build(deps-dev): bump webpack from 4.0.0 to 5.0.0
 ```
 
-The PR description will contain webpack's release notes and commits.
+The PR description will contain webpack's release notes, changelog, and/or commits.
