@@ -93,7 +93,8 @@ Use [HTMLProofer](https://github.com/gjtorikian/html-proofer) to validate HTML o
 
 ```sh
 $ bundle exec jekyll build
-$ bundle exec htmlproofer _site
+$ bundle exec htmlproofer ./_site/
+# bundle exec htmlproofer --http-status-ignore "401,429,999" ./_site/
 ```
 
 ## Support
