@@ -6,4 +6,4 @@ env:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 script:
   - bundle exec jekyll build --safe
-  - bundle exec htmlproofer --http-status-ignore "401,429,999" ./_site/
+  - bundle exec htmlproofer --http-status-ignore "400,401,429,999" ./_site/
