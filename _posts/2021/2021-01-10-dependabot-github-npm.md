@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Add Dependabot to GitHub for npm
+title: Add Dependabot to npm projects
 date: 2021-01-10 15:21:12
 updated: 2021-01-10 17:18:57
-excerpt: How to add Dependabot to automate dependency update for npm or Node.js projects on GitHub.
-categories: dependabot github npm
+excerpt: How to add Dependabot to automate dependency updates for npm or Node.js projects on GitHub.
+categories: dependabot github npm nodejs
 ---
 
 [Dependabot](https://dependabot.com/) automates dependency updates for projects on [GitHub](https://github.com/). We'll go over how to automate dependency updates for npm or Node.js projects.
@@ -18,7 +18,7 @@ $ mkdir -p .github/
 $ touch .github/dependabot.yml
 ```
 
-Add the minimum (required) configuration:
+Add the minimum (_required_) configuration:
 
 ```yml
 # .github/dependabot.yml
