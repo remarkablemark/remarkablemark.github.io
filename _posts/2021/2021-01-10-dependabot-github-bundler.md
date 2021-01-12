@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Add Dependabot to GitHub for bundler
+title: Add Dependabot to bundler projects
 date: 2021-01-10 17:25:55
-excerpt: How to add Dependabot to automate dependency update for bundler or ruby projects on GitHub.
+excerpt: How to add Dependabot to automate dependency updates for bundler or Ruby projects on GitHub.
 categories: dependabot github bundler ruby
 ---
 
@@ -17,7 +17,7 @@ $ mkdir -p .github/
 $ touch .github/dependabot.yml
 ```
 
-Add the minimum (required) configuration:
+Add the minimum (_required_) configuration:
 
 ```yml
 # .github/dependabot.yml
