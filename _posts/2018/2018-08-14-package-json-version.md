@@ -1,13 +1,13 @@
 ---
 layout: post
-title: How to access package.json fields
+title: Get package.json fields
 date: 2018-08-14 19:25:22
-updated: 2020-03-08 20:22:00
-excerpt: package.json fields like "version" can be accessed via package.json vars (npm environment variables), jq, node, and awk.
-categories: package json npm environment variable jq node awk bash cli
+updated: 2021-01-14 20:49:58
+excerpt: How to get package.json fields using package.json vars, jq, node, and awk.
+categories: package.json jq node awk bash
 ---
 
-Here are the ways to get "version" from `package.json`:
+Get `package.json` fields using:
 
 - [package.json vars](#packagejson-vars)
 - [jq](#jq)
@@ -16,13 +16,15 @@ Here are the ways to get "version" from `package.json`:
 
 ## package.json vars
 
-There are [npm environment variables](https://docs.npmjs.com/misc/scripts#packagejson-vars) for each `package.json` field:
+package.json vars are the [npm package environment variables](https://docs.npmjs.com/cli/v6/using-npm/scripts#packagejson-vars).
+
+To print out all the package.json vars:
 
 ```sh
 $ npm run env | grep npm_package_
 ```
 
-This means you can access `version` in a [run-script](https://docs.npmjs.com/cli/run-script):
+To get the "version" using a [run-script](https://docs.npmjs.com/cli/v6/commands/npm-run-script):
 
 ```js
 // package.json
@@ -34,16 +36,7 @@ This means you can access `version` in a [run-script](https://docs.npmjs.com/cli
 }
 ```
 
-```sh
-$ npm run get-version
-
-> @1.2.3 get-version path/to/package
-> echo $npm_package_version
-
-1.2.3
-```
-
-If you ever need to access npm environment variables outside the scope of run-scripts, you can parse the variables with bash:
+To access an npm environment variable outside the scope of a run-script, parse the variable with bash:
 
 ```sh
 $ npm run env | grep npm_package_version | cut -d '=' -f 2
@@ -51,15 +44,17 @@ $ npm run env | grep npm_package_version | cut -d '=' -f 2
 
 ## jq
 
-[jq](https://stedolan.github.io/jq/) is a powerful tool for filtering [JSON](https://www.json.org/):
+[jq](https://stedolan.github.io/jq/) is a tool for filtering [JSON](https://www.json.org/).
+
+To print the `package.json` version:
 
 ```sh
 $ jq -r .version package.json
 ```
 
-The `-r` option outputs the _raw string_ (so it's `1.2.3` instead of `"1.2.3"`).
+> The `-r` option outputs the **raw** string (so it's `1.2.3` instead of `"1.2.3"`).
 
-This means you can add a script like so:
+To get the "version" using a [run-script](https://docs.npmjs.com/cli/v6/commands/npm-run-script):
 
 ```js
 // package.json
@@ -71,30 +66,23 @@ This means you can add a script like so:
 }
 ```
 
-```sh
-$ npm run get-version
-
-> @1.2.3 get-version path/to/package
-> jq -r .version package.json
-
-1.2.3
-```
-
 ## node
 
-With [Node.js](https://nodejs.org/), you can evaluate a script with the [`-e`](https://nodejs.org/api/cli.html#cli_e_eval_script) option:
+[Node.js](https://nodejs.org/) can evaluate a script with the [`-e`](https://nodejs.org/api/cli.html#cli_e_eval_script) option.
+
+To print the `package.json` version:
 
 ```sh
 $ node -e "console.log(require('./package.json').version)"
 ```
 
-Furthermore, you can simplify the script by using the [`-p`](https://nodejs.org/api/cli.html#cli_p_print_script) option to print the evaluation:
+Pass the [`-p`](https://nodejs.org/api/cli.html#cli_p_print_script) option to print the evaluation:
 
 ```sh
 $ node -p "require('./package').version"
 ```
 
-Thus, your script will look like so:
+To get the "version" using a [run-script](https://docs.npmjs.com/cli/v6/commands/npm-run-script):
 
 ```js
 // package.json
@@ -106,26 +94,17 @@ Thus, your script will look like so:
 }
 ```
 
-```sh
-$ npm run get-version
-
-> @1.2.3 get-version path/to/package
-> node -p "require('./package').version"
-
-1.2.3
-```
-
 ## awk
 
-You can always use [awk](https://www.gnu.org/software/gawk/manual/gawk.html#Getting-Started) to process text:
+[awk](https://www.gnu.org/software/gawk/manual/gawk.html#Getting-Started) is a tool that processes text.
+
+To match `package.json` against the regex pattern `/"version": ".+"/` and print the 4th field of the first result:
 
 ```sh
 $ awk -F'"' '/"version": ".+"/{ print $4; exit; }' package.json
 ```
 
-We're matching `package.json` against the regex pattern `/"version": ".+"/` and printing the 4th field of the first result.
-
-The script will be as follows:
+To get the "version" using a [run-script](https://docs.npmjs.com/cli/v6/commands/npm-run-script):
 
 ```js
 // package.json
@@ -136,16 +115,3 @@ The script will be as follows:
   }
 }
 ```
-
-```sh
-$ npm run get-version
-
-> @1.2.3 get-version path/to/package
-> awk -F'"' '/"version": ".+"/{ print $4; exit; }' package.json
-
-1.2.3
-```
-
-## Conclusion
-
-Which approach worked for you? Tell us in the comments below!
