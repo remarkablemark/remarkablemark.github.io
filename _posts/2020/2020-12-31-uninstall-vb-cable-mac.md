@@ -2,7 +2,7 @@
 layout: post
 title: Uninstall VB-Cable on macOS
 date: 2020-12-31 16:25:04
-updated: 2021-01-17 13:37:26
+updated: 2021-01-17 13:42:13
 excerpt: How to uninstall VB-Cable on macOS.
 categories: vb-cable bash script mac
 ---
@@ -32,13 +32,13 @@ find /Library/Audio/Plug-Ins/HAL/ -type d -iname 'vbcable*' -maxdepth 1
 Delete the `VB-CABLE Control Panel.app` file from the `/Applications/VB-Audio/` directory:
 
 ```sh
-sudo rm '/Applications/VB-Audio/VB-CABLE Control Panel.app'
+rm '/Applications/VB-Audio/VB-CABLE Control Panel.app'
 ```
 
 Or delete the entire `/Applications/VB-Audio/` directory:
 
 ```sh
-sudo rm -rf /Applications/VB-Audio/
+rm -rf /Applications/VB-Audio/
 ```
 
 ### Optional
