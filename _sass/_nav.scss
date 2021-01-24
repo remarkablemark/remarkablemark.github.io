@@ -1,4 +1,4 @@
-$nav-width: 250px;
+$nav-width: 225px;
 
 .nav {
   background-color: #222;
@@ -31,7 +31,7 @@ $nav-width: 250px;
 
         &:hover,
         &:focus {
-          background-color: #f0f0f0;
+          background-color: $background-color;
           color: #111;
           cursor: pointer;
         }
