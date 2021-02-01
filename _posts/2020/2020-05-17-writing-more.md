@@ -2,7 +2,7 @@
 layout: post
 title: How to write more
 date: 2020-05-17 21:25:36
-updated: 2021-01-01 21:58:42
+updated: 2021-02-01 18:27:50
 excerpt: Tips and tricks on writing more.
 categories: writing psychology philosophy
 ---
@@ -44,7 +44,7 @@ You can accomplish a lot of writing when you're in the right environment:
 - In a quiet place
 - In a noisy place
 
-Find the settings that is conducive to writing and condition yourself to write in them.
+Find the settings that are conducive to writing and condition yourself to write in them.
 
 ## Quantity over quality
 
@@ -86,7 +86,7 @@ You can experiment with:
 
 - typing
 - writing by hand
-- dictating
+- dictation
 - recording a video or call
 
 Some authors don't do any writing but are interviewed on a topic. The interview then gets transcribed and edited into an article or book. Ultimately, writing is more about _what you have to say_ than how it gets done.
@@ -95,7 +95,7 @@ Every individual is unique, so you want to discover the approach that **best fit
 
 ## Gamify the act
 
-[Gamification](https://wikipedia.org/wiki/Gamification) can keep us engaged. With the proper rewards and punishments, we can use this technique to keep ourselves committed and on track. Jerry Seinfeld does this by forcing himself to [write a joke a day](https://jamesclear.com/stop-procrastinating-seinfeld-strategy).
+[Gamification](https://wikipedia.org/wiki/Gamification) keeps us engaged. With the proper rewards and punishments, we can use this technique to keep ourselves committed and on track. Jerry Seinfeld does this by forcing himself to [write a joke every day](https://jamesclear.com/stop-procrastinating-seinfeld-strategy).
 
 So figure out what your daily activity is going to be and hold yourself accountable so you **don't break the chain**. Write everyday.
 
