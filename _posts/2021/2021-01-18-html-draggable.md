@@ -7,7 +7,7 @@ excerpt: How native drag-and-drop for the web works with the HTML5 draggable att
 categories: html javascript draggable youtube livestream
 ---
 
-On my [2021-01-18 livestream](https://youtu.be/hCsuyZHlUtY?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ), I learned about [drag-and-drop](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API) using the HTML5 [draggable](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations#draggableattribute) attribute:
+I learned about [drag-and-drop](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API) using the HTML5 [draggable](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations#draggableattribute) attribute in my [2021-01-18 livestream](https://youtu.be/hCsuyZHlUtY?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ):
 
 <iframe width="100%" height="720" src="https://www.youtube.com/embed/hCsuyZHlUtY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -95,6 +95,5 @@ document
 
 ## Links
 
-- [YouTube video](https://youtu.be/hCsuyZHlUtY?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ)
 - [W3docs](https://www.w3docs.com/learn-html/html-draggable-attribute.html)
 - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
