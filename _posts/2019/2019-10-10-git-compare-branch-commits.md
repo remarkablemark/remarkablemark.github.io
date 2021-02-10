@@ -17,19 +17,19 @@ $ git branch
 To see the commit messages that are on `master` but not on `myBranch`:
 
 ```sh
-$ git log master ^myBranch
+git log master ^myBranch
 ```
 
 To see the commit messages (first line) that are on `myBranch` but not on `master`:
 
 ```sh
-$ git log --oneline myBranch ^master
+git log --oneline myBranch ^master
 ```
 
 To count how many commits your branch is ahead of `master`:
 
 ```sh
-$ git log --oneline $(git rev-parse --abbrev-ref HEAD) ^master | wc -l
+git log --oneline $(git rev-parse --abbrev-ref HEAD) ^master | wc -l
 ```
 
 > Note: `git rev-parse --abbrev-ref HEAD` returns the name of the branch you're currently on.
@@ -37,9 +37,9 @@ $ git log --oneline $(git rev-parse --abbrev-ref HEAD) ^master | wc -l
 You can also format the data into a useful message:
 
 ```sh
-$ COUNT_AHEAD=$(git log --oneline $(git rev-parse --abbrev-ref HEAD) ^master | wc -l | xargs)
-$ COUNT_BEHIND=$(git log --oneline master ^$(git rev-parse --abbrev-ref HEAD) | wc -l | xargs)
-$ echo "$COUNT_AHEAD commits ahead and $COUNT_BEHIND commits behind master"
+COUNT_AHEAD=$(git log --oneline $(git rev-parse --abbrev-ref HEAD) ^master | wc -l | xargs)
+COUNT_BEHIND=$(git log --oneline master ^$(git rev-parse --abbrev-ref HEAD) | wc -l | xargs)
+echo "$COUNT_AHEAD commits ahead and $COUNT_BEHIND commits behind master"
 ```
 
 > Note: `wc -l` outputs the line count and `xargs` trims the whitespace.
