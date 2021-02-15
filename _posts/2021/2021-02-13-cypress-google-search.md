@@ -140,7 +140,7 @@ describe('Google Search', () => {
     cy.visit('https://www.google.com');
   });
 
-  it('search for `remarkablemark`', () => {
+  it('searches for `remarkablemark`', () => {
     cy.get('input[name="q"]').type('remarkablemark{enter}');
   });
 
