@@ -7,6 +7,8 @@ excerpt: How to lint Git commit messages with commitlint and husky.
 categories: git hook commitlint husky npm
 ---
 
+<!--email_off-->
+
 This post goes over how to lint Git commit messages with [commitlint](https://b.remarkabl.org/commitlint) and [husky](https://b.remarkabl.org/husky) (see [demo repository](https://b.remarkabl.org/3qIwXlU)).
 
 - [husky v5](#husky-5)
@@ -69,7 +71,9 @@ Or add `postinstall` script to `package.json` to enable Git hooks after `npm ins
     "postinstall": "husky install"
   },
   "devDependencies": {
-    "husky": "5"
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "husky": "^5.0.9"
   }
 }
 ```
@@ -153,3 +157,5 @@ Commit and verify the message follows [Conventional Commits](https://www.convent
 $ git commit -m 'add commitlint'       # fail
 $ git commit -m 'feat: add commitlint' # success
 ```
+
+<!--/email_off-->
