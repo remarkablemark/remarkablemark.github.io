@@ -1,13 +1,13 @@
 ---
 layout: post
-title: How to lint your Git commit messages
+title: How to lint Git commit messages
 date: 2019-05-29 20:01:42
-updated: 2021-02-15 15:35:51
-excerpt: How to automate linting of your Git commit message with commitlint and husky.
+updated: 2021-02-20 15:42:13
+excerpt: How to lint Git commit messages with commitlint and husky.
 categories: git hook commitlint husky npm
 ---
 
-This post goes over how to lint your Git commit messages with [commitlint](https://github.com/conventional-changelog/commitlint) and [husky](https://github.com/typicode/husky).
+This post goes over how to lint Git commit messages with [commitlint](https://b.remarkabl.org/commitlint) and [husky](https://b.remarkabl.org/husky) (see [demo repository](https://b.remarkabl.org/3qIwXlU)).
 
 - [husky v5](#husky-5)
 - [husky v4](#husky-4)
@@ -17,6 +17,10 @@ This post goes over how to lint your Git commit messages with [commitlint](https
 - [Node.js](https://b.remarkabl.org/nodejs-site)
 
 ## Husky 5
+
+Watch [YouTube video](https://youtu.be/2J9VnYiZ_Ts?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ):
+
+<iframe width="100%" height="720" src="https://www.youtube.com/embed/2J9VnYiZ_Ts?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Install [`commitlint`](https://www.npmjs.com/package/commitlint) with a config:
 
@@ -70,7 +74,7 @@ Or add `postinstall` script to `package.json` to enable Git hooks after `npm ins
 }
 ```
 
-> It's assumed that your package is **private**. If your package is **public**, then make sure to disable `postinstall` script using [`pinst`](https://github.com/typicode/pinst). See [Husky docs](https://typicode.github.io/husky/#/?id=install) for more information.
+> It's assumed that the package is **private**. If the package is **public**, then make sure to disable `postinstall` script using [`pinst`](https://github.com/typicode/pinst). See [Husky docs](https://typicode.github.io/husky/#/?id=install) for more information.
 
 Add the `commit-msg` hook:
 
@@ -78,7 +82,9 @@ Add the `commit-msg` hook:
 $ npx husky add .husky/commit-msg 'npx commitlint --edit $1'
 ```
 
-[Test](#test) that your commit hook works.
+> Make sure to use single quotes intead of double quotes so `$1` is added correctly.
+
+[Test](#test) that the commit hook works.
 
 ## Husky 4
 
@@ -104,7 +110,7 @@ module.exports = {
 };
 ```
 
-Install `husky@4`, which sets up your [Git hooks](https://git-scm.com/docs/githooks):
+Install `husky@4`, which sets up the [Git hooks](https://git-scm.com/docs/githooks):
 
 ```sh
 $ npm install husky@4
@@ -137,17 +143,13 @@ Or add the hook to `package.json`:
 }
 ```
 
-[Test](#test) that your commit hook works.
+[Test](#test) that the commit hook works.
 
 ## Test
 
-Commit and verify that the message is following the [Conventional Commits](https://www.conventionalcommits.org/) format:
+Commit and verify the message follows [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```sh
 $ git commit -m 'add commitlint'       # fail
 $ git commit -m 'feat: add commitlint' # success
 ```
-
-## Resources
-
-- [Demo](https://github.com/remarkablemark/husky-commitlint-demo)
