@@ -9,11 +9,11 @@ categories: travis ci github nodejs npm
 
 <!--email_off-->
 
-This article will go over how to migrate from [Travis CI](https://b.remarkabl.org/travis-ci) to [GitHub Actions](https://b.remarkabl.org/github-actions) for a [Node.js](https://b.remarkabl.org/nodejs-site) project on [GitHub](https://b.remarkabl.org/github-site).
+This article goes over how to migrate from [Travis CI](https://b.remarkabl.org/travis-ci) to [GitHub Actions](https://b.remarkabl.org/github-actions) for a [Node.js](https://b.remarkabl.org/nodejs-site) project on [GitHub](https://b.remarkabl.org/github-site).
 
 ## Travis CI
 
-Given `.travis.yml`:
+Given the `.travis.yml`:
 
 ```yml
 # .travis.yml
@@ -32,19 +32,19 @@ after_success:
 
 ## GitHub Actions
 
-First, make the directory `.github/workflows`:
+First make the directory `.github/workflows/`:
 
 ```sh
-$ mkdir -p .github/workflows
+$ mkdir -p .github/workflows/
 ```
 
-Create the workflow file `.github/workflows/build.yml`:
+Create `.github/workflows/build.yml`:
 
 ```sh
 $ touch .github/workflows/build.yml
 ```
 
-And add the Node.js workflow (inspired by the [template](https://docs.github.com/en/free-pro-team@latest/actions/guides/building-and-testing-nodejs#starting-with-the-nodejs-workflow-template)):
+Add the Node.js workflow:
 
 {% raw %}
 
@@ -76,6 +76,8 @@ jobs:
 
 {% endraw %}
 
+The workflow is inspired by the [template](https://docs.github.com/en/free-pro-team@latest/actions/guides/building-and-testing-nodejs#starting-with-the-nodejs-workflow-template).
+
 ## Workflow
 
 Here's a breakdown of what each YAML field does.
@@ -85,7 +87,7 @@ Here's a breakdown of what each YAML field does.
 [`name`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#name) is the workflow name. It's optional and you can name it whatever you like:
 
 ```yml
-name: Node.js CI
+name: CI build
 ```
 
 ### on
@@ -128,7 +130,7 @@ runs-on: ubuntu-18.04
 
 ### strategy.matrix
 
-[`strategy.matrix`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstrategymatrix) is the build matrix. In our example, we're running a job for a single node version. To run jobs for multiple node versions:
+[`strategy.matrix`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstrategymatrix) is the build matrix. In our example, we're running a job for a single node version. To define jobs for multiple node versions:
 
 ```yml
 strategy:
@@ -141,10 +143,10 @@ strategy:
 [`steps`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idsteps) are the tasks of a job. In our example, we're using the GitHub Actions:
 
 - [Checkout](https://github.com/marketplace/actions/checkout)
-- [Setup Node.js environment](https://github.com/marketplace/actions/setup-node-js-environment)
+- [Setup Node.js](https://github.com/marketplace/actions/setup-node-js-environment)
 - [Coveralls GitHub Action](https://github.com/marketplace/actions/coveralls-github-action)
 
-`actions/checkout` checks out the repository and `actions/setup-node` sets up the node environment:
+`actions/checkout` checks out the repository and `actions/setup-node` sets up the Node.js environment:
 
 {% raw %}
 
@@ -176,14 +178,12 @@ steps:
 
 [`steps.run`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsrun) runs the commands. The commands can be [npm scripts](https://docs.npmjs.com/cli/v6/commands/npm-run-script/) from `package.json` or other bash commands.
 
-> `npm`, `yarn`, and `npx` can be used since we're using `actions/setup-node@v1`.
-
-`--if-present` runs the script if it exists:
-
 ```yml
 steps:
   - run: npm run build --if-present
 ```
+
+`actions/setup-node@v1` installs `npm`, `npx`, and `yarn`. The `--if-present` option runs the script only if it exists:
 
 ### env
 
@@ -201,9 +201,6 @@ jobs:
 ## Resources
 
 - [Migrating from Travis CI to GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions)
-- [GitHub Actions](https://b.remarkabl.org/github-actions)
 - [Building and testing Node.js](https://docs.github.com/en/free-pro-team@latest/actions/guides/building-and-testing-nodejs)
-- [Actions Marketplace](https://github.com/marketplace?type=actions)
-- [Adding a workflow status badge](https://docs.github.com/en/free-pro-team@latest/actions/managing-workflow-runs/adding-a-workflow-status-badge)
 
 <!--/email_off-->
