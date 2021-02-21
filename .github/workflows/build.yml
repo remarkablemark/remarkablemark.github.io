@@ -1,0 +1,19 @@
+name: build
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      # speeds up installation of html-proofer
+      NOKOGIRI_USE_SYSTEM_LIBRARIES: true
+    strategy:
+      matrix:
+        ruby-version: [2.6.0]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+      - run: bundle exec jekyll build --safe
+      - run: bundle exec htmlproofer --http-status-ignore '400,401,429,999' _site
