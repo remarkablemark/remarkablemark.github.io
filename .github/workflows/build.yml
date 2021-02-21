@@ -6,9 +6,6 @@ jobs:
     env:
       # speeds up installation of html-proofer
       NOKOGIRI_USE_SYSTEM_LIBRARIES: true
-    strategy:
-      matrix:
-        ruby-version: [2.6.0]
     steps:
       - name: Checkout repository and submodules
         uses: actions/checkout@v2
@@ -17,7 +14,6 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
       - name: Build site
         run: bundle exec jekyll build --safe
