@@ -2,6 +2,7 @@
 layout: post
 title: Migrate Travis CI to GitHub Actions for Ruby
 date: 2021-02-20 23:40:23
+updated: 2021-02-21 13:30:17
 excerpt: How to migrate from Travis CI to GitHub Actions for a Ruby project.
 categories: travis ci github ruby
 ---
@@ -9,6 +10,10 @@ categories: travis ci github ruby
 <!--email_off-->
 
 This article goes over how to migrate from [Travis CI](https://b.remarkabl.org/travis-ci) to [GitHub Actions](https://b.remarkabl.org/github-actions) for a [Ruby](https://b.remarkabl.org/ruby) project on [GitHub](https://b.remarkabl.org/github-site).
+
+Watch the [YouTube video](https://youtu.be/QE9mk9Ww7oM?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ):
+
+<iframe width="100%" height="720" src="https://www.youtube.com/embed/QE9mk9Ww7oM?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Travis CI
 
@@ -31,7 +36,7 @@ script:
 First make the directory `.github/workflows/`:
 
 ```sh
-$ mkdir -p .github/workflows
+$ mkdir -p .github/workflows/
 ```
 
 Create `.github/workflows/build.yml`:
@@ -195,5 +200,6 @@ jobs:
 
 - [Migrating from Travis CI to GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/migrating-from-travis-ci-to-github-actions)
 - [Building and testing Ruby](https://docs.github.com/en/actions/guides/building-and-testing-ruby)
+- [Pull Request (PR) example](https://github.com/remarkablegames/remarkablegames.github.io/pull/2)
 
 <!--/email_off-->
