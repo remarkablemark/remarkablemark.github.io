@@ -127,7 +127,7 @@ We discuss how Seamus got started in tech, which includes his transition from ma
 
 **SEAMUS**: Right, which is crazy because that's actually where they spend the most money, [which] is through promoting you.
 
-**MARK**: I agree with you. I feel like the interviewing process [and] getting the foot-in-the-door [are] kind of hardest [hurdles to overcome]. That's just something that you [have] to practice [to] get better at. [And] as long as the status quo doesn't change. people [will] still use the same structure of asking computer science related questions and whatnot.
+**MARK**: I agree with you. I feel like the interviewing process [and] getting the foot-in-the-door [are] kind of [the] hardest [hurdles to overcome]. That's just something you [have] to practice [to] get better at. As long as the status quo doesn't change. people [will] use the same structure of asking computer science related questions and whatnot.
 
 **SEAMUS**: Right. And the reality is too that if you can take the long view, you only have to know that stuff for maybe 2 or 3 weeks out of your life. You can stay at a company for [a long time]. How long have you been at that job?
 
