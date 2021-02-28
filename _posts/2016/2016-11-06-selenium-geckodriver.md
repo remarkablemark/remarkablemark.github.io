@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using geckodriver with Selenium
-date: 2016-11-06 23:53:00 -4000
+date: 2016-11-06 23:53:00
 excerpt: In order to control Firefox 48+ with Selenium, you'll need to install geckodriver and put it in the PATH.
 categories: selenium geckodriver firefox node
 ---
@@ -14,7 +14,7 @@ You can install geckodriver [here](https://github.com/mozilla/geckodriver/releas
 $ brew install geckodriver
 ```
 
-If you installed without homebrew, you'll need to make sure that the [executable is found in the system path](https://developer.mozilla.org/docs/Mozilla/QA/Marionette/WebDriver#Add_executable_to_system_path):
+If you installed without homebrew, you'll need to make sure that the [executable is found in the system path](https://firefox-source-docs.mozilla.org/testing/geckodriver/Usage.html#selenium):
 
 ```sh
 # append to your bash config file (e.g., `~/.bashrc`)
