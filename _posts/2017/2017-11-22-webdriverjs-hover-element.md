@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "WebDriverJS: Hover over element"
-date: 2017-11-22 20:23:14 -4000
+title: 'WebDriverJS: Hover over element'
+date: 2017-11-22 20:23:14
 excerpt: How to hover over an element with WebDriverJS (Selenium Webdriver for Node.js).
 categories: selenium webdriver webdriverjs nodejs javascript
 ---
@@ -12,24 +12,16 @@ Assuming you have a [driver]({% post_url 2016/2016-11-25-webdriverjs-launch-brow
 const myElement = driver.findElement({ css: '#myElement' });
 ```
 
-You can hover over it using the [mouseMove](https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/lib/actions_exports_ActionSequence.html#mouseMove) action sequence:
+You can hover over it using the [mouseMove](https://www.selenium.dev/selenium/docs/api/javascript/module/selenium-webdriver/lib/actions_exports_LegacyActionSequence.html#mouseMove) action sequence:
 
 ```js
-driver
-  .actions()
-  .mouseMove(myElement)
-  .perform();
+driver.actions().mouseMove(myElement).perform();
 ```
 
 Alternatively, you could move the mouse over the element [location](https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/lib/webdriver_exports_WebElement.html#getLocation):
 
 ```js
-myElement
-  .getLocation()
-  .then(location => {
-    driver
-      .actions()
-      .mouseMove(location)
-      .perform();
-  });
+myElement.getLocation().then(location => {
+  driver.actions().mouseMove(location).perform();
+});
 ```
