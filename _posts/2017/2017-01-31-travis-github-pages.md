@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Test GitHub Pages for broken links
-date: 2017-01-31 21:43:00 -4000
+date: 2017-01-31 21:43:00
 excerpt: Set up Travis CI for your site hosted by GitHub Pages.
 categories: travis github-pages html-proofer
 ---
@@ -29,19 +29,19 @@ And add the following:
 ```yml
 language: ruby
 rvm:
-    - 2.2
+  - 2.2
 cache: bundler
 env:
-    global:
-        # speeds up installation of html-proofer
-        - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+  global:
+    # speeds up installation of html-proofer
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 script:
-    # replace `.` with the directory path of your site
-    - bundle exec htmlproofer .
+  # replace `.` with the directory path of your site
+  - bundle exec htmlproofer .
 ```
 
 Finally, commit and push your changes to trigger the build on Travis.
 
-If you have a [Jekyll](https://jekyllrb.com) site, then I recommend checking out the docs on [continuous integration](https://jekyllrb.com/docs/continuous-integration/). Feel free to use my [personal site](https://github.com/remarkablemark/remarkablemark.github.io) as a reference.
+If you have a [Jekyll](https://jekyllrb.com) site, then I recommend checking out the docs on [continuous integration](https://jekyllrb.com/docs/deployment/automated/#continuous-integration-service). Feel free to use my [personal site](https://github.com/remarkablemark/remarkablemark.github.io) as a reference.
 
 Also, Travis has a guide on [building a ruby project](https://docs.travis-ci.com/user/languages/ruby/).
