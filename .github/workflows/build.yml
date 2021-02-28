@@ -18,4 +18,4 @@ jobs:
       - name: Build site
         run: bundle exec jekyll build --safe
       - name: Run tests
-        run: bundle exec htmlproofer --http-status-ignore '400,401,429,999' _site
+        run: bundle exec htmlproofer --http-status-ignore '0,400,401,429,999' _site
