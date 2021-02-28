@@ -1,7 +1,7 @@
 ---
 layout: post
 title: TypeScript integration with Jest
-date: 2018-11-16 19:56:57 -4000
+date: 2018-11-16 19:56:57
 excerpt: How to write Jest tests in TypeScript (and React).
 categories: typescript jest test react
 ---
@@ -77,7 +77,7 @@ error Command failed with exit code 1.
 info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
 ```
 
-To fix this, you'll need to create a [configuration file](https://kulshekhar.github.io/ts-jest/user/install#jest-config-file):
+To fix this, you'll need to create a [configuration file](https://kulshekhar.github.io/ts-jest/docs/getting-started/installation/#jest-config-file):
 
 ```sh
 $ yarn ts-jest config:init
