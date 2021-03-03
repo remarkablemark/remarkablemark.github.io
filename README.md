@@ -9,7 +9,7 @@
 [Ruby](https://www.ruby-lang.org/en/downloads/) 2.6.0:
 
 ```sh
-$ ruby --version
+ruby --version
 ```
 
 If your version is behind, you can install ruby with [rbenv](https://github.com/rbenv/rbenv) or [RVM](https://rvm.io/).
@@ -19,38 +19,50 @@ If your version is behind, you can install ruby with [rbenv](https://github.com/
 Install and set up rbenv on macOS:
 
 ```sh
-$ brew install rbenv
-$ rbenv init
+brew install rbenv
+rbenv init
 ```
 
 Reload or open a new shell:
 
 ```sh
-$ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
-$ rbenv install 2.6.0
-$ rbenv local 2.6.0
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+rbenv install 2.6.0
+rbenv local 2.6.0
 ```
 
-[Bundler](http://bundler.io/):
+[Bundler](https://bundler.io/):
 
 ```sh
-$ gem install bundler
-$ bundler --version
+gem install bundler
+bundler --version
 ```
 
-## Installation
+## Install
 
 Clone repository:
 
 ```sh
-$ git clone --recursive https://github.com/remarkablemark/remarkablemark.github.io.git
-$ cd remarkablemark.github.io
+git clone --recursive https://github.com/remarkablemark/remarkablemark.github.io.git
+cd remarkablemark.github.io
+```
+
+If you forgot to clone the git submodule:
+
+```sh
+git submodule update --init --recursive
+```
+
+To switch the git submodule remote URL from HTTPS to SSH:
+
+```sh
+git remote set-url origin git@github.com:remarkablemark/assets.git
 ```
 
 Install dependencies:
 
 ```sh
-$ bundle install
+bundle install
 ```
 
 ## Update
@@ -58,9 +70,9 @@ $ bundle install
 Update dependencies:
 
 ```sh
-$ git checkout master
-$ git pull
-$ bundle update
+git checkout master
+git pull
+bundle update
 ```
 
 ## Run
@@ -68,13 +80,13 @@ $ bundle update
 ### Development Server
 
 ```sh
-$ bundle exec jekyll serve --livereload # --incremental --limit_posts 1
+bundle exec jekyll serve --livereload # --incremental --limit_posts 1
 ```
 
 The server will be running at http://127.0.0.1:4000/:
 
 ```sh
-$ open http://127.0.0.1:4000/
+open http://127.0.0.1:4000/
 ```
 
 To stop the server, press `CTRL-C`.
@@ -82,7 +94,7 @@ To stop the server, press `CTRL-C`.
 ### Production Build
 
 ```sh
-$ bundle exec jekyll build
+bundle exec jekyll build
 ```
 
 The site will be generated at `./_site/`.
@@ -92,9 +104,8 @@ The site will be generated at `./_site/`.
 Use [HTMLProofer](https://github.com/gjtorikian/html-proofer) to validate HTML output (see [post](https://remarkablemark.org/blog/2017/01/31/travis-github-pages/)):
 
 ```sh
-$ bundle exec jekyll build
-$ bundle exec htmlproofer ./_site/
-# bundle exec htmlproofer --http-status-ignore "400,401,429,999" ./_site/
+bundle exec jekyll build
+bundle exec htmlproofer --http-status-ignore '0,400,401,429,999' ./_site/
 ```
 
 ## Support
