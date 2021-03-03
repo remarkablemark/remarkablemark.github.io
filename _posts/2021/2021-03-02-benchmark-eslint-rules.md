@@ -2,7 +2,7 @@
 layout: post
 title: How to benchmark ESLint rules
 date: 2021-03-02 20:14:12
-excerpt: To track the performance of ESLint rules, set the environment variable `TIMING=1`.
+excerpt: The performance of ESLint rules can be benchmarked by setting the environment variable `TIMING=1`.
 categories: eslint benchmark performance npx npm yarn
 ---
 
