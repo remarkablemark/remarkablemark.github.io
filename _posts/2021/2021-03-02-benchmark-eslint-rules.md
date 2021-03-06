@@ -8,7 +8,7 @@ categories: eslint benchmark performance npx npm yarn
 
 Sometimes [ESLint](https://eslint.org/) can take a while a run, especially if you have a lot of rules and files. So how do you benchmark how long each rule takes?
 
-With the [`TIMING`](https://eslint.org/docs/1.0.0/developer-guide/working-with-rules#per-rule-performance) environment variable, ESLint tracks the performance of individual rules.
+With the environment variable [`TIMING`](https://eslint.org/docs/1.0.0/developer-guide/working-with-rules#per-rule-performance), ESLint tracks the performance of individual rules.
 
 So instead of running ESLint like:
 
@@ -34,7 +34,7 @@ no-self-assign          |     0.311 |     0.2%
 no-dupe-else-if         |     0.291 |     0.2%
 ```
 
-When using [Yarn](https://yarnpkg.com/), you can get the total time elapsed:
+With [Yarn](https://yarnpkg.com/), you can get the total time elapsed:
 
 ```sh
 $ TIMING=1 yarn eslint ./lib/
