@@ -2,7 +2,7 @@
 layout: post
 title: Not all RFC's are created equal
 date: 2021-03-04 19:30:50
-excerpt: How to evaluate and improve the RFC (Request for Comments) process.
+excerpt: How to evaluate and facilitate the RFC (Request for Comments) process by prioritizing high value and low effort proposals.
 categories: rfc process management
 ---
 
