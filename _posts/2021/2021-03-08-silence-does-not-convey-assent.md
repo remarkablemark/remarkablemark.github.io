@@ -2,7 +2,7 @@
 layout: post
 title: Silence does not convey assent
 date: 2021-03-08 20:16:32
-excerpt: Why silence does not convey assent.
+excerpt: Why silence does not convey assent and how to address the communication problem.
 categories: communication management psychology
 ---
 
@@ -14,7 +14,7 @@ However, virtual communication isn't the same as in-person communication because
 
 It's easier for participants to remain silent due to the mute button and the difficulty of multiple people speaking at once. But what I find alarming is how people assume silence implies assent when it should be the other way around.
 
-This misguided thinking sets a dangerous precendent because:
+This misguided thinking sets a dangerous precedent because:
 
 - only the loud ones are heard,
 - the team misses its chance to air out concerns,
