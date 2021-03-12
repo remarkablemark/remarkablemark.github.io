@@ -7,6 +7,8 @@ excerpt: How to avoid entering a passphrase when performing an SSH operation.
 categories: ssh mac passphrase keychain git
 ---
 
+<!--email_off-->
+
 I recently upgraded my macOS but when I tried to perform an SSH operation, I was asked to enter a passphrase:
 
 ```sh
@@ -89,3 +91,5 @@ Host *
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_rsa
 ```
+
+<!--/email_off-->
