@@ -6,6 +6,8 @@ excerpt: How to fix Lodash Prototype Pollution vulnerability for v4 and v3.
 categories: lodash npm security vulnerability javascript nodejs
 ---
 
+<!--email_off-->
+
 > TL;DR:
 >
 > ```sh
@@ -71,3 +73,5 @@ Given that lodash hasn't published version `3.x.x` since 2015, I created a [repo
 ```sh
 $ npm install remarkablemark/lodash#3.10.2
 ```
+
+<!--/email_off-->
