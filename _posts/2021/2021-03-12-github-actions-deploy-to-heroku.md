@@ -3,12 +3,12 @@ layout: post
 title: Deploy to Heroku with GitHub Actions
 date: 2021-03-12 22:29:42
 excerpt: How to deploy to Heroku using the GitHub Actions workflow.
-categories: heroku github actions deploy
+categories: heroku github actions deploy devops
 ---
 
 <!--email_off-->
 
-This article goes over how to deploy to [Heroku](https://www.heroku.com/) using the [GitHub Actions](https://github.com/features/actions) workflow.
+This article goes over how to deploy to [Heroku](https://b.remarkabl.org/heroku) using the [GitHub Actions](https://b.remarkabl.org/github-actions) workflow.
 
 ## Prerequisites
 
@@ -93,7 +93,7 @@ jobs:
 
 The differences between the 2 workflows are explained below.
 
-### GitHub Action Checkout
+### Checkout
 
 The [Checkout](https://github.com/marketplace/actions/checkout) action must [fetch the entire Git history](https://github.com/marketplace/actions/checkout#fetch-all-history-for-all-tags-and-branches) or else the build will fail with the error:
 
