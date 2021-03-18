@@ -6,6 +6,8 @@ excerpt: How to set up PostgreSQL in a GitHub Actions workflow.
 categories: postgres github actions workflow
 ---
 
+<!--email_off-->
+
 [GitHub Actions](https://b.remarkabl.org/github-actions) workflow that sets up [PostgreSQL](https://b.remarkabl.org/postgresql) in a [Node.js](https://b.remarkabl.org/nodejs-site) container:
 
 ```yml
@@ -86,3 +88,5 @@ The example source code can be found [here](https://github.com/remarkablemark/gi
 The article is inspired by "[Creating PostgreSQL service containers](https://docs.github.com/en/actions/guides/creating-postgresql-service-containers)".
 
 [Workflow](https://github.com/actions/example-services/blob/master/.github/workflows/postgres-service.yml) that shows difference between setting up Postgres in a container versus a virtual machine (VM).
+
+<!--/email_off-->
