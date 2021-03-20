@@ -2,13 +2,13 @@
 layout: post
 title: Google Drive clear cache
 date: 2020-10-03 17:59:19
-updated: 2021-03-19 20:20:38
+updated: 2021-03-20 15:26:42
 excerpt: Save disk space by clearing the Google Drive File Stream cache so files are only available online and not on the computer.
 categories: google drive cache bash terminal
 image: /assets/images/2020/2020-10-04-drive-file-stream-options.png
 ---
 
-> **TL;DR**: remove the Drive File Stream cache from your Terminal:
+> **TL;DR**: run the command in your Terminal to remove your Drive File Stream cache:
 >
 > ```sh
 > $ rm -rf ~/Library/Application\ Support/Google/DriveFS/[0-9]*
