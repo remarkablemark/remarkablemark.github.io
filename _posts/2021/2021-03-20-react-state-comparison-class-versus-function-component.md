@@ -7,11 +7,11 @@ excerpt: How React state is managed for class and function components.
 categories: react class function state javascript
 ---
 
-[YouTube video](https://youtu.be/s5u9Ui7e9L4?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ):
+[YouTube video](https://b.remarkabl.org/3lHwLBG):
 
 <iframe width="100%" height="720" src="https://www.youtube.com/embed/s5u9Ui7e9L4?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[CodeSandbox demo](https://codesandbox.io/s/react-state-class-vs-function-qwf3z):
+[CodeSandbox demo](https://b.remarkabl.org/3tGMTGk):
 
 <iframe src="https://codesandbox.io/embed/react-state-class-vs-function-qwf3z?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="React State: Class vs Function" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 
