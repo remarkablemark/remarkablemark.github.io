@@ -2,8 +2,9 @@
 layout: post
 title: 'React state comparison: class vs function'
 date: 2021-03-20 17:43:27
-excerpt: The difference between class and function components in regards to React state management.
-categories: react class function javascript
+updated: 2021-03-20 19:03:16
+excerpt: How React state is managed for class and function components.
+categories: react class function state javascript
 ---
 
 [YouTube video](https://youtu.be/s5u9Ui7e9L4?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ):
@@ -84,12 +85,7 @@ export default function Funktion() {
       count: state.count + 1,
     });
   }
-  return (
-    <>
-      <h1>Function</h1>
-      <button onClick={handleClick}>{state.count}</button>
-    </>
-  );
+  return <button onClick={handleClick}>{state.count}</button>;
 }
 ```
 
