@@ -2,9 +2,10 @@
 layout: post
 title: Google Drive clear cache
 date: 2020-10-03 17:59:19
-updated: 2020-10-04 17:58:44
+updated: 2021-03-19 20:20:38
 excerpt: Save disk space by clearing the Google Drive File Stream cache so files are only available online and not on the computer.
 categories: google drive cache bash terminal
+image: /assets/images/2020/2020-10-04-drive-file-stream-options.png
 ---
 
 > **TL;DR**: remove the Drive File Stream cache from your Terminal:
@@ -12,6 +13,8 @@ categories: google drive cache bash terminal
 > ```sh
 > $ rm -rf ~/Library/Application\ Support/Google/DriveFS/[0-9]*
 > ```
+>
+> **WARNING**: If files are pending upload to Drive, deleting the cache may cause the files to be lost (see [comment](https://disq.us/p/2fteuml)).
 
 ## Background
 
@@ -44,6 +47,8 @@ To delete the DriveFS cache directory using [Terminal](<https://en.wikipedia.org
 $ rm -rf ~/Library/Application\ Support/Google/DriveFS/
 ```
 
+> **WARNING**: If files are pending upload to Drive, deleting the cache may cause the files to be lost (see [comment](https://disq.us/p/2fteuml)).
+
 The side-effect of this is that it also deletes your credentials so you'll need to login again.
 
 ## Clear cache content directory
@@ -53,6 +58,8 @@ To clear cache without deleting credentials, you can delete just the cache conte
 ```sh
 $ rm -rf ~/Library/Application\ Support/Google/DriveFS/[0-9]*
 ```
+
+> **WARNING**: If files are pending upload to Drive, deleting the cache may cause the files to be lost (see [comment](https://disq.us/p/2fteuml)).
 
 What the command above is doing is deleting the numeric directory from DriveFS:
 
