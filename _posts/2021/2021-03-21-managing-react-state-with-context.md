@@ -6,11 +6,11 @@ excerpt: How to manage React state with Context and the useReducer hook.
 categories: react context reducer hook state javascript
 ---
 
-[YouTube video](https://youtu.be/Bl38Qyg8z3Q?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ):
+[YouTube video](https://b.remarkabl.org/3f1EYz3):
 
 <iframe width="100%" height="720" src="https://www.youtube.com/embed/Bl38Qyg8z3Q?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[CodeSandbox demo](https://codesandbox.io/s/react-context-state-3ji7t):
+[CodeSandbox demo](https://b.remarkabl.org/314R56A):
 
 <iframe src="https://codesandbox.io/embed/react-context-state-3ji7t?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="React State: Class vs Function" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 
@@ -72,7 +72,6 @@ Render `<Provider>` as the top-level component in `index.js`:
 
 ```jsx
 // index.js
-import React from 'react';
 import { render } from 'react-dom';
 import App from './App';
 import Provider from './Provider';
@@ -187,7 +186,6 @@ First, export `Consumer` from Context:
 
 ```js
 // Provider.js
-// ...
 export const Context = createContext();
 export const { Consumer, Provider } = Context;
 ```
