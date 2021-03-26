@@ -8,7 +8,7 @@ categories: livestream html-react-parser test youtube
 
 I wrote a unit test for an ES module in [html-react-parser](https://b.remarkabl.org/html-react-parser) in my [2021-02-06 livestream](https://youtu.be/jI-3Z5Temks?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ):
 
-<iframe width="100%" height="720" src="https://www.youtube.com/embed/jI-3Z5Temks" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="720" src="https://www.youtube.com/embed/jI-3Z5Temks?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Links:
 
