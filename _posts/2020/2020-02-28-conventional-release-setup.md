@@ -2,8 +2,8 @@
 layout: post
 title: Conventional Release Setup
 date: 2020-02-28 20:45:17
-updated: 2021-03-28 20:43:50
-excerpt: A command-line tool that sets up committing and releasing with conventional commits.
+updated: 2021-03-28 20:51:17
+excerpt: Conventional Release Setup is a command-line tool that sets up committing and releasing with conventional commits.
 categories: npm package binary executable command-line conventional-release-setup conventional-commits husky commitlint standard-version cli
 ---
 
@@ -47,9 +47,7 @@ For your first release, it's recommended to do the following:
 
 ```sh
 git stash
-npm version 1.0.0
-git commit --amend -m 'chore(package): bump version to 1.0.0'
-npx standard-version --first-release
+npx standard-version --release-as 1.1.0
 git stash pop
 ```
 
