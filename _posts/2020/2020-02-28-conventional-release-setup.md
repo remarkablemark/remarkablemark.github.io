@@ -2,6 +2,7 @@
 layout: post
 title: Conventional Release Setup
 date: 2020-02-28 20:45:17
+updated: 2021-03-28 20:43:50
 excerpt: A command-line tool that sets up committing and releasing with conventional commits.
 categories: npm package binary executable command-line conventional-release-setup conventional-commits husky commitlint standard-version cli
 ---
@@ -9,7 +10,7 @@ categories: npm package binary executable command-line conventional-release-setu
 Run [`conventional-release-setup`](https://www.npmjs.com/package/conventional-release-setup) in your Terminal to enable your project to be released with [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```sh
-$ npx conventional-release-setup
+npx conventional-release-setup
 ```
 
 ## Motivation
@@ -32,25 +33,24 @@ Now I run the executable and it does all that for me.
 If the binary is installed globally, you can execute it like so:
 
 ```sh
-$ npm install --global conventional-release-setup
-$ conventional-release-setup
+npm install --global conventional-release-setup
+conventional-release-setup
 ```
 
 Otherwise, execute it with [npx](https://www.npmjs.com/package/npx):
 
 ```sh
-$ npx conventional-release-setup
+npx conventional-release-setup
 ```
 
 For your first release, it's recommended to do the following:
 
 ```sh
-# git stash
-$ npm version 1.0.0
-$ git add package.json
-$ git commit -m 'chore(package): bump version to 1.0.0'
-$ npx standard-version --first-release
-# git stash pop
+git stash
+npm version 1.0.0
+git commit --amend -m 'chore(package): bump version to 1.0.0'
+npx standard-version --first-release
+git stash pop
 ```
 
 See [standard-version > First Release](https://github.com/conventional-changelog/standard-version#first-release) for more details.
