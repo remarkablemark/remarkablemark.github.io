@@ -2,7 +2,7 @@
 layout: post
 title: How to lint Git commit messages
 date: 2019-05-29 20:01:42
-updated: 2021-02-20 15:42:13
+updated: 2021-04-14 19:34:36
 excerpt: How to lint Git commit messages with commitlint and husky.
 categories: git hook commitlint husky npm
 ---
@@ -11,14 +11,14 @@ categories: git hook commitlint husky npm
 
 This post goes over how to lint Git commit messages with [commitlint](https://b.remarkabl.org/commitlint) and [husky](https://b.remarkabl.org/husky) (see [demo repository](https://b.remarkabl.org/3qIwXlU)).
 
-- [husky v5](#husky-5)
-- [husky v4](#husky-4)
+- [husky](#husky)
+- [husky 4](#husky-4)
 
 ## Prerequisites
 
 - [Node.js](https://b.remarkabl.org/nodejs-site)
 
-## Husky 5
+## Husky
 
 Watch [YouTube video](https://youtu.be/2J9VnYiZ_Ts?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ):
 
