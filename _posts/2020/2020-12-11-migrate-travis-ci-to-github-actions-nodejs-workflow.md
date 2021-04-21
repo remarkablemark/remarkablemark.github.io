@@ -57,17 +57,22 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [14]
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm run lint
-      - run: npm run build
-      - run: npm test
+      - name: Install dependencies
+        run: npm install
+      - name: Lint files
+        run: npm run lint
+      - name: Build bundle
+        run: npm run build
+      - name: Run tests
+        run: npm test
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
@@ -152,9 +157,10 @@ strategy:
 
 ```yml
 steps:
-  - uses: actions/checkout@v2
+  - name: Checkout repository
+    uses: actions/checkout@v2
   - name: Use Node.js ${{ matrix.node-version }}
-    uses: actions/setup-node@v1
+    uses: actions/setup-node@v2
     with:
       node-version: ${{ matrix.node-version }}
 ```
@@ -183,7 +189,7 @@ steps:
   - run: npm run build --if-present
 ```
 
-`actions/setup-node@v1` installs `npm`, `npx`, and `yarn`. The `--if-present` option runs the script only if it exists:
+`actions/setup-node@v2` installs `npm`, `npx`, and `yarn`. The `--if-present` option runs the script only if it exists:
 
 ### env
 
