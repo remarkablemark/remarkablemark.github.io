@@ -189,7 +189,7 @@ steps:
   - run: npm run build --if-present
 ```
 
-`actions/setup-node@v2` installs `npm`, `npx`, and `yarn`. The `--if-present` option runs the script only if it exists:
+`actions/setup-node@v2` installs `npm`, `npx`, and `yarn`. The `--if-present` option runs the script only if it exists.
 
 ### env
 
