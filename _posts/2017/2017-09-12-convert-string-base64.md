@@ -1,21 +1,32 @@
 ---
 layout: post
-title: Convert a string to base64
-date: 2017-09-12 20:11:36 -4000
-excerpt: How to convert a string to base64 from the command-line or the browser.
-categories: base64 bash cli
+title: Convert string to Base64
+date: 2017-09-12 20:11:36
+updated: 2021-04-21 20:33:57
+excerpt: How to convert a string to Base64 from the command-line, Node.js, or the browser.
+categories: base64 bash cli nodejs javascript browser
 ---
 
-To base64 encode your string on the command-line:
+Convert a string to [Base64](https://wikipedia.org/wiki/Base64) using:
+
+- [CLI](#cli)
+- [Node.js](#nodejs)
+- [Browser](#browser)
+
+## CLI
+
+Use `base64` to Base64 encode your string on the command-line:
 
 ```sh
 $ base64 <<< 'your string'
+eW91ciBzdHJpbmcK
 ```
 
 However, this includes the newline at the end. To encode without the newline, use `printf`:
 
 ```sh
 $ printf 'your string' | base64
+eW91ciBzdHJpbmc=
 ```
 
 For those on Mac, use `pbcopy` to copy the output to your clipboard:
@@ -24,16 +35,34 @@ For those on Mac, use `pbcopy` to copy the output to your clipboard:
 $ printf 'your string' | base64 | pbcopy
 ```
 
-If you don't have `base64` installed, you can try an alternative:
+If you don't have `base64` installed, use `openssl`:
 
 ```sh
 $ printf 'your string' | openssl base64
+eW91ciBzdHJpbmc=
 ```
 
-And you can always encode the string in the browser's JavaScript console:
+## Node.js
+
+Use [`Buffer`](https://nodejs.org/api/buffer.html) to convert your string to Base64 in Node.js:
+
+```sh
+$ node
+> Buffer.from('your string').toString('base64')
+'eW91ciBzdHJpbmc='
+```
+
+Or do this in one-line:
+
+```sh
+$ node -p 'Buffer.from("your string").toString("base64")'
+eW91ciBzdHJpbmc=
+```
+
+## Browser
+
+Use [`btoa`](https://developer.mozilla.org/docs/Glossary/Base64) to encode the string in your browser's JavaScript console:
 
 ```js
-btoa('your string');
+window.btoa('your string');
 ```
-
-Or use [base64decode.org](https://www.base64decode.org).
