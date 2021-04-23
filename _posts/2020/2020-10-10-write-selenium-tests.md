@@ -35,7 +35,7 @@ categories: selenium testing automation
 
 ### Locators
 
-- Separate [locators](https://www.selenium.dev/documentation/en/getting_started_with_webdriver/locating_elements/) in their own files.
+- Separate [locators](https://www.selenium.dev/documentation/en/webdriver/locating_elements/) in their own files.
 - Locators should not be brittle or else tests will be _flaky_.
 - Use [XPath](https://devhints.io/xpath) to find elements with text.
 
