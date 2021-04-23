@@ -14,7 +14,7 @@ If I were to use a metaphor to describe _life_, then it would be the act of _sai
 
 {:.credit}
 
-> Photo by [Osman Rana](https://unsplash.com/@osmanrana) on [Unsplash](https://unsplash.com/photos/Oi1fJwi35oI)
+> Photo by Osman Rana
 
 In the beginning, all we can do is drift. _Drift, drift, drift._ The waters and the wind move us about. There's really not much we can do to control where we're going. But as we collect materials that drift towards us, we're able to build some tools.
 
