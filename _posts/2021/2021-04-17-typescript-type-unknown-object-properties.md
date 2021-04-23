@@ -10,7 +10,7 @@ Given a JavaScript object with unknown property names but known property values,
 
 ## Object Literal
 
-Unknown properties for [object literals](https://www.typescriptlang.org/docs/handbook/3/objects.html) can be typed like so:
+Unknown properties for [object literals](https://www.typescriptlang.org/docs/handbook/2/objects.html) can be typed like so:
 
 ```ts
 // index.ts
