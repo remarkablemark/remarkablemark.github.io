@@ -1,123 +1,109 @@
 ---
 layout: post
-title: Setting up Hot Module Replacement
-date: 2017-05-07 15:55:35 -4000
-excerpt: How to set up hot module replacement (HMR) for webpack-dev-server.
-categories: webpack development
+title: How to set up Hot Module Replacement
+date: 2017-05-07 15:55:35
+updated: 2021-04-27 20:25:50
+excerpt: How to set up Hot Module Replacement (HMR) for Webpack Dev Server (WDS).
+categories: webpack development webpack-dev-server server wds
 ---
 
-By adding [webpack-dev-server (WDS)]({% post_url 2017/2017-05-06-webpack-dev-server %}) to our app, the page will automatically refresh on change.
+This article goes over how to set up [Hot Module Replacement (HMR)](https://webpack.js.org/guides/hot-module-replacement/) with [Webpack Dev Server (WDS)](https://webpack.js.org/configuration/dev-server/).
 
-But wouldn't it be better if our app updates _without a hard reload_?
+## Prerequisite
 
-With [Hot Module Replacement (HMR)](https://webpack.github.io/docs/hot-module-replacement.html), we can do just that.
+Set up an app with [webpack-dev-server]({% post_url 2017/2017-05-06-webpack-dev-server %}).
 
-### Prerequisite
-
-Make sure you have [webpack-dev-server]({% post_url 2017/2017-05-06-webpack-dev-server %}) set up.
-
-### Quickstart
-
-The easiest way to enable HMR for WDS is to update the CLI command:
+We are using the `package.json` dependencies:
 
 ```json
 {
-  "scripts": {
-    "start": "webpack-dev-server --hot --inline"
+  "devDependencies": {
+    "webpack": "^5.35.0",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }
 ```
 
-Now when you restart the server, the additional **chunks** should be displayed in the command-line output.
+## Quickstart
 
-If you open `http://localhost:8080/`, you should get the following logs in the browser:
+Enable HMR for WDS using the CLI by passing [`--hot`](https://webpack.js.org/configuration/dev-server/#devserverhot) and [`--inline`](https://webpack.js.org/configuration/dev-server/#devserverinline):
+
+```sh
+npx webpack serve --hot --inline
+```
+
+Start the server:
+
+```sh
+$ npm start
+
+> @ start path/to/app
+> webpack serve --hot --inline
+
+ℹ ｢wds｣: Project is running at http://localhost:8080/
+ℹ ｢wds｣: webpack output is served from /
+ℹ ｢wds｣: Content not from webpack is served from path/to/app
+⚠ ｢wdm｣: asset main.js 160 KiB [emitted] [minimized] (name: main) 1 related asset
+```
+
+Open `http://localhost:8080/` in the browser:
+
+```sh
+$ open http://localhost:8080/
+```
+
+See the console logs:
 
 ```
 [HMR] Waiting for update signal from WDS...
 [WDS] Hot Module Replacement enabled.
+[WDS] Live Reloading enabled.
 ```
 
-But that's not enough for HMR to work. You'll also need to **accept the hot update**:
+But that's not enough for HMR to work. You'll need to accept the hot update:
 
 ```js
-// main.js
-console.log('Hello, world!');
-
-// https://webpack.github.io/docs/hot-module-replacement.html#api
+// src/index.js
+// ...
 if (module.hot) {
   module.hot.accept();
 }
 ```
 
-Now if you edit and save the app, you should get an update without a hard refresh.
+Edit and save the file and the page should update without a hard reload.
 
-And you should see the following console logs:
+You should see the console logs:
 
 ```
 [WDS] App updated. Recompiling...
 [WDS] App hot update...
 [HMR] Checking for updates on the server...
 [HMR] Updated modules:
-[HMR]  - 77
+[HMR]  - ./src/index.js
 [HMR] App is up to date.
 ```
 
-One more thing, you could add a plugin to see the _named module_ instead of the _module id_ in the browser console:
+## Config
+
+HMR can also be enabled from the config file:
 
 ```js
 // webpack.config.js
-var webpack = require('webpack');
 module.exports = {
-  entry: './main.js',
-  output: {
-    filename: 'bundle.js'
-  },
-  plugins: [
-    new webpack.NamedModulesPlugin()
-  ]
-};
-```
-
-When you restart the server and update `main.js`, you should be able to see:
-
-```
-[HMR] Updated modules:
-[HMR]  - ./main.js
-```
-
-### Config
-
-The alternative to enabling HMR from the CLI is through the configuration file:
-
-```js
-// webpack.config.js
-var webpack = require('webpack');
-module.exports = {
-  entry: './main.js',
-  output: {
-    filename: 'bundle.js'
-  },
-  plugins: [
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
-  ],
   devServer: {
+    hot: true,
     inline: true,
-    hot: true
-  }
+  },
 };
 ```
 
-But you must revert `package.json` since you can't have HMR enabled in both the CLI and the config:
+Run `webpack-dev-server` without passing any options:
 
-```json
-{
-  "scripts": {
-    "start": "webpack-dev-server"
-  }
-}
+```sh
+$ npx webpack serve
 ```
 
-Now if you restart the server, HMR should continue to work like before.
+## Resources
 
-You can learn more about HMR from the ["SurviveJS - Webpack" chapter](https://survivejs.com/webpack/appendices/hmr/).
+- [Hot Module Replacement](https://survivejs.com/webpack/appendices/hmr/)
