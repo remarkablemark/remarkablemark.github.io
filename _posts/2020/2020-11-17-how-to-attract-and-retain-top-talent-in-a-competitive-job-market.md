@@ -11,7 +11,7 @@ image: /assets/images/2020/2020-11-17-man-in-suit-carrying-briefcase.jpg
 
 ![Walking man in blue suit carrying a leather brown briefcase]({{ "/images/2020/2020-11-17-man-in-suit-carrying-briefcase.jpg" | prepend: site.assets_path }})
 
-{:.credit}
+{:.credit-image}
 
 > Photo by [Marten Bjork](https://unsplash.com/@martenbjork) on [Unsplash](https://unsplash.com/photos/6dW3xyQvcYE)
 
@@ -30,7 +30,7 @@ Employers will need to come up with strategies to not only attract prospects, bu
 
 ![MacBook Pro on brown wooden table]({{ "/images/2020/2020-11-30-macbook-pro.jpg" | prepend: site.assets_path }})
 
-{:.credit}
+{:.credit-image}
 
 > Photo by [Aleks Marinkovic](https://unsplash.com/@aleks_marinkovic) on [Unsplash](https://unsplash.com/photos/j3aqw_0cNQM)
 
@@ -52,7 +52,7 @@ For employers, remote work has become the new norm and companies who embrace it 
 
 !["LOVE TO LEARN" pencil signage on wall]({{ "/images/2020/2020-11-30-love-to-learn.jpg" | prepend: site.assets_path }})
 
-{:.credit}
+{:.credit-image}
 
 > Photo by [Tim Mossholder](https://unsplash.com/@timmossholder) on [Unsplash](https://unsplash.com/photos/WE_Kv_ZB1l0)
 
@@ -66,7 +66,7 @@ At bootcamps like [Coding Dojo](https://careerkarma.com/schools/coding-dojo/) an
 
 ![Woman standing surrounded by exercise equipment]({{ "/images/2020/2020-11-30-dumbbell-rack.jpg" | prepend: site.assets_path }})
 
-{:.credit}
+{:.credit-image}
 
 > Photo by [Danielle Cerullo](https://unsplash.com/@dncerullo) on [Unsplash](https://unsplash.com/photos/CQfNt66ttZM)
 
@@ -78,7 +78,7 @@ Ultimately, the perks that you offer should follow your company’s brand and va
 
 ![Hands in front of a laptop]({{ "/images/2020/2020-11-30-feedback.jpg" | prepend: site.assets_path }})
 
-{:.credit}
+{:.credit-image}
 
 > Photo by [Headway](https://unsplash.com/@headwayio) on [Unsplash](https://unsplash.com/photos/5QgIuuBxKwM)
 
@@ -90,7 +90,7 @@ To make workers feel special, you need to communicate with them on a personal le
 
 ![Green leafed indoor plant in white vase]({{ "/images/2020/2020-11-30-plant.jpg" | prepend: site.assets_path }})
 
-{:.credit}
+{:.credit-image}
 
 > Photo by [Dose Media](https://unsplash.com/@dose) on [Unsplash](https://unsplash.com/photos/viCdVl_PGHc)
 
@@ -100,7 +100,7 @@ Everyone desires a job that’s meaningful. Offering a good salary may increase 
 
 ![Two people shaking hands]({{ "/images/2020/2020-11-30-handshake.jpg" | prepend: site.assets_path }})
 
-{:.credit}
+{:.credit-image}
 
 > Photo by [Cytonn Photography](https://unsplash.com/@cytonn_photography) on [Unsplash](https://unsplash.com/photos/n95VMLxqM2I)
 

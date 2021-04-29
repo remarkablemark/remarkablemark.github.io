@@ -9,7 +9,7 @@ image: /assets/images/2021/2021-01-01-yellow-and-white-alarm-clock.jpg
 
 ![Yellow and white alarm clock]({{ "/images/2021/2021-01-01-yellow-and-white-alarm-clock.jpg" | prepend: site.assets_path }})
 
-{:.credit}
+{:.credit-image}
 
 > Photo by [Laura Chouette](https://unsplash.com/@laurachouette) on [Unsplash](https://unsplash.com/photos/t6hNUc8vspA)
 

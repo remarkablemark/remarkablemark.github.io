@@ -10,7 +10,7 @@ image: /assets/images/2021/2021-04-29-business-woman-glancing-sideways.jpg
 
 ![Business woman dressed in black glancing sideways and contemplating]({{ "/images/2021/2021-04-29-business-woman-glancing-sideways.jpg" | prepend: site.assets_path }})
 
-{:.credit}
+{:.credit-image}
 
 > Photo by [Magnet.me](https://unsplash.com/@magnetme) on [Unsplash](https://unsplash.com/photos/LDcC7aCWVlo)
 

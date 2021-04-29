@@ -10,7 +10,7 @@ image: /assets/images/2020/2020-12-14-work-desk.jpg
 
 ![Wooden work desk with coffee, laptop, notebook, and pens]({{ "/images/2020/2020-12-14-work-desk.jpg" | prepend: site.assets_path }})
 
-{:.credit}
+{:.credit-image}
 
 > Photo by [ian dooley](https://unsplash.com/@sadswim) on [Unsplash](https://unsplash.com/photos/DJ7bWa-Gwks)
 

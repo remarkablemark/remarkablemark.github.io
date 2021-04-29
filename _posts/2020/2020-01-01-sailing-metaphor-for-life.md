@@ -12,7 +12,7 @@ If I were to use a metaphor to describe _life_, then it would be the act of _sai
 
 ![Empty rowboat in the middle of the ocean]({{ "/images/2020/01-01-rowboat.jpg" | prepend: site.assets_path }})
 
-{:.credit}
+{:.credit-image}
 
 > Photo by Osman Rana
 
@@ -22,7 +22,7 @@ The first tool we build might be a **sail** for our boat. Although the sail migh
 
 ![White sails in front of clear skies]({{ "/images/2020/01-01-sail.jpg" | prepend: site.assets_path }})
 
-{:.credit}
+{:.credit-image}
 
 > Photo by [Kelly Sikkema](https://unsplash.com/@kellysikkema) on [Unsplash](https://unsplash.com/photos/jinWKnH0m5A)
 
@@ -30,7 +30,7 @@ Because all we can see is blue, we lack a sense of _direction_. Hence, we constr
 
 ![Metallic telescope looking over the blue sea]({{ "/images/2020/01-01-telescope.jpg" | prepend: site.assets_path }})
 
-{:.credit}
+{:.credit-image}
 
 > Photo by [Drew Graham](https://unsplash.com/@dizzyd718) on [Unsplash](https://unsplash.com/photos/_Sr03VSKIeg)
 
@@ -38,7 +38,7 @@ As we collect more materials, we're able to craft our next tool&mdash;the **comp
 
 ![Golden compass on a hardwood table]({{ "/images/2020/01-01-compass.jpg" | prepend: site.assets_path }})
 
-{:.credit}
+{:.credit-image}
 
 > Photo by [Aaron Burden](https://unsplash.com/@aaronburden) on [Unsplash](https://unsplash.com/photos/NXt5PrOb_7U)
 
@@ -48,7 +48,7 @@ All of a sudden, we see something in the distance. It's green and brown. On clos
 
 ![Small island in the middle of the blue waters]({{ "/images/2020/01-01-island.jpg" | prepend: site.assets_path }})
 
-{:.credit}
+{:.credit-image}
 
 > Photo by [Ivan Slade](https://unsplash.com/@flowinteractive) on [Unsplash](https://unsplash.com/photos/RdyMe8KQAV0)
 
@@ -56,7 +56,7 @@ And so, that is how we _**sail through life**_. We start off without a destinati
 
 ![Small ship sailing in a starry background]({{ "/images/2020/01-01-sailing.jpg" | prepend: site.assets_path }})
 
-{:.credit}
+{:.credit-image}
 
 > Photo by [Johannes Plenio](https://unsplash.com/@jplenio) on [Unsplash](https://unsplash.com/photos/DKix6Un55mw)
 
