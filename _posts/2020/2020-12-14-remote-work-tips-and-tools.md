@@ -83,6 +83,8 @@ Lastly, the following are some of my [favorite tools](https://blog.tryexponent.c
 - [Google Drive](https://www.google.com/intl/en_in/drive/)/[Dropbox](https://www.dropbox.com/)/[Box](https://www.box.com/) - Cloud file storage.
 - [Pomodoro Timer](https://tomato-timer.com/) - Time management technique.
 
+{:.credit-author}
+
 > Guest post by **Jeff Lee**.
 >
 > Jeff Lee is a writer with [Exponent](http://tryexponent.com). Interviewing for an upcoming tech job? Check out [Exponent’s free online courses](http://tryexponent.com) to get the prep you need.

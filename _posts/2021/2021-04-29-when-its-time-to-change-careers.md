@@ -49,6 +49,8 @@ However, before completely ruling out your current job, you can try exploring ot
 
 Change is difficult but necessary for growth in both your personal and professional life. If you have doubts about your current job, it means you're not satisfied and this will prevent you from reaching your full potential. You're the only person who knows your own situation and emotions, but it's never a good idea to remain in an unhappy situation out of fear of the unknown. Who knows if your ideal job is waiting for you out there? You can find out by taking the first step.
 
+{:.credit-author}
+
 > Guest post by **David Torrealba**.
 >
 > David Torrealba is a Venezuelan journalist, illustrator, and SEO writer. He has been creating content for blogs, social media, newspapers, and websites since 2016.
