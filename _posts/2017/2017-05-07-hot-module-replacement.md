@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to set up Hot Module Replacement
+title: 'Webpack Dev Server: Hot Module Replacement'
 date: 2017-05-07 15:55:35
 updated: 2021-04-27 20:25:50
 excerpt: How to set up Hot Module Replacement (HMR) for Webpack Dev Server (WDS).
@@ -38,12 +38,12 @@ Start the server:
 ```sh
 $ npm start
 
-> @ start path/to/app
+> @ start path/to/project
 > webpack serve --hot --inline
 
 ℹ ｢wds｣: Project is running at http://localhost:8080/
 ℹ ｢wds｣: webpack output is served from /
-ℹ ｢wds｣: Content not from webpack is served from path/to/app
+ℹ ｢wds｣: Content not from webpack is served from path/to/project
 ⚠ ｢wdm｣: asset main.js 160 KiB [emitted] [minimized] (name: main) 1 related asset
 ```
 
@@ -103,6 +103,12 @@ Run `webpack-dev-server` without passing any options:
 ```sh
 $ npx webpack serve
 ```
+
+## Demo
+
+[Repl.it](https://repl.it/@remarkablemark/webpack-dev-server-hot-module-replacement):
+
+<iframe height="400px" width="100%" src="https://repl.it/@remarkablemark/webpack-dev-server-hot-module-replacement?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ## Resources
 
