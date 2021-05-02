@@ -1,113 +1,134 @@
 ---
 layout: post
-title: Build to UMD with webpack@1
-date: 2016-09-22 20:38:00 -4000
-excerpt: How to use webpack@1 to build a UMD (Universal Module Definition) compatible bundle.
-categories: webpack build umd javascript
+title: 'Webpack: Build UMD bundle'
+date: 2016-09-22 20:38:00
+updated: 2021-05-02 12:32:00
+excerpt: How to build a UMD (Universal Module Definition) bundle with webpack.
+categories: webpack build umd commonjs amd script javascript
 ---
 
-[Webpack](https://webpack.github.io) is an excellent module bundler:
+This article goes over how to build a [UMD](https://github.com/umdjs/umd#readme) (Universal Module Definition) JavaScript bundle with [webpack](https://webpack.js.org/).
 
-> [It] takes modules with dependencies and generates static assets representing those modules. (_[Source](http://webpack.github.io/docs/what-is-webpack.html)._)
+The UMD format allows JavaScript modules to be imported using:
 
-For JavaScript modules, webpack can be used to build a bundle for the browser and/or the server.
+- [CommonJS](#commonjs)
+- [AMD](#amd)
+- [script](#script)
 
-As a result, this means that you can generate a [UMD](https://github.com/umdjs/umd) build with webpack. This **Universal Module Definition** format allows JavaScript modules to be loaded via [CommonJS](https://webpack.github.io/docs/commonjs.html), [AMD](http://requirejs.org/docs/whyamd.html#amd), or [script tag](https://www.html5rocks.com/en/tutorials/speed/script-loading/#toc-first-script).
+## Prerequisites
 
-Let's learn how to use webpack to output UMD.
-
-### Example
-
-To get started, install [webpack@1](https://www.npmjs.com/package/webpack) globally:
+Install [webpack](https://www.npmjs.com/package/webpack) and [webpack-cli](https://www.npmjs.com/package/webpack-cli):
 
 ```sh
-npm install -g webpack@1
+$ npm install webpack webpack-cli --save-dev
 ```
 
-Create an `add` module that returns the sum of two numbers:
+Your `package.json` will look like:
+
+```json
+{
+  "devDependencies": {
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0"
+  }
+}
+```
+
+## Module
+
+Create module:
 
 ```js
-// add.js
+// src/add.js
 module.exports = function add(a, b) {
   return a + b;
 };
 ```
 
-Next, we'll set up the [webpack configuration](https://webpack.github.io/docs/configuration.html):
+Add [webpack configuration](https://webpack.js.org/configuration/):
 
 ```js
 // webpack.config.js
 module.exports = {
-  entry: './add.js',
+  entry: './src/add.js',
   output: {
-    filename: './dist/add.js',
-    // export to AMD, CommonJS, or window
-    libraryTarget: 'umd',
-    // the name exported to window
-    library: 'add'
-  }
+    filename: 'add.js',
+    library: {
+      type: 'umd',
+      name: 'add',
+    },
+    // prevent error: `Uncaught ReferenceError: self is not define`
+    globalObject: 'this',
+  },
 };
 ```
 
-Build your bundle with the `webpack` command:
+Run `webpack` to build your bundle:
 
 ```sh
-$ webpack
-Hash: 81d114e86560c48d887b
-Version: webpack 1.13.2
-Time: 45ms
-        Asset     Size  Chunks             Chunk Names
-./dist/add.js  1.81 kB       0  [emitted]  main
-   [0] ./add.js 55 bytes {0} [built]
+$ npx webpack
+asset add.js 399 bytes [compared for emit] [minimized] (name: main)
+./src/add.js 57 bytes [built] [code generated]
 ```
 
-You'll see that the file is outputted to `dist`:
+The output file will be in `dist`:
 
 ```sh
-$ tree
+$ tree -I node_modules
 .
-├── add.js
 ├── dist
-│   └── add.js
-└── webpack.config.js
+│   └── add.js
+├── package.json
+└── src
+    └── index.js
+
+2 directories, 3 files
 ```
 
-Now you can load your module via [CommonJS](#commonjs), [AMD](#amd), or a [script tag](#script-tag).
+## Import
 
 ### CommonJS
 
+Require module with [CommonJS](https://wikipedia.org/wiki/CommonJS):
+
 ```sh
 $ node
-> var add = require('./dist/add');
+> const add = require('./dist/add');
 > add(1, 2);
 ```
 
 ### AMD
 
+Load module with [AMD](https://requirejs.org/docs/whyamd.html#amd):
+
 ```html
 <!-- amd.html -->
-<html>
-<body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.min.js"></script>
-  <script>
-    window.requirejs(['dist/add'], function(add) {
-      console.log(add(1, 2));
-    });
-  </script>
-</body>
-</html>
+<h1></h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+<script>
+  window.requirejs(['dist/add'], function (add) {
+    document.querySelector('h1').innerText = add(1, 2);
+  });
+</script>
 ```
 
-### Script Tag
+### Script
+
+Load module with [script tag](https://www.html5rocks.com/en/tutorials/speed/script-loading/#toc-first-script):
 
 ```html
-<!-- script-tag.html -->
-<html>
-<body>
-  <script src="./dist/add.js"></script>
-  <script>
-    console.log(window.add(1, 2));
-  </script>
-</body>
-</html>
+<!-- script.html -->
+<h1></h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+<script>
+  window.requirejs(['dist/add'], function (add) {
+    document.querySelector('h1').innerText = add(1, 2);
+  });
+</script>
 ```
+
+## Demo
+
+[Repl.it](https://repl.it/@remarkablemark/webpack-umd):
+
+<iframe height="400px" width="100%" src="https://repl.it/@remarkablemark/webpack-umd?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
