@@ -1,195 +1,155 @@
 ---
 layout: post
-title: How to ignore a module with webpack
-date: 2017-02-25 21:20:00 -4000
-excerpt: To prevent a required module from being bundled, use webpack's IgnorePlugin, DefinePlugin, and UglifyJsPlugin.
-categories: webpack plugin
+title: 'Webpack: ignore module'
+date: 2017-02-25 21:20:00
+updated: 2021-05-18 22:58:15
+excerpt: How to ignore a module with webpack.
+categories: webpack
 ---
 
-Let's say you're doing some logging in `main.js` for development:
+Given you're using module `logger`:
 
 ```js
-// main.js
-
-var logger = require('./logger');
-logger();
-
-// ...
+// src/index.js
+const logger = require('./logger');
+logger('hi');
 ```
 
-And your [webpack config](https://webpack.github.io/docs/configuration.html) is as follows:
+Your bundle is built using the [webpack config](https://webpack.js.org/concepts/configuration/):
 
 ```js
 // webpack.config.js
-
 module.exports = {
-    entry: './main.js',
-    output: {
-        filename: 'bundle.js'
-    }
+  entry: './src/index.js',
+  output: {
+    filename: 'main.js',
+  },
 };
 ```
 
-But given how webpack works, it bundles all required modules (_see last 2 lines_):
+When you build the bundle, how can `logger` be removed?
 
 ```sh
-$ webpack --display-chunks
-Hash: 9d1935249bd4e4d05276
-Version: webpack 2.2.1
-Time: 89ms
-    Asset     Size  Chunks             Chunk Names
-    bundle.js  2.63 kB       0  [emitted]  main
-    chunk    {0} bundle.js (main) 44 bytes [entry] [rendered]
-        [0] ./logger.js 23 bytes {0} [built]
-        [1] ./main.js 21 bytes {0} [built]
+$ NODE_ENV=development npx webpack
+asset main.js 2.46 KiB [emitted] (name: main)
+./src/index.js 50 bytes [built] [code generated]
+./src/logger.js 30 bytes [built] [code generated]
+webpack 5.37.0 compiled successfully in 67 ms
 ```
 
-So how can we ignore the `logger` module in _production_? With a combination of webpack's plugins.
+## IgnorePlugin
 
-### IgnorePlugin
+With [IgnorePlugin](https://webpack.js.org/plugins/ignore-plugin/), a regular expression can be tested to prevent the module from being generated:
 
-With [IgnorePlugin](https://webpack.github.io/docs/list-of-plugins.html#ignoreplugin), a regular expression can be tested to prevent the module from being generated:
+<!-- prettier-ignore-start -->
 
-```js
-// webpack.config.js
-
-var webpack = require('webpack');
-var isProduction = process.env.NODE_ENV === 'production';
-
-var plugins = [];
-if (isProduction) {
-    plugins.push(
-        /**
-         * IgnorePlugin will skip any require
-         * that matches the following regex.
-         */
-        new webpack.IgnorePlugin(/logger/)
-    );
-}
-
-module.exports = {
-    entry: './main.js',
-    output: {
-        filename: 'bundle.js'
-    },
-    plugins: plugins
-};
+```diff
+ // webpack.config.js
++const { IgnorePlugin } = require('webpack');
+ 
+ module.exports = {
+   entry: './src/index.js',
+   output: {
+     filename: 'bundle.js',
+   },
++  plugins: [
++    new IgnorePlugin({
++      resourceRegExp: /logger/,
++    }),
++  ],
+ };
 ```
 
-Now when you build the bundle, you'll see that `logger` is no longer included as a chunk:
+<!-- prettier-ignore-start -->
+
+When you build the bundle, notice how `logger` is no longer part of the generated code:
 
 ```sh
-$ webpack --display-chunks
-Hash: 0dc6a44b438e4bff97d1
-Version: webpack 2.2.1
-Time: 67ms
-    Asset     Size  Chunks             Chunk Names
-    bundle.js  2.69 kB       0  [emitted]  main
-    chunk    {0} bundle.js (main) 21 bytes [entry] [rendered]
-        [0] ./main.js 21 bytes {0} [built]
+webpack-dev-server$ NODE_ENV=development npx webpack
+asset main.js 2.33 KiB [emitted] (name: main)
+./src/index.js 50 bytes [built] [code generated]
+webpack 5.37.0 compiled successfully in 61 ms
 ```
 
-However, if you load your bundle in a webpage, you'll receive the error:
+But when you open your webpage:
+
+```html
+<!-- index.html -->
+<script src="dist/main.js"></script>
+```
+
+The **Console** will show a JavaScript error:
 
 ```
-Cannot find module "./logger"
+Uncaught Error: Cannot find module './logger'
+    at webpackMissingModule (index.js:1)
+    at eval (index.js:1)
+    at Object../src/index.js (main.js:18)
+    at __webpack_require__ (main.js:42)
+    at main.js:53
+    at main.js:55
 ```
 
-This is because `logger` is still being called in `main.js` and webpack doesn't know that any logic related to it should be removed.
+This is because `logger` is still required in `src/index.js`.
 
-Wouldn't it be nice if you could doing something like this:
+## DefinePlugin
+
+To have webpack prune unused code, use [DefinePlugin](https://webpack.js.org/plugins/define-plugin/):
+
+<!-- prettier-ignore-start -->
+
+```diff
+ // webpack.config.js
+-const { IgnorePlugin } = require('webpack');
++const { DefinePlugin, IgnorePlugin } = require('webpack');
+ 
++const { NODE_ENV } = process.env;
+ 
+ module.exports = {
+   entry: './src/index.js',
+   output: {
+     filename: 'main.js',
+   },
+   plugins: [
+-    new IgnorePlugin({
+-      resourceRegExp: /logger/,
+-    }),
++   NODE_ENV === 'production' &&
++     new IgnorePlugin({
++       resourceRegExp: /logger/,
++     }),
++    new DefinePlugin({
++      'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
++    }),
+   ],
+ };
+```
+
+<!-- prettier-ignore-end -->
+
+The plugin allows you to create global constants that are injected at **compile** time:
 
 ```js
-// main.js
-
-if (isDevelopment) {
-    var logger = require('./logger');
-    logger();
-}
-
-// ...
-```
-
-And have webpack strip out the _if statement_ when `isDevelopment` is false?
-
-That's where **DefinePlugin** and **UglifyJsPlugin** comes in.
-
-### DefinePlugin
-
-With [DefinePlugin](https://webpack.github.io/docs/list-of-plugins.html#defineplugin), you can create global constants that are injected at compile time. See [post]({% post_url 2017/2017-01-25-webpack-global-constants %}) on how to do that.
-
-Now you can use the global constant in `main.js`:
-
-```js
-// main.js
-
+// src/index.js
 if (process.env.NODE_ENV === 'development') {
-    var logger = require('./logger');
-    logger();
+  const logger = require('./logger');
+  logger('hi');
 }
-
-// ...
 ```
 
-### UglifyJsPlugin
-
-Finally with [UglifyJsPlugin](https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin), you can eliminate the dead code when the _if statement_ is false:
-
-```js
-// webpack.config.js
-
-var webpack = require('webpack');
-var isProduction = process.env.NODE_ENV === 'production';
-
-var plugins = [
-    new webpack.DefinePlugin({
-        'process.env': {
-            NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-        }
-    })
-];
-
-if (isProduction) {
-    plugins.push(
-        new webpack.IgnorePlugin(/redux-logger/)
-    );
-    plugins.push(
-        /**
-         * UglifyJS will compress the bundle and
-         * eliminate any dead code.
-         */
-        new webpack.optimize.UglifyJsPlugin()
-    );
-}
-
-module.exports = {
-    entry: './main.js',
-    output: {
-        filename: 'bundle.js'
-    },
-    plugins: plugins
-};
-```
-
-Now you can have separate builds for each environment:
+Build the bundle:
 
 ```sh
-$ NODE_ENV=development webpack --display-chunks
-Hash: b7f5f05d03abe533ec77
-Version: webpack 2.2.1
-Time: 89ms
-    Asset     Size  Chunks             Chunk Names
-    bundle.js  2.68 kB       0  [emitted]  main
-    chunk    {0} bundle.js (main) 121 bytes [entry] [rendered]
-        [0] ./logger.js 23 bytes {0} [built]
-        [1] ./main.js 98 bytes {0} [built]
-
-$ NODE_ENV=production webpack --display-chunks
-Hash: a8169341174e7bc6437a
-Version: webpack 2.2.1
-Time: 130ms
-    Asset       Size  Chunks             Chunk Names
-    bundle.js  536 bytes       0  [emitted]  main
-    chunk    {0} bundle.js (main) 98 bytes [entry] [rendered]
-        [0] ./main.js 98 bytes {0} [built]
+$ NODE_ENV=production npx webpack
+asset main.js 0 bytes [emitted] [minimized] (name: main)
+./src/index.js 102 bytes [built] [code generated]
+webpack 5.37.0 compiled successfully in 134 ms
 ```
+
+Open the webpage to see no **Console** errors.
+
+```sh
+$ open index.html
+```
+
+To learn more about Webpack global constants, check out the following [post]({% post_url 2017/2017-01-25-webpack-global-constants %}).
