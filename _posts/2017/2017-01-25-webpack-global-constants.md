@@ -1,50 +1,51 @@
 ---
 layout: post
-title: Creating global constants with webpack
-date: 2017-01-25 21:26:00 -4000
+title: 'Webpack: create global constants'
+date: 2017-01-25 21:26:00
+updated: 2021-05-18 23:14:00
 excerpt: How to create global constants with webpack.
 categories: webpack global constants javascript
 ---
 
-How do we create global constants (e.g., environment variables) with [webpack](https://webpack.github.io)?
+This article goes over how to create global constants (environment variables) with [Webpack](https://webpack.js.org/).
 
-First, let's assume you have the following configuration:
+## Prerequisites
 
-```js
-// webpack.config.js
-
-module.exports = {
-    entry: './main.js',
-    output: {
-        path: __dirname + '/build/',
-        filename: 'bundle.js'
-    }
-};
-```
-
-To define `process.env.NODE_ENV`, you use [DefinePlugin](https://webpack.github.io/docs/list-of-plugins.html#defineplugin):
+Let's assume you have the [webpack config](https://webpack.js.org/configuration/):
 
 ```js
 // webpack.config.js
-
-const webpack = require('webpack');
-
 module.exports = {
-    // ...
-    plugins: [
-        new webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify('production') // '"production"'
-            }
-        })
-    ]
+  entry: './src/index.js',
+  output: {
+    filename: 'main.js',
+  },
 };
 ```
 
-Now, you can use the global constant as the value will be replaced at compile time:
+## DefinePlugin
+
+To define `process.env.NODE_ENV`, use [DefinePlugin](https://webpack.js.org/plugins/define-plugin/):
 
 ```js
-// main.js
+// webpack.config.js
+const { DefinePlugin } = require('webpack');
 
+module.exports = {
+  // ...
+  plugins: [
+    new DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      },
+    }),
+  ],
+};
+```
+
+The global constant will be injected at **compile** time:
+
+```js
+// src/index.js
 console.log(process.env.NODE_ENV); // "production"
 ```
