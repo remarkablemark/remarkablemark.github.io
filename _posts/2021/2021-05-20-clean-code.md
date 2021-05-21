@@ -2,7 +2,7 @@
 layout: post
 title: Clean code
 date: 2021-05-20 21:02:03
-excerpt: My philosophy on writing good and clean code.
+excerpt: My philosophy on writing clean code.
 categories: coding philosophy
 ---
 
