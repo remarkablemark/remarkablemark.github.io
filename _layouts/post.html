@@ -17,23 +17,26 @@ layout: default
   </header>
   <hr>
   <article class="post-content">{{ content }}</article>
-  <script>
-    document
-      .querySelector('.post-content')
-      .querySelectorAll('h1,h2,h3,h4,h5,h6')
-      .forEach(function(heading) {
-        if (heading.id)
-          heading.innerHTML =
-            '<a href="#' + heading.id + '">' +
-              heading.innerText +
-            '<\/a>' +
-            '<span class="anchor-icon">§<\/span>';
-      });
-  </script>
   <br>
   {% include promo.html %}
-  <br>
-  <br>
+  <br><br>
   {% include disqus.html %}
   <br>
 </main>
+{% comment %}
+
+<!-- Heading links -->
+{% endcomment %}
+<script>
+  document
+    .querySelector('.post-content')
+    .querySelectorAll('h1,h2,h3,h4,h5,h6')
+    .forEach(function(heading) {
+      if (heading.id)
+        heading.innerHTML =
+          '<a href="#' + heading.id + '">' +
+            heading.innerText +
+          '<\/a>' +
+          '<span class="anchor-icon">§<\/span>';
+  });
+</script>
