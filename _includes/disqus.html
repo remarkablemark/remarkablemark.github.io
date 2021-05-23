@@ -1,19 +1,19 @@
+{% comment %}
+<!-- Universal Code: https://disqus.com/admin/universalcode/ -->
+{% endcomment %}
 {% if page.layout == "post" %}
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        {% comment %}
-        Universal Code: https://disqus.com/admin/universalcode/
-        {% endcomment %}
-        window.disqus_config = function() {
-            this.page.url = '{{ page.url | prepend: site.url }}';
-            this.page.identifier = '{{ page.id | remove_first: "/blog/" | replace: "/", "-" }}';
-        };
-
-        (function(doc, script) {
-            script = doc.createElement('script');
-            script.src = '//{{ site.disqus_shortname }}.disqus.com/embed.js';
-            script.setAttribute('data-timestamp', +new Date());
-            (doc.head || doc.body).appendChild(script);
-        })(document);
-    </script>
+  <div id="disqus_thread"></div>
+  <script>
+    window.disqus_config = function() {
+      this.page.url = '{{ page.url | prepend: site.url }}';
+      this.page.identifier = '{{ page.id | remove_first: "/blog/" | replace: "/", "-" }}';
+    };
+    (function() {
+      var script = document.createElement('script');
+      script.src = '//{{ site.disqus_shortname }}.disqus.com/embed.js';
+      script.async = true;
+      script.setAttribute('data-timestamp', +new Date());
+      document.head.appendChild(script);
+    })();
+  </script>
 {% endif %}
