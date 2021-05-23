@@ -1,8 +1,15 @@
-{% comment %}<!-- Global site tag (gtag.js) - Google Analytics -->{% endcomment %}
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-59233605-1"></script>
+{% comment %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+{% endcomment %}
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() {
+    dataLayer.push(arguments);
+  }
   gtag('js', new Date());
-  gtag('config', 'UA-59233605-1');
+  gtag('config', '{{ site.google_analytics_id }}');
 </script>
