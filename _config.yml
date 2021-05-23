@@ -8,7 +8,7 @@ title: remarkablemark
 email: mark@remarkablemark.org
 description: >- # this means to ignore newlines until "baseurl:"
   remarkablemark's site.
-baseurl: "" # the subpath of your site, e.g. /blog/
+baseurl: '' # the subpath of your site, e.g. /blog/
 url: https://remarkablemark.org # the base hostname & protocol for your site, e.g. http://example.com
 github_username: remarkablemark
 repository: remarkablemark/remarkablemark.github.io
@@ -35,7 +35,7 @@ plugins:
 # https://jekyllrb.com/docs/configuration/#front-matter-defaults
 defaults:
   - scope:
-      path: ""
+      path: ''
     values:
       # https://jekyll.github.io/jekyll-seo-tag/advanced-usage/#setting-a-default-image
       image: /assets/images/logo/100.png
