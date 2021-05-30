@@ -17,7 +17,7 @@ $header-border-height: 2px;
 
   // hamburger icon
   .menu {
-    color: #fff;
+    color: $white;
     line-height: $header-height;
     margin: 0; // remove additional margins coming from skeleton
     position: absolute; // ensure the logo is centered

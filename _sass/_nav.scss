@@ -60,8 +60,8 @@ $nav-width: 225px;
 
     &:hover,
     &:focus {
-      background-color: #fff;
-      border-color: #fff;
+      background-color: $white;
+      border-color: $white;
       color: #000;
       cursor: pointer;
     }
