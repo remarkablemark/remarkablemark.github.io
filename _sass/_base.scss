@@ -100,7 +100,7 @@ a {
  */
 blockquote {
   color: $grey-color;
-  border-left: 4px solid $grey-color-light;
+  border-left: 4px solid lighten($grey-color, 40%); // #ccc
   padding-left: $spacing-unit / 2;
   font-size: 18px;
   font-style: italic;

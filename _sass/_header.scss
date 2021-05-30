@@ -1,3 +1,4 @@
+$header-color: darken($grey-color, 20%); // #333;
 $header-height: 85px;
 $header-border-height: 2px;
 
@@ -5,9 +6,8 @@ $header-border-height: 2px;
  * Header.
  */
 .header {
-  background-color: #333;
-  border-bottom: $header-border-height solid $grey-color-dark;
-  font-size: 2em;
+  background-color: $header-color;
+  border-bottom: $header-border-height solid $header-color;
   font-size: 4rem;
 
   .container {
