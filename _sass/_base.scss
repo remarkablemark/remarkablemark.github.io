@@ -89,8 +89,10 @@ a {
     color: darken($red, 15%);
   }
 
+  &:active,
+  &:focus,
   &:hover {
-    color: $text-color;
+    color: $red;
     text-decoration: underline;
   }
 }
