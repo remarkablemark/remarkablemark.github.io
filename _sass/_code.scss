@@ -1,0 +1,37 @@
+/**
+ * Gist.
+ */
+.gist {
+  td {
+    border: inherit; // fix Skeleton override
+  }
+}
+
+/**
+ * Codeblock.
+ */
+pre {
+  padding: 8px 12px;
+
+  // override skeleton styles
+  > code {
+    border: 0;
+    overflow-x: auto;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &.highlight {
+    border-left: 15px solid #35383c;
+    color: #c1c2c3;
+    overflow: auto;
+    white-space: pre;
+    word-wrap: normal;
+
+    &,
+    code {
+      background-color: #222;
+      font-size: 18px;
+    }
+  }
+}

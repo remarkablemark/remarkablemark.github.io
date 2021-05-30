@@ -41,9 +41,10 @@ $on-laptop: 800px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import 'base';
-@import 'nav';
+@import 'code';
 @import 'header';
 @import 'headshot';
 @import 'layout';
+@import 'monokai';
+@import 'nav';
 @import 'post';
-@import 'syntax-highlighting';
