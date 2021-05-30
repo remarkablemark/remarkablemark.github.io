@@ -1,29 +1,4 @@
 /**
- * Reset some basic elements.
- */
-/*
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-hr,
-dl,
-dd,
-ol,
-ul,
-figure {
-  margin: 0;
-  padding: 0;
-}
-*/
-
-/**
  * Basic styling.
  */
 body {
@@ -129,6 +104,7 @@ blockquote {
   padding-left: $spacing-unit / 2;
   font-size: 18px;
   font-style: italic;
+  margin-left: 0;
 
   > :last-child {
     margin-bottom: 0;
