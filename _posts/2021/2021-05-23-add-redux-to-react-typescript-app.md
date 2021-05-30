@@ -2,8 +2,9 @@
 layout: post
 title: How to add Redux to a React app
 date: 2021-05-23 21:33:32
+updated: 2021-05-29 21:10:41
 excerpt: How to add Redux to a React TypeScript app.
-categories: redux react typescript
+categories: react redux cra typescript javascript web
 ---
 
 <!--email_off-->
@@ -13,6 +14,8 @@ This article goes over how to to add Redux to a React TypeScript app.
 <details markdown="1">
 <summary>Table of Contents</summary>
 
+- [Video](#video)
+- [Demo](#demo)
 - [Prerequisites](#prerequisites)
 - [Install](#install)
 - [Slice](#slice)
@@ -23,6 +26,18 @@ This article goes over how to to add Redux to a React TypeScript app.
 - [Resources](#resources)
 
 </details>
+
+## Video
+
+Watch [YouTube video](https://youtu.be/upcZZAN7Gt8?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ):
+
+<iframe width="100%" height="720" src="https://www.youtube.com/embed/upcZZAN7Gt8?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Demo
+
+[CodeSandbox demo](https://codesandbox.io/s/react-redux-typescript-oof6n):
+
+<iframe src="https://codesandbox.io/embed/react-redux-typescript-oof6n?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="React State: Class vs Function" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 
 ## Prerequisites
 
