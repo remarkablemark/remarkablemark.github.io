@@ -1,0 +1,99 @@
+.post-meta {
+  color: #666;
+}
+
+.post-link {
+  font-size: 1.2em;
+
+  &,
+  &:hover {
+    color: #e22a2a;
+  }
+
+  &:visited {
+    color: #666;
+  }
+}
+
+// list page
+.post-list {
+  list-style: none;
+  margin-left: 0.25em;
+
+  // keep date separated from title in list view
+  .post-meta {
+    margin-right: 0.25em;
+    @include media-query($on-palm) {
+      display: block;
+    }
+  }
+}
+
+.post-title {
+  line-height: 1.15;
+  margin-bottom: 0.25em;
+}
+
+// post page
+.post {
+  hr {
+    margin: 1em 0;
+  }
+
+  // center images
+  p > img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  // remove extra spacing for lists and items
+  ol ol,
+  ol ul,
+  ul ol,
+  ul ul {
+    font-size: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  li {
+    margin-bottom: 0;
+  }
+}
+
+.post-content {
+  .anchor-icon {
+    bottom: 0;
+    color: $grey-color;
+    display: none;
+    font-size: 0.75em;
+    left: -1em;
+    position: absolute;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+
+    > a {
+      &,
+      &:visited {
+        color: inherit;
+      }
+
+      @media only screen and (min-width: $on-palm) {
+        &:active,
+        &:focus,
+        &:hover {
+          + .anchor-icon {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
