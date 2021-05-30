@@ -99,8 +99,8 @@ a {
  * Blockquotes.
  */
 blockquote {
-  color: $grey-color;
-  border-left: 4px solid lighten($grey-color, 40%); // #ccc
+  color: $grey;
+  border-left: 4px solid lighten($grey, 40%); // #ccc
   padding-left: $spacing-unit / 2;
   font-size: 18px;
   font-style: italic;
@@ -157,7 +157,7 @@ blockquote {
     vertical-align: middle;
 
     path {
-      fill: $grey-color;
+      fill: $grey;
     }
   }
 }
