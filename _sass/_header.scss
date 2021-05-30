@@ -26,7 +26,7 @@ $header-border-height: 2px;
     &:focus,
     &:hover {
       background-color: $white;
-      color: #000;
+      color: $black;
       cursor: pointer;
       outline: 0;
     }

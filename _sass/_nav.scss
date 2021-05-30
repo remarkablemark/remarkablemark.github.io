@@ -62,7 +62,7 @@ $nav-width: 225px;
     &:focus {
       background-color: $white;
       border-color: $white;
-      color: #000;
+      color: $black;
       cursor: pointer;
     }
   }
