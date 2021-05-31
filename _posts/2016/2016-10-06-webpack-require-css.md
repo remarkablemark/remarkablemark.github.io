@@ -1,186 +1,182 @@
 ---
 layout: post
-title: Bundling CSS with webpack@1
-date: 2016-10-06 19:59:00 -4000
-excerpt: How to require and bundle CSS files with webpack@1.
-categories: webpack css stylesheet nodejs
+title: 'Webpack: Require CSS'
+date: 2016-10-06 19:59:00
+updated: 2021-05-31 17:26:04
+excerpt: How to import CSS files in JavaScript modules with Webpack.
+categories: webpack css stylesheet
 ---
+
+This article goes oer how to require CSS files in JavaScript modules with Webpack.
+
+## Problem
 
 Given `style.css`:
 
 ```css
-/* style.css */
+/* src/style.css */
 .foo {
   color: #f00;
 }
 ```
 
-Can you run the following in Node.js?
+And `index.html`:
+
+```html
+<!-- index.html -->
+<p class="foo">CSS</p>
+<script src="dist/main.js"></script>
+```
+
+Can you import a `.css` file?
 
 ```js
-// entry.js
-require('./style.css');
+// src/index.js
+import './style.css';
 ```
 
-No, you can't.
+No, you can't. But you can bundle the styles with [Webpack](https://webpack.js.org/).
 
-But what you can do is build a browser bundle with [webpack](https://webpack.github.io).
+## Webpack
 
-### Webpack
-
-Install [webpack](https://www.npmjs.com/package/webpack) if you haven't already:
+Install [`webpack`](https://www.npmjs.com/package/webpack) and [`webpack-cli`](https://www.npmjs.com/package/webpack-cli):
 
 ```sh
-$ npm install webpack@1 --global
+npm install webpack webpack-cli
 ```
 
-Or you can install a local version of webpack and use the local binary:
+## CSS Loader
+
+Install [`css-loader`](https://github.com/webpack/css-loader):
 
 ```sh
-$ npm install webpack
-# ./node_modules/.bin/webpack
+npm install css-loader
 ```
 
-### Loader
-
-The [css-loader](https://github.com/webpack/css-loader) comes handy here:
-
-```sh
-$ npm install css-loader
-```
-
-Create your [webpack configuration](https://webpack.github.io/docs/configuration.html):
-
-```js
-// webpack.config.js
-module.exports = {
-  module: {
-    loaders: [
-      {
-        test: /\.css$/,
-        loader: 'css-loader'
-      }
-    ]
-  }
-};
-```
-
-Use the [webpack CLI](https://github.com/webpack/docs/wiki/cli) to build the output:
-
-```sh
-$ webpack entry.js output.js
-
-Hash: 450179c0dbbc679bc68a
-Version: webpack 1.13.2
-Time: 345ms
-    Asset    Size  Chunks             Chunk Names
-output.js  3.3 kB       0  [emitted]  main
-   [0] ./entry.js 36 bytes {0} [built]
-    + 2 hidden modules
-```
-
-The exports of `style.css` is an array with the method `.toString()`:
-
-```js
-// entry.js
-var style = require('./style.css');
-console.log(style); // [ Array[3] ]
-console.log(style.toString()); // css string
-```
-
-### Style
-
-But how would load the styles to your document?
-
-One approach is to insert it with JavaScript:
-
-```js
-// entry.js
-var css = require('./style.css').toString();
-var style = document.createElement('style');
-if (style.styleSheet) {
-  style.styleSheet.cssText = css;
-} else {
-  style.appendChild(document.createTextNode(css));
-}
-document.head.appendChild(style);
-```
-
-Another approach is to use [style-loader](https://github.com/webpack-contrib/style-loader):
-
-```sh
-$ npm install style-loader
-```
-
-Now add the loader to your webpack config:
+Update your [webpack configuration](https://webpack.js.org/concepts/configuration/):
 
 ```js
 // webpack.config.js
 module.exports = {
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.css$/,
-        // chained loaders are applied right to left
-        loaders: ['style-loader', 'css-loader']
-        // an alternative syntax:
-        // loader: 'style-loader!css-loader'
-      }
-    ]
-  }
-};
-```
-
-### Plugin
-
-What if you have **multiple** `.css` files and you want to combine them into a **single** stylesheet?
-
-Here, you'll want to use [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin).
-
-Install both the [plugin](https://www.npmjs.com/package/extract-text-webpack-plugin) and [webpack](https://www.npmjs.com/package/webpack) locally (if you haven't already):
-
-```sh
-$ npm install extract-text-webpack-plugin webpack@1
-```
-
-Now update your webpack configuration:
-
-```js
-// webpack.config.js
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-module.exports = {
-  module: {
-    loaders: [
-      {
-        test: /\.css$/,
-        // extract styles
-        loader: ExtractTextPlugin.extract('css-loader')
-      }
-    ]
+        test: /\.css$/i,
+        use: ['css-loader'],
+      },
+    ],
   },
-  plugins: [
-    // create CSS file named `output.css`
-    new ExtractTextPlugin('output.css', {
-      allChunks: true
-    })
-  ]
 };
 ```
 
-Webpack will generate a **JavaScript bundle** as well as a **CSS bundle**:
+Run `webpack` to build the bundle:
 
 ```sh
-$ webpack entry.js output.js
-
-Hash: ca4a8ab3e0b1963e60de
-Version: webpack 1.13.2
-Time: 370ms
-     Asset      Size  Chunks             Chunk Names
- output.js   1.66 kB       0  [emitted]  main
-output.css  42 bytes       0  [emitted]  main
-   [0] ./entry.js 150 bytes {0} [built]
-    + 1 hidden modules
-Child extract-text-webpack-plugin:
-        + 2 hidden modules
+npx webpack --mode=development
 ```
+
+Output:
+
+```
+asset main.js 7.12 KiB [compared for emit] (name: main)
+runtime modules 937 bytes 4 modules
+cacheable modules 1.91 KiB
+  ./src/index.js 24 bytes [built] [code generated]
+  ./src/style.css 331 bytes [built] [code generated]
+  ../../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+webpack 5.38.1 compiled successfully in 199 ms
+```
+
+The default export of `style.css` is an array with the method `.toString()`:
+
+```js
+// src/index.js
+import style from './style.css';
+
+console.log(style); // [ Array[3] ]
+console.log(style.toString()); // ".foo { color: #foo; }"
+```
+
+How would your load the styles on the page?
+
+One approach is to do it manually with JavaScript:
+
+```js
+// src/index.js
+import style from './style.css';
+
+const css = style.toString();
+const styleElement = document.createElement('style');
+
+if (styleElement.styleSheet) {
+  styleElement.styleSheet.cssText = css;
+} else {
+  styleElement.appendChild(document.createTextNode(css));
+}
+
+document.head.appendChild(styleElement);
+```
+
+Another approach is to use [Style Loader](https://github.com/webpack-contrib/style-loader).
+
+## Style Loader
+
+Install [`style-loader`](https://npmjs.com/package/style-loader):
+
+```sh
+npm install style-loader
+```
+
+Add the loader to your webpack config:
+
+```diff
+ // webpack.config.js
+ module.exports = {
+   module: {
+     rules: [
+       {
+         test: /\.css$/i,
+-        use: ['css-loader'],
++        use: ['style-loader', 'css-loader'],
+       },
+     ],
+   },
+ };
+```
+
+To inject the styles in your webpage, you only need:
+
+```js
+// src/index.js
+import './style.css';
+```
+
+Run webpack:
+
+```sh
+npx webpack --mode=development
+```
+
+Output:
+
+```
+asset main.js 16.6 KiB [emitted] (name: main)
+runtime modules 937 bytes 4 modules
+cacheable modules 8.91 KiB
+  modules by path ./src/ 691 bytes
+    ./src/index.js 22 bytes [built] [code generated]
+    ./src/style.css 338 bytes [built] [code generated]
+    ../../node_modules/css-loader/dist/cjs.js!./src/style.css 331 bytes [built] [code generated]
+  modules by path ../../node_modules/ 8.23 KiB
+    ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js 6.67 KiB [built] [code generated]
+    ../../node_modules/css-loader/dist/runtime/api.js 1.57 KiB [built] [code generated]
+webpack 5.38.1 compiled successfully in 204 ms
+```
+
+View the webpage:
+
+```sh
+open index.html
+```
+
+To extract CSS into separate files, check out [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin).
