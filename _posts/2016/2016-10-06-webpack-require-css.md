@@ -180,3 +180,7 @@ open index.html
 ```
 
 To extract CSS into separate files, check out [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin).
+
+## Resources
+
+- [webpack-recipes](https://github.com/remarkablemark/webpack-recipes)

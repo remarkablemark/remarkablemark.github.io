@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Webpack: create global constants'
+title: 'Webpack: Create global constants'
 date: 2017-01-25 21:26:00
 updated: 2021-05-18 23:14:00
 excerpt: How to create global constants with webpack.
@@ -49,3 +49,7 @@ The global constant will be injected at **compile** time:
 // src/index.js
 console.log(process.env.NODE_ENV); // "production"
 ```
+
+## Resources
+
+- [webpack-recipes](https://github.com/remarkablemark/webpack-recipes)
