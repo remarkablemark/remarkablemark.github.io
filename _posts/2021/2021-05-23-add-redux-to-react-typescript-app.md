@@ -44,19 +44,26 @@ Watch [YouTube video](https://youtu.be/upcZZAN7Gt8?list=PLVgOtoUBG2mdLpj6qT5DXfg
 Given an app bootstrapped by [Create React App](https://create-react-app.dev/):
 
 ```sh
-npx create-react-app my-app --template typescript
-cd my-app
+npx create-react-app my-app --template typescript && cd my-app
 ```
 
 ## Install
 
-Install [`@reduxjs/toolkit`](https://www.npmjs.com/package/@reduxjs/toolkit), [`@types/react-redux`](https://www.npmjs.com/package/@types/react-redux), and [`react-redux`](https://www.npmjs.com/package/react-redux):
+Install the dependencies:
+
+- [@reduxjs/toolkit](https://www.npmjs.com/package/@reduxjs/toolkit)
+- [@types/react-redux](https://www.npmjs.com/package/@types/react-redux)
+- [react-redux](https://www.npmjs.com/package/react-redux)
+
+With npm:
 
 ```sh
-# npm
 npm install @reduxjs/toolkit @types/react-redux react-redux
+```
 
-# yarn
+Or with Yarn:
+
+```sh
 yarn add @reduxjs/toolkit @types/react-redux react-redux
 ```
 
