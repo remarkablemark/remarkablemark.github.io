@@ -10,8 +10,9 @@
 /**
  * Codeblock.
  */
-pre {
+pre.highlight {
   padding: 8px 12px;
+  position: relative;
 
   // override skeleton styles
   > code {
@@ -33,5 +34,28 @@ pre {
       background-color: #222;
       font-size: 18px;
     }
+  }
+
+  // copy code to clipboard
+  .copy {
+    color: $white;
+    position: absolute;
+    right: 1.2rem;
+    top: 1.2rem;
+    opacity: 0;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background: rgba(0, 0, 0, 0.7);
+      opacity: 1;
+    }
+  }
+
+  &:active .copy,
+  &:focus .copy,
+  &:hover .copy {
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 1;
   }
 }

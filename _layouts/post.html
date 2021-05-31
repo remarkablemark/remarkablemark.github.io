@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+
 {% assign date = page.updated | default: page.date %}
 <main class="container post" id="main" role="main">
   <header class="post-header" role="header">
@@ -31,12 +32,38 @@ layout: default
   document
     .querySelector('.post-content')
     .querySelectorAll('h1,h2,h3,h4,h5,h6')
-    .forEach(function(heading) {
+    .forEach(function (heading) {
       if (heading.id)
         heading.innerHTML =
           '<a href="#' + heading.id + '">' +
             heading.innerText +
           '<\/a>' +
           '<span class="anchor-icon">§<\/span>';
-  });
+    });
+</script>
+{% comment %}
+
+<!-- Copy code to clipboard -->
+{% endcomment %}
+<script>
+  document
+    .querySelector('.post-content')
+    .querySelectorAll('pre.highlight')
+    .forEach(function (pre) {
+      var button = document.createElement('button');
+      var copyText = 'Copy';
+      button.className = 'copy';
+      button.type = 'button';
+      button.ariaLabel = 'Copy code to clipboard';
+      button.innerText = copyText;
+      button.addEventListener('click', function () {
+        var code = pre.querySelector('code').innerText.trim();
+        navigator.clipboard.writeText(code);
+        button.innerText = 'Copied';
+        setTimeout(function () {
+          button.innerText = copyText;
+        }, 4000);
+      });
+      pre.appendChild(button);
+    });
 </script>
