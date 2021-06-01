@@ -57,6 +57,7 @@ git submodule update --init --recursive
 To switch the git submodule remote URL from HTTPS to SSH:
 
 ```sh
+cd assets
 git remote set-url origin git@github.com:remarkablemark/assets.git
 ```
 
@@ -106,7 +107,7 @@ Use [HTMLProofer](https://github.com/gjtorikian/html-proofer) to validate HTML o
 
 ```sh
 bundle exec jekyll build
-bundle exec htmlproofer --http-status-ignore '0,400,401,429,999' ./_site/
+bundle exec htmlproofer --http-status-ignore '0,301,400,401,429,999' ./_site/
 ```
 
 ## Support
