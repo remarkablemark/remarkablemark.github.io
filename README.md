@@ -7,7 +7,7 @@
 
 ## Prerequisites
 
-[Ruby](https://www.ruby-lang.org/en/downloads/) 2.6.7:
+[Ruby](https://www.ruby-lang.org/en/downloads/) 2.7.3:
 
 ```sh
 ruby --version
@@ -28,8 +28,8 @@ Reload or open a new shell:
 
 ```sh
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
-rbenv install 2.6.7
-rbenv local 2.6.7
+rbenv install 2.7.3
+rbenv local 2.7.3
 ```
 
 [Bundler](https://bundler.io/):
@@ -37,6 +37,12 @@ rbenv local 2.6.7
 ```sh
 gem install bundler
 bundler --version
+```
+
+Update bundler:
+
+```sh
+bundle update --bundler
 ```
 
 ## Install
