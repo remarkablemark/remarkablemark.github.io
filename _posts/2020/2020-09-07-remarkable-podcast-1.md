@@ -16,7 +16,7 @@ Listen on [Spotify](https://open.spotify.com/episode/0HVRNOFnerKdFMaVg4pnfD) and
 
 ## Description
 
-This is an episode of the ["Remarkable Podcast"](https://soundcloud.com/remarkablemark/sets/remarkable-podcast) with host [Mark](https://b.remarkabl.org/mark) and guest [Seamus Martin](https://github.com/spmartin823). Seamus is the founder of [Dashlight](https://dashlight.io/) and an ex-[PowerSchool](https://www.powerschool.com/) Tech Lead.
+This is an episode of the ["Remarkable Podcast"](https://soundcloud.com/remarkablemark/sets/remarkable-podcast) with host [Mark](https://b.remarkabl.org/mark) and guest [Seamus Martin](https://github.com/spmartin823). Seamus is the founder of Dashlight.io and an ex-[PowerSchool](https://www.powerschool.com/) Tech Lead.
 
 We discuss how Seamus got started in tech, which includes his transition from math teacher to developer, his experience going through a coding bootcamp, his process of finding interviews to getting hired, and his time working as an engineer at a mid-to-large sized company.
 
@@ -195,7 +195,7 @@ We discuss how Seamus got started in tech, which includes his transition from ma
 
 [26:27]
 
-**SEAMUS**: Yeah so I left Schoology to start a company and I'm about 5 days into it. My company is called [Dashlight](https://dashlight.io/) and Dashlight is trying to solve the problem of the silent unhappy employee. As you know, [since] we worked together for a long time, I was a very vocal [and] unhappy employee towards the end. Sometimes maybe too vocal? Telling everybody who would listen to all the gripes that I had day-to-day. And ultimately, those gripes went unanswered and I felt like I had to leave. But for every one of me, there's a lot of less confrontational people that have feedback about how they're being treated at work. And my company wants to create an avenue for collecting and analyzing that feedback. So that's what I'm up to. If you want to check it out, it's <https://dashlight.io/>. Right now it's just under construction, but it'll change everyday so keep watching.
+**SEAMUS**: Yeah so I left Schoology to start a company and I'm about 5 days into it. My company is called Dashlight and Dashlight is trying to solve the problem of the silent unhappy employee. As you know, [since] we worked together for a long time, I was a very vocal [and] unhappy employee towards the end. Sometimes maybe too vocal? Telling everybody who would listen to all the gripes that I had day-to-day. And ultimately, those gripes went unanswered and I felt like I had to leave. But for every one of me, there's a lot of less confrontational people that have feedback about how they're being treated at work. And my company wants to create an avenue for collecting and analyzing that feedback. So that's what I'm up to. If you want to check it out, it's `https://dashlight.io/`. Right now it's just under construction, but it'll change everyday so keep watching.
 
 **MARK**: Nice, I’m excited.
 
