@@ -11,7 +11,7 @@ image: /assets/images/2020/2020-10-04-drive-file-stream-options.png
 > **TL;DR**: run the command in your Terminal to remove your Drive File Stream cache:
 >
 > ```sh
-> $ rm -rf ~/Library/Application\ Support/Google/DriveFS/[0-9]*
+> rm -rf ~/Library/Application\ Support/Google/DriveFS/[0-9]*
 > ```
 >
 > **WARNING**: If files are pending upload to Drive, deleting the cache may cause the files to be lost (see [comment](https://disq.us/p/2fteuml)).
@@ -44,7 +44,7 @@ By default, the cache directory should be `~/Library/Application Support/Google/
 To delete the DriveFS cache directory using [Terminal](<https://en.wikipedia.org/wiki/Terminal_(macOS)>):
 
 ```sh
-$ rm -rf ~/Library/Application\ Support/Google/DriveFS/
+rm -rf ~/Library/Application\ Support/Google/DriveFS/
 ```
 
 > **WARNING**: If files are pending upload to Drive, deleting the cache may cause the files to be lost (see [comment](https://disq.us/p/2fteuml)).
@@ -56,7 +56,7 @@ The side-effect of this is that it also deletes your credentials so you'll need 
 To clear cache without deleting credentials, you can delete just the cache content directory:
 
 ```sh
-$ rm -rf ~/Library/Application\ Support/Google/DriveFS/[0-9]*
+rm -rf ~/Library/Application\ Support/Google/DriveFS/[0-9]*
 ```
 
 > **WARNING**: If files are pending upload to Drive, deleting the cache may cause the files to be lost (see [comment](https://disq.us/p/2fteuml)).
@@ -64,8 +64,11 @@ $ rm -rf ~/Library/Application\ Support/Google/DriveFS/[0-9]*
 What the command above is doing is deleting the numeric directory from DriveFS:
 
 ```sh
-$ cd ~/Library/Application\ Support/Google/DriveFS/
-$ du -sh *
+cd ~/Library/Application\ Support/Google/DriveFS/
+du -sh *
+```
+
+```
 224M	114104707028901901726
 4.0K	Crashpad
 4.7M	Logs
@@ -74,8 +77,14 @@ $ du -sh *
 512K	cef_cache
 4.0K	pid.txt
 4.0K	signin
-$ rm -rf [0-9]* # 114104707028901901726
-$ du -sh *
+```
+
+```sh
+rm -rf [0-9]* # 114104707028901901726
+du -sh *
+```
+
+```
 4.0K	Crashpad
 4.7M	Logs
  20M	Resources
