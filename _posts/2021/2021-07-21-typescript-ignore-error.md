@@ -2,9 +2,17 @@
 layout: post
 title: TypeScript ignore error
 date: 2021-07-21 19:18:44
+updated: 2021-07-23 19:43:16
 excerpt: How to ignore a TypeScript error in a file.
 categories: typescript error
 ---
+
+> **TL;DR**: to ignore a line:
+>
+> ```
+> // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+> // @ts-ignore
+> ```
 
 To disable type checking for an entire file, add the comment to the top of the file:
 
