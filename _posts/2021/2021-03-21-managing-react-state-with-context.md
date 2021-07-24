@@ -2,6 +2,7 @@
 layout: post
 title: Managing React state with Context
 date: 2021-03-21 19:19:03
+updated: 2021-07-24 16:36:27
 excerpt: How to manage React state with Context and the useReducer hook.
 categories: react context reducer hook state javascript
 ---
@@ -59,12 +60,12 @@ Create `<Provider>` and set prop `value` to 0:
 
 ```jsx
 // Provider.js
-import { createContext, useReducer } from 'react';
+import { createContext } from 'react';
 
-const Context = createContext();
+export const Context = createContext();
 
-export default function StoreProvider(props) {
-  return <Provider value={0}>{props.children}</Provider>;
+export default function Provider(props) {
+  return <Context.Provider value={0}>{props.children}</Context.Provider>;
 }
 ```
 
@@ -138,9 +139,13 @@ const initialState = {
   count: 0,
 };
 
-export default function StoreProvider(props) {
+export default function Provider(props) {
   const [state, dispatch] = useReducer(reducer, initialState);
-  return <Provider value={[state, dispatch]}>{props.children}</Provider>;
+  return (
+    <Context.Provider value={[state, dispatch]}>
+      {props.children}
+    </Context.Provider>
+  );
 }
 ```
 
