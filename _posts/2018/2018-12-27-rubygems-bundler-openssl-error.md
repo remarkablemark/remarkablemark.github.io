@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Fixing RubyGems/Bundler SSL error
-date: 2018-12-27 19:25:05 -4000
-excerpt: How I resolved a RubyGems/Bundler SSL/TSL error, which was caused by an outdated version of OpenSSL being used to compile Ruby.
-categories: rubygems bundler openssl ruby gem rbenv brew ssl tsl troubleshooting
+date: 2018-12-27 19:25:05
+excerpt: How to resolve a RubyGems/Bundler SSL/TSL error, which was caused by an outdated version of OpenSSL being used to compile Ruby.
+categories: ruby bundler openssl
 ---
 
 > TL;DR: Skip to the [solution](#solution).
@@ -12,28 +12,36 @@ categories: rubygems bundler openssl ruby gem rbenv brew ssl tsl troubleshooting
 
 Recently, I upgraded my [homebrew](https://brew.sh/) packages but I was still on **OS X El Capitan**.
 
-Although I had installed `ruby` with brew, my global `ruby` showed up as:
+Although I installed `ruby` with brew, my global `ruby` showed up as:
 
 ```sh
-$ which ruby
+which ruby
 /usr/bin/ruby
-$ ruby -v
+```
+
+```sh
+ruby -v
 ruby 2.0.0p645 (2015-04-13 revision 50299) [universal.x86_64-darwin15]
 ```
 
-Accordingly, my `gem` version was:
+My `gem` version was:
 
 ```sh
-$ gem env version
+gem env version
 2.0.14
 ```
 
 ## Problem
 
-When I tried to run the Jekyll server with [Bundler](https://bundler.io/), I received the error:
+When I tried to run the Jekyll server with [Bundler](https://bundler.io/):
 
 ```sh
-$ bundle exec jekyll serve
+bundle exec jekyll serve
+```
+
+I received the error:
+
+```
 Traceback (most recent call last):
         2: from /usr/local/bin/bundle:22:in `<main>'
         1: from /usr/local/Cellar/ruby/2.6.0/lib/ruby/2.6.0/rubygems.rb:302:in `activate_bin_path'
@@ -45,29 +53,42 @@ To install the missing version, run `gem install bundler:1.16.1`
 I followed the recommendation to update Bundler:
 
 ```sh
-$ bundle update --bundler
+bundle update --bundler
+```
+
+But that didn't fix the problem:
+
+```
 Traceback (most recent call last):
         2: from /usr/local/bin/bundle:22:in `<main>'
         1: from /usr/local/Cellar/ruby/2.6.0/lib/ruby/2.6.0/rubygems.rb:302:in `activate_bin_path'
 /usr/local/Cellar/ruby/2.6.0/lib/ruby/2.6.0/rubygems.rb:283:in `find_spec_for_exe': can't find gem bundler (>= 0.a) with executable bundle (Gem::GemNotFoundException)
 ```
 
-But that didn't fix the problem. I tried installing Bundler as well:
+I tried installing Bundler:
 
 ```sh
-$ gem install bundler
+gem install bundler
+```
+
+But no dice:
+
+```
 ERROR:  Could not find a valid gem 'bundler' (>= 0), here is why:
           Unable to download data from https://rubygems.org/ - SSL_connect returned=1 errno=0 state=SSLv2/v3 read server hello A: tlsv1 alert protocol version (https://rubygems.org/latest_specs.4.8.gz)
 ```
 
-But also no dice.
-
 ## Troubleshooting
 
-I ran the [SSL check](https://bundler.io/v1.16/guides/rubygems_tls_ssl_troubleshooting_guide.html#solutions-for-ssl-issues#automated-ssl-check) and got the following:
+I ran an [SSL check](https://bundler.io/v1.16/guides/rubygems_tls_ssl_troubleshooting_guide.html#solutions-for-ssl-issues#automated-ssl-check):
 
 ```sh
-$ ruby -ropen-uri -e 'eval open("https://git.io/vQhWq").read'
+ruby -ropen-uri -e 'eval open("https://git.io/vQhWq").read'
+```
+
+And received the following:
+
+```
 Here's your Ruby and OpenSSL environment:
 
 Ruby:           2.0.0p645 (2015-04-13 revision 50299) [universal.x86_64-darwin15]
@@ -89,11 +110,13 @@ Your Ruby can't connect to rubygems.org because your version of OpenSSL is too o
 
 It seems that RubyGems version >=2 no longer works with OpenSSL version <1 as the SSL/TLS protocol has been updated.
 
-I followed the official [troubleshooting guide](https://bundler.io/v1.16/guides/rubygems_tls_ssl_troubleshooting_guide.html) but I still encountered some difficulty. Ultimately, I was able to solve the issue with 3 steps.
+I followed the official [troubleshooting guide](https://bundler.io/v1.16/guides/rubygems_tls_ssl_troubleshooting_guide.html) but I still encountered some difficulty.
+
+Ultimately, I was able to solve the issue with 3 steps.
 
 ## Solution
 
-The steps that resolved the problem were:
+The resolution steps were:
 
 1. [Uninstall Ruby from Homebrew](#uninstall-ruby-from-homebrew)
 2. [Install or upgrade OpenSSL](#install-or-upgrade-openssl)
@@ -102,10 +125,10 @@ The steps that resolved the problem were:
 ### Uninstall Ruby from Homebrew
 
 ```sh
-$ brew uninstall ruby
+brew uninstall ruby
 ```
 
-If you get the following error:
+If you get the error:
 
 ```
 Error: Refusing to uninstall /usr/local/Cellar/ruby/2.6.0
@@ -119,15 +142,18 @@ I recommend you continue with the uninstallation because you'll reinstall ruby i
 ### Install or upgrade OpenSSL
 
 ```sh
-$ brew install openssl # or brew upgrade openssl
+brew install openssl # brew upgrade openssl
 ```
 
-If you get something like:
+If you see the following:
 
 ```sh
-$ which openssl
+which openssl
 /usr/bin/openssl
-$ openssl version -a
+```
+
+```sh
+openssl version -a
 OpenSSL 0.9.8zg 14 July 2015
 built on: Jul 31 2015
 platform: darwin64-x86_64-llvm
@@ -136,24 +162,27 @@ compiler: -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings 
 OPENSSLDIR: "/System/Library/OpenSSL"
 ```
 
-It means you're still not using the correct binary. Follow the installation instructions and add the path to your shell configuration file:
+This means you're still not using the correct binary. Follow the installation instructions and add the path to your shell configuration file:
 
 ```sh
-# if you're using bash
-$ echo 'export PATH="/usr/local/opt/openssl/bin:$PATH"' >> ~/.bashrc
-$ source ~/.bashrc
-
-# or if you're using zsh
-$ echo 'export PATH="/usr/local/opt/openssl/bin:$PATH"' >> ~/.zshrc
-$ source ~/.zshrc
+echo 'export PATH="/usr/local/opt/openssl/bin:$PATH"' >> ~/.bashrc
 ```
 
-Confirm that the binary and version are correct now:
+Reload your shell:
 
 ```sh
-$ which openssl
+source ~/.bashrc
+```
+
+Confirm that the binary and version are correct:
+
+```sh
+which openssl
 /usr/local/opt/openssl/bin/openssl
-$ openssl version -a
+```
+
+```sh
+openssl version -a
 OpenSSL 1.0.2q  20 Nov 2018
 built on: reproducible build, date unspecified
 platform: darwin64-x86_64-cc
@@ -162,31 +191,24 @@ compiler: clang -I. -I.. -I../include  -fPIC -fno-common -DOPENSSL_PIC -DOPENSSL
 OPENSSLDIR: "/usr/local/etc/openssl"
 ```
 
-Looking good!
-
 ### Install Ruby with rbenv
 
-Now you can reinstall ruby with [rbenv](https://github.com/rbenv/rbenv) or [rvm](https://github.com/rvm/rvm) (they're both version managers):
+Reinstall ruby with [rbenv](https://github.com/rbenv/rbenv) or [rvm](https://github.com/rvm/rvm) (they're both version managers):
 
 ```sh
-$ brew install rbenv
-$ rbenv init # follow the instructions
+brew install rbenv && rbenv init
 ```
 
-Make sure to reload your shell so `rbenv` is initialized correctly:
+Reload your shell so `rbenv` is initialized correctly:
 
 ```sh
-# if you're using bash
-$ source ~/.bashrc
-
-# or if you're using zsh
-$ source ~/.zshrc
+source ~/.bashrc
 ```
 
-Now install `ruby`:
+Install `ruby`:
 
 ```sh
-$ rbenv install 2.6.0
+rbenv install 2.6.0
 ruby-build: use openssl from homebrew
 Downloading ruby-2.6.0.tar.bz2...
 -> https://cache.ruby-lang.org/pub/ruby/2.6/ruby-2.6.0.tar.bz2
@@ -195,19 +217,16 @@ ruby-build: use readline from homebrew
 Installed ruby-2.6.0 to ~/.rbenv/versions/2.6.0
 ```
 
-And set it as the global:
+Set it as the global:
 
 ```sh
-$ rbenv global 2.6.0
+rbenv global 2.6.0
 ```
 
-You know your `ruby` compiled correctly when it's built off the `openssl` binary from homebrew.
+`ruby` will compile correctly when it's built using the `openssl` binary from homebrew.
 
-I had to reinstall my project gems given the fresh ruby binary, but after that, I was able to get my Jekyll server running again:
+After reinstalling my project gems, I was able to get my Jekyll server running again:
 
 ```sh
-$ bundle install
-$ bundle exec jekyll serve
+bundle install && bundle exec jekyll serve
 ```
-
-Success!

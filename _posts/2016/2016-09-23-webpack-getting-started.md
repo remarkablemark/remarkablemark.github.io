@@ -31,7 +31,7 @@ console.log('1 + 1 =', add(1, 1));
 Running the module on [Node.js](https://nodejs.org) works:
 
 ```sh
-$ node src/index.js
+node src/index.js
 2 + 2 = 4
 1 + 1 = 2
 ```
@@ -50,7 +50,7 @@ Since the browser doesn't understand [CommonJS](https://addyosmani.com/resources
 Install [webpack](https://www.npmjs.com/package/webpack) and [webpack-cli](https://www.npmjs.com/package/webpack-cli):
 
 ```sh
-$ npm install webpack webpack-cli --save-dev
+npm install webpack webpack-cli --save-dev
 ```
 
 Your `package.json` will look like:
@@ -69,7 +69,7 @@ Your `package.json` will look like:
 Build the bundle with the [CLI](https://webpack.js.org/api/#cli):
 
 ```sh
-$ npx webpack
+npx webpack
 ```
 
 > By default, the entry point is `./src/index.js` and the output is `./dist/main.js`.
@@ -84,7 +84,7 @@ Update the script tag:
 You should see the logs in your browser console:
 
 ```sh
-$ open index.html
+open index.html
 ```
 
 ## Configuration
@@ -107,7 +107,7 @@ module.exports = {
 Webpack uses `webpack.config.js` if it exists:
 
 ```sh
-$ npx webpack
+npx webpack
 ```
 
 ## Resources

@@ -15,13 +15,13 @@ First, login to [Travis](https://travis-ci.org) and _turn on the switch_ for you
 Then add the [html-proofer](https://github.com/gjtorikian/html-proofer) gem to your `Gemfile`:
 
 ```sh
-$ echo "gem 'html-proofer'" >> Gemfile
+echo "gem 'html-proofer'" >> Gemfile
 ```
 
 Create your [Travis configuration](https://docs.travis-ci.com/user/customizing-the-build):
 
 ```sh
-$ touch .travis.yml
+touch .travis.yml
 ```
 
 And add the following:

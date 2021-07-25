@@ -6,6 +6,8 @@ excerpt: How to get the version of bash, node, php, python, and ruby.
 categories: bash node php python ruby
 ---
 
+Get the version of:
+
 - [bash](#bash)
 - [node](#node)
 - [php](#php)
@@ -14,25 +16,34 @@ categories: bash node php python ruby
 
 ## bash
 
-To see the version:
+See the version:
 
 ```sh
-$ bash --version
+bash --version
+```
+
+```
 GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin18)
 Copyright (C) 2007 Free Software Foundation, Inc.
 ```
 
-To get the version:
+Get the version:
 
 ```sh
-$ bash --version | awk '{print $4}' | head -1
+bash --version | awk '{print $4}' | head -1
+```
+
+```
 3.2.57(1)-release
 ```
 
-To get the major version:
+Get the major version:
 
 ```sh
-$ bash --version | awk '{print $4}' | head -1 | awk -F. '{print $1}'
+bash --version | awk '{print $4}' | head -1 | awk -F. '{print $1}'
+```
+
+```
 3
 ```
 
@@ -40,29 +51,33 @@ $ bash --version | awk '{print $4}' | head -1 | awk -F. '{print $1}'
 
 ## node
 
-To see the version:
+See the version:
 
 ```sh
-$ node --version
+node --version # node -v
+```
+
+```
 v12.16.2
 ```
 
+Cut the `v` out from the version:
+
 ```sh
-$ node -v
-v12.16.2
+node -v | cut -c 2-
 ```
 
-To cut the `v` out from the version:
-
-```sh
-$ node -v | cut -c 2-
+```
 12.16.2
 ```
 
-To get the major version:
+Get the major version:
 
 ```sh
-$ node -v | cut -c 2- | awk -F. '{print $1}'
+node -v | cut -c 2- | awk -F. '{print $1}'
+```
+
+```
 12
 ```
 
@@ -70,31 +85,35 @@ $ node -v | cut -c 2- | awk -F. '{print $1}'
 
 ## python
 
-To see the version:
+See the version:
 
 ```sh
-$ python --version
+python --version # python -V
+```
+
+```
 Python 2.7.17
 ```
 
+Remove `Python` from the version:
+
 ```sh
-$ python -V
-Python 2.7.17
+python -V 2>&1 | awk '{print $2}'
 ```
 
-To remove `Python` from the version:
-
-```sh
-$ python -V 2>&1 | awk '{print $2}'
+```
 2.7.17
 ```
 
 We're redirecting stderr to stdout with `2>&1` because python writes the version to stderr.
 
-To get the major version:
+Get the major version:
 
 ```sh
-$ python -V 2>&1 | awk '{print $2}' | awk -F. '{print $1}'
+python -V 2>&1 | awk '{print $2}' | awk -F. '{print $1}'
+```
+
+```
 2
 ```
 
@@ -102,33 +121,35 @@ $ python -V 2>&1 | awk '{print $2}' | awk -F. '{print $1}'
 
 ## php
 
-To see the version:
+See the version:
 
 ```sh
-$ php --version
+php --version # php -v
+```
+
+```
 PHP 7.1.33 (cli) (built: Jan 26 2020 22:52:32) ( NTS )
 Copyright (c) 1997-2018 The PHP Group
 Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies
 ```
 
+Get the version and remove all extraneous details:
+
 ```sh
-$ php -v
-PHP 7.1.33 (cli) (built: Jan 26 2020 22:52:32) ( NTS )
-Copyright (c) 1997-2018 The PHP Group
-Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies
+php -v | awk '{print $2}' | head -1
 ```
 
-To get the version and remove all extraneous details:
-
-```sh
-$ php -v | awk '{print $2}' | head -1
+```
 7.1.33
 ```
 
-To get the major version:
+Get the major version:
 
 ```sh
-$ php -v | awk '{print $2}' | head -1 | awk -F. '{print $1}'
+php -v | awk '{print $2}' | head -1 | awk -F. '{print $1}'
+```
+
+```
 7
 ```
 
@@ -136,29 +157,33 @@ $ php -v | awk '{print $2}' | head -1 | awk -F. '{print $1}'
 
 ## ruby
 
-To see the version:
+See the version:
 
 ```sh
-$ ruby --version
+ruby --version # ruby -v
+```
+
+```
 ruby 2.7.0p0 (2019-12-25 revision 647ee6f091) [x86_64-darwin18]
 ```
 
+Get the version:
+
 ```sh
-$ ruby -v
-ruby 2.7.0p0 (2019-12-25 revision 647ee6f091) [x86_64-darwin18]
+ruby -v | awk '{print $2}'
 ```
 
-To get the version:
-
-```sh
-$ ruby -v | awk '{print $2}'
+```
 2.7.0p0
 ```
 
-To get the major version:
+Get the major version:
 
 ```sh
-$ ruby -v | awk '{print $2}' | awk -F. '{print $1}'
+ruby -v | awk '{print $2}' | awk -F. '{print $1}'
+```
+
+```
 2
 ```
 

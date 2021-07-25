@@ -11,25 +11,25 @@ categories: git log diff branch
 To compare `master` branch with current `HEAD`:
 
 ```sh
-$ git log master..HEAD
+git log master..HEAD
 ```
 
 This is equivalent to:
 
 ```sh
-$ git log master..
+git log master..
 ```
 
 To see commits in oneline:
 
 ```sh
-$ git log master.. --oneline
+git log master.. --oneline
 ```
 
 To see commits as a decorated graph:
 
 ```sh
-$ git log master.. --oneline --decorate --graph
+git log master.. --oneline --decorate --graph
 ```
 
 ## Compare code
@@ -37,5 +37,5 @@ $ git log master.. --oneline --decorate --graph
 To see the difference in regards to files modified:
 
 ```sh
-$ git diff master..
+git diff master..
 ```

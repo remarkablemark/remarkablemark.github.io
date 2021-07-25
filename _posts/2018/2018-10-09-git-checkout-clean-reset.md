@@ -7,20 +7,20 @@ excerpt: 'The difference between the git commands: checkout, clean, and reset.'
 categories: git checkout clean reset bash
 ---
 
-Do you know the difference between `git checkout`, `git clean`, and `git reset`?
+This post goes over the difference between `git checkout`, `git clean`, and `git reset`:
 
 - [git checkout](#git-checkout)
 - [git clean](#git-clean)
 - [git reset](#git-reset)
 
-We'll compare them using the following example below.
+They will be compared using the example below.
 
 ## Example
 
-Given the following index and working tree:
+Given the index and working tree:
 
 ```sh
-$ git status
+git status
 On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -39,7 +39,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 Or in the short format:
 
 ```sh
-$ git status -s
+git status -s
  M modified.txt
 ?? untracked.txt
 ```
@@ -49,8 +49,11 @@ $ git status -s
 Changes to modified files are discarded but untracked files are untouched:
 
 ```sh
-$ git checkout .
-$ git status -s
+git checkout .
+```
+
+```sh
+git status -s
 ?? untracked.txt
 ```
 
@@ -61,13 +64,20 @@ $ git status -s
 Untracked files are removed but modified files are unchanged:
 
 ```sh
-$ git clean -f
+git clean -f
 Removing untracked.txt
-$ git status -s
+```
+
+```sh
+git status -s
  M modified.txt
 ```
 
-To remove untracked directories in addition to untracked files, run `git clean -f -d`.
+To remove untracked directories in addition to untracked files, run:
+
+```sh
+git clean -f -d
+```
 
 > See docs on [git clean](https://git-scm.com/docs/git-clean) for more info.
 
@@ -76,16 +86,19 @@ To remove untracked directories in addition to untracked files, run `git clean -
 Changes to modified files are discarded but untracked files are untouched:
 
 ```sh
-$ git reset --hard
+git reset --hard
 HEAD is now at sha1234 my commit message
-$ git status -s
+```
+
+```sh
+git status -s
 ?? untracked.txt
 ```
 
 Thus, to discard modified files and remove untracked files:
 
 ```sh
-$ git reset --hard && git clean -f -d
+git reset --hard && git clean -f -d
 ```
 
 > See docs [git reset](https://git-scm.com/docs/git-reset) for more info.

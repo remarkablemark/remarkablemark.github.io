@@ -15,7 +15,7 @@ find . -type f -execdir mv {} 0{} \;
 For example, given the file directory structure:
 
 ```sh
-$ tree
+tree
 .
 ├── 1.txt
 ├── 2.txt
@@ -24,11 +24,16 @@ $ tree
 0 directories, 3 files
 ```
 
-After running the script, the files will be renamed to:
+After running the script:
 
 ```sh
-$ find . -type f -execdir mv {} 0{} \;
-$ tree
+find . -type f -execdir mv {} 0{} \;
+```
+
+The files will be renamed to:
+
+```sh
+tree
 .
 ├── 01.txt
 ├── 02.txt

@@ -15,13 +15,13 @@ Given you have a [Git](https://git-scm.com/) repository, commit a message follow
 Here's a sample from Angular's [commit message guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines):
 
 ```sh
-$ git commit -m 'docs(changelog): update changelog to beta.5'
+git commit -m 'docs(changelog): update changelog to beta.5'
 ```
 
 Run [`standard-version`](https://www.npmjs.com/package/standard-version):
 
 ```sh
-$ npx standard-version
+npx standard-version
 ```
 
 `standard-version` bumps the version and generates `CHANGELOG.md`.
@@ -31,7 +31,7 @@ Create a new [token](https://github.com/settings/tokens/new). Select the scope `
 Run [`conventional-github-releaser`](https://www.npmjs.com/package/conventional-github-releaser) with the token set as the environment variable:
 
 ```sh
-$ CONVENTIONAL_GITHUB_RELEASER_TOKEN=<MY_TOKEN> npx conventional-github-releaser
+CONVENTIONAL_GITHUB_RELEASER_TOKEN=<MY_TOKEN> npx conventional-github-releaser
 ```
 
 `conventional-github-releaser` creates a GitHub release from the Git metadata.
@@ -39,7 +39,7 @@ $ CONVENTIONAL_GITHUB_RELEASER_TOKEN=<MY_TOKEN> npx conventional-github-releaser
 Besides using the environment variable `CONVENTIONAL_GITHUB_RELEASER_TOKEN`, the token can also be passed via the flag `-t` or `--token`:
 
 ```sh
-$ npx conventional-github-releaser -t <MY_TOKEN>
+npx conventional-github-releaser -t <MY_TOKEN>
 ```
 
 To see a demo, check out [conventional-github-releaser-demo](https://github.com/remarkablemark/conventional-github-releaser-demo).
@@ -60,5 +60,5 @@ See [conventional-changelog/releaser-tools#50](https://github.com/conventional-c
 Set the environment variable `DEBUG=conventional-github-releaser` before running the command:
 
 ```sh
-$ DEBUG=conventional-github-releaser npx conventional-github-releaser
+DEBUG=conventional-github-releaser npx conventional-github-releaser
 ```

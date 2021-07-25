@@ -17,13 +17,13 @@ This is useful for bookmarking or sharing a page section. It can also be used wh
 First, remove all existing heading links from your blog posts. You can find them by grepping the pattern:
 
 ```sh
-$ git grep '# \[' -- _posts/
+git grep '# \[' -- _posts/
 ```
 
 Or add the `-l` option to get all the relative filepaths matching the pattern:
 
 ```sh
-$ git grep -l '# \[' -- _posts/
+git grep -l '# \[' -- _posts/
 ```
 
 ## Fragment links

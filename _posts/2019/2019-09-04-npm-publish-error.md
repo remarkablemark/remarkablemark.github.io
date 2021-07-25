@@ -6,9 +6,9 @@ excerpt: How I handled an npm publish error and updated my process.
 categories: npm publish package error
 ---
 
-Recently, I tried to publish a [npm](https://www.npmjs.com/) package, but received the error:
+Recently I tried to publish an [npm](https://www.npmjs.com/) package, but I received the error:
 
-```sh
+```
 npm ERR! publish Failed PUT 403
 npm ERR! code E403
 npm ERR! Package name too similar to existing packages
@@ -33,14 +33,13 @@ While working on a package, use a _placeholder_ name that's unique and greppable
 When it's ready to be published, create a test directory:
 
 ```sh
-$ mkdir test
-$ cd test
+mkdir test && cd test
 ```
 
-And initialize `package.json` in the test directory:
+Initialize `package.json` in the test directory:
 
 ```sh
-$ npm init -y
+npm init -y
 ```
 
 Remove all fields except for `name` and `version`:
@@ -54,39 +53,55 @@ Remove all fields except for `name` and `version`:
 
 Then follow the steps outlined below.
 
-### Steps
+## Steps
 
 1\. Change the name to what you want the package to be called (e.g., `my-package`):
 
 ```sh
-$ sed -i '' 's/test/my-package/' package.json
+sed -i '' 's/test/my-package/' package.json
 ```
 
-> **Note**: To learn more about `sed`, check out this [post]({% post_url 2017/2017-09-18-sed-replace-text %}).
+> Learn more about [sed]({% post_url 2017/2017-09-18-sed-replace-text %}).
 
 2\. Try publishing the package:
 
 ```sh
-$ npm publish
+npm publish
 ```
 
 - If it succeeds, you're now the owner of the name and proceed to step **3**.
 - If it fails, repeat steps **1**-**2** until it succeeds.
 
-3\. Go back to your package and replace the placeholder name with the published one:
+3\. Return to your package:
 
 ```sh
-$ cd ..
-$ rm -rf test
-$ git grep -l 'placeholder' | xargs sed -i '' -e 's/placeholder/my-package/g'
+cd .. && rm -rf test
 ```
 
-4\. Commit the change, bump the package version, and now you can publish:
+4\. Replace your package name with the published one:
 
 ```sh
-$ git commit
-$ npm version
-$ npm publish
+git grep -l 'placeholder' | xargs sed -i '' -e 's/placeholder/my-package/g'
 ```
 
-And that's a surefire way to publish a new package.
+> Learn more about [git grep replace]({% post_url 2020/2020-07-12-git-grep-replace %}).
+
+5\. Commit the change:
+
+```sh
+git commit
+```
+
+6\. Bump the package version:
+
+```sh
+npm version
+```
+
+7\. Publish:
+
+```sh
+npm publish
+```
+
+Success!

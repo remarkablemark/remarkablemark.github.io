@@ -13,7 +13,7 @@ Here's how to convert file `dos.txt` from [DOS](https://en.wikipedia.org/wiki/DO
 Open `dos.txt` with the Vim editor:
 
 ```sh
-$ vim dos.txt
+vim dos.txt
 ```
 
 Set `fileformat` to `unix` and write and quit the file:
@@ -26,7 +26,7 @@ Set `fileformat` to `unix` and write and quit the file:
 This is equivalent to running the Vim commands from the shell:
 
 ```sh
-$ vim '+set ff=unix' '+x' dos.txt
+vim '+set ff=unix' '+x' dos.txt
 ```
 
 ## UNIX to DOS
@@ -36,7 +36,7 @@ Here's how to convert file `unix.txt` from [UNIX](https://en.wikipedia.org/wiki/
 Open `unix.txt` with the Vim editor:
 
 ```sh
-$ vim unix.txt
+vim unix.txt
 ```
 
 Set `fileformat` to `dos` and write and quit the file:
@@ -49,5 +49,5 @@ Set `fileformat` to `dos` and write and quit the file:
 This is equivalent to running the Vim commands from the shell:
 
 ```sh
-$ vim '+set ff=dos' '+x' unix.txt
+vim '+set ff=dos' '+x' unix.txt
 ```

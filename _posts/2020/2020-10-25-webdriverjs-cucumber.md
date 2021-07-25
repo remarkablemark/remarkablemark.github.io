@@ -6,6 +6,8 @@ excerpt: How to write browser automation BDD tests using Cucumber and WebDriverJ
 categories: cucumber gherkin webdriverjs selenium webdriver nodejs javascript
 ---
 
+This post goes over how to write E2E tests using Selenium, Cucumber, Node.js, and Firefox.
+
 ## Background
 
 From the [Cucumber.js](https://github.com/cucumber/cucumber-js) README:
@@ -19,12 +21,24 @@ In other words, Cucumber helps accomplish [Behavior-Driven Development (BDD)](ht
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/get-npm)
 - [Firefox](https://www.mozilla.org/en-US/firefox/new/) and [geckodriver](https://github.com/mozilla/geckodriver)
 
-If you're on macOS, you can install the prerequisites with [Homebrew](https://brew.sh/):
+If you're on macOS, you can install the prerequisites with [Homebrew](https://brew.sh/).
+
+Install [Node.js](https://nodejs.org/):
 
 ```sh
-$ brew install node
-$ brew cask install firefox
-$ brew install geckodriver
+brew install node
+```
+
+Install [Firefox](https://www.mozilla.org/en-US/firefox/new/) browser:
+
+```sh
+brew cask install firefox
+```
+
+Install [geckodriver](https://github.com/mozilla/geckodriver) (WebDriver for Firefox):
+
+```sh
+brew install geckodriver
 ```
 
 ## Install
@@ -32,13 +46,13 @@ $ brew install geckodriver
 Install [cucumber](https://www.npmjs.com/package/cucumber) and [selenium-webdriver](https://www.npmjs.com/package/selenium-webdriver):
 
 ```sh
-$ npm install cucumber@6 selenium-webdriver
+npm install cucumber@6 selenium-webdriver
 ```
 
 The versions we're using are:
 
 ```sh
-$ npm ls --depth=0
+npm ls --depth=0
 ├── cucumber@6.0.5
 └── selenium-webdriver@4.0.0-alpha.7
 ```
@@ -48,7 +62,7 @@ $ npm ls --depth=0
 Create a file named `cucumber.js`:
 
 ```sh
-$ touch cucumber.js
+touch cucumber.js
 ```
 
 Add the content:
@@ -63,7 +77,7 @@ module.exports = {
 Run `cucumber-js` to see that no scenarios/steps are found.
 
 ```sh
-$ npx cucumber-js
+npx cucumber-js
 
 0 scenarios
 0 steps
@@ -75,7 +89,7 @@ $ npx cucumber-js
 Create a directory named `features`:
 
 ```sh
-$ mkdir features
+mkdir features
 ```
 
 > The spelling and capitalization of the directory name must be exact here.
@@ -83,7 +97,7 @@ $ mkdir features
 Create a `.feature` file inside the directory. We'll name it `google-search.feature`:
 
 ```sh
-$ touch features/google-search.feature
+touch features/google-search.feature
 ```
 
 Write the scenario:
@@ -101,7 +115,10 @@ Feature: Google search
 Run `npx cucumber-js` to see the warnings:
 
 ```sh
-$ npx cucumber-js
+npx cucumber-js
+```
+
+```
 UUU
 
 Warnings:
@@ -144,7 +161,7 @@ This is expected because the [step definitions](https://github.com/cucumber/cucu
 Create a `.js` file inside the `features` directory for your steps. We'll name it `google-search-steps.js`:
 
 ```sh
-$ touch features/google-search-steps.js
+touch features/google-search-steps.js
 ```
 
 Import `Given`, `When`, and `Then` from `cucumber` and paste the steps from earlier:
@@ -172,7 +189,10 @@ Then('the page title is {string}', function (string) {
 Run `npx cucumber-js` to see the warnings:
 
 ```sh
-$ npx cucumber-js
+npx cucumber-js
+```
+
+```
 P--
 
 Warnings:
@@ -251,7 +271,10 @@ Then('the page title is {string}', async function (string) {
 Run `npx cucumber-js` to see the failure:
 
 ```sh
-$ npx cucumber-js
+npx cucumber-js
+```
+
+```
 F--
 
 Failures:
@@ -303,7 +326,10 @@ Given('I am on the Google homepage', { timeout: 10000 }, async function () {
 Run `npx cucumber-js` to verify that the scenario passes:
 
 ```sh
-$ npx cucumber-js
+npx cucumber-js
+```
+
+```
 ...
 
 1 scenario (1 passed)

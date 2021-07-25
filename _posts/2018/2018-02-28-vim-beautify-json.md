@@ -10,7 +10,7 @@ categories: vim json python jq prettier
 Open the [JSON](https://wikipedia.org/wiki/JSON) file in your [Vim](<https://wikipedia.org/wiki/Vim_(text_editor)>) text editor:
 
 ```sh
-$ vim my-file.json
+vim my-file.json
 ```
 
 ## python

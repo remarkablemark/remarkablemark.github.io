@@ -9,7 +9,7 @@ categories: minikube hyperkit bash
 Recently, I had trouble starting [`minikube`](https://minikube.sigs.k8s.io/). When I ran the start command:
 
 ```sh
-$ minikube start
+minikube start
 ```
 
 I got the error:
@@ -29,7 +29,10 @@ X hyperkit does not appear to be installed, but is specified by an existing prof
 I verified that [`hyperkit`](https://github.com/moby/hyperkit) was installed with [brew](https://brew.sh/):
 
 ```sh
-$ brew list hyperkit
+brew list hyperkit
+```
+
+```
 /usr/local/Cellar/hyperkit/0.20200224/bin/hyperkit
 /usr/local/Cellar/hyperkit/0.20200224/share/man/man1/hyperkit.1
 ```
@@ -37,7 +40,10 @@ $ brew list hyperkit
 So the issue was that the `hyperkit` binary wasn't available in `$PATH`:
 
 ```sh
-$ which hyperkit
+which hyperkit
+```
+
+```
 hyperkit not found
 ```
 
@@ -51,13 +57,16 @@ This means we have 2 ways of resolving this:
 To symlink the `hyperkit` binary so it's available in `/usr/local/bin/`:
 
 ```sh
-$ ln -sf $(brew --prefix hyperkit)/bin/hyperkit /usr/local/bin/hyperkit
+ln -sf $(brew --prefix hyperkit)/bin/hyperkit /usr/local/bin/hyperkit
 ```
 
 The `hyperkit` binary should now be available:
 
 ```sh
-$ which hyperkit
+which hyperkit
+```
+
+```
 /usr/local/bin/hyperkit
 ```
 
@@ -66,25 +75,31 @@ $ which hyperkit
 To include the `hyperkit` binary in `$PATH`, you need to append the following line to your `.bashrc` or `.zshrc`:
 
 ```sh
-$ echo 'export PATH=$(brew --prefix hyperkit)/bin:$PATH' >> .bashrc
+echo 'export PATH=$(brew --prefix hyperkit)/bin:$PATH' >> .bashrc
 ```
 
 This means the last line of your `.bashrc` or `.zshrc` is:
 
 ```sh
-$ tail -1 ~/.bashrc
+tail -1 ~/.bashrc
+```
+
+```bash
 export PATH=$(brew --prefix hyperkit)/bin:$PATH
 ```
 
 Reload your shell by sourcing `.bashrc` or `.zshrc`:
 
 ```sh
-$ source ~/.bashrc
+source ~/.bashrc
 ```
 
-And verify that the `hyperkit` binary is there:
+Verify that the `hyperkit` binary is there:
 
 ```sh
-$ which hyperkit
+which hyperkit
+```
+
+```
 /usr/local/opt/hyperkit/bin/hyperkit
 ```

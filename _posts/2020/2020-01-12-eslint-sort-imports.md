@@ -33,7 +33,7 @@ This post goes over how to **sort imports** with [ESLint](https://eslint.org/).
 Install [`eslint`](https://www.npmjs.com/package/eslint):
 
 ```sh
-$ npm install eslint --save-dev
+npm install eslint --save-dev
 ```
 
 Your `package.json` should look like:
@@ -51,7 +51,7 @@ Your `package.json` should look like:
 Create an ESLint configuration file (if you haven't already):
 
 ```sh
-$ npx eslint --init
+npx eslint --init
 ```
 
 Your `.eslintrc` will look something like:
@@ -75,7 +75,7 @@ Your `.eslintrc` will look something like:
 Execute the `eslint` binary with [npx](https://www.npmjs.com/package/npx):
 
 ```sh
-$ npx eslint .
+npx eslint .
 ```
 
 Or create a `package.json` [script](https://docs.npmjs.com/cli/run-script):
@@ -95,7 +95,7 @@ Or create a `package.json` [script](https://docs.npmjs.com/cli/run-script):
 And call it from the command line:
 
 ```sh
-$ npm run lint
+npm run lint
 ```
 
 If you encounter the parsing error:
@@ -145,8 +145,10 @@ ESLint has the rule [`sort-imports`](https://eslint.org/docs/rules/sort-imports)
 But when you run `eslint`, you'll get the errors:
 
 ```sh
-$ npm run lint
+npm run lint
+```
 
+```
 > @ lint /home/runner/eslint-sort-imports
 > eslint .
 
@@ -162,8 +164,10 @@ $ npm run lint
 Autofixable errors can be fixed by passing `--fix` in the CLI:
 
 ```sh
-$ npm run lint -- --fix
+npm run lint -- --fix
+```
 
+```
 > @ lint /home/runner/eslint-sort-imports
 > eslint . "--fix"
 
@@ -204,7 +208,7 @@ One ESLint plugin that performs autofixable import sorting is [`eslint-plugin-si
 Install the package:
 
 ```sh
-$ npm install eslint-plugin-simple-import-sort --save-dev
+npm install eslint-plugin-simple-import-sort --save-dev
 ```
 
 Your `package.json` will look like:
@@ -234,8 +238,10 @@ Add the plugin and [rules](https://github.com/lydell/eslint-plugin-simple-import
 When you run `eslint . --fix`:
 
 ```sh
-$ npm run lint:fix
+npm run lint:fix
+```
 
+```
 > @ lint:fix /home/runner/eslint-sort-imports
 > npm run lint -- --fix
 

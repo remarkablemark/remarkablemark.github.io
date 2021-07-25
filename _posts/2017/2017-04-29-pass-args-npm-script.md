@@ -14,7 +14,7 @@ console.log(process.argv.slice(2));
 ```
 
 ```sh
-$ node index.js --arg
+node index.js --arg
 [ '--arg' ]
 ```
 
@@ -33,7 +33,7 @@ Given the following `package.json`:
 We pass our arguments after the end of options delimiter (`--`):
 
 ```sh
-$ npm run main -- --arg
+npm run main -- --arg
 [ '--arg' ]
 ```
 
@@ -49,6 +49,6 @@ This holds true even for nested npm scripts:
 ```
 
 ```sh
-$ npm run nested -- -- --arg
+npm run nested -- -- --arg
 [ '--arg' ]
 ```

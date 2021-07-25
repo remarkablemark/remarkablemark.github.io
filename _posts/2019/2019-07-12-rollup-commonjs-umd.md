@@ -23,21 +23,19 @@ Rollup supports _ES modules_ out of the box. However, to support _CommonJS_, the
 Install [rollup](https://www.npmjs.com/package/rollup):
 
 ```sh
-$ npm install rollup
-$ npx rollup --version
-rollup v2.32.1
+npm install rollup
 ```
 
 Create the entry file `index.js`:
 
 ```sh
-$ echo "export default 'Hello, world!'" > index.js
+echo "export default 'Hello, world!'" > index.js
 ```
 
 Initialize `package.json`:
 
 ```sh
-$ npm init --yes
+npm init --yes
 ```
 
 Add the build script to `package.json`:
@@ -55,7 +53,7 @@ Add the build script to `package.json`:
 Run the build script:
 
 ```sh
-$ npm run build
+npm run build
 ```
 
 To find that you got the error:
@@ -83,7 +81,7 @@ See table for summary:
 To generate a UMD bundle with `MyModuleName` as the export name:
 
 ```sh
-$ npx rollup index.js --file dist/bundle.js --format umd --name 'MyModuleName'
+npx rollup index.js --file dist/bundle.js --format umd --name 'MyModuleName'
 ```
 
 ### Load with script
@@ -106,7 +104,7 @@ Load the module in a browser using [AMD](https://github.com/amdjs/amdjs-api/blob
 <!-- amd.html -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
 <script>
-  window.requirejs(['dist/bundle'], function(MyModuleName) {
+  window.requirejs(['dist/bundle'], function (MyModuleName) {
     console.log(MyModuleName);
   });
 </script>
@@ -117,7 +115,7 @@ Load the module in a browser using [AMD](https://github.com/amdjs/amdjs-api/blob
 Load the module in Node.js using CommonJS:
 
 ```sh
-$ node
+node
 > const MyModuleName = require('./dist/bundle');
 > console.log(MyModuleName);
 Hello, world!
@@ -130,7 +128,7 @@ Instead of passing the options via the CLI (command-line interface), you can spe
 Create the file `rollup.config.js`:
 
 ```sh
-$ touch rollup.config.js
+touch rollup.config.js
 ```
 
 Add the config:
@@ -162,7 +160,7 @@ Update the build script in `package.json` to use the config file:
 To give the config file a name other than the default, you'll need to specify the custom file location:
 
 ```sh
-$ npx rollup --config my.config.js
+npx rollup --config my.config.js
 ```
 
 ## CommonJS
@@ -170,10 +168,12 @@ $ npx rollup --config my.config.js
 To use CommonJS syntax, install [@rollup/plugin-commonjs](https://www.npmjs.com/package/@rollup/plugin-commonjs):
 
 ```sh
-$ npm install @rollup/plugin-commonjs
+npm install @rollup/plugin-commonjs
 ```
 
 Add the plugin to the rollup config:
+
+<!-- prettier-ignore-start -->
 
 ```diff
  // rollup.config.js
@@ -192,6 +192,8 @@ Add the plugin to the rollup config:
  export default config;
 ```
 
+<!-- prettier-ignore-end -->
+
 Now refactor `index.js`:
 
 ```js
@@ -202,10 +204,10 @@ module.exports = 'Hello, world!';
 After rebuilding the bundle, loading it with script, AMD, or CommonJS should continue to work:
 
 ```sh
-$ npm run build
-$ open script.html
-$ open amd.html
-$ node -p "require('./dist/bundle')"
+npm run build && open script.html && open amd.html && node -p "require('./dist/bundle')"
+```
+
+```
 Hello, world!
 ```
 
@@ -214,7 +216,7 @@ Hello, world!
 Let's say you want to use [lodash](https://www.npmjs.com/package/lodash) in `index.js`:
 
 ```sh
-$ npm install lodash
+npm install lodash
 ```
 
 ```js
@@ -227,10 +229,12 @@ module.exports = compiled({ name: 'world' });
 In order for rollup to locate 3rd party modules in `node_modules`, you need to install [@rollup/plugin-node-resolve](https://github.com/rollup/plugins/tree/master/packages/node-resolve):
 
 ```sh
-$ npm install @rollup/plugin-node-resolve
+npm install @rollup/plugin-node-resolve
 ```
 
 Add the plugin to the rollup config:
+
+<!-- prettier-ignore-start -->
 
 ```diff
  // rollup.config.js
@@ -251,11 +255,15 @@ Add the plugin to the rollup config:
  export default config;
 ```
 
+<!-- prettier-ignore-end -->
+
 Build the bundle to verify it still works:
 
 ```sh
-$ npm run build
-$ node -p "require('./dist/bundle')"
+npm run build && node -p "require('./dist/bundle')"
+```
+
+```
 Hello, world!
 ```
 
@@ -268,10 +276,12 @@ To minify your bundle with rollup v2, use [terser](https://github.com/terser/ter
 Install [rollup-plugin-terser](https://github.com/TrySound/rollup-plugin-terser):
 
 ```sh
-$ npm install rollup-plugin-terser
+npm install rollup-plugin-terser
 ```
 
 Add the plugin to the rollup config:
+
+<!-- prettier-ignore-start -->
 
 ```diff
  // rollup.config.js
@@ -292,7 +302,11 @@ Add the plugin to the rollup config:
  export default config;
 ```
 
+<!-- prettier-ignore-end -->
+
 Use an environment variable to determine whether you want to build a minified or unminified bundle:
+
+<!-- prettier-ignore-start -->
 
 ```diff
  // rollup.config.js
@@ -316,6 +330,8 @@ Use an environment variable to determine whether you want to build a minified or
 +
  export default config;
 ```
+
+<!-- prettier-ignore-end -->
 
 Set the environment variable before you run the build command:
 
@@ -342,10 +358,12 @@ To minify the bundle with rollup v1, use [UglifyJS](https://github.com/mishoo/Ug
 Install [rollup-plugin-uglify](https://github.com/TrySound/rollup-plugin-uglify):
 
 ```sh
-$ npm install rollup-plugin-uglify
+npm install rollup-plugin-uglify
 ```
 
 Add the plugin to the rollup config:
+
+<!-- prettier-ignore-start -->
 
 ```diff
  // rollup.config.js
@@ -366,11 +384,15 @@ Add the plugin to the rollup config:
  export default config;
 ```
 
+<!-- prettier-ignore-end -->
+
 Now you can build an uglified bundle:
 
 ```sh
-$ npm run build
-$ node -p "require('./dist/bundle')"
+npm run build && node -p "require('./dist/bundle')"
+```
+
+```
 Hello, world!
 ```
 

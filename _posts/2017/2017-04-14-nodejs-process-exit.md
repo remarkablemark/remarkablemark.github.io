@@ -19,6 +19,6 @@ process.on('exit', function() {
 Now when you run the script, `exit` is logged out:
 
 ```sh
-$ node script
+node script
 exit
 ```

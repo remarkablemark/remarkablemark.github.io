@@ -15,14 +15,13 @@ Hence, I documented my own guide in wiring up [TypeScript](https://www.typescrip
 First, create a directory for your project:
 
 ```sh
-$ mkdir react-webpack
-$ cd react-webpack
+mkdir react-webpack && cd react-webpack
 ```
 
 Install the dependencies (I'm using [`yarn`](https://yarnpkg.com/) but you can use [`npm`](https://www.npmjs.com/)):
 
 ```sh
-$ yarn add webpack@4 \
+yarn add webpack@4 \
            webpack-cli \
            react \
            react-dom \
@@ -36,18 +35,18 @@ $ yarn add webpack@4 \
 
 The dependencies can be described as follows:
 
-* [`webpack`](https://www.npmjs.com/package/webpack)/[`webpack-cli`](https://www.npmjs.com/package/webpack-cli) is the bundler
-* [`react`](https://www.npmjs.com/package/react)/[`react-dom`](https://www.npmjs.com/package/react-dom) is the library we're using to build our app
-* [`@types/react`](https://www.npmjs.com/package/@types/react)/[`@types/react-dom`](https://www.npmjs.com/package/@types/react-dom) provides the [type definitions](https://definitelytyped.org/)
-* [`typescript`](https://www.npmjs.com/package/typescript) is the compiler
-* [`awesome-typescript-loader`](https://github.com/s-panferov/awesome-typescript-loader) is the webpack loader
+- [`webpack`](https://www.npmjs.com/package/webpack)/[`webpack-cli`](https://www.npmjs.com/package/webpack-cli) is the bundler
+- [`react`](https://www.npmjs.com/package/react)/[`react-dom`](https://www.npmjs.com/package/react-dom) is the library we're using to build our app
+- [`@types/react`](https://www.npmjs.com/package/@types/react)/[`@types/react-dom`](https://www.npmjs.com/package/@types/react-dom) provides the [type definitions](https://definitelytyped.org/)
+- [`typescript`](https://www.npmjs.com/package/typescript) is the compiler
+- [`awesome-typescript-loader`](https://github.com/s-panferov/awesome-typescript-loader) is the webpack loader
 
 ## TypeScript Configuration
 
 Create a TypeScript [configuration](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) file:
 
 ```sh
-$ touch tsconfig.json
+touch tsconfig.json
 ```
 
 And add the following:
@@ -71,23 +70,22 @@ And add the following:
 
 Let's go over each option:
 
-* [`compilerOptions`](https://www.typescriptlang.org/docs/handbook/compiler-options.html): the compiler options
-  * `jsx: react`: supports [JSX](https://reactjs.org/docs/introducing-jsx.html) in `.tsx` files
-  * `lib`: includes a list of library files in the compilation (specifying `es2015` allows you to use ES6 syntax)
-  * `module`: specifies the module code generation
-  * `noImplicitAny`: raises errors on expressions and declarations with an implied `any` type (to enable all strict type checking options, use `strict` instead)
-  * `outDir`: the output directory
-  * `sourceMap`: generates `.map`, which is useful for debugging
-  * `target`: the target ECMAScript version to transpile down to (pick the version that supports your browser requirements)
-  * `include`: the files to be included (there's also `exclude`)
+- [`compilerOptions`](https://www.typescriptlang.org/docs/handbook/compiler-options.html): the compiler options
+  - `jsx: react`: supports [JSX](https://reactjs.org/docs/introducing-jsx.html) in `.tsx` files
+  - `lib`: includes a list of library files in the compilation (specifying `es2015` allows you to use ES6 syntax)
+  - `module`: specifies the module code generation
+  - `noImplicitAny`: raises errors on expressions and declarations with an implied `any` type (to enable all strict type checking options, use `strict` instead)
+  - `outDir`: the output directory
+  - `sourceMap`: generates `.map`, which is useful for debugging
+  - `target`: the target ECMAScript version to transpile down to (pick the version that supports your browser requirements)
+  - `include`: the files to be included (there's also `exclude`)
 
 ## First Component
 
 Let's create our first component:
 
 ```sh
-$ mkdir -p src/App/
-$ touch src/App/index.tsx
+mkdir -p src/App/ && touch src/App/index.tsx
 ```
 
 And add the code:
@@ -116,7 +114,7 @@ Because `react` uses CommonJS syntax (`module.exports = ...`) and not ES Module 
 If you use `import React from 'react'`, you'll receive the TypeScript compiler error:
 
 ```sh
-$ yarn tsc
+yarn tsc
 error TS1192: Module '"react"' has no default export.
 ```
 
@@ -136,7 +134,7 @@ error TS1192: Module '"react"' has no default export.
 Let's create our entry file:
 
 ```sh
-$ touch src/index.tsx
+touch src/index.tsx
 ```
 
 And add the code:
@@ -153,8 +151,7 @@ render(<App name="world" />, document.getElementById('app'));
 Then create the HTML file:
 
 ```sh
-$ mkdir public
-$ touch public/index.html
+mkdir public && touch public/index.html
 ```
 
 And add the markup:
@@ -170,7 +167,7 @@ And add the markup:
 Let's create our webpack [configuration](https://webpack.js.org/configuration/) file:
 
 ```sh
-$ touch webpack.config.js
+touch webpack.config.js
 ```
 
 And add the following:
@@ -210,7 +207,7 @@ When webpack sees a file with the extension `.ts` or `.tsx`, it transpiles the f
 To build the bundle, run:
 
 ```sh
-$ yarn webpack
+yarn webpack
 ```
 
 ## Open App
@@ -218,7 +215,7 @@ $ yarn webpack
 To open the app in a browser, run:
 
 ```sh
-$ open public/index.html
+open public/index.html
 ```
 
 ## Conclusion

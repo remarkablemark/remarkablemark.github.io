@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Puppeteer example without async/await
-date: 2018-04-15 19:56:56 -4000
+date: 2018-04-15 19:56:56
 excerpt: Puppeteer example without async/await.
 categories: puppeteer async await promise javascript nodejs
 ---
@@ -9,11 +9,7 @@ categories: puppeteer async await promise javascript nodejs
 Given [puppeteer](https://www.npmjs.com/package/puppeteer) is installed:
 
 ```sh
-# with npm
-$ npm install puppeteer
-
-# or with yarn
-$ yarn add puppeteer
+npm install puppeteer
 ```
 
 The current [example](https://github.com/GoogleChrome/puppeteer#usage) uses [async/await](https://javascript.info/async-await):
@@ -42,11 +38,11 @@ let _page;
 
 puppeteer
   .launch()
-  .then(browser => (_browser = browser))
-  .then(browser => (_page = browser.newPage()))
-  .then(page => page.goto('https://example.com'))
+  .then((browser) => (_browser = browser))
+  .then((browser) => (_page = browser.newPage()))
+  .then((page) => page.goto('https://example.com'))
   .then(() => _page)
-  .then(page => page.screenshot({ path: 'example.png' }))
+  .then((page) => page.screenshot({ path: 'example.png' }))
   .then(() => _browser.close());
 ```
 

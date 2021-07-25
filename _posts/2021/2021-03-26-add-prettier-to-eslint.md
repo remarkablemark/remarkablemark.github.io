@@ -17,17 +17,19 @@ This article assumes you have [`eslint`](https://www.npmjs.com/package/eslint) i
 Save [`prettier`](https://www.npmjs.com/package/prettier) and [`eslint-plugin-prettier`](https://www.npmjs.com/package/eslint-plugin-prettier) to devDependencies:
 
 ```sh
-# npm
-$ npm install --save-dev prettier eslint-plugin-prettier
+npm install --save-dev prettier eslint-plugin-prettier
+```
 
-# yarn
-$ yarn add --dev prettier eslint-plugin-prettier
+Or with [Yarn](https://yarnpkg.com/package/eslint-plugin-prettier):
+
+```sh
+yarn add --dev prettier eslint-plugin-prettier
 ```
 
 If you don't want the default [prettier format options](https://prettier.io/docs/en/options.html), create a `.prettierrc`:
 
 ```sh
-$ touch .prettierrc
+touch .prettierrc
 ```
 
 For example, to use single quotes instead of double quotes:
@@ -70,21 +72,25 @@ For example, remove `indent` since this conflicts with Prettier's default indent
 To lint all files in the current directory:
 
 ```sh
-# npx
-$ npx eslint .
+npx eslint .
+```
 
-# yarn
-$ yarn eslint .
+Or with Yarn:
+
+```sh
+yarn eslint .
 ```
 
 To automatically fix lint problems:
 
 ```sh
-# npx
-$ npx eslint . --fix
+npx eslint . --fix
+```
 
-# yarn
-$ yarn eslint . --fix
+Or with Yarn:
+
+```sh
+yarn eslint . --fix
 ```
 
 ## Example

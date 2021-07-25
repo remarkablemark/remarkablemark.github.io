@@ -9,19 +9,19 @@ categories: python dotenv
 Install [python-dotenv](https://pypi.org/project/python-dotenv/) with [pip](https://pypi.org/project/pip/):
 
 ```sh
-$ pip install python-dotenv
+pip install python-dotenv
 ```
 
 Set environment variable in `.env` file:
 
 ```sh
-$ echo 'KEY=VALUE' > .env
+echo 'KEY=VALUE' > .env
 ```
 
 Create `script.py`:
 
 ```sh
-$ touch script.py
+touch script.py
 ```
 
 Find and load `.env`:
@@ -47,8 +47,7 @@ print(environ.get("KEY"))
 Run Python script:
 
 ```sh
-$ python script.py
-VALUE
+python script.py # VALUE
 ```
 
 ## Script

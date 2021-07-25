@@ -21,7 +21,7 @@ package.json vars are the [npm package environment variables](https://docs.npmjs
 To print out all the package.json vars:
 
 ```sh
-$ npm run env | grep npm_package_
+npm run env | grep npm_package_
 ```
 
 To get the "version" using a [run-script](https://docs.npmjs.com/cli/v6/commands/npm-run-script):
@@ -39,7 +39,7 @@ To get the "version" using a [run-script](https://docs.npmjs.com/cli/v6/commands
 To access an npm environment variable outside the scope of a run-script, parse the variable with bash:
 
 ```sh
-$ npm run env | grep npm_package_version | cut -d '=' -f 2
+npm run env | grep npm_package_version | cut -d '=' -f 2
 ```
 
 ## jq
@@ -49,7 +49,7 @@ $ npm run env | grep npm_package_version | cut -d '=' -f 2
 To print the `package.json` version:
 
 ```sh
-$ jq -r .version package.json
+jq -r .version package.json
 ```
 
 > The `-r` option outputs the **raw** string (so it's `1.2.3` instead of `"1.2.3"`).
@@ -73,13 +73,13 @@ To get the "version" using a [run-script](https://docs.npmjs.com/cli/v6/commands
 To print the `package.json` version:
 
 ```sh
-$ node -e "console.log(require('./package.json').version)"
+node -e "console.log(require('./package.json').version)"
 ```
 
 Pass the [`-p`](https://nodejs.org/api/cli.html#cli_p_print_script) option to print the evaluation:
 
 ```sh
-$ node -p "require('./package').version"
+node -p "require('./package').version"
 ```
 
 To get the "version" using a [run-script](https://docs.npmjs.com/cli/v6/commands/npm-run-script):
@@ -101,7 +101,7 @@ To get the "version" using a [run-script](https://docs.npmjs.com/cli/v6/commands
 To match `package.json` against the regex pattern `/"version": ".+"/` and print the 4th field of the first result:
 
 ```sh
-$ awk -F'"' '/"version": ".+"/{ print $4; exit; }' package.json
+awk -F'"' '/"version": ".+"/{ print $4; exit; }' package.json
 ```
 
 To get the "version" using a [run-script](https://docs.npmjs.com/cli/v6/commands/npm-run-script):

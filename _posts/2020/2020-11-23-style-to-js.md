@@ -11,7 +11,7 @@ Use [`style-to-js`](https://b.remarkabl.org/style-to-js) to parse a CSS inline s
 ## Install
 
 ```sh
-$ npm install style-to-js
+npm install style-to-js
 ```
 
 ## Usage
@@ -55,7 +55,7 @@ See [README](https://github.com/remarkablemark/style-to-js#readme).
 Use [`style-to-object`](https://b.remarkabl.org/style-to-object) to parse a CSS inline style to a JavaScript object that's kebab-cased.
 
 ```sh
-$ npm install style-to-object
+npm install style-to-object
 ```
 
 Parse:

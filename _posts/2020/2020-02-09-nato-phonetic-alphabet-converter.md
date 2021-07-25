@@ -18,13 +18,13 @@ You can download `phonetic-alphabet-converter` from:
 [npm](https://www.npmjs.com/package/phonetic-alphabet-converter)
 
 ```sh
-$ npm install phonetic-alphabet-converter
+npm install phonetic-alphabet-converter
 ```
 
 [yarn](https://yarnpkg.com/package/phonetic-alphabet-converter)
 
 ```sh
-$ yarn add phonetic-alphabet-converter
+yarn add phonetic-alphabet-converter
 ```
 
 [unpkg](https://unpkg.com/phonetic-alphabet-converter/)

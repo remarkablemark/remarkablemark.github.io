@@ -17,7 +17,7 @@ Transcribe speech to text with Python or the Web Speech API:
 Make sure you have [Python](https://www.python.org/downloads/) installed:
 
 ```sh
-$ python --version
+python --version
 ```
 
 > Python version 3 is recommended.
@@ -25,7 +25,7 @@ $ python --version
 Install [`SpeechRecognition`](https://pypi.org/project/SpeechRecognition/) module:
 
 ```sh
-$ pip install SpeechRecognition
+pip install SpeechRecognition
 ```
 
 Create script `speech_to_text.py` that transcribes audio file `Hello World.wav` to text:
@@ -47,8 +47,7 @@ print(text)
 Run script:
 
 ```sh
-$ python speech_to_text.py
-hello world
+python speech_to_text.py # hello world
 ```
 
 ### Library

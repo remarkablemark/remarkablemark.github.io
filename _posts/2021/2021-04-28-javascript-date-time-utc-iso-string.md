@@ -13,7 +13,7 @@ How to generate a [UTC](https://wikipedia.org/wiki/Coordinated_Universal_Time) d
 Enter the `node` [REPL](https://nodejs.org/api/repl.html):
 
 ```sh
-$ node
+node
 ```
 
 Generate new [`Date`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date):
@@ -31,8 +31,8 @@ new Date().toISOString();
 See example:
 
 ```sh
-$ node
-Welcome to Node.js v12.14.0.
+node
+Welcome to Node.js v16.1.0.
 Type ".help" for more information.
 > new Date()
 2021-04-28T20:49:52.578Z

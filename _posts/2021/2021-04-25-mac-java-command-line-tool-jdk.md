@@ -19,7 +19,7 @@ which java # /usr/bin/java
 When you try to use `java` in the CLI:
 
 ```sh
-$ java -version
+java -version
 ```
 
 You will get the pop-up:
@@ -78,5 +78,8 @@ Check the `java` binary and version:
 
 ```sh
 which java # /usr/local/opt/openjdk/bin/java
+```
+
+```sh
 java -version
 ```

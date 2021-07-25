@@ -35,8 +35,7 @@ subprocess.call(["bash", "hello_world.sh"])
 When you run your Python script in your command-line:
 
 ```sh
-$ python main.py
-Hello, world!
+python main.py # Hello, world!
 ```
 
 ## Output

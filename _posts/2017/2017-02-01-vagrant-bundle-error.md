@@ -26,7 +26,7 @@ Later, I learned that not all vagrant directories were removed.
 So the first thing I did was to remove `/opt/vagrant/`:
 
 ```sh
-$ sudo rm -rf /opt/vagrant/
+sudo rm -rf /opt/vagrant/
 ```
 
 Unfortunately, that didn't resolve the issue.
@@ -34,7 +34,7 @@ Unfortunately, that didn't resolve the issue.
 Hence, I continued to remove `~/.vagrant.d/`:
 
 ```sh
-$ rm -rf ~/.vagrant.d/
+rm -rf ~/.vagrant.d/
 ```
 
 And that fixed the problem.

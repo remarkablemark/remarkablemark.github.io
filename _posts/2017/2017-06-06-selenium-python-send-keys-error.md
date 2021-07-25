@@ -23,7 +23,7 @@ After researching the [issue](https://github.com/mozilla/geckodriver/issues/659)
 So I updated [geckodriver](https://github.com/mozilla/geckodriver/releases) with [homebrew](https://brew.sh/):
 
 ```sh
-$ brew upgrade geckodriver
+brew upgrade geckodriver
 ```
 
 After running Selenium again, I received a new error:
@@ -35,7 +35,7 @@ KeyError: 'sessionId'
 It turned out I also needed to upgrade the [selenium](https://pypi.python.org/pypi/selenium) Python package:
 
 ```sh
-$ pip install selenium --upgrade
+pip install selenium --upgrade
 ```
 
 Now everything's working again.

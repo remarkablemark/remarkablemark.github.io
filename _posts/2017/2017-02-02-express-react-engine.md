@@ -17,7 +17,7 @@ Set up a [minimal Express server]({% post_url 2017/2017-01-17-minimal-express-se
 Install [React](https://www.npmjs.com/package/react) and [ReactDOM](https://www.npmjs.com/package/react-dom):
 
 ```sh
-$ npm install react react-dom
+npm install react react-dom
 ```
 
 Create the templating engine:
@@ -93,7 +93,7 @@ app.get('/', function(request, response, next) {
 Run the server to see it working at <a href="http://localhost:3000" target="_blank" data-proofer-ignore>http://localhost:3000</a>:
 
 ```sh
-$ node server.js
+node server.js
 ```
 
 

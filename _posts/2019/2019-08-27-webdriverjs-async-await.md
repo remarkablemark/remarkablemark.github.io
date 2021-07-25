@@ -101,7 +101,7 @@ SELENIUM_PROMISE_MANAGER=0
 Which means we can do the following before running the script:
 
 ```sh
-$ SELENIUM_PROMISE_MANAGER=0 node async-await.js
+SELENIUM_PROMISE_MANAGER=0 node async-await.js
 ```
 
 ## Addendum

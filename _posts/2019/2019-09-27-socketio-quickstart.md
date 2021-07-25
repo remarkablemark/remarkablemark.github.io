@@ -11,7 +11,7 @@ categories: socketio express nodejs javascript real-time
 Install [express](https://www.npmjs.com/package/express):
 
 ```sh
-$ npm install express
+npm install express
 ```
 
 Create a basic [express app]({% post_url 2017/2017-01-17-minimal-express-server %}):
@@ -31,13 +31,13 @@ server.listen(PORT, () => console.log('Listening on *:' + PORT));
 Create directory `public`, which will serve static files:
 
 ```sh
-$ mkdir public
+mkdir public
 ```
 
 Create `index.html`:
 
 ```sh
-$ echo 'Hello world' > public/index.html
+echo 'Hello world' > public/index.html
 ```
 
 Update the express app to [serve the static directory](https://expressjs.com/en/starter/static-files.html):
@@ -51,13 +51,13 @@ app.use(express.static('public'));
 Start the server:
 
 ```sh
-$ node index.js
+node index.js
 ```
 
 Go to `localhost:3000` in your browser to see `Hello world`:
 
 ```sh
-$ open http://localhost:3000/
+open http://localhost:3000/
 ```
 
 ## Socket.IO
@@ -65,7 +65,7 @@ $ open http://localhost:3000/
 Install [socket.io](https://www.npmjs.com/package/socket.io):
 
 ```sh
-$ npm install socket.io
+npm install socket.io
 ```
 
 Add Socket.IO to the [server](https://socket.io/docs/server-api/):

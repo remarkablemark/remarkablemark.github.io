@@ -9,7 +9,7 @@ categories: python php phpserialize
 Given a [serialized](https://www.php.net/manual/en/function.serialize.php) array:
 
 ```sh
-$ php -r "echo serialize(['foo' => 'bar']);"
+php -r "echo serialize(['foo' => 'bar']);"
 ```
 
 ```
@@ -19,7 +19,7 @@ a:1:{s:3:"foo";s:3:"bar";}
 And serialized object:
 
 ```sh
-$ php -r "echo serialize((object) ['baz' => 'qux']);"
+php -r "echo serialize((object) ['baz' => 'qux']);"
 ```
 
 ```

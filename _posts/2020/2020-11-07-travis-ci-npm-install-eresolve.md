@@ -14,7 +14,10 @@ categories: travis ci build npm error
 I received an npm install error for my [Travis CI build](https://travis-ci.org/github/remarkablemark/phonetic-alphabet-converter/builds/742165128) after upgrading my dependencies:
 
 ```sh
-$ npm install
+npm install
+```
+
+```
 npm ERR! code ERESOLVE
 npm ERR! ERESOLVE unable to resolve dependency tree
 npm ERR!
@@ -42,7 +45,7 @@ npm ERR!     /home/travis/.npm/_logs/2020-11-08T01_13_40_933Z-debug.log
 
 This started happening with [npm v7](https://blog.npmjs.org/post/628356819518210048/release-v700-beta9) and I realized it's related to build cache:
 
-```sh
+```
 Setting up build cache
 
 $ node --version
@@ -66,7 +69,7 @@ cache:
 To fix this error locally, delete `node_modules` and reinstall:
 
 ```sh
-$ rm -rf node_modules && npm i
+rm -rf node_modules && npm i
 ```
 
 <!--/email_off-->

@@ -13,7 +13,7 @@ As a Vim user, I sometimes have a buildup of unremoved swap files (`.swp`) float
 First, I use `find` to list out all the swap filepaths:
 
 ```sh
-$ find . -name '*.swp'
+find . -name '*.swp'
 ```
 
 You can see that it's traversing the current directory `.` and trying to match the pattern `*.swp`.
@@ -25,19 +25,19 @@ You can see that it's traversing the current directory `.` and trying to match t
 To delete the files, all you need to do is pass the `-delete` option (**_warning: this operation cannot be undone_**):
 
 ```sh
-$ find . -name '*.swp' -delete
+find . -name '*.swp' -delete
 ```
 
 To be safe and target only file types, you can pass `-type f`:
 
 ```sh
-$ find . -type f -name '*.swp' -delete
+find . -type f -name '*.swp' -delete
 ```
 
 To ignore files in the `./dist` directory, pass `-path ./dist -prune -o` and `-print`:
 
 ```sh
-$ find . -path ./dist -prune -o -name '*.swp' -print -delete
+find . -path ./dist -prune -o -name '*.swp' -print -delete
 ```
 
 The `-print` option ensures that the `./dist` directory is excluded from the `find` output.

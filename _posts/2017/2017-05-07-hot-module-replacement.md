@@ -36,8 +36,12 @@ npx webpack serve --hot --inline
 Start the server:
 
 ```sh
-$ npm start
+npm start
+```
 
+Output:
+
+```
 > @ start path/to/project
 > webpack serve --hot --inline
 
@@ -50,7 +54,7 @@ $ npm start
 Open `http://localhost:8080/` in the browser:
 
 ```sh
-$ open http://localhost:8080/
+open http://localhost:8080/
 ```
 
 See the console logs:
@@ -101,7 +105,7 @@ module.exports = {
 Run `webpack-dev-server` without passing any options:
 
 ```sh
-$ npx webpack serve
+npx webpack serve
 ```
 
 ## Demo

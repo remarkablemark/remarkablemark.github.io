@@ -9,7 +9,7 @@ categories: npm environment variables dotenv nodejs javascript
 You can access npm environment variables from [package.json vars]({% post_url 2018/2018-08-14-package-json-version %}):
 
 ```sh
-$ npm run env | grep npm_package_
+npm run env | grep npm_package_
 ```
 
 But to load them in your Node.js module, you'll need [`dotenv`](https://github.com/motdotla/dotenv) and [`dotenv-expand`](https://github.com/motdotla/dotenv-expand).
@@ -19,18 +19,18 @@ But to load them in your Node.js module, you'll need [`dotenv`](https://github.c
 Make sure you have a `package.json`. If you don't have one, create one:
 
 ```sh
-$ npm init # --yes
+npm init --yes
 ```
 
 Install both [`dotenv`](https://www.npmjs.com/package/dotenv) and [`dotenv-expand`](https://www.npmjs.com/package/dotenv-expand):
 
 ```sh
-$ npm install dotenv dotenv-expand
+npm install dotenv dotenv-expand
 ```
 
 Create a `.env` file with your expanded environment variables:
 
-```sh
+```bash
 # .env
 NAME=$npm_package_name
 VERSION=${npm_package_version}
@@ -51,7 +51,7 @@ console.log(process.env.NAME, process.env.VERSION);
 If you run the command:
 
 ```sh
-$ node index.js
+node index.js
 ```
 
 You won't see anything logged to the console.
@@ -71,7 +71,7 @@ So create an [npm script](https://docs.npmjs.com/cli/run-script) in your `packag
 Then when you run the script:
 
 ```sh
-$ npm start
+npm start
 ```
 
 You will see the package name and version logged to the console.

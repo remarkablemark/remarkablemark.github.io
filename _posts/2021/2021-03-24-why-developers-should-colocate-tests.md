@@ -72,5 +72,5 @@ When a feature is removed, it's simple to delete both the file and the test.
 [Mocha](https://mochajs.org/) requires some configuration:
 
 ```sh
-$ npx mocha src/**/*.test.js
+npx mocha src/**/*.test.js
 ```

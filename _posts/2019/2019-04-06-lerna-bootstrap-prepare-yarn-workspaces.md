@@ -9,7 +9,10 @@ categories: lerna bootstrap npm script prepare yarn workspaces
 [`prepare`](https://docs.npmjs.com/misc/scripts) is a useful script for running a command before a package is published or on local install.
 
 ```sh
-$ cat packages/my-lerna-package/package.json
+jq . packages/my-lerna-package/package.json # cat packages/my-lerna-package/package.json
+```
+
+```json
 {
   "name": "my-lerna-package",
   "scripts": {
@@ -21,7 +24,10 @@ $ cat packages/my-lerna-package/package.json
 However, [`lerna bootstrap`](https://github.com/lerna/lerna/tree/v3.13.1/commands/bootstrap#lernabootstrap) doesn't run `prepare` when using [yarn workspaces](https://yarnpkg.com/lang/en/docs/workspaces/) (see [issue](https://github.com/lerna/lerna/issues/1021)).
 
 ```sh
-$ yarn lerna bootstrap
+yarn lerna bootstrap
+```
+
+```bash
 yarn run v1.9.4
 $ path/to/monorepo/node_modules/.bin/lerna bootstrap
 lerna notice cli v3.13.1
@@ -49,7 +55,10 @@ The workaround is to add a `prepare` script to your root `package.json`:
 Now when you run `lerna bootstrap`:
 
 ```sh
-$ yarn lerna bootstrap
+yarn lerna bootstrap
+```
+
+```bash
 yarn run v1.9.4
 $ path/to/monorepo/node_modules/.bin/lerna bootstrap
 lerna notice cli v3.13.1

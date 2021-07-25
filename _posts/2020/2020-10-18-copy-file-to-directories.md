@@ -6,16 +6,18 @@ excerpt: How to copy a file to all directories using `find`.
 categories: find copy
 ---
 
-> **TL;DR**: copy `source` file to `target` directories given `root` path:
+> **TL;DR**: copy file `$SOURCE` to directories `$TARGET` given path `$ROOT`:
 >
 > ```sh
-> $ find <root> -type d -name <target> -exec cp <source> {} \;
+> find $ROOT -type d -name $TARGET -exec cp $SOURCE {} \;
 > ```
+
+## Problem
 
 Given the following directory structure:
 
 ```sh
-$ tree
+tree
 .
 ├── dir1
 ├── dir2
@@ -25,10 +27,10 @@ $ tree
 3 directories, 1 file
 ```
 
-How can we copy `file` to `dir1/`, `dir2/`, and `dir3/` to get something like this:
+How can we copy `file` to `dir1/`, `dir2/`, and `dir3/` to get something like the following?
 
-```
-$ tree
+```sh
+tree
 .
 ├── dir1
 │   └── file
@@ -41,22 +43,27 @@ $ tree
 3 directories, 4 files
 ```
 
-## cp
+## Solution
+
+### cp
 
 We can explicitly call `cp` to copy the source file to each target directory:
 
 ```sh
-$ cp file dir1; cp file dir2; cp file dir3
+cp file dir1; cp file dir2; cp file dir3
 ```
 
 But this doesn't feel [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)&mdash;especially when the number of directories increases.
 
-## find
+### find
 
 With [`find`]({% post_url 2018/2018-04-17-find-examples %}), we can list all the directories:
 
 ```sh
-$ find . -type d
+find . -type d
+```
+
+```
 .
 ./dir2
 ./dir3
@@ -66,7 +73,10 @@ $ find . -type d
 To match the directory name starting with `dir`:
 
 ```sh
-$ find . -type d -name 'dir*'
+find . -type d -name 'dir*'
+```
+
+```
 ./dir2
 ./dir3
 ./dir1
@@ -75,5 +85,5 @@ $ find . -type d -name 'dir*'
 Then we can execute `cp` and pass each directory as `{}`:
 
 ```sh
-$ find . -type d -name 'dir*' -exec cp file {} \;
+find . -type d -name 'dir*' -exec cp file {} \;
 ```

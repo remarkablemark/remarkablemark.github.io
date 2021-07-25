@@ -8,14 +8,16 @@ categories: lodash npm security vulnerability javascript nodejs
 
 <!--email_off-->
 
-> TL;DR:
+> TL;DR: fix for lodash >= 4:
 >
 > ```sh
-> # lodash >=4
-> $ npm i lodash@latest
+> npm i lodash@latest
+> ```
 >
-> # lodash 3
-> $ npm i remarkablemark/lodash#3.10.2
+> Fix for lodash 3:
+>
+> ```sh
+> npm i remarkablemark/lodash#3.10.2
 > ```
 
 ## Background
@@ -55,13 +57,13 @@ The fix for lodash version 4 is to upgrade to `>=4.17.15`:
 [npm](https://www.npmjs.com/package/lodash):
 
 ```sh
-$ npm install lodash@latest
+npm install lodash@latest
 ```
 
 [Yarn](https://classic.yarnpkg.com/en/package/lodash):
 
 ```sh
-$ yarn add lodash@latest
+yarn add lodash@latest
 ```
 
 ### lodash 3
@@ -71,7 +73,7 @@ Although there's a [fix](https://github.com/lodash/lodash/pull/4627) for lodash 
 Given that lodash hasn't published version `3.x.x` since 2015, I created a [repository](https://github.com/remarkablemark/lodash) that has the fix:
 
 ```sh
-$ npm install remarkablemark/lodash#3.10.2
+npm install remarkablemark/lodash#3.10.2
 ```
 
 <!--/email_off-->

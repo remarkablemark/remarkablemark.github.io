@@ -18,7 +18,7 @@ There are several [languages](https://github.com/SeleniumHQ/selenium#documentati
 Install [Node.js](https://nodejs.org/) (see [video](https://www.youtube.com/watch?v=F2uovvU-dLA)). To [install with homebrew](https://www.youtube.com/watch?v=44FhlEiMEpU):
 
 ```sh
-$ brew install node
+brew install node
 ```
 
 This should come with [npm](https://www.npmjs.com/) installed.
@@ -28,7 +28,7 @@ This should come with [npm](https://www.npmjs.com/) installed.
 Install [`selenium-webdriver`](https://www.npmjs.com/package/selenium-webdriver):
 
 ```sh
-$ npm install selenium-webdriver
+npm install selenium-webdriver
 ```
 
 Make sure the `selenium-webdriver` version is [supported](https://www.npmjs.com/package/selenium-webdriver#user-content-node-support-policy) by your version of Node.js.
@@ -42,7 +42,7 @@ Install [Firefox](https://www.mozilla.org/firefox). For Firefox 48+, you'll need
 Create script `launch-driver.js`:
 
 ```sh
-$ touch launch-driver.js
+touch launch-driver.js
 ```
 
 Import `selenium-webdriver`:
@@ -98,7 +98,7 @@ driver.quit();
 Run the script:
 
 ```sh
-$ node launch-driver.js
+node launch-driver.js
 ```
 
 ## Examples

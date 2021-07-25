@@ -17,7 +17,7 @@ I was working on an npm package executable and I wanted to know the directory of
 Create the following directories:
 
 ```sh
-$ mkdir a/ b/
+mkdir a/ b/
 ```
 
 `a` will contain your _**app**_ project and `b` will contain your npm package _**binary**_.
@@ -27,19 +27,19 @@ $ mkdir a/ b/
 Enter directory `b`:
 
 ```sh
-$ cd b/
+cd b/
 ```
 
 Initialize the `package.json`:
 
 ```sh
-$ npm init -y
+npm init -y
 ```
 
 Create your script:
 
 ```sh
-$ touch script.js
+touch script.js
 ```
 
 Add the following code to your script:
@@ -65,8 +65,10 @@ Set the [bin](https://docs.npmjs.com/files/package.json#bin) field in `package.j
 [Symlink your package](https://docs.npmjs.com/cli-commands/link.html):
 
 ```sh
-$ npm link
+npm link
+```
 
+```
 /usr/local/bin/b -> /usr/local/lib/node_modules/b/script.js
 /usr/local/lib/node_modules/b -> /Users/remarkablemark/b
 ```
@@ -76,20 +78,23 @@ $ npm link
 Enter directory `a`:
 
 ```sh
-$ cd ../a/
+cd ../a/
 ```
 
 [Install `b` as a symlink](https://docs.npmjs.com/cli-commands/link.html):
 
 ```sh
-$ npm link b
+npm link b
+```
+
+```
 /Users/remarkablemark/a/node_modules/b -> /usr/local/lib/node_modules/b -> /Users/remarkablemark/b
 ```
 
 When you execute the binary:
 
 ```sh
-$ npx b # yarn b
+npx b # yarn b
 ```
 
 You'll get the output:

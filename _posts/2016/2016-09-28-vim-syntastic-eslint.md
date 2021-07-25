@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using Vim with Syntastic and ESLint
-date: 2016-09-28 21:31:00 -4000
+date: 2016-09-28 21:31:00
 excerpt: How to setup your Vim editor with ESLint as your JavaScript linter using the Syntastic plugin.
 categories: vim syntastic eslint javascript
 ---
@@ -12,14 +12,14 @@ Wouldn't it be nice to set up automatic linting of JavaScript when using [Vim](h
 
 First you'll need to install [Syntastic](https://github.com/vim-syntastic/syntastic) and [ESLint](https://github.com/eslint/eslint) if you haven't already.
 
-### Syntastic
+## Syntastic
 
 Feel free to check out [Syntastic's installation steps](https://github.com/scrooloose/syntastic#installation). But personally, I recommend using [Vundle](https://github.com/VundleVim/Vundle.vim) to manage Vim plugins.
 
 If you have [Vundle installed](https://github.com/VundleVim/Vundle.vim#quick-start), open your Vim config file:
 
 ```sh
-$ vim ~/.vimrc
+vim ~/.vimrc
 ```
 
 Then add the plugin:
@@ -37,12 +37,12 @@ Finally save, reload, and install:
 :PluginInstall
 ```
 
-### ESLint
+## ESLint
 
 Now install [eslint](https://www.npmjs.com/package/eslint) globally:
 
 ```sh
-$ npm install eslint --global
+npm install eslint --global
 ```
 
 Add it as a Syntastic JavaScript checker in your `.vimrc`:
@@ -81,9 +81,7 @@ You'll need to install them in order for your linter to work.
 One approach is to install them globally:
 
 ```sh
-$ npm install -g eslint-config-airbnb \
-                 babel-eslint \
-                 eslint-plugin-react
+npm i -g eslint-config-airbnb babel-eslint eslint-plugin-react
 ```
 
 But this can get tiresome when different projects have different ESLint dependencies. And you're also polluting the global `node_modules` directory.
@@ -100,5 +98,5 @@ let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 This means that `eslint` and its parser and plugin dependencies must be installed locally in your project:
 
 ```sh
-$ npm install eslint # and its related dependencies
+npm install eslint # and its related dependencies
 ```

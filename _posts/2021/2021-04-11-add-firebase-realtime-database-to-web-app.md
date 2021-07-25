@@ -66,7 +66,7 @@ To add Firebase to your web app, go to **Project Overview** and under **Get star
 Given you have [`firebase`](https://www.npmjs.com/package/firebase) installed:
 
 ```sh
-$ npm install firebase
+npm install firebase
 ```
 
 Import the Firebase modules and initialize the app:

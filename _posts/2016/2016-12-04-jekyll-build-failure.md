@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Jekyll build failure
-date: 2016-12-04 22:36:00 -4000
+date: 2016-12-04 22:36:00
 excerpt: Jekyll build failure caused by Bundler installing different gem versions.
 categories: github jekyll bundler gem ruby
 ---
@@ -22,10 +22,12 @@ gem 'github-pages', group: :jekyll_plugins
 I update the gems and check the versions:
 
 ```sh
-$ bundle update
-$ bundle exec github-pages --version
+bundle update && bundle exec github-pages --version
 github-pages 39
-$ bundle exec jekyll --version
+```
+
+```sh
+bundle exec jekyll --version
 jekyll 2.4.0
 ```
 
@@ -39,11 +41,16 @@ So the [current fix](https://github.com/github/pages-gem/tree/v105#usage) is to 
 gem 'github-pages', '104', group: :jekyll_plugins
 ```
 
-Update your gems and then build your site:
+Update your gems:
 
 ```sh
-$ bundle update
-$ bundle exec jekyll build --safe
+bundle update
+```
+
+Then build your site:
+
+```sh
+bundle exec jekyll build --safe
 ```
 
 Now when I push my latest commit to my [repository]({{ site.repository | prepend: "https://github.com/" }}), my site builds successfully:

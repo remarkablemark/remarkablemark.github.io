@@ -13,7 +13,10 @@ categories: npm rollup
 When [upgrading](https://www.npmjs.com/package/npm-check-updates) my npm package dependencies, I encountered an error with the [`rollup`](https://www.npmjs.com/package/rollup) upgrade:
 
 ```sh
-$ npm install
+npm install
+```
+
+```
 npm ERR! code ERESOLVE
 npm ERR! ERESOLVE unable to resolve dependency tree
 npm ERR!
@@ -42,7 +45,7 @@ Luckily, the process was straightforward.
 Install [`rollup-plugin-terser`](https://www.npmjs.com/package/rollup-plugin-terser) and remove [`rollup-plugin-uglify`](https://www.npmjs.com/package/rollup-plugin-uglify):
 
 ```sh
-$ npm i rollup-plugin-terser -D && npm rm rollup-plugin-uglify -D
+npm i rollup-plugin-terser -D && npm rm rollup-plugin-uglify -D
 ```
 
 Update `rollup.config.js`:

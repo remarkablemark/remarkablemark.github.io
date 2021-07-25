@@ -9,7 +9,7 @@ categories: nodejs debug
 > **TL;DR**: To terminate all `node` processes:
 >
 > ```sh
-> $ killall -9 node
+> killall -9 node
 > ```
 >
 > However, make sure to it's **safe** to do so.
@@ -19,7 +19,7 @@ categories: nodejs debug
 When debugging a Node.js app:
 
 ```sh
-$ node --inspect app.js
+node --inspect app.js
 ```
 
 You may get the error:
@@ -35,7 +35,7 @@ This means the address is already in use by another Node.js app and you may have
 Grep for all running processes with `node`:
 
 ```sh
-$ ps ax | grep node
+ps ax | grep node
 ```
 
 You'll see something like the following:
@@ -48,19 +48,19 @@ You'll see something like the following:
 Verify it's safe to kill the process before terminating it:
 
 ```sh
-$ kill -9 86789
+kill -9 86789
 ```
 
 Remember to replace `<pid>` with your process id:
 
 ```sh
-$ kill -9 <pid>
+kill -9 <pid>
 ```
 
 To kill all `node` processes:
 
 ```sh
-$ killall -9 node
+killall -9 node
 ```
 
 This solution is inspired by the [Stackoverflow answer](https://stackoverflow.com/questions/47609400/how-to-stop-the-node-js-inspector-chrome-debugger-on-sigint#answer-49797588).

@@ -17,13 +17,13 @@ This project was inspired by the blog post ["Markdown Table of Contents Generato
 [npm](https://www.npmjs.com/package/mdtocs):
 
 ```sh
-$ npm install mdtocs
+npm install mdtocs
 ```
 
 [Yarn](https://yarnpkg.com/package/mdtocs):
 
 ```sh
-$ yarn add mdtocs
+yarn add mdtocs
 ```
 
 [UNPKG](https://unpkg.com/mdtocs/):

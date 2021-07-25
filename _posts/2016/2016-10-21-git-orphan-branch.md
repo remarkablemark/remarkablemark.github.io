@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Git orphan branch
-date: 2016-10-21 15:23:00 -4000
+date: 2016-10-21 15:23:00
 excerpt: To checkout a branch with no commit history, you can use the `--orphan` option.
 categories: git branch
 ---
@@ -9,31 +9,39 @@ categories: git branch
 Given a [Git](https://git-scm.com) repository with a [commit history](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History):
 
 ```sh
-$ git status
+git status
 On branch master
 nothing to commit, working directory clean
-$ git log --oneline
+```
+
+```sh
+git log --oneline
 ```
 
 Is it possible to create a new [branch](https://git-scm.com/docs/git-branch) with no commits?
 
-Well, with the `orphan` option, you definitely can!
+It is possible with the `orphan` option, you definitely can!
 
 ```sh
-$ git checkout --orphan orphan
+git checkout --orphan orphan
+```
+
+Output:
+
+```
 Switched to a new branch 'orphan'
 ```
 
 Delete all your existing files:
 
 ```sh
-$ git rm -rf .
+git rm -rf .
 ```
 
 And now you have a branch with zero commits and files.
 
 ```sh
-$ git status
+git status
 On branch orphan
 Initial commit
 nothing to commit (create/copy files and use "git add" to track)

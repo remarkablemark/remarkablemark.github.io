@@ -15,7 +15,7 @@ From `man awk`:
 Given version:
 
 ```sh
-$ version=1.2.3
+version=1.2.3
 ```
 
 ### Major version
@@ -23,7 +23,7 @@ $ version=1.2.3
 To get the **major** version:
 
 ```sh
-$ echo $version | awk -F '.' '{print $1}'
+echo $version | awk -F '.' '{print $1}'
 1
 ```
 
@@ -32,7 +32,7 @@ Here, the input field separator is the period and we're returning the 1st field.
 A more concise way to write this is:
 
 ```sh
-$ awk -F. '{print $1}' <<< $version
+awk -F. '{print $1}' <<< $version
 1
 ```
 
@@ -41,7 +41,7 @@ $ awk -F. '{print $1}' <<< $version
 To get the **minor** version:
 
 ```sh
-$ awk -F. '{print $2}' <<< $version
+awk -F. '{print $2}' <<< $version
 2
 ```
 
@@ -50,7 +50,7 @@ $ awk -F. '{print $2}' <<< $version
 And to get the **patch** version:
 
 ```sh
-$ awk -F. '{print $3}' <<< $version
+awk -F. '{print $3}' <<< $version
 3
 ```
 
@@ -59,13 +59,13 @@ $ awk -F. '{print $3}' <<< $version
 What about the **pre-release** version?
 
 ```sh
-$ version=1.2.3-alpha.4
+version=1.2.3-alpha.4
 ```
 
 Instead of using the period as the field separator, we can use the hyphen:
 
 ```sh
-$ awk -F- '{print $NF}' <<< $version
+awk -F- '{print $NF}' <<< $version
 alpha.4
 ```
 

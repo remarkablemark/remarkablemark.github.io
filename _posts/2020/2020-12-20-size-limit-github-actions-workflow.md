@@ -15,13 +15,16 @@ This post goes over how to add [Size Limit](https://github.com/ai/size-limit), a
 Install [`size-limit`](https://www.npmjs.com/package/size-limit):
 
 ```sh
-$ npm install --save-dev size-limit
+npm install --save-dev size-limit
 ```
 
 Run the `size-limit` binary to get the message:
 
 ```sh
-$ npx size-limit
+npx size-limit
+```
+
+```
 Install Size Limit preset depends on type of the project
 
 For application, where you send JS bundle directly to users
@@ -40,13 +43,16 @@ Check out docs for more complicated cases
 In our example, we're going to install the big library preset [`@size-limit/preset-big-lib`](https://www.npmjs.com/package/@size-limit/preset-big-lib):
 
 ```sh
-$ npm install --save-dev @size-limit/preset-big-lib
+npm install --save-dev @size-limit/preset-big-lib
 ```
 
 Run `size-limit` again to get the error:
 
 ```sh
-$ npx size-limit
+npx size-limit
+```
+
+```
  ERROR  Create Size Limit config in package.json
 
   "size-limit": [
@@ -84,7 +90,10 @@ If your bundle path is `build/my-bundle.js` and you don't want your bundle to go
 A success message for `size-limit` looks like:
 
 ```sh
-$ npx size-limit
+npx size-limit
+```
+
+```
 ✔ Adding to empty webpack project
 ✔ Running JS in headless Chrome
 
@@ -100,7 +109,10 @@ $ npx size-limit
 A failure message for `size-limit` looks like:
 
 ```sh
-$ npx size-limit
+npx size-limit
+```
+
+```
 ✔ Adding to empty webpack project
 ✔ Running JS in headless Chrome
 

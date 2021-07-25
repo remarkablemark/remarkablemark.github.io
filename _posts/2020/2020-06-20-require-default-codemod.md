@@ -28,7 +28,7 @@ require('foo').default;
 Then you can use [`require-default-codemod`](https://www.npmjs.com/package/require-default-codemod):
 
 ```sh
-$ npx require-default-codemod <path>
+npx require-default-codemod <path>
 ```
 
 The codemod appends the `default` property to CommonJS `require`.
@@ -36,7 +36,7 @@ The codemod appends the `default` property to CommonJS `require`.
 To run the codemod in your current working directory:
 
 ```sh
-$ npx require-default-codemod .
+npx require-default-codemod .
 ```
 
 > For more ways to run the codemod, see [usage](https://github.com/remarkablemark/require-default-codemod#usage) or [options](https://github.com/remarkablemark/require-default-codemod#options).

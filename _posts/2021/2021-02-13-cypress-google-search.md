@@ -19,7 +19,7 @@ This article goes over how to perform a Google search using the [Cypress](https:
 Install [cypress](https://www.npmjs.com/package/cypress) with npm or yarn:
 
 ```sh
-$ npm install cypress
+npm install cypress
 ```
 
 ## Open
@@ -27,7 +27,7 @@ $ npm install cypress
 Open Cypress:
 
 ```sh
-$ npx cypress open
+npx cypress open
 ```
 
 ![Cypress integration tests]({{ "/images/2021/2021-02-13-cypress-integration-tests.png" | prepend: site.assets_path }})
@@ -35,7 +35,7 @@ $ npx cypress open
 The directories will be created:
 
 ```sh
-$ tree cypress -L 1
+tree cypress -L 1
 cypress
 ├── fixtures
 ├── integration
@@ -54,7 +54,7 @@ To run a test, click on the test file:
 Create file `cypress/integration/example.js`:
 
 ```sh
-$ touch cypress/integration/example.js
+touch cypress/integration/example.js
 ```
 
 Write the test:
@@ -76,7 +76,7 @@ Cypress uses [Mocha](https://mochajs.org/) as the test runner and [Chai](https:/
 Create file `cypress/integration/google-search.js`:
 
 ```sh
-$ touch cypress/integration/google-search.js
+touch cypress/integration/google-search.js
 ```
 
 Use [`visit`](https://docs.cypress.io/api/commands/visit.html) to open a page:

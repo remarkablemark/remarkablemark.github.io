@@ -13,13 +13,16 @@ With the environment variable [`TIMING`](https://eslint.org/docs/1.0.0/developer
 So instead of running ESLint like:
 
 ```sh
-$ npx eslint ./lib/
+npx eslint ./lib/
 ```
 
 Prepend the command with `TIMING=1`:
 
 ```sh
-$ TIMING=1 npx eslint ./lib/
+TIMING=1 npx eslint ./lib/
+```
+
+```
 Rule                    | Time (ms) | Relative
 :-----------------------|----------:|--------:
 prettier/prettier       |   136.659 |    92.4%
@@ -37,9 +40,12 @@ no-dupe-else-if         |     0.291 |     0.2%
 With [Yarn](https://yarnpkg.com/), you can get the total time elapsed:
 
 ```sh
-$ TIMING=1 yarn eslint ./lib/
-yarn run v1.22.10
-$ /Users/mark/html-react-parser/node_modules/.bin/eslint ./lib/
+TIMING=1 yarn eslint ./lib/
+```
+
+```
+$ yarn run v1.22.10
+/Users/remarkablemark/html-react-parser/node_modules/.bin/eslint ./lib/
 Rule                    | Time (ms) | Relative
 :-----------------------|----------:|--------:
 prettier/prettier       |   140.710 |    92.2%

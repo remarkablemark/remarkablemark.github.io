@@ -1,24 +1,33 @@
 ---
 layout: post
 title: Sass @import partial
-date: 2016-10-12 17:22:00 -4000
+date: 2016-10-12 17:22:00
 excerpt: How to import a Sass file in another Sass file.
-categories: sass cli
+categories: sass
 ---
+
+This post goes over how to import a Sass file in another Sass file.
+
+## Prerequisites
 
 Before we get started, make sure you have [Sass installed](http://sass-lang.com/install):
 
 ```sh
-$ gem install sass
-
-# if you don't have write permissions
-$ sudo gem install sass
+gem install sass
 ```
+
+Or if you don't have write permissions:
+
+```sh
+sudo gem install sass
+```
+
+## Import Sass
 
 Now assuming the following directory structure:
 
 ```sh
-$ tree
+tree
 .
 ├── partial.scss
 └── main.scss
@@ -33,7 +42,7 @@ To do that, _two_ things must be done:
 1\. Prepend an **underscore** to the filename:
 
 ```sh
-$ mv partial.scss _partial.scss
+mv partial.scss _partial.scss
 ```
 
 2\. **@import** the partial:
@@ -41,7 +50,7 @@ $ mv partial.scss _partial.scss
 ```scss
 // main.scss
 
-@import "partial";
+@import 'partial';
 ```
 
 If you have _more than one_ partial, you can separate each partial with a **comma**:
@@ -49,7 +58,7 @@ If you have _more than one_ partial, you can separate each partial with a **comm
 ```scss
 // main.scss
 
-@import "partial-1", "partial-2";
+@import 'partial-1', 'partial-2';
 ```
 
 If the partials are found in _different directories_, you'll need to specify the **relative paths**:
@@ -58,10 +67,10 @@ If the partials are found in _different directories_, you'll need to specify the
 // main.scss
 
 // parent directory partial
-@import "../partial";
+@import '../partial';
 
 // subdirectory partial
-@import "sub/partial";
+@import 'sub/partial';
 ```
 
 All Sass [variables](http://sass-lang.com/guide#topic-2), [mixins](http://sass-lang.com/guide#topic-6), and styles are cascaded in the order that they are imported.

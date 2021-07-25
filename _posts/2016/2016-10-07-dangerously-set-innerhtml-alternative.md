@@ -27,7 +27,7 @@ There are, and one of them is called [html-react-parser](https://github.com/rema
 First install the [package](https://www.npmjs.com/package/html-react-parser) and its dependencies:
 
 ```sh
-$ npm install html-react-parser react react-dom
+npm install html-react-parser react react-dom
 ```
 
 Now you can do something like this:

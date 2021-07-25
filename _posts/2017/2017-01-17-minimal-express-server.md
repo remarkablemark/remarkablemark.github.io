@@ -18,13 +18,13 @@ This article goes over how to set up a minimal [Express](https://b.remarkabl.org
 Install [express](https://www.npmjs.com/package/express):
 
 ```sh
-$ npm install express
+npm install express
 ```
 
 Create `index.js`:
 
 ```sh
-$ touch index.js
+touch index.js
 ```
 
 Require the module:
@@ -59,7 +59,7 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 Run the server:
 
 ```sh
-$ node index.js
+node index.js
 ```
 
 Go to <a href="http://localhost:3000" target="_blank" data-proofer-ignore>http://localhost:3000</a> to access the site.

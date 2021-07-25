@@ -13,8 +13,7 @@ categories: dependabot github bundler ruby
 Create `.github/dependabot.yml`:
 
 ```sh
-$ mkdir -p .github/
-$ touch .github/dependabot.yml
+mkdir .github/ && touch .github/dependabot.yml
 ```
 
 Add the minimum (_required_) configuration:

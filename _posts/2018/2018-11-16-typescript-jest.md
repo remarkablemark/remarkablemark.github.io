@@ -2,7 +2,7 @@
 layout: post
 title: TypeScript integration with Jest
 date: 2018-11-16 19:56:57
-excerpt: How to write Jest tests in TypeScript (and React).
+excerpt: How to write Jest tests in TypeScript and React.
 categories: typescript jest test react
 ---
 
@@ -11,13 +11,13 @@ categories: typescript jest test react
 Install [Jest](https://jestjs.io/):
 
 ```sh
-$ yarn add jest
+yarn add jest
 ```
 
 Create a test:
 
 ```sh
-$ touch test.js
+touch test.js
 ```
 
 And add the test suite and case:
@@ -34,7 +34,7 @@ describe('test', () => {
 Run and verify that the test passes:
 
 ```sh
-$ yarn jest
+yarn jest
  PASS  ./test.js
   test
     ✓ should pass (3ms)
@@ -52,21 +52,19 @@ Ran all test suites.
 Install [ts-jest](https://kulshekhar.github.io/ts-jest/), [typescript](https://www.typescriptlang.org/), and [@types/jest](https://www.npmjs.com/package/@types/jest):
 
 ```sh
-$ yarn add ts-jest \
-           typescript \
-           @types/jest
+yarn add ts-jest typescript @types/jest
 ```
 
 Change the file extension of the test:
 
 ```sh
-$ mv test.js test.ts
+mv test.js test.ts
 ```
 
 But if you run the test, it now complains that `No tests found`:
 
 ```sh
-$ yarn jest
+yarn jest
 No tests found
 In /path/to/test
   1 file checked.
@@ -80,15 +78,15 @@ info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this comm
 To fix this, you'll need to create a [configuration file](https://kulshekhar.github.io/ts-jest/docs/getting-started/installation/#jest-config-file):
 
 ```sh
-$ yarn ts-jest config:init
+yarn ts-jest config:init
 Jest configuration written to "/path/to/test/jest.config.js".
 ✨  Done in 0.51s.
 ```
 
 It should add the [preset](https://jestjs.io/docs/en/configuration.html#preset-string) `ts-jest`:
 
-```sh
-$ cat jest.config.js
+```ts
+// jest.config.js
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
@@ -98,7 +96,7 @@ module.exports = {
 When you run the test again:
 
 ```sh
-$ yarn jest
+yarn jest
  PASS  ./test.ts
   test
     ✓ should pass (4ms)
@@ -118,11 +116,7 @@ Now what if we want to write a [React](https://reactjs.org/) test?
 First you need to install the dependencies:
 
 ```sh
-$ yarn add react@16 \
-           enzyme \
-           enzyme-adapter-react-16 \
-           @types/enzyme \
-           @types/react
+yarn add react@16 enzyme enzyme-adapter-react-16 @types/{enzyme,react}
 ```
 
 To write in [JSX](https://reactjs.org/docs/introducing-jsx.html), you need to update the [compiler options](https://www.typescriptlang.org/docs/handbook/compiler-options.html) so that it's supported in `.tsx` files.
@@ -130,7 +124,7 @@ To write in [JSX](https://reactjs.org/docs/introducing-jsx.html), you need to up
 Create `tsconfig.json`:
 
 ```sh
-$ touch tsconfig.json
+touch tsconfig.json
 ```
 
 And add the option:
@@ -146,7 +140,7 @@ And add the option:
 Now rename `test.ts` to `test.tsx`:
 
 ```sh
-$ mv test.ts test.tsx
+mv test.ts test.tsx
 ```
 
 Update the test:
@@ -171,7 +165,7 @@ describe('test', () => {
 A snapshot should be created when you run the test:
 
 ```sh
-$ yarn jest
+yarn jest
  PASS  ./test.tsx
   test
     ✓ should pass (5ms)

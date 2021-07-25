@@ -31,7 +31,7 @@ echo hello();
 When you run `index.php` in your command-line:
 
 ```sh
-$ php index.php
+php index.php
 hello from foo
 ```
 
@@ -61,7 +61,7 @@ echo hello();
 You will get an error when running `index.php` in the command-line:
 
 ```sh
-$ php index.php
+php index.php
 Fatal error: Cannot redeclare hello()
 ```
 
@@ -112,7 +112,7 @@ You should notice that the namespace name and function name are joined by a back
 Now when you run `index.php`, you should get the expected output:
 
 ```sh
-$ php index.php
+php index.php
 hello from foo
 hello from bar
 ```

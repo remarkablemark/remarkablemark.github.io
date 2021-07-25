@@ -39,7 +39,7 @@ What happened to `{ 4: {} }`?
 Node.js formats [`console.log`](https://nodejs.org/api/console.html#console_console_log_data_args) output with [`util.inspect`](https://nodejs.org/api/util.html#util_util_inspect_object_options) so deeply nested objects are replaced with `[Object]`:
 
 ```sh
-$ node
+node
 > const obj = { 1: { 2: { 3: { 4: {} } } } };
 > util.inspect(obj);
 '{ \'1\': { \'2\': { \'3\': [Object] } } }'
@@ -59,7 +59,7 @@ console.log(util.inspect(obj, { depth: null }));
 ```
 
 ```sh
-$ node index.js
+node index.js
 { '1': { '2': { '3': { '4': {} } } } }
 ```
 

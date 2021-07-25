@@ -10,17 +10,21 @@ This post goes over how to fix [YouCompleteMe](https://github.com/ycm-core/YouCo
 
 ## Problem
 
-After updating my YouCompleteMe plugin:
+I recently updated my YouCompleteMe plugin:
 
 ```sh
-$ cd path/to/YouCompleteMe
-$ git pull
+cd ~/.vim/bundle/YouCompleteMe/ && git pull
 ```
 
-I installed to find errors:
+After reinstalling:
 
 ```sh
-$ python3 install.py --all
+python3 install.py --all
+```
+
+I got the following errors:
+
+```
 Searching Python 3.9 libraries...
 Found Python library: /usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/lib/python3.9/config-3.9-darwin/libpython3.9.dylib
 Found Python headers folder: /usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/include/python3.9
@@ -79,11 +83,11 @@ And came upon this [Gitter thread](https://gitter.im/Valloric/YouCompleteMe?at=6
 From the [install failure issue](https://github.com/ycm-core/YouCompleteMe/issues/3805), the [instructions](https://github.com/ycm-core/YouCompleteMe/issues/3805#issuecomment-784107020) are to install from a legacy branch:
 
 ```sh
-$ cd path/to/YouCompleteMe
-$ git fetch
-$ git checkout legacy-c++11 # 4e480a31
-$ git submodule update --init --recursive
-$ python3 install.py --all
+cd ~/.vim/bundle/YouCompleteMe/ &&
+  git fetch &&
+  git checkout legacy-c++11 &&
+  git submodule update --init --recursive &&
+  python3 install.py --all
 ```
 
 This fixed it for me.

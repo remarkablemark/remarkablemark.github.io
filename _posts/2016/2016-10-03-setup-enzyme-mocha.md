@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Setting up Enzyme with Mocha
-date: 2016-10-03 15:34:00 -4000
+date: 2016-10-03 15:34:00
 excerpt: How to set up Enzyme, a testing utility for React, with Mocha.
 categories: enzyme mocha react test babel npm
 ---
@@ -10,17 +10,10 @@ How do we go about _testing_ our [React](https://facebook.github.io/react/) comp
 
 A popular approach is to use [Enzyme](http://airbnb.io/enzyme/), which is a React testing utility. Let's use it with [Mocha](https://mochajs.org), a Node.js test runner.
 
-You'll need the following installed:
+Install the dependencies:
 
 ```sh
-# peer dependencies (if not already installed)
-$ npm install react react-dom
-
-# another dependency
-$ npm install react-addons-test-utils
-
-# for testing
-$ npm install enzyme mocha
+npm install react react-dom react-addons-test-utils enzyme mocha
 ```
 
 Add the following to your project's [.babelrc](https://babeljs.io/docs/usage/babelrc/):
@@ -58,28 +51,29 @@ In either scenario, babel will compile the JavaScript files based on your `.babe
 Now you can run your tests:
 
 ```sh
-$ npm test
+npm test
 ```
 
 Check out [Enzyme's repository](https://github.com/airbnb/enzyme) for [basic usage](https://github.com/airbnb/enzyme#basic-usage) and [examples](https://github.com/airbnb/enzyme/blob/master/docs/guides/mocha.md).
 
-### Advanced
+## Advanced
 
-You can also specify a different directory to run your tests:
+You can also specify a different directory to run your tests.
+
+To run tests that match `./lib/*.js`:
 
 ```sh
-# run tests that match `./lib/*.js`
-$ mocha --require babel-register lib/
+mocha --require babel-register lib/
 ```
 
 Or even subdirectories with a glob pattern:
 
 ```sh
-$ mocha --require babel-register lib/**/*.spec.js
+mocha --require babel-register lib/**/*.spec.js
 ```
 
 For Windows compatibility, wrap the glob in quotes:
 
 ```sh
-$ mocha --require babel-register "lib/**/*.spec.js"
+mocha --require babel-register 'lib/**/*.spec.js'
 ```

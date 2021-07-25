@@ -20,7 +20,7 @@ The UMD format allows JavaScript modules to be imported using:
 Install [webpack](https://www.npmjs.com/package/webpack) and [webpack-cli](https://www.npmjs.com/package/webpack-cli):
 
 ```sh
-$ npm install webpack webpack-cli --save-dev
+npm install webpack webpack-cli --save-dev
 ```
 
 Your `package.json` will look like:
@@ -66,7 +66,7 @@ module.exports = {
 Run `webpack` to build your bundle:
 
 ```sh
-$ npx webpack
+npx webpack
 asset add.js 399 bytes [compared for emit] [minimized] (name: main)
 ./src/add.js 57 bytes [built] [code generated]
 ```
@@ -74,7 +74,7 @@ asset add.js 399 bytes [compared for emit] [minimized] (name: main)
 The output file will be in `dist`:
 
 ```sh
-$ tree -I node_modules
+tree -I node_modules
 .
 ├── dist
 │   └── add.js
@@ -92,7 +92,7 @@ $ tree -I node_modules
 Require module with [CommonJS](https://wikipedia.org/wiki/CommonJS):
 
 ```sh
-$ node
+node
 > const add = require('./dist/add');
 > add(1, 2);
 ```

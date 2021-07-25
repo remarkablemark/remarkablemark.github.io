@@ -13,19 +13,19 @@ To automate the mouse click action on macOS, use [Cliclick](https://www.bluem.ne
 Install [`cliclick`](https://github.com/BlueM/cliclick) with [Homebrew](https://brew.sh/):
 
 ```sh
-$ brew install cliclick
+brew install cliclick
 ```
 
 To click at the current mouse location:
 
 ```sh
-$ cliclick c:.
+cliclick c:.
 ```
 
 This is the same as running with the full binary path:
 
 ```sh
-$ /usr/local/bin/cliclick c:.
+/usr/local/bin/cliclick c:.
 ```
 
 ## AppleScript

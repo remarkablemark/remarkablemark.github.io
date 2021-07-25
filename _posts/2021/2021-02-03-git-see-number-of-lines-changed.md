@@ -9,7 +9,7 @@ categories: git
 To see the number of lines changed in the current working directory:
 
 ```sh
-$ git diff --stat
+git diff --stat
 ```
 
 The output will look something like this:
@@ -22,21 +22,25 @@ file.txt | 2 +-
 To see the number of lines changed in a git commit:
 
 ```sh
-$ git diff --stat <commit>
+git diff --stat <commit>
 ```
 
 This means you can see the number of lines changed for the most recent git commit:
 
 ```sh
-$ git diff --stat HEAD~
+git diff --stat HEAD~
 ```
 
 To remove a dirty working directory from the diff, use [git stash](https://git-scm.com/docs/git-stash):
 
 ```sh
-$ git stash
-$ git diff --stat HEAD~
-$ git stash pop
+git stash
+```
+
+Pop the stash to restore it:
+
+```sh
+git stash pop
 ```
 
 See [git diff](https://git-scm.com/docs/git-diff) to learn more.

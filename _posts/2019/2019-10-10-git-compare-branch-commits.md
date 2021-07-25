@@ -9,7 +9,7 @@ categories: git bash
 Given you have a local [Git](https://git-scm.com/) repository with the following branches:
 
 ```sh
-$ git branch
+git branch
 * master
   myBranch
 ```
@@ -38,7 +38,13 @@ You can also format the data into a useful message:
 
 ```sh
 COUNT_AHEAD=$(git log --oneline $(git rev-parse --abbrev-ref HEAD) ^master | wc -l | xargs)
+```
+
+```sh
 COUNT_BEHIND=$(git log --oneline master ^$(git rev-parse --abbrev-ref HEAD) | wc -l | xargs)
+```
+
+```sh
 echo "$COUNT_AHEAD commits ahead and $COUNT_BEHIND commits behind master"
 ```
 
@@ -46,6 +52,6 @@ echo "$COUNT_AHEAD commits ahead and $COUNT_BEHIND commits behind master"
 
 Example output:
 
-```sh
+```
 13 commits ahead and 37 commits behind master
 ```

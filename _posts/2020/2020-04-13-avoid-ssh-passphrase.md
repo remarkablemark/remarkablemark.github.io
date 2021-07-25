@@ -12,7 +12,10 @@ categories: ssh mac passphrase keychain git
 I recently upgraded my macOS but when I tried to perform an SSH operation, I was asked to enter a passphrase:
 
 ```sh
-$ git pull
+git pull
+```
+
+```
 Enter passphrase for key '/Users/remarkablemark/.ssh/id_rsa':
 git@github.com: Permission denied (publickey).
 fatal: Could not read from remote repository.
@@ -28,7 +31,7 @@ I took the following steps to resolve this issue.
 First, check if you have a key pair:
 
 ```sh
-$ ls -a ~/.ssh/
+ls -a ~/.ssh/
 ```
 
 If you don't see the following files:
@@ -45,7 +48,7 @@ Then you'll need to generate a new SSH key.
 To [generate an SSH key](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key):
 
 ```sh
-$ ssh-keygen -t rsa -b 4096 -C "your.email@example.com"
+ssh-keygen -t rsa -b 4096 -C "your.email@example.com"
 ```
 
 ## Add SSH key to agent
@@ -53,21 +56,30 @@ $ ssh-keygen -t rsa -b 4096 -C "your.email@example.com"
 Start the `ssh-agent` if it's not running already:
 
 ```sh
-$ eval $(ssh-agent -s)
+eval $(ssh-agent -s)
+```
+
+```
 Agent pid 5451
 ```
 
 The `ssh-agent` manages your keys so check if it's there:
 
 ```sh
-$ ssh-add -l
+ssh-add -l
+```
+
+```
 The agent has no identities.
 ```
 
 Since there are no keys, [add your key to the `ssh-agent`](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent) (hit _Enter_ when asked to enter a passphrase):
 
 ```sh
-$ ssh-add -K ~/.ssh/id_rsa
+ssh-add -K ~/.ssh/id_rsa
+```
+
+```
 Enter passphrase for /Users/remarkablemark/.ssh/id_rsa:
 Identity added: /Users/remarkablemark/.ssh/id_rsa (/Users/remarkablemark/.ssh/id_rsa)
 ```
@@ -77,7 +89,10 @@ Identity added: /Users/remarkablemark/.ssh/id_rsa (/Users/remarkablemark/.ssh/id
 Now you should be able to perform SSH operations without being asked for a passphrase:
 
 ```sh
-$ git pull
+git pull
+```
+
+```
 Already up to date.
 ```
 

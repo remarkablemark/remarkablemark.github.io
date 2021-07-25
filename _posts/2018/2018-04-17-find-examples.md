@@ -16,7 +16,7 @@ From `man find`:
 Given the following directory tree:
 
 ```sh
-$ tree
+tree
 .
 ├── file1.txt
 ├── file2.txt
@@ -31,7 +31,7 @@ $ tree
 To recreate the directory layout, run the command:
 
 ```sh
-$ mkdir -p folder tmp && touch file1.txt file2.txt folder/file3 tmp/file4
+mkdir -p folder tmp && touch file1.txt file2.txt folder/file3 tmp/file4
 ```
 
 ## Examples
@@ -41,7 +41,7 @@ $ mkdir -p folder tmp && touch file1.txt file2.txt folder/file3 tmp/file4
 To list all files and directories in your current working directory:
 
 ```sh
-$ find .
+find .
 ```
 
 Output:
@@ -59,7 +59,7 @@ Output:
 To list all files and directories in `folder`:
 
 ```sh
-$ find folder
+find folder
 ```
 
 Output:
@@ -74,7 +74,7 @@ folder/file3
 To list only files:
 
 ```sh
-$ find . -type f
+find . -type f
 ```
 
 Output:
@@ -89,7 +89,7 @@ Output:
 To list only directories:
 
 ```sh
-$ find . -type d
+find . -type d
 ```
 
 Output:
@@ -103,7 +103,7 @@ Output:
 To list all files in `folder`:
 
 ```sh
-$ find folder -type -f
+find folder -type -f
 ```
 
 Output:
@@ -117,7 +117,7 @@ folder/file3
 To list all files with the extension `.txt`:
 
 ```sh
-$ find . -type f -name '*.txt'
+find . -type f -name '*.txt'
 ```
 
 Output:
@@ -130,7 +130,7 @@ Output:
 Which is the same as:
 
 ```sh
-$ find . -type f -name \*.txt
+find . -type f -name \*.txt
 ```
 
 ### -path
@@ -138,7 +138,7 @@ $ find . -type f -name \*.txt
 To list all files excluding those in `tmp`:
 
 ```sh
-$ find . -type f ! -path './tmp/*'
+find . -type f ! -path './tmp/*'
 ```
 
 Output:
@@ -152,7 +152,7 @@ Output:
 To list all files excluding those in `folder` and `tmp`:
 
 ```sh
-$ find . -type f ! -path './tmp/*' ! -path './folder/*'
+find . -type f ! -path './tmp/*' ! -path './folder/*'
 ```
 
 Output:
@@ -167,7 +167,7 @@ Output:
 To test against multiple conditions:
 
 ```sh
-$ find . -name '*.txt' -or -name '*tmp*'
+find . -name '*.txt' -or -name '*tmp*'
 ```
 
 Output:
@@ -181,7 +181,7 @@ Output:
 This is the same as:
 
 ```sh
-$ find . -name '*.txt' -o -name '*tmp*'
+find . -name '*.txt' -o -name '*tmp*'
 ```
 
 The following test operators are available to be used:
@@ -195,7 +195,7 @@ The following test operators are available to be used:
 To execute a command for each match:
 
 ```sh
-$ find . -name '*.txt' -exec echo {} \;
+find . -name '*.txt' -exec echo {} \;
 ```
 
 Output:
@@ -210,14 +210,13 @@ The `{}` is the argument and `\;` is to ensure the semicolon is escaped.
 This is the same as:
 
 ```sh
-$ echo ./file2.txt
-$ echo ./file1.txt
+echo ./file2.txt && echo ./file1.txt
 ```
 
 To execute a single command for all matches:
 
 ```sh
-$ find . -name '*.txt' -exec echo {} +
+find . -name '*.txt' -exec echo {} +
 ```
 
 Output:
@@ -229,7 +228,7 @@ Output:
 This is the same as:
 
 ```sh
-$ echo ./file2.txt ./file1.txt
+echo ./file2.txt ./file1.txt
 ```
 
 ## Resources

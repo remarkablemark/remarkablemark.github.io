@@ -18,7 +18,7 @@ categories: typescript commonjs es6 modules export
 Install [`typescript`](https://www.npmjs.com/package/typescript) globally (if you haven't already):
 
 ```sh
-$ npm install --global typescript
+npm install --global typescript
 ```
 
 Given function `myModule`:
@@ -116,7 +116,7 @@ export default myModule;
 You'll get the error:
 
 ```sh
-$ tsc index.ts
+tsc index.ts
 index.ts:3:1 - error TS2309: An export assignment cannot be used in a module with other exported elements.
 
 3 export = myModule;

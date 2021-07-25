@@ -1,17 +1,22 @@
 ---
 layout: post
-title: Mac date command
+title: Bash date command
 date: 2020-10-29 21:47:18
-excerpt: How to use the `date` command in macOS Terminal.
+excerpt: How to use the `date` command on macOS.
 categories: mac date shell
 ---
+
+This post goes over how to use the `date` command on macOS.
 
 ## date
 
 Display the current date and time:
 
 ```sh
-$ date
+date
+```
+
+```
 Tue Oct 20 20:20:20 EDT 2020
 ```
 
@@ -20,7 +25,10 @@ Tue Oct 20 20:20:20 EDT 2020
 Get the date in `YYYY-MM-DD` format:
 
 ```sh
-$ date +%Y-%m-%d
+date +%Y-%m-%d
+```
+
+```
 2020-10-20
 ```
 
@@ -29,7 +37,10 @@ $ date +%Y-%m-%d
 Get the seconds since epoch:
 
 ```sh
-$ date +%s
+date +%s
+```
+
+```
 1603239620
 ```
 
@@ -38,20 +49,26 @@ $ date +%s
 Adjust the date with the `-v` option:
 
 ```sh
-$ date -j -v <ADJUSTMENT> -f "%Y-%m-%d" $(date +%Y-%m-%d)
+date -j -v <ADJUSTMENT> -f "%Y-%m-%d" $(date +%Y-%m-%d)
 ```
 
 Adjust the date 1 day from now (`+1d`):
 
 ```sh
-$ date -j -v +1d -f "%Y-%m-%d" $(date +%Y-%m-%d)
+date -j -v +1d -f "%Y-%m-%d" $(date +%Y-%m-%d)
+```
+
+```
 Wed Oct 21 20:20:20 EDT 2020
 ```
 
 Adjust the date 2 hours before now (`-2H`):
 
 ```sh
-$ date -j -v -2H -f "%Y-%m-%d" $(date +%Y-%m-%d)
+date -j -v -2H -f "%Y-%m-%d" $(date +%Y-%m-%d)
+```
+
+```
 Tue Oct 20 18:20:20 EDT 2020
 ```
 
@@ -72,5 +89,5 @@ What each value represents:
 Read the `date` manual:
 
 ```sh
-$ man date
+man date
 ```

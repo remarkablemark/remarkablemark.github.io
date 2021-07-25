@@ -27,7 +27,7 @@ Watch [YouTube video](https://youtu.be/2J9VnYiZ_Ts?list=PLVgOtoUBG2mdLpj6qT5DXfg
 Install [`commitlint`](https://www.npmjs.com/package/commitlint) with a config:
 
 ```sh
-$ npm install @commitlint/{cli,config-conventional}
+npm install @commitlint/{cli,config-conventional}
 ```
 
 > This command installs both [`@commitlint/cli`](https://www.npmjs.com/package/@commitlint/cli) and [`@commitlint/config-conventional`](https://www.npmjs.com/package/@commitlint/config-conventional).
@@ -53,13 +53,13 @@ module.exports = {
 Install [`husky`](https://www.npmjs.com/package/husky):
 
 ```sh
-$ npm install husky
+npm install husky
 ```
 
 Enable [Git hooks](https://git-scm.com/docs/githooks):
 
 ```sh
-$ npx husky install
+npx husky install
 ```
 
 Or add `postinstall` script to `package.json` to enable Git hooks after `npm install`:
@@ -83,10 +83,10 @@ Or add `postinstall` script to `package.json` to enable Git hooks after `npm ins
 Add the `commit-msg` hook:
 
 ```sh
-$ npx husky add .husky/commit-msg 'npx commitlint --edit $1'
+npx husky add .husky/commit-msg 'npx commitlint --edit $1'
 ```
 
-> Make sure to use single quotes intead of double quotes so `$1` is added correctly.
+> Make sure to use single quotes intead of double quotes so `$1` is not escaped.
 
 [Test](#test) that the commit hook works.
 
@@ -95,7 +95,7 @@ $ npx husky add .husky/commit-msg 'npx commitlint --edit $1'
 Install `commitlint` with a config:
 
 ```sh
-$ npm install @commitlint/{cli,config-conventional}
+npm install @commitlint/{cli,config-conventional}
 ```
 
 Create `.commitlintrc.json`, which extends the rules from [config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional):
@@ -117,7 +117,7 @@ module.exports = {
 Install `husky@4`, which sets up the [Git hooks](https://git-scm.com/docs/githooks):
 
 ```sh
-$ npm install husky@4
+npm install husky@4
 ```
 
 Create `.huskyrc` (or `.huskyrc.json`) and add the Git `commit-msg` hook that runs `commitlint`:
@@ -154,8 +154,11 @@ Or add the hook to `package.json`:
 Commit and verify the message follows [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```sh
-$ git commit -m 'add commitlint'       # fail
-$ git commit -m 'feat: add commitlint' # success
+git commit -m 'add commitlint' # fail
+```
+
+```sh
+git commit -m 'feat: add commitlint' # success
 ```
 
 <!--/email_off-->

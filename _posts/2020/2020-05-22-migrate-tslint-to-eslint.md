@@ -7,11 +7,11 @@ excerpt: How to replace TSLint with ESLint.
 categories: tslint eslint lint npm
 ---
 
-Since [TSLint](https://palantir.github.io/tslint/) is [deprecated](https://medium.com/palantir/tslint-in-2019-1a144c2317a9), I migrated my [TypeScript](https://www.typescriptlang.org/) projects to [ESLint](https://eslint.org/).
+This post goes over how to migrate a project from [TypeScript](https://www.typescriptlang.org/) to [ESLint](https://eslint.org/) since [TSLint](https://palantir.github.io/tslint/) is [deprecated](https://medium.com/palantir/tslint-in-2019-1a144c2317a9).
 
 ## Prerequisites
 
-I expect your project to contain the files:
+The project should contain the files:
 
 - package.json
 - tsconfig.json
@@ -22,13 +22,13 @@ I expect your project to contain the files:
 First, uninstall [tslint](https://www.npmjs.com/package/tslint) from `package.json`:
 
 ```sh
-$ npm remove tslint
+npm remove tslint
 ```
 
 Verify [typescript](https://www.npmjs.com/package/typescript) is still present:
 
 ```sh
-$ npm list typescript
+npm list typescript
 ```
 
 ## Install
@@ -36,7 +36,7 @@ $ npm list typescript
 Then install [eslint](https://www.npmjs.com/package/eslint) and the TypeScript [eslint-plugin](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin) and [parser](https://www.npmjs.com/package/@typescript-eslint/parser):
 
 ```sh
-$ npm install eslint @typescript-eslint/{eslint-plugin,parser} # --save-dev
+npm install --save-dev eslint @typescript-eslint/{eslint-plugin,parser}
 ```
 
 ## Config
@@ -44,7 +44,7 @@ $ npm install eslint @typescript-eslint/{eslint-plugin,parser} # --save-dev
 Initialize `.eslintrc`:
 
 ```sh
-$ npx eslint --init
+npx eslint --init
 ```
 
 Your base `.eslintrc` should look something like this:
@@ -95,7 +95,7 @@ Update your `lint` [script](https://docs.npmjs.com/cli/run-script) in `package.j
 Test that it still works:
 
 ```sh
-$ npm run lint
+npm run lint
 ```
 
 ## Misc
@@ -105,8 +105,7 @@ Migrate any TSLint configs/plugins to ESLint (if applicable).
 The following example is for [Prettier](https://prettier.io/):
 
 ```sh
-$ npm rm tslint-config-prettier
-$ npm i eslint-plugin-prettier # -D
+npm rm tslint-config-prettier && npm i -D eslint-plugin-prettier
 ```
 
 Don't forget to update `.eslintrc`:
@@ -126,5 +125,5 @@ Here's a [pull request](https://github.com/remarkablemark/phonetic-alphabet-conv
 Lastly, you can use [tslint-to-eslint-config](https://github.com/typescript-eslint/tslint-to-eslint-config) to migrate from TSLint to ESLint:
 
 ```sh
-$ npx tslint-to-eslint-config
+npx tslint-to-eslint-config
 ```

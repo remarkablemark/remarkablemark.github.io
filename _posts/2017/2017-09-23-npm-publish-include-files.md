@@ -45,5 +45,5 @@ Ultimately, it's better to _whitelist_ what gets published with `package.json`'s
 To check what gets published, a local [tarball can be generated](https://docs.npmjs.com/misc/developers#keeping-files-out-of-your-package#testing-whether-your-npmignore-or-files-config-works):
 
 ```sh
-$ npm pack
+npm pack
 ```

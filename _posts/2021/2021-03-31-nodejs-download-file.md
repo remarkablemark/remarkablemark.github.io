@@ -15,7 +15,7 @@ For example, an MP4 file can be downloaded using [node-fetch](https://github.com
 Install [node-fetch](https://www.npmjs.com/package/node-fetch):
 
 ```sh
-$ npm install node-fetch
+npm install node-fetch
 ```
 
 The URL of the MP4 file is:
@@ -45,7 +45,7 @@ const url =
 Run the script to download the MP4:
 
 ```sh
-$ node index.js
+node index.js
 ```
 
 ## Demo

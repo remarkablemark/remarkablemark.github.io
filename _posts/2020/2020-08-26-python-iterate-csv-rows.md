@@ -48,7 +48,7 @@ Output:
 Install [pandas](https://pypi.org/project/pandas/):
 
 ```sh
-$ pip install pandas
+pip install pandas
 ```
 
 Using [`pandas.read_csv`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html#pandas-read-csv) and [`pandas.DataFrame.iterrows`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iterrows.html#pandas-dataframe-iterrows):

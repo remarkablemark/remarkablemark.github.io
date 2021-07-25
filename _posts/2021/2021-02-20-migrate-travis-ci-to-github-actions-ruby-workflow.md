@@ -36,13 +36,13 @@ script:
 First make the directory `.github/workflows/`:
 
 ```sh
-$ mkdir -p .github/workflows/
+mkdir -p .github/workflows/
 ```
 
 Create `.github/workflows/build.yml`:
 
 ```sh
-$ touch .github/workflows/build.yml
+touch .github/workflows/build.yml
 ```
 
 Add the workflow that runs a single job:

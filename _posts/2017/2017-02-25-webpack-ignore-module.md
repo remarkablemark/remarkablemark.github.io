@@ -30,7 +30,7 @@ module.exports = {
 When you build the bundle, how can `logger` be removed?
 
 ```sh
-$ NODE_ENV=development npx webpack
+NODE_ENV=development npx webpack
 asset main.js 2.46 KiB [emitted] (name: main)
 ./src/index.js 50 bytes [built] [code generated]
 ./src/logger.js 30 bytes [built] [code generated]
@@ -65,7 +65,7 @@ With [IgnorePlugin](https://webpack.js.org/plugins/ignore-plugin/), a regular ex
 When you build the bundle, notice how `logger` is no longer part of the generated code:
 
 ```sh
-webpack-dev-server$ NODE_ENV=development npx webpack
+webpack-dev-serverNODE_ENV=development npx webpack
 asset main.js 2.33 KiB [emitted] (name: main)
 ./src/index.js 50 bytes [built] [code generated]
 webpack 5.37.0 compiled successfully in 61 ms
@@ -140,7 +140,7 @@ if (process.env.NODE_ENV === 'development') {
 Build the bundle:
 
 ```sh
-$ NODE_ENV=production npx webpack
+NODE_ENV=production npx webpack
 asset main.js 0 bytes [emitted] [minimized] (name: main)
 ./src/index.js 102 bytes [built] [code generated]
 webpack 5.37.0 compiled successfully in 134 ms
@@ -149,7 +149,7 @@ webpack 5.37.0 compiled successfully in 134 ms
 Open the webpage to see no **Console** errors.
 
 ```sh
-$ open index.html
+open index.html
 ```
 
 To learn more about Webpack global constants, check out the following [post]({% post_url 2017/2017-01-25-webpack-global-constants %}).

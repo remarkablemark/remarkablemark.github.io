@@ -9,11 +9,11 @@ categories: vim vimrc
 To start `vim` without initializing `vimrc`:
 
 ```sh
-$ vim -u NONE
+vim -u NONE
 ```
 
 To start `vim` with a different `vimrc` other than the default (`~/.vimrc`):
 
 ```sh
-$ vim -u path/to/vimrc
+vim -u path/to/vimrc
 ```

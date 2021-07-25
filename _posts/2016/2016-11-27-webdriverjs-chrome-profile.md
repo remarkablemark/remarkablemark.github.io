@@ -20,16 +20,16 @@ You need the following installed:
 - [Chrome browser](https://www.google.com/chrome/)
 - [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
 
-If you're on Mac OS and have [homebrew](https://brew.sh/) installed (see [video](https://www.youtube.com/watch?v=44FhlEiMEpU) if you don't have it installed), you can do the following:
+Install Chrome browser with Homebrew:
 
 ```sh
-# install Chrome browser
-$ brew cask install google-chrome
+brew cask install google-chrome
 ```
 
+Install ChromeDriver:
+
 ```sh
-# install ChromeDriver
-$ brew cask install chromedriver
+brew cask install chromedriver
 ```
 
 These steps are covered in this [video](https://www.youtube.com/watch?v=5lWOV0rnYRo).

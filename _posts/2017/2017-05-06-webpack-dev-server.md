@@ -43,7 +43,7 @@ Installed dependencies in `package.json`:
 Install [webpack-dev-server](https://www.npmjs.com/package/webpack-dev-server):
 
 ```sh
-$ npm install webpack-dev-server --save-dev
+npm install webpack-dev-server --save-dev
 ```
 
 Your `package.json` will look like:
@@ -63,7 +63,7 @@ Your `package.json` will look like:
 Run the server with `npx`:
 
 ```sh
-$ npx webpack serve
+npx webpack serve
 ```
 
 Or create an [npm script](https://docs.npmjs.com/cli/run-script):
@@ -79,8 +79,12 @@ Or create an [npm script](https://docs.npmjs.com/cli/run-script):
 And start the server with:
 
 ```sh
-$ npm start
+npm start
+```
 
+Output:
+
+```
 > @ start path/to/project
 > webpack serve
 
@@ -93,7 +97,7 @@ $ npm start
 Open `http://localhost:8080/` in the browser:
 
 ```sh
-$ open http://localhost:8080/
+open http://localhost:8080/
 ```
 
 Edit and save `src/index.js`:

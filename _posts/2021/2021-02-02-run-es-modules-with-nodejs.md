@@ -18,7 +18,10 @@ console.log(util.inspect('Hello, World!'));
 To execute `index.mjs` with Node.js v12, pass the [`--experimental-modules`](https://nodejs.medium.com/announcing-a-new-experimental-modules-1be8d2d6c2ff) flag:
 
 ```sh
-$ node --experimental-modules index.mjs
+node --experimental-modules index.mjs
+```
+
+```
 (node:84000) ExperimentalWarning: The ESM module loader is experimental.
 'Hello, World!'
 ```
@@ -26,6 +29,9 @@ $ node --experimental-modules index.mjs
 For Node.js v14 and up, the `--experimental-modules` flag isn't necessary:
 
 ```sh
-$ node index.mjs
+node index.mjs
+```
+
+```
 'Hello, World!'
 ```
