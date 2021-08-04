@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Expectations of my directs
+title: Expectations of my direct reports
 date: 2021-08-01 23:38:57
-excerpt: What I expect of my direct reports.
+updated: 2021-08-03 22:11:06
+excerpt: I expect my direct reports to be coachable, direct, and committed.
 categories: philosophy management
 ---
 
@@ -16,7 +17,7 @@ I expect my direct reports to be...
 
 Coachability is a key trait I look for in people. It's a core indicator whether someone's going to grow _slightly_ or _immensely_.
 
-Coachable people are acceptive to **feedback**. They understand that feedback is constructive and intended to help them grow. Since my job is to assess their actions, behaviors, and work in an _objective_ manner, they understand that I'm trying to point out their strengths and weaknesses. As as result, they take my feedback with an open mind and use it to get better.
+Coachable people are receptive to **feedback**. They understand that feedback is constructive and intended to help them grow. Since my job is to assess their actions, behaviors, and work in an _objective_ manner, they understand that I'm trying to point out their strengths and weaknesses. As as result, they take my feedback with an open mind and use it to get better.
 
 ## Direct
 
