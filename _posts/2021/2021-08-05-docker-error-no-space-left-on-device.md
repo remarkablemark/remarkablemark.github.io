@@ -2,6 +2,7 @@
 layout: post
 title: 'Docker error: no space left on device'
 date: 2021-08-05 21:20:59
+updated: 2021-08-13 20:39:10
 excerpt: How to fix Docker error "no space left on device".
 categories: docker
 ---
@@ -28,6 +29,8 @@ It means your Docker has run out of space.
 
 ## Solution
 
+### docker system prune
+
 Run [docker system prune](https://docs.docker.com/engine/reference/commandline/system_prune/) to remove all unused data:
 
 ```sh
@@ -46,6 +49,18 @@ It will return the freed space at the end:
 Total reclaimed space: 4.20GB
 ```
 
-Alternatively, increase disk space in [Docker Desktop](https://www.docker.com/products/docker-desktop) > **Settings** > **Resources** > **Advanced** > **Disk image size**:
+### docker volume prune
+
+Run [docker volume prune](https://docs.docker.com/engine/reference/commandline/volume_prune/) to remove all unused local volumes:
+
+```sh
+docker volume prune
+```
+
+> **WARNING**: Be careful since this can remove local database data.
+
+### Disk image size
+
+Increase disk space in [Docker Desktop](https://www.docker.com/products/docker-desktop) > **Settings** > **Resources** > **Advanced** > **Disk image size**:
 
 ![Docker Resources]({{ "/images/2021/2021-07-20-docker-resources.png" | prepend: site.assets_path }})
