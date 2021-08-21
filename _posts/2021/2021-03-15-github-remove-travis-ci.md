@@ -57,4 +57,4 @@ Delete Travis CI from your repository Settings > Webhooks:
 
 ## Travis CI
 
-Finally, don't forget to change your [plan](https://travis-ci.com/account/plan) to the free one so you stop paying.
+Finally, don't forget to change your [plan](https://www.travis-ci.com/pricing/) to the free one so you stop paying.
