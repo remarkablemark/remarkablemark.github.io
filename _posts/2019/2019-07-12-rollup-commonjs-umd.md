@@ -2,7 +2,7 @@
 layout: post
 title: Build Rollup UMD bundle for CommonJS
 date: 2019-07-12 22:29:55
-updated: 2020-11-08 23:27:46
+updated: 2021-08-21 20:38:08
 excerpt: How to build a Rollup bundle in IIFE, CJS, and UMD formats for CommonJS modules.
 categories: rollup bundle build commonjs umd amd iife javascript nodejs npm
 ---
@@ -14,9 +14,32 @@ Rollup supports _ES modules_ out of the box. However, to support _CommonJS_, the
 - [@rollup/plugin-commonjs](https://github.com/rollup/plugins/tree/master/packages/commonjs)
 - [@rollup/plugin-node-resolve](https://github.com/rollup/plugins/tree/master/packages/node-resolve)
 
+## Contents
+
+<details markdown="1">
+<summary>Table of Contents</summary>
+
+- [Prerequisites](#prerequisites)
+- [Setup](#setup)
+- [Output Format](#output-format)
+  - [Load with script](#load-with-script)
+  - [Load with AMD](#load-with-amd)
+  - [Load with CommonJS](#load-with-commonjs)
+- [Config](#config)
+- [Plugins](#plugins)
+  - [CommonJS](#commonjs)
+  - [Node Resolve](#node-resolve)
+  - [Terser](#terser)
+  - [Uglify](#uglify)
+  - [JSON](#json)
+- [Resources](#resources)
+
+</details>
+
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) and npm
+- [Node.js](https://nodejs.org/)
+- [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm/)
 
 ## Setup
 
@@ -121,7 +144,7 @@ node
 Hello, world!
 ```
 
-## Config File
+## Config
 
 Instead of passing the options via the CLI (command-line interface), you can specify them in the configuration file `rollup.config.js`.
 
@@ -163,7 +186,9 @@ To give the config file a name other than the default, you'll need to specify th
 npx rollup --config my.config.js
 ```
 
-## CommonJS
+## Plugins
+
+### CommonJS
 
 To use CommonJS syntax, install [@rollup/plugin-commonjs](https://www.npmjs.com/package/@rollup/plugin-commonjs):
 
@@ -211,7 +236,7 @@ npm run build && open script.html && open amd.html && node -p "require('./dist/b
 Hello, world!
 ```
 
-## Node Resolve
+### Node Resolve
 
 Let's say you want to use [lodash](https://www.npmjs.com/package/lodash) in `index.js`:
 
@@ -269,7 +294,7 @@ Hello, world!
 
 > If you want the module resolution to respect the ["browser" field](https://github.com/defunctzombie/package-browser-field-spec) in `package.json`, you can set the option `resolve({ browser: true })`.
 
-## Terser
+### Terser
 
 To minify your bundle with rollup v2, use [terser](https://github.com/terser/terser).
 
@@ -351,7 +376,7 @@ Alternatively, this can be done in the `package.json` build script:
 }
 ```
 
-## Uglify
+### Uglify
 
 To minify the bundle with rollup v1, use [UglifyJS](https://github.com/mishoo/UglifyJS2).
 
@@ -395,6 +420,40 @@ npm run build && node -p "require('./dist/bundle')"
 ```
 Hello, world!
 ```
+
+### JSON
+
+To import JSON files, install [@rollup/plugin-json](https://www.npmjs.com/package/@rollup/plugin-json):
+
+```sh
+npm install @rollup/plugin-json
+```
+
+Add the plugin to the rollup config similarly to how it was done for the other plugins:
+
+<!-- prettier-ignore-start -->
+
+```diff
+ // rollup.config.js
+ import commonjs from '@rollup/plugin-commonjs';
+ import import resolve from '@rollup/plugin-node-resolve';
+ import { terser } from 'rollup-plugin-terser';
++import json from '@rollup/plugin-json';
+ 
+ const config = {
+   input: 'index.js',
+   output: {
+     format: 'umd',
+     name: 'MyModuleName',
+   },
+-  plugins: [commonjs(), resolve(), terser()],
++  plugins: [commonjs(), resolve(), terser(), json()],
+ };
+ 
+ export default config;
+```
+
+<!-- prettier-ignore-end -->
 
 ## Resources
 
