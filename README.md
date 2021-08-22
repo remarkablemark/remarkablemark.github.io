@@ -47,7 +47,7 @@ bundle update --bundler
 
 ## Install
 
-Clone repository:
+Clone the repository:
 
 ```sh
 git clone --recursive https://github.com/remarkablemark/remarkablemark.github.io.git
@@ -67,7 +67,7 @@ cd assets
 git remote set-url origin git@github.com:remarkablemark/assets.git
 ```
 
-Install dependencies:
+Install the dependencies:
 
 ```sh
 bundle install
@@ -75,7 +75,7 @@ bundle install
 
 ## Update
 
-Update dependencies:
+Update the dependencies:
 
 ```sh
 git checkout master
