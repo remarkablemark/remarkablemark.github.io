@@ -206,6 +206,8 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 For easier use in components:
 
+<!-- prettier-ignore-start -->
+
 ```diff
  // src/Counter.tsx
  import { useDispatch, useSelector } from 'react-redux';
@@ -213,7 +215,7 @@ For easier use in components:
 -import store from './store';
 -type RootState = ReturnType<typeof store.getState>;
 +import { useAppDispatch, useAppSelector } from './hooks';
-
+ 
  export default function Counter() {
 -  const count = useSelector((state: RootState) => state.counter.value);
 -  const dispatch = useDispatch();
@@ -228,6 +230,8 @@ For easier use in components:
    );
  }
 ```
+
+<!-- prettier-ignore-end -->
 
 ## Resources
 
