@@ -2,11 +2,11 @@
 layout: post
 title: React useEffect hook lifecycle
 date: 2021-08-22 14:16:57
-excerpt: Understanding React useEffect hook lifecycle.
+excerpt: 'Understanding React useEffect hook lifecycle: mount, update, and unmount.'
 categories: react
 ---
 
-This post goes over the React [useEffect](https://reactjs.org/docs/hooks-effect.html) hook lifecycle:
+This article goes over the React [useEffect](https://reactjs.org/docs/hooks-effect.html) hook lifecycle:
 
 - [Mount](#mount)
 - [Update](#update)
