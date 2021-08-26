@@ -6,7 +6,7 @@ excerpt: How to curl Certica's AB Connect v4.1 using Bash.
 categories: curl abconnect bash
 ---
 
-This post goes over how to curl Certica's [Academic Benchmarks API](https://academicbenchmarks.org/). We're using [AB Connect 4.1](https://abconnect.docs.apiary.io/).
+This post goes over how to curl Certica's Academic Benchmarks API. We're using [AB Connect 4.1](https://abconnect.docs.apiary.io/).
 
 ## Credentials
 
