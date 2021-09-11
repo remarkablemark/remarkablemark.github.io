@@ -2,7 +2,7 @@
 layout: post
 title: How to lint Git commit messages
 date: 2019-05-29 20:01:42
-updated: 2021-04-14 19:34:36
+updated: 2021-09-10 21:09:19
 excerpt: How to lint Git commit messages with commitlint and husky.
 categories: git hook commitlint husky npm
 ---
@@ -20,6 +20,8 @@ This post goes over how to lint Git commit messages with [commitlint](https://b.
 
 ## Husky
 
+This section goes over how to set up commitlint with the latest husky version.
+
 Watch [YouTube video](https://youtu.be/2J9VnYiZ_Ts?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ):
 
 <iframe width="100%" height="720" src="https://www.youtube.com/embed/2J9VnYiZ_Ts?list=PLVgOtoUBG2mdLpj6qT5DXfg5_pGPTDrJZ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -27,7 +29,7 @@ Watch [YouTube video](https://youtu.be/2J9VnYiZ_Ts?list=PLVgOtoUBG2mdLpj6qT5DXfg
 Install [`commitlint`](https://www.npmjs.com/package/commitlint) with a config:
 
 ```sh
-npm install @commitlint/{cli,config-conventional}
+npm install @commitlint/{cli,config-conventional} --save-dev
 ```
 
 > This command installs both [`@commitlint/cli`](https://www.npmjs.com/package/@commitlint/cli) and [`@commitlint/config-conventional`](https://www.npmjs.com/package/@commitlint/config-conventional).
@@ -36,6 +38,10 @@ npm install @commitlint/{cli,config-conventional}
 
 Create `.commitlintrc.json`, which extends the rules from [config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional):
 
+```sh
+touch .commitlintrc.json
+```
+
 ```json
 {
   "extends": ["@commitlint/config-conventional"]
@@ -43,6 +49,10 @@ Create `.commitlintrc.json`, which extends the rules from [config-conventional](
 ```
 
 Or export the rules in `commitlint.config.js`:
+
+```sh
+touch commitlint.config.js
+```
 
 ```js
 module.exports = {
@@ -53,7 +63,7 @@ module.exports = {
 Install [`husky`](https://www.npmjs.com/package/husky):
 
 ```sh
-npm install husky
+npm install husky --save-dev
 ```
 
 Enable [Git hooks](https://git-scm.com/docs/githooks):
@@ -71,9 +81,9 @@ Or add `postinstall` script to `package.json` to enable Git hooks after `npm ins
     "postinstall": "husky install"
   },
   "devDependencies": {
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
-    "husky": "^5.0.9"
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "husky": "^7.0.2"
   }
 }
 ```
@@ -92,13 +102,19 @@ npx husky add .husky/commit-msg 'npx commitlint --edit $1'
 
 ## Husky 4
 
+This section goes over how to set up commitlint with husky version 4.
+
 Install `commitlint` with a config:
 
 ```sh
-npm install @commitlint/{cli,config-conventional}
+npm install @commitlint/{cli,config-conventional} --save-dev
 ```
 
 Create `.commitlintrc.json`, which extends the rules from [config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional):
+
+```sh
+touch .commitlintrc.json
+```
 
 ```json
 {
@@ -107,6 +123,10 @@ Create `.commitlintrc.json`, which extends the rules from [config-conventional](
 ```
 
 Or export the rules in `commitlint.config.js`:
+
+```sh
+touch commitlint.config.js
+```
 
 ```js
 module.exports = {
@@ -117,7 +137,7 @@ module.exports = {
 Install `husky@4`, which sets up the [Git hooks](https://git-scm.com/docs/githooks):
 
 ```sh
-npm install husky@4
+npm install husky@4 --save-dev
 ```
 
 Create `.huskyrc` (or `.huskyrc.json`) and add the Git `commit-msg` hook that runs `commitlint`:
