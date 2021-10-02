@@ -110,8 +110,6 @@ One way to attract talented people is to involve your engineering team in the hi
 
 Attracting and retaining tech workers is not easy. To be successful, one must embrace changes and be willing to try new things. Go the extra mile to meet the needs of top talent. After all, they’re the ones who can take your company to the next level. Keep improving and adapting so your company can achieve excellence.
 
-{:.credit-author}
-
 > Guest post by **Artur Meyster**.
 >
 > Artur is the CTO of [Career Karma](https://careerkarma.com/) (YC W19), an online marketplace that matches career switchers with coding bootcamps. He is also the host of the [Breaking Into Startups](https://breakingintostartups.com/) podcast, which features people with non-traditional backgrounds who broke into tech.
