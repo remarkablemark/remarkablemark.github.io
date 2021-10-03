@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Why people don't participate at meetings
+title: Why people don't participate in meetings
 date: 2021-10-03 16:45:04
-excerpt: The reasons why people don't participate at meetings are a lack of interest, context, and trust.
+excerpt: People don't participate in meetings because they lack interest, context, and/or trust.
 categories: management psychology
 ---
 
-When people don't participate at meetings, it could mean that the participants have a:
+When people don't participate in meetings, it could mean that the participants have a:
 
 1. [Lack of interest](#lack-of-interest)
 2. [Lack of context](#lack-of-context)
