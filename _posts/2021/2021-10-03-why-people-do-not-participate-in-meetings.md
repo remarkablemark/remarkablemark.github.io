@@ -6,21 +6,21 @@ excerpt: People don't participate in meetings because they lack interest, contex
 categories: management psychology
 ---
 
-When people don't participate in meetings, it could mean that the participants have a:
+When people don't participate in meetings, it means they:
 
-1. [Lack of interest](#lack-of-interest)
-2. [Lack of context](#lack-of-context)
-3. [Lack of trust](#lack-of-trust)
+1. [Lack interest](#lack-interest)
+2. [Lack context](#lack-context)
+3. [Lack trust](#lack-trust)
 
-## Lack of interest
+## Lack interest
 
 A lack of interest means participants are indifferent about the topic. The moderator should motivate participants so they feel compelled to engage in the discussion instead of doing something else. Selling is key to imparting the "why" of the meeting.
 
-## Lack of context
+## Lack context
 
 A lack of context means participants aren't familiar with the topic. The moderator should inform the participants by sharing a clear and structured agenda. Preparation is key to clarifying the "what" of the meeting.
 
-## Lack of trust
+## Lack trust
 
 A lack of trust means participants don't feel safe talking about the topic. The moderator should create a secure environment so people feel protected from embarassment and risks. Here, it's about "how" the meeting is conducted that ensures [psychological safety](https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/).
 
