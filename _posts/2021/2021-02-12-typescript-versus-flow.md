@@ -13,10 +13,10 @@ When evaluating a [type checker](https://en.wikipedia.org/wiki/Type_system) for 
 
 On a high level, you should consider:
 
-- [use](#usage)
-- [support](#support)
-- [community](#community)
-- [trends](#trends)
+- [Use](#use)
+- [Support](#support)
+- [Community](#community)
+- [Trends](#trends)
 
 ## Use
 
