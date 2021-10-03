@@ -22,7 +22,7 @@ A lack of context means participants aren't familiar with the topic. The moderat
 
 ## Lack trust
 
-A lack of trust means participants don't feel safe talking about the topic. The moderator should create a secure environment so people feel protected from embarassment and risks. Here, it's about "how" the meeting is conducted that ensures [psychological safety](https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/).
+A lack of trust means participants don't feel safe talking about the topic. The moderator should create a secure environment so people feel protected from embarrassment and risks. Here, it's about "how" the meeting is conducted that ensures [psychological safety](https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/).
 
 ## Conclusion
 
