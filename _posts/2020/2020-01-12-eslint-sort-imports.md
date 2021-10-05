@@ -2,12 +2,12 @@
 layout: post
 title: ESLint sort imports
 date: 2020-01-12 21:39:51
-updated: 2021-04-30 22:30:18
+updated: 2021-10-04 21:17:09
 excerpt: How to automatically sort imports with ESLint.
-categories: javascript eslint lint npm
+categories: eslint javascript
 ---
 
-This post goes over how to **sort imports** with [ESLint](https://eslint.org/).
+This article goes over how to **sort imports** with [ESLint](https://eslint.org/).
 
 <p>
 <details markdown="1">
@@ -30,10 +30,16 @@ This post goes over how to **sort imports** with [ESLint](https://eslint.org/).
 
 ### Install
 
-Install [`eslint`](https://www.npmjs.com/package/eslint):
+Install [`eslint`](https://www.npmjs.com/package/eslint) with npm:
 
 ```sh
-npm install eslint --save-dev
+npm install --save-dev eslint
+```
+
+Or with yarn:
+
+```sh
+yarn add --dev eslint
 ```
 
 Your `package.json` should look like:
@@ -48,13 +54,13 @@ Your `package.json` should look like:
 
 ### Config
 
-Create an ESLint configuration file (if you haven't already):
+Create an ESLint config:
 
 ```sh
 npx eslint --init
 ```
 
-Your `.eslintrc` will look something like:
+Your `.eslintrc` will look like:
 
 ```json
 {
@@ -92,7 +98,7 @@ Or create a `package.json` [script](https://docs.npmjs.com/cli/run-script):
 }
 ```
 
-And call it from the command line:
+To call it from the command line:
 
 ```sh
 npm run lint
@@ -205,10 +211,16 @@ This isn't ideal so what can you do? You can find other ESLint plugins that hand
 
 One ESLint plugin that performs autofixable import sorting is [`eslint-plugin-simple-import-sort`](https://www.npmjs.com/package/eslint-plugin-simple-import-sort).
 
-Install the package:
+Install the package with npm:
 
 ```sh
-npm install eslint-plugin-simple-import-sort --save-dev
+npm install --save-dev eslint-plugin-simple-import-sort
+```
+
+Or with yarn:
+
+```sh
+yarn add --dev eslint-plugin-simple-import-sort
 ```
 
 Your `package.json` will look like:
@@ -233,7 +245,19 @@ Add the plugin and [rules](https://github.com/lydell/eslint-plugin-simple-import
 }
 ```
 
-> **Note**: Don't forget to remove or disable the `sort-imports` rule.
+To sort exports, add the ESLint rule:
+
+```json
+{
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": "error"
+  }
+}
+```
+
+> **Reminder**: Don't forget to remove or disable the `sort-imports` rule.
 
 When you run `eslint . --fix`:
 
@@ -261,10 +285,10 @@ import { join, resolve } from 'path';
 import foo from './foo';
 ```
 
-And that's how to set up import sorting with ESLint.
+Congratulations! You've set up import sorting with ESLint.
 
 ## Demo
 
-[Repl.it](https://replit.com/@remarkablemark/eslint-sort-imports):
+[Replit](https://replit.com/@remarkablemark/eslint-sort-imports) example:
 
-<iframe height="400px" width="100%" src="https://repl.it/@remarkablemark/eslint-sort-imports?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/eslint-sort-imports?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
