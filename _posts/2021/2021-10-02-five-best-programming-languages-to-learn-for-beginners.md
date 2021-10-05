@@ -3,7 +3,7 @@ layout: post
 title: 5 Best Programming Languages to Learn for Beginners
 author: Chatty Garrate
 date: 2021-10-02 19:14:38
-excerpt: 5 best programming languages to learn for beginners. Guest post by Chatty.
+excerpt: 5 best programming languages to learn for beginners. Guest post by Chatty Garrate.
 categories: programming languages
 image: /assets/images/2021/2021-10-02-programming-language-on-a-screen.jpg
 ---
