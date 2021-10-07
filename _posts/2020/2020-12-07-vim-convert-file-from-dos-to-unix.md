@@ -1,53 +1,76 @@
 ---
 layout: post
-title: Vim convert file from DOS to UNIX
+title: 'Vim: convert a file from DOS to UNIX'
 date: 2020-12-07 21:20:40
+updated: 2021-10-06 22:34:47
 excerpt: How to convert a file from DOS to UNIX and vice versa using Vim.
-categories: vim dos unix shell
+categories: vim dos unix
 ---
+
+This post goes over how to convert a file from [DOS](https://wikipedia.org/wiki/DOS) to [UNIX](https://wikipedia.org/wiki/Unix) using [Vim](https://www.vim.org/):
+
+- [DOS to UNIX](#dos-to-unix)
+- [UNIX to DOS](#unix-to-dos)
+- [Replace ^M](#replace-m)
 
 ## DOS to UNIX
 
-Here's how to convert file `dos.txt` from [DOS](https://en.wikipedia.org/wiki/DOS) to [UNIX](https://en.wikipedia.org/wiki/Unix) using [Vim](https://www.vim.org/).
-
-Open `dos.txt` with the Vim editor:
+To convert `file.txt` from DOS to UNIX, open the file with Vim:
 
 ```sh
-vim dos.txt
+vim file.txt
 ```
 
-Set `fileformat` to `unix` and write and quit the file:
+Set `fileformat` to `unix`:
 
 ```vim
 :set fileformat=unix
+```
+
+Save and quit the file:
+
+```vim
 :wq
 ```
 
-This is equivalent to running the Vim commands from the shell:
+This is the same as running the command:
 
 ```sh
-vim '+set ff=unix' '+x' dos.txt
+vim '+set ff=unix' '+x' file.txt
 ```
 
 ## UNIX to DOS
 
-Here's how to convert file `unix.txt` from [UNIX](https://en.wikipedia.org/wiki/Unix) to [DOS](https://en.wikipedia.org/wiki/DOS) using [Vim](https://www.vim.org/).
-
-Open `unix.txt` with the Vim editor:
+To convert `file.txt` from UNIX to DOS, open the file with Vim:
 
 ```sh
-vim unix.txt
+vim file.txt
 ```
 
 Set `fileformat` to `dos` and write and quit the file:
 
 ```vim
 :set fileformat=dos
+```
+
+Save and quit the file:
+
+```vim
 :wq
 ```
 
-This is equivalent to running the Vim commands from the shell:
+This is the same as running the command:
 
 ```sh
-vim '+set ff=dos' '+x' unix.txt
+vim '+set ff=dos' '+x' file.txt
 ```
+
+## Replace ^M
+
+To replace `^M`, run a global string replace in Vim:
+
+```vim
+:%s/^M//g
+```
+
+`^M` is entered by typing `Ctrl` + `v` and `Ctrl` + `m`.
