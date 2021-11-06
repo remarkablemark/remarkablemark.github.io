@@ -2,10 +2,18 @@
 layout: post
 title: How to install an older homebrew package
 date: 2017-02-03 23:53:00
-updated: 2020-11-04 20:04:20
+updated: 2021-11-05 21:00:34
 excerpt: How to install an older homebrew package or formula.
-categories: homebrew composer
+categories: homebrew
 ---
+
+> **TL;DR**: One-liner provided by [Ryan Marvin](https://disq.us/p/2kjjvhy):
+>
+> ```sh
+> curl https://raw.githubusercontent.com/Homebrew/homebrew-cask/<commit-hash>/Casks/<formula>.rb > $(find $(brew --repository) -name <formula>.rb) && brew reinstall <formula>
+> ```
+
+## Problem
 
 Did you know it's possible to install an older version of a [homebrew](https://brew.sh/) package or formula?
 
@@ -21,17 +29,18 @@ However, this no longer works:
 Error: Calling Installation of <FORMULA> from a GitHub commit URL is disabled! Use 'brew extract <FORMULA>' to stable tap on GitHub instead.
 ```
 
-Now, you need to replace the [core](https://github.com/Homebrew/homebrew-core/find/master) or [cask](https://github.com/Homebrew/homebrew-cask) formula before installing:
+## Solution
 
-```sh
-# copy formula code
+Now you need to replace the [core](https://github.com/Homebrew/homebrew-core/find/master) or [cask](https://github.com/Homebrew/homebrew-cask) formula before installing:
+
+```bash
 pbpaste > $(find $(brew --repository) -name <FORMULA>.rb)
 brew install <FORMULA>
 ```
 
 ## Example
 
-The following steps outline how to install [composer](https://getcomposer.org/) version `1.10.15`.
+The example goes over how to install [composer](https://getcomposer.org/) version `1.10.15`.
 
 ### Prerequisites
 
@@ -98,8 +107,7 @@ brew install composer
 Once that's done, undo the changes to the formula:
 
 ```sh
-cd $(find $(brew --repository) -name composer.rb -exec dirname {} \;)
-git checkout .
+cd $(find $(brew --repository) -name composer.rb -exec dirname {} \;) && git checkout .
 ```
 
 Pin the formula to prevent accidental upgrade:
