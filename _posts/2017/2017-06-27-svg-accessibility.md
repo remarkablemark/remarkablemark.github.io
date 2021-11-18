@@ -49,7 +49,7 @@ Thus, it's good practice to make the `<title>` and `<desc>` tags more descriptiv
 </svg>
 ```
 
-If you're using the SVG as an icon, you can add [`role="img"`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/Role_Img#svg_and_roleimg) and `aria-labelledby` attributes:
+If you're using the SVG as an icon, you can add [`role="img"`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA/Roles/img_role#svg_and_roleimg) and `aria-labelledby` attributes:
 
 ```diff
  <svg
