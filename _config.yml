@@ -38,7 +38,7 @@ defaults:
       path: ''
     values:
       # https://jekyll.github.io/jekyll-seo-tag/advanced-usage/#setting-a-default-image
-      image: /assets/images/logo/100.png
+      image: /assets/images/logo/200.png
 
 # Exclude from processing
 #
