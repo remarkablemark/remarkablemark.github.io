@@ -69,7 +69,7 @@ Click on the test so it runs in a new browser window:
 
 ![Cypress example test]({{ "/images/2021/2021-02-13-cypress-example-test.png" | prepend: site.assets_path }})
 
-Cypress uses [Mocha](https://mochajs.org/) as the test runner and [Chai](https://www.chaijs.com/) as the assertion library.
+Cypress uses [Mocha](https://mochajs.org/) as the test runner and [Chai](https://chaijs.github.io/) as the assertion library.
 
 ## Google Search
 
@@ -127,7 +127,7 @@ Use [`invoke`](https://docs.cypress.io/api/commands/invoke.html) to get the firs
 cy.get('#search a')
   .first()
   .invoke('attr', 'href')
-  .then(href => console.log(href));
+  .then((href) => console.log(href));
 ```
 
 > [`then`](https://docs.cypress.io/api/commands/then.html) is used to yield the promise value since the command is asynchronous.
@@ -147,7 +147,7 @@ describe('Google Search', () => {
   it('gets first search result', () => {
     cy.get('#search a')
       .invoke('attr', 'href')
-      .then(href => console.log(href));
+      .then((href) => console.log(href));
   });
 });
 ```
