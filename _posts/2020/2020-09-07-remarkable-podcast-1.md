@@ -4,7 +4,8 @@ title: 'Remarkable Podcast 1: How I Got Started in Tech with Seamus Martin'
 date: 2020-09-07 20:34:23
 updated: 2020-09-12 21:44:19
 excerpt: >
-  This is an episode of the "Remarkable Podcast" with host Mark and guest Seamus Martin. Seamus is the founder of Dashlight and an ex-PowerSchool Tech Lead.
+  This is the first episode of the "Remarkable Podcast" with host Mark and guest Seamus Martin.
+  Seamus is the founder of Dashlight and an ex-PowerSchool Tech Lead.
   We discuss how Seamus got started in tech, which includes his transition from math teacher to developer, his experience going through a coding bootcamp, his process from finding interviews to getting hired, and his time working as an engineer at a mid-to-large sized company.
 categories: podcast technology interviewing bootcamp programming startup entrepreneurship career
 image: https://i1.sndcdn.com/artworks-PE7F1gqI71mSIypK-FsNIGA-t3000x3000.jpg
@@ -16,7 +17,7 @@ Listen on [Spotify](https://open.spotify.com/episode/0HVRNOFnerKdFMaVg4pnfD) and
 
 ## Description
 
-This is an episode of the ["Remarkable Podcast"](https://soundcloud.com/remarkablemark/sets/remarkable-podcast) with host [Mark](https://b.remarkabl.org/mark) and guest [Seamus Martin](https://github.com/spmartin823). Seamus is the founder of Dashlight.io and an ex-[PowerSchool](https://www.powerschool.com/) Tech Lead.
+This is the first episode of the ["Remarkable Podcast"](https://soundcloud.com/remarkablemark/sets/remarkable-podcast) with host [Mark](https://b.remarkabl.org/mark) and guest [Seamus Martin](https://github.com/spmartin823). Seamus is the founder of Dashlight.io and an ex-[PowerSchool](https://www.powerschool.com/) Tech Lead.
 
 We discuss how Seamus got started in tech, which includes his transition from math teacher to developer, his experience going through a coding bootcamp, his process of finding interviews to getting hired, and his time working as an engineer at a mid-to-large sized company.
 
