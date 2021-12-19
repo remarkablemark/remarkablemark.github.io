@@ -1,24 +1,25 @@
 ---
 layout: post
-title: Migrate husky 4 to 5
+title: Migrate husky 4 to 7
 date: 2021-02-28 16:16:29
-excerpt: Migrate husky 4 to 5 using npm CLI husky-4-to-5.
+updated: 2021-12-18 19:20:20
+excerpt: How to migrate husky 4 to 7 using the npm package husky-4-to-5.
 categories: npm npx cli husky migration
 ---
 
-> **TL;DR**: run in your command-line:
+> **TL;DR**: migrate husky from 4 to 7:
 >
 > ```sh
->  npx husky-4-to-5
+> npx husky-4-to-5
 > ```
+
+This post goes over how to migrate [husky](https://github.com/typicode/husky) from 4 to 7 using the npm package [husky-4-to-5](https://github.com/remarkablemark/husky-4-to-5).
 
 ## Problem
 
 [Husky](https://typicode.github.io/husky/)'s [maintainer](https://github.com/typicode) created a migration tool [husky-4-to-5](https://github.com/typicode/husky-4-to-5) but it didn't suit my needs.
 
-It requires you to be on npm 7+ and there's a lot of manual work of updating scripts and removing leftover files.
-
-To migrate for an npm project:
+It requires you to be on npm 7+ and there's a lot of manual work of updating scripts and removing leftover files:
 
 ```sh
 npm exec -- github:typicode/husky-4-to-5 --package-manager npm
@@ -26,7 +27,7 @@ npm exec -- github:typicode/husky-4-to-5 --package-manager npm
 
 ## Solution
 
-As a result, I created my own CLI tool [husky-4-to-5](https://www.npmjs.com/package/husky-4-to-5) that's published to npm.
+As a result, I created my own CLI tool [husky-4-to-5](https://www.npmjs.com/package/husky-4-to-5) that's published on npm.
 
 Migrating is as simple as:
 
@@ -34,7 +35,7 @@ Migrating is as simple as:
 npx husky-4-to-5
 ```
 
-The one step I didn't automate is prepending `npx` in front of the binaries in the husky hooks.
+What wasn't automated was prepending `npx` in front of the binaries of the husky hooks.
 
 For example:
 
@@ -48,9 +49,3 @@ jest && eslint → npx jest && npx eslint
 commitlint -E HUSKY_GIT_PARAMS → npx commitlint --edit $1
                                → yarn commitlint --edit $1
 ```
-
-## Resources
-
-- [Repository](https://github.com/remarkablemark/husky-4-to-5)
-- [Husky 4](https://github.com/typicode/husky/tree/master)
-- [Husky 5](https://github.com/typicode/husky/tree/main)
