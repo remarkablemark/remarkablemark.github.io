@@ -20,7 +20,7 @@ Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is
 
 ## Solution
 
-I found that this was related to the [connection pool](https://sequelize.org/master/manual/connection-pool.html) (it was too low in my Sequelize config).
+I found that this was related to the [connection pool](https://sequelize.org/v5/manual/getting-started.html#note--connection-pool--production-) (it was too low in my Sequelize config).
 
 I checked the maximum database connection pool size:
 
@@ -32,7 +32,7 @@ The PostgreSQL database I was using has a maximum connection pool of 100.
 
 Since my integration tests run on 3 processes, I set the max pool size to 30 so the total number (90) is below the max connection pool limit (100).
 
-After updating the [Sequelize options](https://sequelize.org/master/manual/getting-started.html#connecting-to-a-database):
+After updating the [Sequelize options](https://sequelize.org/v5/manual/getting-started.html#setting-up-a-connection):
 
 ```js
 const { Sequelize } = require('sequelize');
