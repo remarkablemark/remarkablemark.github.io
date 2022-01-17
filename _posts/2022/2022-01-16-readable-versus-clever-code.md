@@ -2,7 +2,7 @@
 layout: post
 title: Should your code be readable or clever?
 date: 2022-01-16 21:44:18
-excerpt: Should your code be readable or clever?
+excerpt: Thoughts on code readability versus cleverness and optimization.
 categories: philosophy programming
 ---
 
