@@ -1,12 +1,16 @@
 ---
 layout: post
-title: "Enzyme: calling a component method"
-date: 2017-02-13 19:50:00 -4000
+title: 'Enzyme: calling a React component method'
+date: 2017-02-13 19:50:00
 excerpt: How to use Enzyme and Jasmine to test that a React component method is called.
 categories: react enzyme jasmine spy method test
 ---
 
-Given the component:
+This post goes over how to use Enzyme and Jasmine to test that a React component method is called.
+
+## Problem
+
+Given a React component:
 
 ```js
 // MyComponent.js
@@ -28,9 +32,9 @@ class MyComponent extends Component {
 export default MyComponent;
 ```
 
-When writing tests, how can we check that `_method` can be called?
+When writing tests, how can we check that `_method` is called?
 
-### Instance
+## Instance
 
 With [enzyme](https://github.com/airbnb/enzyme), you can access the component methods from the component [instance](http://airbnb.io/enzyme/docs/api/ReactWrapper/instance.html):
 
@@ -44,9 +48,9 @@ const wrapper = shallow(<MyComponent />);
 console.log(wrapper.instance()._method()); // true
 ```
 
-### Spy
+## Spy
 
-If you're using [Jasmine](https://jasmine.github.io/), you can even [spy](https://jasmine.github.io/2.0/introduction.html#section-Spies) on `_method`:
+If you're using [Jasmine](https://jasmine.github.io/), you can even [spy](https://jasmine.github.io/api/edge/Spy.html) on `_method`:
 
 ```js
 // ...
@@ -63,7 +67,7 @@ describe('MyComponent.prototype._method', () => {
 });
 ```
 
-### Arrow Function
+## Arrow Function
 
 But what if you're using [arrow functions as class methods](https://babeljs.io/docs/plugins/transform-class-properties/)?
 
