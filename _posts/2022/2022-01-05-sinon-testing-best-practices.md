@@ -17,7 +17,7 @@ This post goes over [Sinon](https://sinonjs.org/) testing best practices:
 
 ## sandbox
 
-Create a new [sandbox](https://sinonjs.org/releases/v12.0.1/sandbox/) instead of using the default one.
+Create a new [sandbox](https://sinonjs.org/releases/v13/sandbox/) instead of using the default one.
 
 ❌ Bad:
 
@@ -60,7 +60,7 @@ afterEach(() => {
 
 ## assert
 
-Use Sinon's built-in [assertions](https://sinonjs.org/releases/v12.0.1/assertions/) to display more robust error messages.
+Use Sinon's built-in [assertions](https://sinonjs.org/releases/v13/assertions/) to display more robust error messages.
 
 ❌ Bad:
 
@@ -76,7 +76,7 @@ sinon.assert.called(spy);
 
 ## match
 
-Use [matchers](https://sinonjs.org/releases/v12.0.1/matchers/) to match partial object.
+Use [matchers](https://sinonjs.org/releases/v13/matchers/) to match partial object.
 
 ❌ Bad:
 
