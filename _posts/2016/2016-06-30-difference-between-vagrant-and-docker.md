@@ -1,9 +1,9 @@
 ---
 layout: post
 title: The difference between Vagrant and Docker
-date: 2016-06-30 05:25:00 -4000
+date: 2016-06-30 05:25:00
 excerpt: The difference between Vagrant, which manages virtual machines, and Docker, which manages containers .
-categories: vagrant docker virtual machine container
+categories: vagrant docker
 ---
 
 For those who use **Vagrant** but are looking into **Docker**, you may be curious about the _difference_ between them.
@@ -33,5 +33,3 @@ For instance, when a jewelry shop called "Ruby and Reals" is added, it simply fi
 What's efficient here is that both businesses _share_ the same building infrastructure such as the lighting system and the bathroom facilities. In this scenario, _adding, removing, and changing businesses is fast, easy, and scalable_.
 
 So let's bring everything together. What's similar between Vagrant's virtual machines and Docker's containers is that they both sit on top a _host operating system_. The difference, on the other hand, is _how the application is run_. For Vagrant, each virtual machine includes a _guest operating system_ with the application and its libraries and binaries. For Docker, the containers don't need a guest OS for each application since they all _share the same kernel_.
-
-That's the key difference between Vagrant and Docker. For more information, check out this [visual diagram](https://www.docker.com/what-docker#VM) which illustrates this difference.
