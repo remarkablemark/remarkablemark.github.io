@@ -55,7 +55,7 @@ The URL string has the format:
 redis://<REDIS_USER>:<REDIS_PASSWORD>@<REDIS_HOST>:<REDIS_PORT>
 ```
 
-So local Redis URL is:
+So the local Redis URL is:
 
 ```
 redis://localhost:6379
