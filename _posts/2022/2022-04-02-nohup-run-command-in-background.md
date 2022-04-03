@@ -48,13 +48,13 @@ nohup redis-server redis.conf &
 To silence the nohup output in the command-line:
 
 ```bash
-nohup redis-server redis.conf >/dev/null 2>&1 &
+nohup redis-server >/dev/null 2>&1 &
 ```
 
 Now you can run `redis-server` and `redis-cli` in the same script:
 
 ```bash
-nohup redis-server redis.conf &
+nohup redis-server &
 redis-cli
 ```
 
@@ -63,7 +63,7 @@ But one problem is that `redis-server` never shuts down.
 Thus, save the [pid](https://wikipedia.org/wiki/Process_identifier):
 
 ```bash
-nohup redis-server redis.conf >/dev/null 2>&1 &
+nohup redis-server &
 echo $! > /tmp/redis-server.pid
 ```
 
@@ -96,4 +96,4 @@ redis-cli
 
 [Replit](https://replit.com/@remarkablemark/Redis#runner.sh):
 
-<iframe height="600px" width="100%" src="https://replit.com/@remarkablemark/Redis?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/Redis?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
