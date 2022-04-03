@@ -64,7 +64,7 @@ Once your podcast is hosted and the RSS feed is available, you can submit the RS
 2. Submit your podcast to [Spotify](https://podcasters.spotify.com/submit) by adding the link to your podcast's RSS feed.
 3. Verify that you own this podcast and fill out the podcast details.
 4. Once it's submitted, it'll take a few hours for it to show up on Spotify.
-5. Embed the podcast using the [embed generator](https://developer.spotify.com/documentation/widgets/generate/embed/).
+5. Embed the podcast by [copying the embed code](https://newsroom.spotify.com/2018-09-04/how-to-embed-spotifys-play-button/).
 
 ### Google
 
