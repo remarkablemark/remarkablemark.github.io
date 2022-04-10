@@ -50,6 +50,8 @@ Whether you're an adult or a kid, there are other [programming languages](https:
 
 > About The Author:
 >
-> <img alt="Chatty" src="{{ "/images/authors/chatty.jpeg" | prepend: site.assets_path }}" style="float: left; margin-right: 1em; width: 7em;">
+> <img alt="Chatty headshot" src="{{ "/images/authors/chatty.jpeg" | prepend: site.assets_path }}" style="float: left; margin-right: 1em; width: 15rem;">
 >
-> [Chatty](https://twitter.com/ChattyGarrate) is a freelance writer from Manila. She finds joy in inspiring and educating others through writing. That's why aside from her job as a language evaluator for local and international students, she spends her leisure time writing about various topics such as lifestyle, technology, and business.
+> [Chatty](https://twitter.com/ChattyGarrate) is a freelance writer from Manila.
+>
+> She finds joy in inspiring and educating others through writing. That's why aside from her job as a language evaluator for local and international students, she spends her leisure time writing about various topics such as lifestyle, technology, and business.
