@@ -23,7 +23,7 @@ Coachable people are receptive to **feedback**. They understand that feedback is
 
 I want my directs to be **honest** and **transparent** with me. I want my directs to share their motivations and goals with me. I want to know what makes them happy and what makes them sad.
 
-Accordingly, I want to be told what _I need to hear_ rather than what _I want to hear_. When things are going well, tell me. When things aren't going so well, tell me. If my directs are willing to be vulnerable and share their issues with me, I can make their issues my problem and find ways to solve them.
+Accordingly, I want to be told what _I need to hear_ rather than what _I want to hear_. When things are going well, tell me. When things aren't going well, tell me. If my directs are willing to be vulnerable and share their issues with me, I can make their issues my problem and find ways to solve them.
 
 I'm not perfect and I can't guarantee that I can solve every problem that comes my way, but calling them out and creating awareness will help me understand their perspectives.
 
