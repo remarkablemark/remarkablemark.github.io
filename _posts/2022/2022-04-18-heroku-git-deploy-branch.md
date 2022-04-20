@@ -2,23 +2,36 @@
 layout: post
 title: Deploy Git branch to Heroku
 date: 2022-04-18 22:09:52
-excerpt: How to deploy a Git branch to Heroku using the CLI.
+updated: 2022-04-20 00:22:59
+excerpt: How to create and deploy a Git branch to Heroku via the CLI.
 categories: git heroku cli
 ---
 
-This article goes over how to deploy a Git branch to Heroku using the CLI.
+This article goes over how to create and deploy a Git branch to Heroku via the CLI.
 
 ## Prerequisites
 
 - [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
-## Heroku
+## Create
 
-Go to your Heroku dashboard and create a new app. Let's say your Heroku app is named `my-app`.
+Let's say you want to create a Heroku app named `my-app`.
 
-## CLI
+Create it in Heroku dashboard or via the CLI:
 
-Add the Git remote for your Heroku app `my-app`:
+```sh
+heroku apps:create my-app # --team my-team
+```
+
+Optionally, you can add it to an existing pipeline:
+
+```sh
+heroku pipelines:add my-pipeline --app my-app # --stage development
+```
+
+## Remote
+
+Set the Git remote for your app:
 
 ```sh
 heroku git:remote --app my-app
@@ -35,35 +48,55 @@ heroku  https://git.heroku.com/my-app.git (fetch)
 heroku  https://git.heroku.com/my-app.git (push)
 ```
 
-Rename the Git remote to `heroku-my-app`:
+If you're adding multiple remotes, it's good practice to rename the remote:
 
 ```sh
 git remote rename heroku heroku-my-app
 ```
 
-Copy environment variables from another Heroku app to `my-app`:
+## Config Vars
+
+Save the config vars or environment variables from another Heroku app `other-app`:
 
 ```sh
-heroku config -s -a $APP_NAME > .env # replace $APP_NAME
+heroku config --shell --app other-app > .env.heroku
 ```
+
+Set the config vars to `my-app`:
 
 ```sh
-cat .env | tr '\n' ' ' | xargs heroku config:set -a my-app
+cat .env.heroku | tr '\n' ' ' | xargs heroku config:set --app my-app
 ```
 
-Deploy by pushing your feature branch `my-feature` to the Heroku remote:
+## Deploy
+
+Deploy by pushing your branch to the Heroku remote:
 
 ```sh
-git push heroku-my-app my-feature:master
+git push <remote> <branch>:master
 ```
 
-Alternatively, you can deploy to [`main`](https://devcenter.heroku.com/articles/git#deploy-your-code):
+For example:
 
 ```sh
-git push heroku-my-app my-feature:main
+git push heroku-my-app my-branch:master
 ```
 
-After you're done, you can delete the Heroku app from the dashboard and remove the remote:
+Alternatively, you can replace `master` with [`main`](https://devcenter.heroku.com/articles/git#deploy-your-code):
+
+```sh
+git push heroku-my-app my-branch:main
+```
+
+## Destroy
+
+After you're done, delete the app from the dashboard or via the CLI:
+
+```sh
+heroku apps:destroy my-app
+```
+
+Then remove the remote:
 
 ```sh
 git remote rm heroku-my-app
