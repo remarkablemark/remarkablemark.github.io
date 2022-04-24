@@ -6,7 +6,7 @@ excerpt: How to build a Privnote clone using JavaScript.
 categories: privnote express nodejs javascript web
 ---
 
-This article goes over how to build a [Privnote](https://privnote.com/) clone. See [Replit](https://replit.com/@remarkablemark/Privnote) or [repository](https://github.com/remarkablemark/Replit-Privnote).
+This article goes over how to build a [Privnote](https://privnote.com/) clone. See [Replit](https://replit.com/@remarkablemark/Privnote) or [repository](https://b.remarkabl.org/37Dpsbu).
 
 ## Privnote
 
