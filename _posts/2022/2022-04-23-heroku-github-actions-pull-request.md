@@ -66,7 +66,7 @@ jobs:
 
 {% endraw %}
 
-For the first job step, [checkout](https://github.com/actions/checkout) the full repository at the source (PR) branch:
+For the first job step, [checkout](https://github.com/actions/checkout) the repository at the source (PR) branch:
 
 {% raw %}
 
@@ -175,7 +175,8 @@ Optionally, you can add a PR comment after the app is deployed:
 ```yml
 - name: Add comment to PR
   if: github.event.action == 'opened'
-  run: gh pr comment ${{ github.event.number }} --body "[Heroku app dashboard](https://dashboard.heroku.com/apps/${{ env.HEROKU_APP_NAME }})\n\nhttps://${{ env.HEROKU_APP_NAME }}.herokuapp.com"
+  run: |
+    gh pr comment ${{ github.event.number }} --body '[Heroku app](https://dashboard.heroku.com/apps/${{ env.HEROKU_APP_NAME }}): https://${{ env.HEROKU_APP_NAME }}.herokuapp.com'
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -217,8 +218,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
-          ref: ${{ github.head_ref }}
+          fetch-depth: ${{ github.event.action == 'closed' && 1 || 0 }}
+          ref: ${{ github.event.action != 'closed' && github.head_ref || '' }}
 
       - name: Login to Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
@@ -250,7 +251,8 @@ jobs:
 
       - name: Add comment to PR
         if: github.event.action == 'opened'
-        run: gh pr comment ${{ github.event.number }} --body "[Heroku app dashboard](https://dashboard.heroku.com/apps/${{ env.HEROKU_APP_NAME }})\n\nhttps://${{ env.HEROKU_APP_NAME }}.herokuapp.com"
+        run: |
+          gh pr comment ${{ github.event.number }} --body '[Heroku app](https://dashboard.heroku.com/apps/${{ env.HEROKU_APP_NAME }}): https://${{ env.HEROKU_APP_NAME }}.herokuapp.com'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
