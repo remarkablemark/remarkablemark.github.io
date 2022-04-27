@@ -93,7 +93,7 @@ git push heroku-my-app my-branch:main
 After you're done, delete the app from the dashboard or via the CLI:
 
 ```sh
-heroku apps:destroy my-app
+heroku apps:destroy my-app --confirm my-app
 ```
 
 Then remove the remote:
@@ -101,3 +101,7 @@ Then remove the remote:
 ```sh
 git remote rm heroku-my-app
 ```
+
+## Resources
+
+- [How to switch deployment method from GitHub to Heroku Git with all the changes/app code available in a GitHub repo](https://help.heroku.com/CKVOUPSY/how-to-switch-deployment-method-from-github-to-heroku-git-with-all-the-changes-app-code-available-in-a-github-repo)
