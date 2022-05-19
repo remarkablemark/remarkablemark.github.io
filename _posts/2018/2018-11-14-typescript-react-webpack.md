@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using TypeScript with React and Webpack
-date: 2018-11-14 19:55:51 -4000
+date: 2018-11-14 19:55:51
 excerpt: How to set up TypeScript with React and Webpack.
 categories: typescript react webpack
 ---
@@ -37,7 +37,7 @@ The dependencies can be described as follows:
 
 - [`webpack`](https://www.npmjs.com/package/webpack)/[`webpack-cli`](https://www.npmjs.com/package/webpack-cli) is the bundler
 - [`react`](https://www.npmjs.com/package/react)/[`react-dom`](https://www.npmjs.com/package/react-dom) is the library we're using to build our app
-- [`@types/react`](https://www.npmjs.com/package/@types/react)/[`@types/react-dom`](https://www.npmjs.com/package/@types/react-dom) provides the [type definitions](https://definitelytyped.org/)
+- [`@types/react`](https://www.npmjs.com/package/@types/react)/[`@types/react-dom`](https://www.npmjs.com/package/@types/react-dom) provides the [type definitions](https://github.com/DefinitelyTyped/DefinitelyTyped)
 - [`typescript`](https://www.npmjs.com/package/typescript) is the compiler
 - [`awesome-typescript-loader`](https://github.com/s-panferov/awesome-typescript-loader) is the webpack loader
 
