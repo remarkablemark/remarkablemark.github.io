@@ -7,6 +7,8 @@ excerpt: How to set up and run commitlint with GitHub Actions.
 categories: commitlint github nodejs git
 ---
 
+<!--email_off-->
+
 ## Problem
 
 [Commitlint](https://github.com/conventional-changelog/commitlint) has [CI setup](https://commitlint.js.org/#/guides-ci-setup) documentation for [Travis CI](https://travis-ci.org/) and [CircleCI](https://circleci.com/) but not for [GitHub Actions](https://github.com/features/actions).
@@ -63,3 +65,5 @@ However, if a shallow checkout is permissible (`fetch-depth: 1`), then update `c
 ## Resources
 
 Check out ["Migrate Travis CI to GitHub Actions (Node.js)"]({% post_url 2020/2020-12-11-migrate-travis-ci-to-github-actions-nodejs-workflow %}) for more information on how to set up GitHub Actions.
+
+<!--/email_off-->
