@@ -2,6 +2,7 @@
 layout: post
 title: How to deploy a Parcel build to Heroku
 date: 2022-03-16 20:59:00
+updated: 2022-06-15 21:26:25
 excerpt: How to deploy a Parcel build to Heroku.
 categories: parcel heroku
 ---
@@ -16,7 +17,7 @@ Given you have a Parcel app:
 - [parcel-typescript-example](https://github.com/remarkablemark/parcel-typescript-example)
 - [react-typescript-parcel-template](https://github.com/remarkablemark/react-typescript-parcel-template)
 
-In your [`package.json`](https://docs.npmjs.com/cli/v8/configuring-npm/package-json), ensure there's a `build` script:
+In your [package.json](https://docs.npmjs.com/cli/v8/configuring-npm/package-json), make sure there's a `build` script:
 
 ```json
 {
@@ -28,12 +29,44 @@ In your [`package.json`](https://docs.npmjs.com/cli/v8/configuring-npm/package-j
 
 > Heroku runs the [`build`](https://devcenter.heroku.com/articles/nodejs-support#customizing-the-build-process) script if it exists during deploy.
 
-## Heroku
+## Serve
+
+Install [serve](https://www.npmjs.com/package/serve) to serve the static site:
+
+```sh
+npm install serve
+```
+
+Create a [start script](https://devcenter.heroku.com/articles/deploying-nodejs#specifying-a-start-script) in `package.json`:
+
+```json
+{
+  "scripts": {
+    "build": "parcel build",
+    "start": "serve dist"
+  },
+  "dependencies": {
+    "serve": "latest"
+  }
+}
+```
+
+Or create a [Procfile](https://devcenter.heroku.com/articles/procfile) to serve your project directory:
+
+```sh
+echo 'web: npx serve dist' > Procfile
+```
+
+> Heroku determines how to start your app by looking for a Procfile or start script.
+
+Commit and push your repository.
+
+## Deprecated
 
 Add the [Heroku buildpacks](https://devcenter.heroku.com/articles/buildpacks) in order:
 
 1. [heroku/nodejs](https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-nodejs)
-2. [heroku-buildpack-static](https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-static)
+2. [heroku-buildpack-static](https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-static) ([deprecated](https://github.com/heroku/heroku-buildpack-static#warning-heroku-buildpack-static-is-deprecated))
 
 > The Node.js buildpack must come before the static buildpack since the site has to be built before it can be served.
 
@@ -135,7 +168,3 @@ There's no need for a [Procfile](https://devcenter.heroku.com/articles/procfile)
 ```
 web bin/boot
 ```
-
-## Resources
-
-- [heroku-buildpack-static](https://github.com/heroku/heroku-buildpack-static)
