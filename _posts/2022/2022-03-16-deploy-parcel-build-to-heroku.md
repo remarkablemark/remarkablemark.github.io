@@ -2,7 +2,7 @@
 layout: post
 title: How to deploy a Parcel build to Heroku
 date: 2022-03-16 20:59:00
-updated: 2022-06-15 21:26:25
+updated: 2022-06-16 20:36:57
 excerpt: How to deploy a Parcel build to Heroku.
 categories: parcel heroku
 ---
@@ -43,7 +43,7 @@ Create a [start script](https://devcenter.heroku.com/articles/deploying-nodejs#s
 {
   "scripts": {
     "build": "parcel build",
-    "start": "serve dist"
+    "start": "serve"
   },
   "dependencies": {
     "serve": "latest"
@@ -54,10 +54,43 @@ Create a [start script](https://devcenter.heroku.com/articles/deploying-nodejs#s
 Or create a [Procfile](https://devcenter.heroku.com/articles/procfile) to serve your project directory:
 
 ```sh
-echo 'web: npx serve dist' > Procfile
+echo 'web: npx serve' > Procfile
 ```
 
 > Heroku determines how to start your app by looking for a Procfile or start script.
+
+Then create [serve.json](https://github.com/vercel/serve-handler#options) so the static site and routes are served correctly:
+
+```sh
+touch serve.json
+```
+
+```json
+{
+  "public": "dist",
+  "rewrites": [{ "source": "**", "destination": "/index.html" }],
+  "headers": [
+    {
+      "source": "**",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "**/*.@(css|ico|jpg|jpeg|js|gif|png)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
+```
 
 Commit and push your repository.
 
