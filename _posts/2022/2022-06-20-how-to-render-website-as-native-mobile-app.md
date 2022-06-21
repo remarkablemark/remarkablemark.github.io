@@ -2,11 +2,11 @@
 layout: post
 title: Render a website as a native mobile app
 date: 2022-06-20 20:56:28
-excerpt: To display a website as a native mobile app, render it as a React Native WebView.
+excerpt: To display a website in a native mobile app, render it as a React Native WebView.
 categories: react native website mobile app
 ---
 
-This post goes over how to render a website in a native mobile app by wrapping it inside a [React Native](https://reactnative.dev/) [WebView](https://docs.expo.dev/versions/latest/sdk/webview/).
+This post goes over how to render a website as a native mobile app by wrapping it inside a [React Native](https://reactnative.dev/) [WebView](https://docs.expo.dev/versions/latest/sdk/webview/).
 
 ## Prerequisites
 
