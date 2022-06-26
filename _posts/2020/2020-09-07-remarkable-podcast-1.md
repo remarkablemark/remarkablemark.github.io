@@ -13,7 +13,7 @@ image: https://i1.sndcdn.com/artworks-PE7F1gqI71mSIypK-FsNIGA-t3000x3000.jpg
 
 <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/888994309&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #ccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100;"><a href="https://soundcloud.com/remarkablemark" title="remarkablemark" target="_blank" style="color: #ccc; text-decoration: none;">remarkablemark</a> · <a href="https://soundcloud.com/remarkablemark/how-i-got-started-in-tech-with-seamus-martin" title="Remarkable Podcast 1: How I Got Started in Tech with Seamus Martin" target="_blank" style="color: #ccc; text-decoration: none;">Remarkable Podcast 1: How I Got Started in Tech with Seamus Martin</a></div>
 
-Listen on [Spotify](https://open.spotify.com/episode/0HVRNOFnerKdFMaVg4pnfD) or [Apple](https://podcasts.apple.com/us/podcast/remarkable-podcast/id1530865268).
+Listen on [Spotify](https://open.spotify.com/episode/0HVRNOFnerKdFMaVg4pnfD) or [Apple](https://podcasts.apple.com/us/podcast/remarkable-podcast-1-how-i-got-started-in-tech-with/id1530865268?i=1000490393948).
 
 ## Description
 
