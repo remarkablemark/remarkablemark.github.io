@@ -14,7 +14,7 @@ image: https://i1.sndcdn.com/artworks-qSsljpyPwqBEvYvp-iSRtSw-t3000x3000.jpg
 
 <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1179912448&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/remarkablemark" title="remarkablemark" target="_blank" style="color: #cccccc; text-decoration: none;">remarkablemark</a> · <a href="https://soundcloud.com/remarkablemark/how-i-got-into-it-with-minh-nguyen" title="Remarkable Podcast 2: How I Got into IT with Minh Nguyen" target="_blank" style="color: #cccccc; text-decoration: none;">Remarkable Podcast 2: How I Got into IT with Minh Nguyen</a></div>
 
-Listen on [Spotify](https://open.spotify.com/episode/3EH0lhw0nBD3u7BWNVK6Qe) or [Apple](https://podcasts.apple.com/us/podcast/remarkable-podcast/id1530865268).
+Listen on [Spotify](https://open.spotify.com/episode/3EH0lhw0nBD3u7BWNVK6Qe) or [Apple](https://podcasts.apple.com/us/podcast/remarkable-podcast-2-how-i-got-into-it-with-minh-nguyen/id1530865268?i=1000545327416).
 
 ## Description
 
@@ -174,4 +174,4 @@ We also share our thoughts on IT and where it is in the present to where it is h
 
 ## More
 
-Check out the previous episode ["How I Got Started in Tech with Seamus Martin"]({% post_url 2020/2020-09-07-remarkable-podcast-1 %}).
+Check out the previous episode ["How I Got Started in Tech with Seamus Martin"]({% post_url 2020/2020-09-07-remarkable-podcast-1 %}) and the next episode ["How to Build High-Performance Teams with Alberto Silveira"]({% post_url 2022/2022-06-26-remarkable-podcast-3-how-to-build-high-performance-teams-with-alberto-silveira %}).
