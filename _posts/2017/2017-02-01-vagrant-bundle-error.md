@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Vagrant bundle error
-date: 2017-02-01 22:23:00 -4000
+date: 2017-02-01 22:23:00
 excerpt: How to deal with the vagrant bundle error on Mac.
 categories: vagrant bundle error
 ---
@@ -19,7 +19,7 @@ remove that file and reinstall all your plugins using `vagrant
 plugin install`.
 ```
 
-I tried installing with [cask](https://caskroom.github.io) and the <a href="https://www.vagrantup.com/downloads.html" target="_blank" data-proofer-ignore>official installer</a>, but to no avail.
+I tried installing with [cask](https://github.com/Homebrew/homebrew-cask) and the <a href="https://www.vagrantup.com/downloads.html" target="_blank" data-proofer-ignore>official installer</a>, but to no avail.
 
 Later, I learned that not all vagrant directories were removed.
 
