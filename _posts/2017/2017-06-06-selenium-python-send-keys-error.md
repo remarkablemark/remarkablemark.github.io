@@ -12,7 +12,7 @@ I ran into the following error when executing a Selenium script written in [Pyth
 selenium.common.exceptions.WebDriverException: Message: Expected [object Undefined] undefined to be a string
 ```
 
-Delving through the stacktrace, I found that the problem was coming from [`send_keys`](http://selenium-python.readthedocs.io/api.html#selenium.webdriver.common.action_chains.ActionChains.send_keys):
+Delving through the stacktrace, I found that the problem was coming from [`send_keys`](https://selenium-python.readthedocs.io/api.html#selenium.webdriver.common.action_chains.ActionChains.send_keys):
 
 ```
 self._execute(Command.SEND_KEYS_TO_ELEMENT, {'value': keys_to_typing(value)})

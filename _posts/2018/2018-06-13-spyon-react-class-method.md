@@ -67,7 +67,7 @@ FAIL  Test.spec.js
 This is because arrow function class properties aren't found on the __class__ but on the class __instance__.
 
 So we have 2 options:
-1. Spy on the [instance](http://airbnb.io/enzyme/docs/api/ReactWrapper/instance.html) method and explicitly invoke the lifecycle method
+1. Spy on the [instance](https://airbnb.io/enzyme/docs/api/ReactWrapper/instance.html) method and explicitly invoke the lifecycle method
 2. Or refactor to [bind in constructor](https://reactjs.org/docs/faq-functions.html#bind-in-constructor-es2015) instead of [arrows for class methods](https://reactjs.org/docs/faq-functions.html#class-properties-stage-3-proposal).
 
 ### Option 1

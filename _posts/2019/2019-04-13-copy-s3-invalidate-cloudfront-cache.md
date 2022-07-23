@@ -46,4 +46,4 @@ To invalidate multiple HTML files using the `*` wildcard:
 aws cloudfront create-invalidation --distribution-id $CDN_DISTRIBUTION_ID --paths '/*'
 ```
 
-When using the `*` wildcard character, make sure to wrap the path with quotes (`'` or `"`) or else [shell expansion](http://linuxcommand.org/lc3_lts0080.php) will occur.
+When using the `*` wildcard character, make sure to wrap the path with quotes (`'` or `"`) or else [shell expansion](https://linuxcommand.org/lc3_lts0080.php) will occur.

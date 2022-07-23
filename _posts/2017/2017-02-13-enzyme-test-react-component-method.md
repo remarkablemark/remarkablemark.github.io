@@ -36,7 +36,7 @@ When writing tests, how can we check that `_method` is called?
 
 ## Instance
 
-With [enzyme](https://github.com/airbnb/enzyme), you can access the component methods from the component [instance](http://airbnb.io/enzyme/docs/api/ReactWrapper/instance.html):
+With [enzyme](https://github.com/airbnb/enzyme), you can access the component methods from the component [instance](https://airbnb.io/enzyme/docs/api/ReactWrapper/instance.html):
 
 ```js
 // __spec__/MyComponent.spec.js

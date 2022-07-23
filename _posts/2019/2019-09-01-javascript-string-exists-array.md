@@ -62,7 +62,7 @@ for (let i = 0, len = strings.length, i < len; i++) {
 stringExists; // true
 ```
 
-The main benefit of `for` statements (instead of [`forEach`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) or [`map`](http://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/map)) is the ability to [`break`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/break) or return early.
+The main benefit of `for` statements (instead of [`forEach`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) or [`map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/map)) is the ability to [`break`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/break) or return early.
 
 ## trie
 

@@ -6,7 +6,7 @@ excerpt: How to setup your Vim editor with ESLint as your JavaScript linter usin
 categories: vim syntastic eslint javascript
 ---
 
-Wouldn't it be nice to set up automatic linting of JavaScript when using [Vim](http://www.vim.org)? Well, with [Syntastic](http://vimawesome.com/plugin/syntastic) and [ESLint](http://eslint.org), you can do just that.
+Wouldn't it be nice to set up automatic linting of JavaScript when using [Vim](https://www.vim.org)? Well, with [Syntastic](https://vimawesome.com/plugin/syntastic) and [ESLint](https://eslint.org), you can do just that.
 
 ## Installation
 
@@ -62,7 +62,7 @@ Now you're set for any project that uses [ECMAScript 5](https://wikipedia.org/wi
 
 ## Advanced
 
-But what if you have the following [.eslintrc](http://eslint.org/docs/user-guide/configuring):
+But what if you have the following [.eslintrc](https://eslint.org/docs/user-guide/configuring):
 
 ```json
 {

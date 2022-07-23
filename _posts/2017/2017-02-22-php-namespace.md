@@ -65,7 +65,7 @@ php index.php
 Fatal error: Cannot redeclare hello()
 ```
 
-So how do we resolve this? With [PHP namespaces](http://php.net/manual/en/language.namespaces.rationale.php).
+So how do we resolve this? With [PHP namespaces](https://php.net/manual/en/language.namespaces.rationale.php).
 
 So let's namespace `foo`:
 

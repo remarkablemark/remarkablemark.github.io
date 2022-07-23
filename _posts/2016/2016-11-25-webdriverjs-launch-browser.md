@@ -60,7 +60,7 @@ const driver = new Builder().forBrowser('firefox').build();
 Open page in browser:
 
 ```js
-driver.get('http://example.com');
+driver.get('https://example.com');
 ```
 
 Print the page title:
@@ -86,7 +86,7 @@ const { Builder } = require('selenium-webdriver');
 const driver = new Builder().forBrowser('firefox').build();
 
 // open the url
-driver.get('http://example.com');
+driver.get('https://example.com');
 
 // print the title
 driver.getTitle().then(title => console.log(title));

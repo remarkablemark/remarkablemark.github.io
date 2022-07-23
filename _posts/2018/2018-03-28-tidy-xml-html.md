@@ -14,7 +14,7 @@ Given file with XML content:
 echo '<foo><bar/></foo>' > test.xml
 ```
 
-You can pretty print the file with [`tidy`](http://tidy.sourceforge.net/):
+You can pretty print the file with [`tidy`](https://tidy.sourceforge.net/):
 
 ```sh
 tidy -i -xml test.xml
@@ -29,10 +29,10 @@ No warnings or errors were found.
   <bar />
 </foo>
 
-To learn more about HTML Tidy see http://tidy.sourceforge.net
+To learn more about HTML Tidy see https://tidy.sourceforge.net
 Please send bug reports to html-tidy@w3.org
-HTML and CSS specifications are available from http://www.w3.org/
-Lobby your company to join W3C, see http://www.w3.org/Consortium
+HTML and CSS specifications are available from https://www.w3.org/
+Lobby your company to join W3C, see https://www.w3.org/Consortium
 ```
 
 To produce a **quiet** output, pass the `-q` switch:
@@ -92,10 +92,10 @@ Info: Document content looks like HTML 3.2
 </body>
 </html>
 
-To learn more about HTML Tidy see http://tidy.sourceforge.net
+To learn more about HTML Tidy see https://tidy.sourceforge.net
 Please send bug reports to html-tidy@w3.org
-HTML and CSS specifications are available from http://www.w3.org/
-Lobby your company to join W3C, see http://www.w3.org/Consortium
+HTML and CSS specifications are available from https://www.w3.org/
+Lobby your company to join W3C, see https://www.w3.org/Consortium
 ```
 
 ## Vim

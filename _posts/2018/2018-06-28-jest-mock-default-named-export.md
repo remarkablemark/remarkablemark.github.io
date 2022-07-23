@@ -6,7 +6,7 @@ excerpt: How to use the Jest testing framework to mock default and/or named expo
 categories: test jest mock es6 module export javascript
 ---
 
-We know that [Jest](http://jestjs.io) can easily mock a CommonJS module:
+We know that [Jest](https://jestjs.io) can easily mock a CommonJS module:
 ```js
 jest.mock('./path/to/commonjs', mockedValue);
 ```

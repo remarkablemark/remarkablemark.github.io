@@ -85,4 +85,4 @@ Lastly, the following are some of my [favorite tools](https://blog.tryexponent.c
 
 > Guest post by **Jeff Lee**.
 >
-> Jeff Lee is a writer with [Exponent](http://tryexponent.com). Interviewing for an upcoming tech job? Check out [Exponent’s free online courses](http://tryexponent.com) to get the prep you need.
+> Jeff Lee is a writer with [Exponent](https://tryexponent.com). Interviewing for an upcoming tech job? Check out [Exponent’s free online courses](https://tryexponent.com) to get the prep you need.

@@ -7,7 +7,7 @@ excerpt: How to set up Flux in a React app.
 categories: flux react javascript
 ---
 
-This post will go over how to set up [Flux](http://facebook.github.io/flux/) in a React app.
+This post will go over how to set up [Flux](https://facebook.github.io/flux/) in a React app.
 
 ## View
 

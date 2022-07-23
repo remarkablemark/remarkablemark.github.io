@@ -20,12 +20,12 @@ When exporting SVG files with tools like [Sketch](https://www.sketch.com/), you 
 
 ```html
 <svg
-  xmlns="http://www.w3.org/2000/svg"
+  xmlns="https://www.w3.org/2000/svg"
   width="32"
   height="32"
   viewBox="0 0 32 32"
 >
-  <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+  <!-- Generator: Sketch 44.1 (41455) - https://www.bohemiancoding.com/sketch -->
   <title>Page 1</title>
   <desc>Created with Sketch.</desc>
   <!-- contents of the SVG image -->
@@ -38,7 +38,7 @@ Thus, it's good practice to make the `<title>` and `<desc>` tags more descriptiv
 
 ```html
 <svg
-  xmlns="http://www.w3.org/2000/svg"
+  xmlns="https://www.w3.org/2000/svg"
   width="32"
   height="32"
   viewBox="0 0 32 32"
@@ -53,7 +53,7 @@ If you're using the SVG as an icon, you can add [`role="img"`](https://developer
 
 ```diff
  <svg
-   xmlns="http://www.w3.org/2000/svg"
+   xmlns="https://www.w3.org/2000/svg"
    width="32"
    height="32"
    viewBox="0 0 32 32"

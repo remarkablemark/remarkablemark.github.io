@@ -8,7 +8,7 @@ categories: vagrant docker
 
 For those who use **Vagrant** but are looking into **Docker**, you may be curious about the _difference_ between them.
 
-_Solomon Hykes_, the author of Docker, gives his [take](http://stackoverflow.com/questions/16647069/should-i-use-vagrant-or-docker-for-creating-an-isolated-environment#answer-22370529):
+_Solomon Hykes_, the author of Docker, gives his [take](https://stackoverflow.com/questions/16647069/should-i-use-vagrant-or-docker-for-creating-an-isolated-environment#answer-22370529):
 
 > If you want to manage machines, you should use Vagrant... If you want to build and run application environments, you should use Docker.
 

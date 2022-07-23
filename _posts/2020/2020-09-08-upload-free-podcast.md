@@ -29,7 +29,7 @@ Go to your track and click **Edit** > **Permissions** > **Include in RSS feed**:
 
 ![Include SoundCloud track in RSS feed]({{ "/images/2020/2020-09-08-soundcloud-permissions-include-in-rss-feed.png" | prepend: site.assets_path }})
 
-To get the RSS feed URL, go to [Content Settings](http://soundcloud.com/settings/content).
+To get the RSS feed URL, go to [Content Settings](https://soundcloud.com/settings/content).
 
 ![SoundCloud RSS feed URL]({{ "/images/2020/2020-09-08-soundcloud-settings-content-rss-feed.png" | prepend: site.assets_path }})
 

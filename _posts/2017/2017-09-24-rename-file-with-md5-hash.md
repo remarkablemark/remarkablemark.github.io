@@ -82,7 +82,7 @@ find . -type f -exec bash -c 'echo $(md5 -q $1)' bash {} \;
 find . -type f -exec bash -c 'mv $1 "${1%.*}.$(md5 -q $1).${1##*.}"' bash {} \;
 ```
 
-To rename files with spaces, wrap `$1` in double quotes (credit goes to [Andreas Sahlbach](http://disq.us/p/263g9pp)):
+To rename files with spaces, wrap `$1` in double quotes (credit goes to [Andreas Sahlbach](https://disq.us/p/263g9pp)):
 
 ```sh
 find . -type f -exec bash -c 'mv "$1" "${1%.*}.$(md5 -q "$1").${1##*.}"' bash {} \;

@@ -30,7 +30,7 @@ However, this is not a _foolproof solution_ as the _global can be instantiated o
 
 For example, you can't trust `window` anymore if you're using [jsdom](https://github.com/tmpvar/jsdom).
 
-But if you're using a module bundler like [webpack](https://webpack.github.io) or [browserify](http://browserify.org), you can check the _shimmed_ `process` global:
+But if you're using a module bundler like [webpack](https://webpack.github.io) or [browserify](https://browserify.org), you can check the _shimmed_ `process` global:
 
 ```js
 if (process.browser === true) {

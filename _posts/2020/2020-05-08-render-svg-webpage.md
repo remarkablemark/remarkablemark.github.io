@@ -53,7 +53,7 @@ To embed an SVG in an [image data URI](https://css-tricks.com/lodge/svg/09-svg-d
 
 ```html
 <img
-  src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><rect width='50' height='50' /></svg>"
+  src="data:image/svg+xml,<svg xmlns='https://www.w3.org/2000/svg'><rect width='50' height='50' /></svg>"
 />
 ```
 
@@ -68,7 +68,7 @@ data:[<media-type>][;charset],<data>
 As a result, the following is required for the image to render correctly:
 
 ```
-data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><!-- content --></svg>
+data:image/svg+xml,<svg xmlns='https://www.w3.org/2000/svg'><!-- content --></svg>
 ```
 
 However, there's a [catch](#encoding).
@@ -79,7 +79,7 @@ To embed an SVG in a [CSS background-image](https://css-tricks.com/lodge/svg/09-
 
 ```css
 .square {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><rect width="50" height="50" /></svg>');
+  background-image: url('data:image/svg+xml,<svg xmlns="https://www.w3.org/2000/svg"><rect width="50" height="50" /></svg>');
 }
 ```
 
@@ -93,7 +93,7 @@ For example, the following image will fail to load:
 
 ```html
 <img
-  src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><rect width='50' height='50' style='fill: #b0b;' /></svg>"
+  src="data:image/svg+xml,<svg xmlns='https://www.w3.org/2000/svg'><rect width='50' height='50' style='fill: #b0b;' /></svg>"
 />
 ```
 

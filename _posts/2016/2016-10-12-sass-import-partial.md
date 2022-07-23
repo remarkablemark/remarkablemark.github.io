@@ -10,7 +10,7 @@ This post goes over how to import a Sass file in another Sass file.
 
 ## Prerequisites
 
-Before we get started, make sure you have [Sass installed](http://sass-lang.com/install):
+Before we get started, make sure you have [Sass installed](https://sass-lang.com/install):
 
 ```sh
 gem install sass
@@ -73,10 +73,10 @@ If the partials are found in _different directories_, you'll need to specify the
 @import 'sub/partial';
 ```
 
-All Sass [variables](http://sass-lang.com/guide#topic-2), [mixins](http://sass-lang.com/guide#topic-6), and styles are cascaded in the order that they are imported.
+All Sass [variables](https://sass-lang.com/guide#topic-2), [mixins](https://sass-lang.com/guide#topic-6), and styles are cascaded in the order that they are imported.
 
 Unfortunately, importing a partial _multiple times_ means that it's included _multiple times_.
 
 That's why it's good practice to do all imports in a **_single_** file.
 
-For more information about importing Sass partials, [Zurb](http://zurb.com) has a nice [introduction](http://zurb.com/university/lessons/wrangling-sass-import-files).
+For more information about importing Sass partials, [Zurb](https://zurb.com) has a nice [introduction](https://zurb.com/university/lessons/wrangling-sass-import-files).

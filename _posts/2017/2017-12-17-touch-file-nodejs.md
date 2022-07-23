@@ -21,7 +21,7 @@ Here, a (blank) file is written with [fs.openSync](https://nodejs.org/api/fs.htm
 
 ## touch file
 
-To `touch` a file, however, requires a bit more work (_credit [boutell](http://disq.us/p/21rurrt)_):
+To `touch` a file, however, requires a bit more work (_credit [boutell](https://disq.us/p/21rurrt)_):
 
 ```js
 const fs = require('fs');

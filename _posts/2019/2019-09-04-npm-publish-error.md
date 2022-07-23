@@ -16,7 +16,7 @@ npm ERR! Package name too similar to existing packages
 
 The name was available on [npm package name checker](https://remarkablemark.org/npm-package-name-checker/) so why did this fail?
 
-After some research, I learned that [new package moniker rules](https://blog.npmjs.org/post/168978377570/new-package-moniker-rules) were added to prevent [typosquatting on the npm registry](http://blog.npmjs.org/post/163723642530/crossenv-malware-on-the-npm-registry).
+After some research, I learned that [new package moniker rules](https://blog.npmjs.org/post/168978377570/new-package-moniker-rules) were added to prevent [typosquatting on the npm registry](https://blog.npmjs.org/post/163723642530/crossenv-malware-on-the-npm-registry).
 
 This made sense from a security point of view so I reassessed my publish process.
 

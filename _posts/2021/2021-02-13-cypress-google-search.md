@@ -12,7 +12,7 @@ This article goes over how to perform a Google search using the [Cypress](https:
 
 ## Prerequisites
 
-- [Node.js](http://b.remarkabl.org/nodejs-site)
+- [Node.js](https://b.remarkabl.org/nodejs-site)
 
 ## Install
 

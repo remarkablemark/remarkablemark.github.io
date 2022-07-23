@@ -8,7 +8,7 @@ categories: enzyme mocha react test babel npm
 
 How do we go about _testing_ our [React](https://facebook.github.io/react/) components?
 
-A popular approach is to use [Enzyme](http://airbnb.io/enzyme/), which is a React testing utility. Let's use it with [Mocha](https://mochajs.org), a Node.js test runner.
+A popular approach is to use [Enzyme](https://airbnb.io/enzyme/), which is a React testing utility. Let's use it with [Mocha](https://mochajs.org), a Node.js test runner.
 
 Install the dependencies:
 
