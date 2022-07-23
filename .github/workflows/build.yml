@@ -18,4 +18,4 @@ jobs:
       - name: Build site
         run: bundle exec jekyll build --safe
       - name: Run tests
-        run: bundle exec htmlproofer --http-status-ignore '0,301,400,401,403,429,999' _site
+        run: bundle exec htmlproofer _site --check-external-hash false --ignore-status-codes 0,301,400,401,403,429,999
