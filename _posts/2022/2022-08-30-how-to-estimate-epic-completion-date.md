@@ -1,12 +1,13 @@
 ---
 layout: post
-title: How to estimate an epic completion date
+title: How to estimate when an epic will be done
 date: 2022-08-30 15:13:00
-excerpt: How to estimate the completion date of an epic.
-categories: management epic
+updated: 2022-08-30 21:15:46
+excerpt: Estimate an epic target date with t-shirt size, ticket count, story points, and Monte Carlo.
+categories: project management epic agile business
 ---
 
-This post goes over how to estimate when an epic will be completed:
+This post goes over how to estimate when an epic will be done.
 
 - [T-Shirt](#t-shirt)
 - [Ticket Count](#ticket-count)
@@ -63,13 +64,13 @@ If you're using [Jira](https://www.atlassian.com/software/jira), you can use the
 
 ## Buffer
 
-Once your epic has a time estimate, you should always add a buffer because it's rare for projects to complete in the ideal time since there will always be interrupts, unexpected changes, and/or bugs.
+Once your epic has a target date, you should always add a buffer because it's rare for projects to complete on time since there are always interrupts, changes, and bugs.
 
 | Outlook      | Buffer |
 | ------------ | ------ |
-| Optimistic   | 1.25   |
-| Conservative | 1.5    |
-| Pessmistic   | 2      |
+| Optimistic   | 1.25x  |
+| Conservative | 1.5x   |
+| Pessimistic  | 2x     |
 
 ### Example
 
