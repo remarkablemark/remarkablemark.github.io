@@ -27,7 +27,7 @@ rbenv init
 Reload or open a new shell:
 
 ```sh
-curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
 rbenv install 2.7.3
 rbenv local 2.7.3
 ```
