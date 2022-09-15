@@ -6,7 +6,7 @@ excerpt: Convert and download SVG to image (PNG or JPEG) on the frontend.
 categories: svg image png jpeg jsfiddle javascript
 ---
 
-<script async src="//jsfiddle.net/remarkablemark/fxg4Lvdt/embed/result/"></script>
+<script async src="https://jsfiddle.net/remarkablemark/fxg4Lvdt/embed/result/"></script>
 
 ## Overview
 

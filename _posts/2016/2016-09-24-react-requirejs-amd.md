@@ -60,4 +60,4 @@ requirejs(['react', 'react-dom'], function (React, ReactDOM) {
 
 [JSFiddle](https://jsfiddle.net/remarkablemark/mejyoLk6/) example:
 
-<script async src="//jsfiddle.net/remarkablemark/mejyoLk6/embed/js,html,result/"></script>
+<script async src="https://jsfiddle.net/remarkablemark/mejyoLk6/embed/js,html,result/"></script>

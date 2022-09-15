@@ -71,4 +71,4 @@ If there are more elements, add more CSS styles:
 
 [JSFiddle](https://jsfiddle.net/remarkablemark/he8c1daj/):
 
-<script async src="//jsfiddle.net/remarkablemark/he8c1daj/embed/html,css,result/"></script>
+<script async src="https://jsfiddle.net/remarkablemark/he8c1daj/embed/html,css,result/"></script>

@@ -115,4 +115,4 @@ The one disadvantage of base64 is that the data becomes more than 2x larger.
 
 ## Demo
 
-<script async src="//jsfiddle.net/remarkablemark/r6q59Ljn/embed/html,css,result/"></script>
+<script async src="https://jsfiddle.net/remarkablemark/r6q59Ljn/embed/html,css,result/"></script>

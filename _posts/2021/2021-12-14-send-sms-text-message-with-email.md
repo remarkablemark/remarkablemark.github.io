@@ -28,4 +28,4 @@ For example, given the phone number `1234567890` and cell carrier `Verizon`, the
 
 [JSFiddle](https://jsfiddle.net/remarkablemark/ujqk6fsb/):
 
-<script async src="//jsfiddle.net/remarkablemark/ujqk6fsb/embed/result,js,html/"></script>
+<script async src="https://jsfiddle.net/remarkablemark/ujqk6fsb/embed/result,js,html/"></script>

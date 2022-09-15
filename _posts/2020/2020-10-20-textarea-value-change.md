@@ -24,7 +24,7 @@ document.querySelector('textarea').addEventListener('input', function (event) {
 
 This logs the value every time the value changes.
 
-<script async src="//jsfiddle.net/remarkablemark/ms0bqf9L/embed/result,js,html/"></script>
+<script async src="https://jsfiddle.net/remarkablemark/ms0bqf9L/embed/result,js,html/"></script>
 
 ## Change
 
@@ -38,4 +38,4 @@ document.querySelector('textarea').addEventListener('change', function (event) {
 
 This logs the value after the textarea element loses focus.
 
-<script async src="//jsfiddle.net/remarkablemark/e2tmLbgw/embed/result,js,html/"></script>
+<script async src="https://jsfiddle.net/remarkablemark/e2tmLbgw/embed/result,js,html/"></script>

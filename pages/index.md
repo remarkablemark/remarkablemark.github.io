@@ -13,7 +13,7 @@ permalink: /
   </div>
 </main>
 
-<script src="//remarkablemark.org/VisualNarrator.js/VisualNarrator.js"></script>
+<script src="https://remarkablemark.org/VisualNarrator.js/VisualNarrator.js"></script>
 <script>
   (function() {
     var element = document.getElementById('home');

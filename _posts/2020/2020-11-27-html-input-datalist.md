@@ -34,7 +34,7 @@ Here's an example of selecting a range of colors:
 
 See [JSFiddle](https://jsfiddle.net/remarkablemark/nya308kc/):
 
-<script async src="//jsfiddle.net/remarkablemark/nya308kc/embed/result,html/"></script>
+<script async src="https://jsfiddle.net/remarkablemark/nya308kc/embed/result,html/"></script>
 
 [To get the input value]({% post_url 2020/2020-10-20-textarea-value-change %}) in JavaScript, listen for the `input` or `change` event:
 

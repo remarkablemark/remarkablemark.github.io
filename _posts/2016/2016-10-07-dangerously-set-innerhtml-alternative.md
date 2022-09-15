@@ -58,4 +58,4 @@ import Parser from 'html-react-parser';
 
 Want to play with it some more? Check out the [repository](https://github.com/remarkablemark/html-react-parser) and this [fiddle](https://jsfiddle.net/remarkablemark/7v86d800/):
 
-<script async src="//jsfiddle.net/remarkablemark/7v86d800/embed/js,html,result/dark/"></script>
+<script async src="https://jsfiddle.net/remarkablemark/7v86d800/embed/js,html,result/dark/"></script>
