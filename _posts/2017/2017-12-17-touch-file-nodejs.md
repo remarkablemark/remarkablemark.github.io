@@ -14,7 +14,7 @@ To create an empty file in [Node.js](https://nodejs.org/):
 ```js
 const fs = require('node:fs/promises');
 const filename = 'file.txt';
-let fh = await fs.open(filename, 'w');
+let fh = await fs.open(filename, 'a');
 await fh.close();
 ```
 
@@ -33,7 +33,7 @@ await fs.utimes(filename, time, time).catch(async function (err) {
     if ('ENOENT' !== err.code) {
         throw err;
     }
-    let fh = await fs.open(filename, 'w');
+    let fh = await fs.open(filename, 'a');
     await fh.close();
 });
 ```
@@ -54,7 +54,7 @@ const time = new Date();
 try {
     fs.utimesSync(filename, time, time);
 } catch (e) {
-    let fd = fs.openSync(filename, 'w');
+    let fd = fs.openSync(filename, 'a');
     fs.closeSync(fd);
 }
 ```
