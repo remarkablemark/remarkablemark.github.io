@@ -125,13 +125,13 @@ Full example:
 
 ## Demo
 
-[Repl.it](https://repl.it/@remarkablemark/record-microphone-audio):
+[Replit](https://replit.com/@remarkablemark/record-microphone-audio):
 
 <p>
-<iframe height="400px" width="100%" src="https://repl.it/@remarkablemark/record-microphone-audio?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/record-microphone-audio?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 </p>
 
-You will get `Permission denied` when running the Repl.it in an `<iframe>`. You can check out the [demo webpage](https://record-microphone-audio--remarkablemark.repl.co/) instead:
+You will get `Permission denied` when running the Replit in an `<iframe>`. You can check out the [demo webpage](https://record-microphone-audio--remarkablemark.repl.co/) instead:
 
 <p>
 <iframe height="100px" width="100%" src="https://record-microphone-audio--remarkablemark.repl.co/" allow="microphone" frameborder="no" scrolling="no"></iframe>
