@@ -3,7 +3,9 @@
 [![build](https://github.com/remarkablemark/remarkablemark.github.io/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablemark/remarkablemark.github.io/actions/workflows/build.yml)
 [![Discord](https://img.shields.io/discord/422421589582282752.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://b.remarkabl.org/discord)
 
-[Site](https://b.remarkabl.org/mark) of [@remarkablemark](https://b.remarkabl.org/github). Built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/). Please [support](#support) this site and join our [Discord](https://b.remarkabl.org/discord)!
+[Site](https://b.remarkabl.org/mark) of [remarkablemark](https://b.remarkabl.org/github). Built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/).
+
+Please [support](#support) this site and join the [Discord](https://b.remarkabl.org/discord)!
 
 ## Prerequisites
 
