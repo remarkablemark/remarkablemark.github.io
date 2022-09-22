@@ -2,7 +2,7 @@
 layout: post
 title: How to touch a file in Node.js
 date: 2017-12-17 16:44:13
-updated: 2022-09-08 10:35:55
+updated: 2022-09-21 18:01:00
 excerpt: How to touch a file in Node.js using the standard promise (async) and legacy synchronous `fs` methods.
 categories: touch file nodejs javascript
 ---
@@ -14,7 +14,7 @@ To create an empty file in [Node.js](https://nodejs.org/):
 ```js
 const fs = require('node:fs/promises');
 const filename = 'file.txt';
-let fh = await fs.open(filename, 'w');
+let fh = await fs.open(filename, 'a');
 await fh.close();
 ```
 
@@ -33,7 +33,7 @@ await fs.utimes(filename, time, time).catch(async function (err) {
     if ('ENOENT' !== err.code) {
         throw err;
     }
-    let fh = await fs.open(filename, 'w');
+    let fh = await fs.open(filename, 'a');
     await fh.close();
 });
 ```
@@ -54,7 +54,7 @@ const time = new Date();
 try {
     fs.utimesSync(filename, time, time);
 } catch (e) {
-    let fd = fs.openSync(filename, 'w');
+    let fd = fs.openSync(filename, 'a');
     fs.closeSync(fd);
 }
 ```
