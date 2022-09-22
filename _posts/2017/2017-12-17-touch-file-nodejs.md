@@ -2,7 +2,7 @@
 layout: post
 title: How to touch a file in Node.js
 date: 2017-12-17 16:44:13
-updated: 2022-09-08 10:35:55
+updated: 2022-09-21 18:01:00
 excerpt: How to touch a file in Node.js using the standard promise (async) and legacy synchronous `fs` methods.
 categories: touch file nodejs javascript
 ---
