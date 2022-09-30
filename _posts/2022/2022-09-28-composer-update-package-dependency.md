@@ -2,6 +2,7 @@
 layout: post
 title: How to update a Composer package
 date: 2022-09-28 22:21:09
+updated: 2022-09-30 13:11:04
 excerpt: How to update a Composer package dependency.
 categories: composer php
 ---
@@ -24,7 +25,7 @@ To install `phpunit/phpunit` version `8.5`:
 composer require phpunit/phpunit:8.5
 ```
 
-To install the new dependency immediately, set option `--no-update`:
+To install the new dependency without updating `composer.lock`, pass option `--no-update`:
 
 ```sh
 composer require phpunit/phpunit:8.5 --no-update
