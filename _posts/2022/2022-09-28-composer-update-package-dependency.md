@@ -2,7 +2,7 @@
 layout: post
 title: How to update a Composer package
 date: 2022-09-28 22:21:09
-updated: 2022-09-30 13:11:04
+updated: 2022-10-04 18:33:24
 excerpt: How to update a Composer package dependency.
 categories: composer php
 ---
@@ -17,6 +17,12 @@ For example, to update `phpunit/phpunit` to the latest version:
 
 ```sh
 composer update phpunit/phpunit
+```
+
+To show the package version:
+
+```sh
+composer show phpunit/phpunit
 ```
 
 To install `phpunit/phpunit` version `8.5`:
