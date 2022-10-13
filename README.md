@@ -9,7 +9,7 @@ Please [support](#support) this site and join the [Discord](https://b.remarkabl.
 
 ## Prerequisites
 
-[Ruby](https://www.ruby-lang.org/en/downloads/) 2.7.3:
+[Ruby](https://www.ruby-lang.org/en/downloads/) 2.7.4:
 
 ```sh
 ruby --version
@@ -30,8 +30,8 @@ Reload or open a new shell:
 
 ```sh
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
-rbenv install 2.7.3
-rbenv local 2.7.3
+rbenv install
+rbenv local
 ```
 
 [Bundler](https://bundler.io/):
