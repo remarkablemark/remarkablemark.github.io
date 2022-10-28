@@ -30,7 +30,7 @@ To use the "java" command-line tool you need to install a JDK.
 
 ## Solution
 
-Install [Java](https://support.apple.com/en-us/HT204036) with [Homebrew](https://brew.sh/):
+Install [Java](https://www.java.com/en/download/apple.jsp) with [Homebrew](https://brew.sh/):
 
 ```sh
 brew install java
