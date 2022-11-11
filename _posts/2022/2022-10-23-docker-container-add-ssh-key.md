@@ -2,6 +2,7 @@
 layout: post
 title: Docker container add SSH key
 date: 2022-10-23 16:24:40
+updated: 2022-11-11 17:34:56
 excerpt: How to add an SSH key to a Docker container.
 categories: docker ssh bash
 ---
@@ -46,5 +47,5 @@ CONTAINER_ID=
 HOME_PATH=
 
 docker cp ~/.ssh/id_rsa $CONTAINER_ID:$HOME_PATH/.ssh/id_rsa
-docker exec web -c 'eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa'
+docker exec -it $CONTAINER_ID sh -c 'eval $(ssh-agent -s); ssh-add ~/.ssh/id_rsa'
 ```
