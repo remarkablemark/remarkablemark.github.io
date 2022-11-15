@@ -1,21 +1,32 @@
 name: build
 on: [push, pull_request]
+
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
       # speeds up installation of html-proofer
       NOKOGIRI_USE_SYSTEM_LIBRARIES: true
+
     steps:
       - name: Checkout repository and submodules
         uses: actions/checkout@v3
         with:
           submodules: recursive
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+
       - name: Build site
         run: bundle exec jekyll build --safe
+
+      # https://github.com/gjtorikian/html-proofer
       - name: Run tests
-        run: bundle exec htmlproofer _site --check-external-hash false --ignore-status-codes 0,301,400,401,403,429,999
+        run: |
+          bundle exec htmlproofer \
+            --check-external-hash false \
+            --ignore-status-codes '0,301,400,401,403,429,999' \
+            --ignore-urls '/regexr.com/' \
+            ./_site/
