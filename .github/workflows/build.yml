@@ -28,5 +28,5 @@ jobs:
           bundle exec htmlproofer \
             --check-external-hash false \
             --ignore-status-codes '0,301,400,401,403,429,999' \
-            --ignore-urls '/regexr.com/' \
+            --ignore-urls '/regexr.com/,/vagrantup.com/' \
             ./_site/

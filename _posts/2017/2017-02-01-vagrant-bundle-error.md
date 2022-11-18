@@ -6,7 +6,7 @@ excerpt: How to deal with the vagrant bundle error on Mac.
 categories: vagrant bundle error
 ---
 
-Recently, I had to downgrade <a href="https://www.vagrantup.com" target="_blank" data-proofer-ignore>vagrant</a> due to a project requirement.
+Recently, I had to downgrade [vagrant](https://www.vagrantup.com) due to a project requirement.
 
 However, when I reinstalled vagrant on Mac, I received a very strange error:
 
@@ -19,7 +19,7 @@ remove that file and reinstall all your plugins using `vagrant
 plugin install`.
 ```
 
-I tried installing with [cask](https://github.com/Homebrew/homebrew-cask) and the <a href="https://www.vagrantup.com/downloads.html" target="_blank" data-proofer-ignore>official installer</a>, but to no avail.
+I tried installing with [cask](https://github.com/Homebrew/homebrew-cask) and the [official installer](https://www.vagrantup.com/downloads.html), but to no avail.
 
 Later, I learned that not all vagrant directories were removed.
 
