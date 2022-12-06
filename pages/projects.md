@@ -33,7 +33,7 @@ permalink: /projects/
 [npm packages]: https://b.remarkabl.org/npm
 [lit.io]: https://github.com/lit-io/lit-io.github.io
 [universal react tutorial]: https://b.remarkabl.org/react-playlist
-[corsmirror]: https://corsmirror.herokuapp.com/
+[corsmirror]: https://b.remarkabl.org/corsmirror
 [npm package name checker]: https://b.remarkabl.org/npm-package-name-checker
 [phonetic alphabet converter]: https://b.remarkabl.org/phonetic-alphabet-converter
 [mdtocs]: https://b.remarkabl.org/mdtocs
