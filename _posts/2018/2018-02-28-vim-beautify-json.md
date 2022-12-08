@@ -15,7 +15,7 @@ vim my-file.json
 
 ## python
 
-To prettify using [`python`](https://pascalprecht.github.io/posts/pretty-print-json-in-vim/):
+To prettify using `python`:
 
 ```vim
 :%!python -m json.tool
