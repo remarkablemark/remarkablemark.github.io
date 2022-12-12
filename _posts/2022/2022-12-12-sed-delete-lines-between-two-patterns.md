@@ -6,12 +6,12 @@ excerpt: How to delete the lines between two patterns with sed.
 categories: sed bash
 ---
 
-This post goes over how to delete lines between two patterns with [sed](https://en.wikipedia.org/wiki/Sed):
+This post goes over how to delete lines between two patterns with [sed](https://wikipedia.org/wiki/Sed):
 
 - [Inclusive](#inclusive)
 - [Exclusive](#exclusive)
 
-This post was inspired by [Sed: Mutli-Line Replacement Between Two Patterns](http://fahdshariff.blogspot.com/2012/12/sed-mutli-line-replacement-between-two.html).
+This post was inspired by [Sed: Mutli-Line Replacement Between Two Patterns](https://fahdshariff.blogspot.com/2012/12/sed-mutli-line-replacement-between-two.html).
 
 ## Inclusive
 
