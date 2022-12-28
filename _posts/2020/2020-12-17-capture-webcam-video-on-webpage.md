@@ -47,10 +47,10 @@ Full example:
 
 ## Demo
 
-[Replit](https://replit.com/@remarkablemark/webcam-video):
+[Replit](https://replit.com/@remarkablemark/webcam-video#script.js):
 
 <p>
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/webcam-video?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/webcam-video?lite=true#script.js" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 </p>
 
 If you get `Requested device not found`, this is because:

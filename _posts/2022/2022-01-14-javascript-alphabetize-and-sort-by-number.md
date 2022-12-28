@@ -69,6 +69,6 @@ const copy = [...objects];
 
 ## Demo
 
-[Replit](https://replit.com/@remarkablemark/JavaScript-alphabetize-and-sort-by-number):
+[Replit](https://replit.com/@remarkablemark/JavaScript-alphabetize-and-sort-by-number#index.js):
 
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/JavaScript-alphabetize-and-sort-by-number?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="600px" width="100%" src="https://replit.com/@remarkablemark/JavaScript-alphabetize-and-sort-by-number?lite=true#index.js" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

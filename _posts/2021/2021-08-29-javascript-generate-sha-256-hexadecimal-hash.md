@@ -29,9 +29,9 @@ Usage:
 console.log(hash('foo')); // '2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae'
 ```
 
-[Demo](https://replit.com/@remarkablemark/Nodejs-SHA-256-hash):
+[Demo](https://replit.com/@remarkablemark/Nodejs-SHA-256-hash#index.js):
 
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/Nodejs-SHA-256-hash?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/Nodejs-SHA-256-hash?lite=true#index.js" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ## Browser
 
@@ -70,6 +70,6 @@ Usage:
 hash('foo').then((hex) => console.log(hex)); // '2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae'
 ```
 
-[Demo](https://replit.com/@remarkablemark/JavaScript-SHA-256-hash):
+[Demo](https://replit.com/@remarkablemark/JavaScript-SHA-256-hash#index.html):
 
-<iframe height="600px" width="100%" src="https://replit.com/@remarkablemark/JavaScript-SHA-256-hash?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/JavaScript-SHA-256-hash?lite=true#index.html" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

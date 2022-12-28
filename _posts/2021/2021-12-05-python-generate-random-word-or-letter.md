@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to generate a random word or letter in Python
+title: Python generate a random word or letter
 date: 2021-12-05 16:21:11
 excerpt: How to generate a random word or letter in Python.
 categories: python
@@ -39,9 +39,9 @@ See the [package documentation](https://pypi.org/project/Random-Word/) for more 
 
 ### Demo
 
-[Replit](https://replit.com/@remarkablemark/random-word):
+[Replit](https://replit.com/@remarkablemark/random-word#main.py):
 
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/random-word?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/random-word?lite=true#main.py" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ## Random Letter
 
@@ -56,6 +56,6 @@ print(ascii_lowercase[randrange(len(ascii_lowercase))])
 
 ### Demo
 
-[Replit](https://replit.com/@remarkablemark/random-alphabet-letter):
+[Replit](https://replit.com/@remarkablemark/random-alphabet-letter#main.py):
 
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/random-alphabet-letter?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/random-alphabet-letter?lite=true#main.py" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

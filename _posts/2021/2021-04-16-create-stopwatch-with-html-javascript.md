@@ -99,6 +99,6 @@ Update `index.html` to create the worker and listen to [`onmessage`](https://dev
 
 ## Demo
 
-Check out the [GitHub repository](https://github.com/remarkablemark/stopwatch) or [Replit](https://replit.com/@remarkablemark/Stopwatch):
+Check out the [GitHub repository](https://github.com/remarkablemark/stopwatch) or [Replit](https://replit.com/@remarkablemark/Stopwatch#index.html):
 
-<iframe height="400px" width="100%" src="https://repl.it/@remarkablemark/Stopwatch?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/Stopwatch?lite=true#index.html" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

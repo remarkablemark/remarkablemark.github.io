@@ -125,10 +125,10 @@ Full example:
 
 ## Demo
 
-[Replit](https://replit.com/@remarkablemark/record-microphone-audio):
+[Replit](https://replit.com/@remarkablemark/record-microphone-audio#script.js):
 
 <p>
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/record-microphone-audio?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/record-microphone-audio?lite=true#script.js" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 </p>
 
 You will get `Permission denied` when running the Replit in an `<iframe>`. You can check out the [demo webpage](https://record-microphone-audio--remarkablemark.repl.co/) instead:

@@ -87,6 +87,6 @@ mustache view.js template
 
 ## Demo
 
-[Replit](https://replit.com/@remarkablemark/mustache-cli) example:
+[Replit](https://replit.com/@remarkablemark/mustache-cli#package.json) example:
 
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/mustache-cli?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/mustache-cli?lite=true#package.json" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

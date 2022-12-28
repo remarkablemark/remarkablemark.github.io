@@ -117,6 +117,6 @@ You can start [sending and receiving events](https://socket.io/docs/v4/emitting-
 
 ## Demo
 
-[Replit](https://replit.com/@remarkablemark/socketio-quickstart) example:
+[Replit](https://replit.com/@remarkablemark/socketio-quickstart#package.json) example:
 
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/socketio-quickstart?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/socketio-quickstart?lite=true#package.json" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

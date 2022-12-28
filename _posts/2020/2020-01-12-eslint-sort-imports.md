@@ -289,6 +289,6 @@ Congratulations! You've set up import sorting with ESLint.
 
 ## Demo
 
-[Replit](https://replit.com/@remarkablemark/eslint-sort-imports) example:
+[Replit](https://replit.com/@remarkablemark/eslint-sort-imports#.eslintrc.json) example:
 
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/eslint-sort-imports?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/eslint-sort-imports?lite=true#.eslintrc.json" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
