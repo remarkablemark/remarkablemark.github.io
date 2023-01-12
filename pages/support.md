@@ -29,6 +29,6 @@ Here are some ways to support **remarkablemark**:
 
 [![Get merch from Teespring](https://cdn.joinhoney.com/images/lp/store-logos/teespring-logo.png)](https://b.remarkabl.org/teespring)
 
-<iframe src="https://github.com/sponsors/remarkablemark/button" title="Sponsor remarkablemark" height="35" width="107" style="border: 0;"></iframe>
+<iframe src="https://github.com/sponsors/remarkablemark/card" title="Sponsor remarkablemark" height="225" width="600" style="border: 0;"></iframe>
 
 _Thank you for your support!_
