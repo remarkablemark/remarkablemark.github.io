@@ -2,6 +2,7 @@
 layout: post
 title: Deploy to Heroku with GitHub Actions
 date: 2021-03-12 22:29:42
+updated: 2022-01-11 19:29:39
 excerpt: How to deploy to Heroku using the GitHub Actions workflow.
 categories: heroku github actions deploy devops
 ---
@@ -37,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
@@ -65,7 +66,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Heroku login credentials
@@ -97,7 +98,7 @@ The differences between the 2 workflows are explained below.
 
 The [Checkout](https://github.com/marketplace/actions/checkout) action must [fetch the entire Git history](https://github.com/marketplace/actions/checkout#fetch-all-history-for-all-tags-and-branches) or else the build will fail with the error:
 
-```sh
+```
 Run git push heroku master
   git push heroku master
   shell: /usr/bin/bash -e {0}
@@ -159,9 +160,9 @@ The [repository](https://github.com/remarkablemark/github-actions-heroku-deploy)
 
 <p>
 <details markdown="1">
-<summary>Here's how a successful deploy looks like.</summary>
+<summary>See how a successful deploy will look like.</summary>
 
-```sh
+```
 Created and wrote to ~/.netrc
 Successfully logged into heroku
  ›   Warning: Our terms of service have changed:
