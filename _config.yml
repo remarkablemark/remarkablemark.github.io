@@ -7,7 +7,7 @@
 title: remarkablemark
 email: mark@remarkablemark.org
 description: >- # this means to ignore newlines until "baseurl:"
-  remarkablemark's site.
+  Site of remarkablemark.
 baseurl: '' # the subpath of your site, e.g. /blog/
 url: https://remarkablemark.org # the base hostname & protocol for your site, e.g. http://example.com
 github_username: remarkablemark
