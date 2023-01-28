@@ -47,12 +47,10 @@ layout: default
 {% endcomment %}
 <script>
   document
-    .querySelector('.post-content')
-    .querySelectorAll('pre.highlight')
+    .querySelectorAll('.post-content pre.highlight')
     .forEach(function (pre) {
       var button = document.createElement('button');
       var copyText = 'Copy';
-      button.className = 'copy';
       button.type = 'button';
       button.ariaLabel = 'Copy code to clipboard';
       button.innerText = copyText;
@@ -61,8 +59,9 @@ layout: default
         navigator.clipboard.writeText(code);
         button.innerText = 'Copied';
         setTimeout(function () {
+          button.blur();
           button.innerText = copyText;
-        }, 4000);
+        }, 2e3);
       });
       pre.appendChild(button);
     });
