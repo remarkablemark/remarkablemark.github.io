@@ -2,6 +2,7 @@
 layout: post
 title: 'release-please failed: Error creating Pull Request'
 date: 2023-01-28 17:12:27
+updated: 2023-01-28 18:39:01
 excerpt: "How to fix error 'release-please failed: Error creating Pull Request: Resource not accessible by integration'."
 categories: release-please github-actions ci
 ---
@@ -25,6 +26,7 @@ You will also need to toggle **Read and write permissions** or update your workf
 ```yml
 # .github/workflows/release-please.yml
 permissions:
+  contents: write
   pull-requests: write
 ```
 
