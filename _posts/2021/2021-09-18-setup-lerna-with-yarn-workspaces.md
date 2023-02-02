@@ -10,7 +10,7 @@ This post goes over how to set up a [Lerna](https://lerna.js.org/) monorepo with
 
 ## Lerna
 
-Create a new Lerna monorepo with [`lerna init`](https://github.com/lerna/lerna/blob/main/commands/init/README.md#readme):
+Create a new Lerna monorepo with [`lerna init`](https://github.com/lerna/lerna/tree/main/libs/commands/init#readme):
 
 ```sh
 npx lerna init
@@ -64,7 +64,7 @@ Then add `npmClient` and `useWorkspaces` to [`lerna.json`](https://github.com/le
  }
 ```
 
-Now when you run `yarn install`, Yarn [bootstraps](https://github.com/lerna/lerna/tree/main/commands/bootstrap#readme) and [hoists](https://github.com/lerna/lerna/blob/main/doc/hoist.md#readme) node modules to the project root directory:
+Now when you run `yarn install`, Lerna [bootstraps](https://github.com/lerna/lerna/tree/main/libs/commands/bootstrap#readme) and [hoists](https://github.com/lerna/lerna/blob/main/doc/hoist.md#readme) node modules to the project root directory:
 
 ```sh
 yarn
