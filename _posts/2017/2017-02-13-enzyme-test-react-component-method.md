@@ -69,7 +69,7 @@ describe('MyComponent.prototype._method', () => {
 
 ## Arrow Function
 
-But what if you're using [arrow functions as class methods](https://babeljs.io/docs/plugins/transform-class-properties/)?
+But what if you're using [arrow functions as class methods](https://www.npmjs.com/package/babel-plugin-transform-class-properties)?
 
 ```js
 // MyComponent2.js
