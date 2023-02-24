@@ -2,6 +2,7 @@
 layout: post
 title: Write Detox tests in TypeScript
 date: 2023-02-21 19:29:56
+updated: 2023-02-23 22:45:00
 excerpt: How to write React Native Detox tests in TypeScript.
 categories: react-native detox test typescript
 ---
@@ -14,11 +15,13 @@ You have a [React Native project with Detox](https://wix.github.io/Detox/docs/in
 
 ## Setup
 
-Install the typings for `detox` and `jest`:
+Install the typings for [`detox`](https://www.npmjs.com/package/@types/detox) and [`jest`](https://www.npmjs.com/package/@types/jest):
 
 ```sh
 yarn add --dev @types/detox @types/jest
 ```
+
+> In Detox version [18.1.0](https://github.com/wix/Detox/releases/tag/18.1.0) and higher, you don't need to install `@types/detox` since Detox provides its own type definitions.
 
 Update `e2e/jest.config.js`:
 
