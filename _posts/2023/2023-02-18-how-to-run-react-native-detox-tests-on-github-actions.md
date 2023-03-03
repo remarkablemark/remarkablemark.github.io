@@ -3,7 +3,7 @@ layout: post
 title: How to run Detox tests on GitHub Actions
 date: 2023-02-18 20:27:46
 updated: 2023-03-01 22:28:30
-excerpt: How to set up and run React Native Detox tests on GitHub Actions.
+excerpt: How to set up and run React Native Detox iOS and Android E2E (end-to-end) tests on GitHub Actions CI.
 categories: react-native detox test github-actions ci ios android
 ---
 
