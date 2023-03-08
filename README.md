@@ -1,7 +1,7 @@
 # [remarkablemark.org](https://b.remarkabl.org/mark)
 
 [![build](https://github.com/remarkablemark/remarkablemark.github.io/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablemark/remarkablemark.github.io/actions/workflows/build.yml)
-![GitHub last commit](https://img.shields.io/github/last-commit/remarkablemark/remarkablemark.github.io)
+![GitHub last commit](https://badgen.net/github/last-commit/remarkablemark/remarkablemark.github.io)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/remarkablemark/remarkablemark.github.io)
 [![Discord](https://img.shields.io/discord/422421589582282752.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://b.remarkabl.org/discord)
 
