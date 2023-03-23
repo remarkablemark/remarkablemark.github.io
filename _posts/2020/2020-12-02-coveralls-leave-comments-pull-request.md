@@ -10,7 +10,7 @@ categories: coveralls
 
 I noticed that Coveralls bot was not leaving comments on pull requests for my new repository.
 
-I found this [issue](https://github.com/lemurheavy/coveralls-public/issues/1313) but it describes [how to add the bot to private repos](https://docs.coveralls.io/coveralls-notifications).
+I found this [issue](https://github.com/lemurheavy/coveralls-public/issues/1313) but it describes [how to add the bot to private repos](https://docs.coveralls.io/app-notifications).
 
 ## Solution
 
