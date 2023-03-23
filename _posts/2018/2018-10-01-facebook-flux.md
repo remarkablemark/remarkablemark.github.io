@@ -7,7 +7,7 @@ excerpt: How to set up Flux in a React app.
 categories: flux react javascript
 ---
 
-This post will go over how to set up [Flux](https://facebook.github.io/flux/) in a React app.
+This post will go over how to set up [Flux](https://facebookarchive.github.io/flux/) in a React app.
 
 ## View
 
@@ -172,7 +172,7 @@ We can add a _dispatcher_ next. However, the best time to add one is when the nu
 
 ## Dispatcher
 
-Instantiate a [dispatcher](https://facebook.github.io/flux/docs/dispatcher/) from [`flux`](https://www.npmjs.com/package/flux):
+Instantiate a [dispatcher](https://facebookarchive.github.io/flux/docs/dispatcher/) from [`flux`](https://www.npmjs.com/package/flux):
 
 ```js
 // dispatcher.js
@@ -193,7 +193,7 @@ import dispatcher from './dispatcher';
 class CountStore extends EventEmitter {
   constructor() {
     super();
-    this.dispatchToken = dispatcher.register(action => {
+    this.dispatchToken = dispatcher.register((action) => {
       switch (action.type) {
         case 'increment':
           this.increment();
@@ -336,7 +336,7 @@ class CountStore extends EventEmitter {
   constructor() {
     super();
     // the token can be used to wait or synchronize with the other stores
-    this.dispatchToken = dispatcher.register(action => {
+    this.dispatchToken = dispatcher.register((action) => {
       switch (action.type) {
         case INCREMENT:
           this.increment();
