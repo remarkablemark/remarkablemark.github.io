@@ -8,9 +8,9 @@ categories: travis github-pages html-proofer
 
 Wouldn't it be nice to run a test that checks for broken links for your site hosted by [GitHub Pages](https://pages.github.com)?
 
-With [Travis CI](https://travis-ci.org), you can certainly do that!
+With [Travis CI](https://www.travis-ci.com), you can certainly do that!
 
-First, login to [Travis](https://travis-ci.org) and _turn on the switch_ for your GitHub Pages repository.
+First, login to [Travis](https://www.travis-ci.com) and _turn on the switch_ for your GitHub Pages repository.
 
 Then add the [html-proofer](https://github.com/gjtorikian/html-proofer) gem to your `Gemfile`:
 

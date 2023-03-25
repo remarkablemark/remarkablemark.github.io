@@ -9,7 +9,7 @@ image: /images/2020/2020-11-14-authorize-travis-ci-for-open-source.png
 
 ## Background
 
-[Travis CI](https://travis-ci.org/) was no longer showing up in my [GitHub](https://github.com/) PR's (pull requests). What I did to make the build show up again was to reset the Travis CI application access to my GitHub account.
+[Travis CI](https://www.travis-ci.com/) was no longer showing up in my [GitHub](https://github.com/) PR's (pull requests). What I did to make the build show up again was to reset the Travis CI application access to my GitHub account.
 
 ## Revoke Access
 
@@ -27,7 +27,7 @@ Click **Revoke** from the **Travis CI for Open Source** dropdown:
 
 ## Reauthorize Application
 
-Sign out of [Travis CI](https://travis-ci.org/), log back in, and reauthorize the application's access to the GitHub account:
+Sign out of [Travis CI](https://www.travis-ci.com/), log back in, and reauthorize the application's access to the GitHub account:
 
 ![Authorize Travis CI for Open Source]({{ "/images/2020/2020-11-14-authorize-travis-ci.png" | prepend: site.assets_path }})
 

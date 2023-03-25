@@ -11,7 +11,7 @@ categories: travis ci build npm error
 
 ## Travis CI
 
-I received an npm install error for my [Travis CI build](https://travis-ci.org/github/remarkablemark/phonetic-alphabet-converter/builds/742165128) after upgrading my dependencies:
+I received an npm install error for my [Travis CI build](https://www.travis-ci.org/github/remarkablemark/phonetic-alphabet-converter/builds/742165128) after upgrading my dependencies:
 
 ```sh
 npm install
@@ -56,7 +56,7 @@ $ nvm --version
 0.36.0
 ```
 
-So I ended up [disabling npm cache](https://docs.travis-ci.com/user/languages/javascript-with-nodejs/#caching-with-npm) in `.travis.yml` to get a [green build](https://travis-ci.org/github/remarkablemark/phonetic-alphabet-converter/builds/742166433):
+So I ended up [disabling npm cache](https://docs.travis-ci.com/user/languages/javascript-with-nodejs/#caching-with-npm) in `.travis.yml` to get a [green build](https://www.travis-ci.com/github/remarkablemark/phonetic-alphabet-converter/builds/742166433):
 
 ```yml
 # .travis.yml

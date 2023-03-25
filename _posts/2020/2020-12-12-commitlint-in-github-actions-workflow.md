@@ -11,7 +11,7 @@ categories: commitlint github nodejs git
 
 ## Problem
 
-[Commitlint](https://github.com/conventional-changelog/commitlint) has [CI setup](https://commitlint.js.org/#/guides-ci-setup) documentation for [Travis CI](https://travis-ci.org/) and [CircleCI](https://circleci.com/) but not for [GitHub Actions](https://github.com/features/actions).
+[Commitlint](https://github.com/conventional-changelog/commitlint) has [CI setup](https://commitlint.js.org/#/guides-ci-setup) documentation for [Travis CI](https://www.travis-ci.com/) and [CircleCI](https://circleci.com/) but not for [GitHub Actions](https://github.com/features/actions).
 
 I added the [step](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsrun) to run `npx commitlint --from=HEAD~1` in my workflow:
 
