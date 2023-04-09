@@ -64,7 +64,7 @@ awk -F. '{ print $3 }' <<< $version
 What about the **pre-release** version `alpha.4`?
 
 ```sh
-version=1.2.3-alpha.4
+version='1.2.3-alpha.4'
 ```
 
 Instead of using the period as the field separator, use the hyphen:
