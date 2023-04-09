@@ -24,7 +24,7 @@ To build TypeDoc docs with the plugin, you can specify the plugin when running t
 npx typedoc src --plugin typedoc-plugin-copy-code-to-clipboard
 ```
 
-Or add the plugin to [`typedoc.json`](https://typedoc.org/guides/options/):
+Or add the plugin to [`typedoc.json`](https://typedoc.org/options/):
 
 ```json
 {
