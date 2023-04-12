@@ -1,19 +1,19 @@
 ---
 layout: post
-title: Migrate husky 4 to 7
+title: Migrate husky 4 to 8
 date: 2021-02-28 16:16:29
-updated: 2021-12-18 19:20:20
-excerpt: How to migrate husky 4 to 7 using the npm package husky-4-to-5.
+updated: 2023-04-12 00:00:57
+excerpt: How to migrate husky 4 to 8 using the npm package husky-4-to-5.
 categories: npm npx cli husky migration
 ---
 
-> **TL;DR**: migrate husky from 4 to 7:
+> **TL;DR**: migrate husky from 4 to 8:
 >
 > ```sh
 > npx husky-4-to-5
 > ```
 
-This post goes over how to migrate [husky](https://github.com/typicode/husky) from 4 to 7 using the npm package [husky-4-to-5](https://github.com/remarkablemark/husky-4-to-5).
+This post goes over how to migrate [husky](https://github.com/typicode/husky) from 4 to 8 using the npm package [husky-4-to-5](https://github.com/remarkablemark/husky-4-to-5).
 
 ## Problem
 
@@ -39,7 +39,7 @@ What wasn't automated was prepending `npx` in front of the binaries of the husky
 
 For example:
 
-```sh
+```bash
 jest → npx jest
      → yarn jest
 
