@@ -31,7 +31,7 @@ If the direct goes over time, that's okay. If there's something you want to brin
 
 ### 15 minutes for me
 
-This is your time as the manager. You can go over [OKRs](https://wikipedia.org/wiki/OKR), discuss work, provide feedback, etc. Make sure to follow up on the items from the last 1:1, and write down the items for the next 1:1.
+This is your time as the manager. You can go over [OKRs](https://wikipedia.org/wiki/OKR), discuss work, give [feedback]({% post_url 2022/2022-05-01-how-to-give-feedback %}), etc. Make sure to follow up on the items from the last 1:1, and write down the items for the next 1:1.
 
 Given [expectations]({% post_url 2021/2021-08-01-expectations-of-my-directs %}) are clear, ask your direct:
 

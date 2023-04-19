@@ -28,7 +28,7 @@ I expect my manager to be...
   - Constructive conflict is expected and should not be avoided
   - Issues should be confronted immediately
   - I want to be told what I _need_ to hear rather than what I _want_ to hear
-    - E.g., why I can't be promoted, feedback on my blunders, etc.
+    - E.g., why I can't be promoted, [feedback]({% post_url 2022/2022-05-01-how-to-give-feedback %}) on my blunders, etc.
 
 ## My "boss" rather than my "friend"
 

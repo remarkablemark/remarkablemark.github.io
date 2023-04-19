@@ -27,7 +27,7 @@ Accordingly, I want to be told what _I need to hear_ rather than what _I want to
 
 I'm not perfect and I can't guarantee that I can solve every problem that comes my way, but calling them out and creating awareness will help me understand their perspectives.
 
-Lastly, I want my directs to have the **courage** to tell me when I'm doing a bad job. Being able to give good feedback is another trait I look for in people.
+Lastly, I want my directs to have the **courage** to tell me when I'm doing a bad job. Being able to give good [feedback]({% post_url 2022/2022-05-01-how-to-give-feedback %}) is another trait I look for in people.
 
 ## Committed
 
