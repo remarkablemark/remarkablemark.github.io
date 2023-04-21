@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Jest spyOn function
-date: 2018-04-10 19:48:31 -4000
+date: 2018-04-10 19:48:31
 excerpt: When writing tests, Jest can be used to spy on functions in a module.
 categories: test jest spy function module javascript
 ---
@@ -14,7 +14,7 @@ export const foo = () => 'foo';
 export const bar = () => 'bar';
 ```
 
-Testing them is easy with [Jest](https://facebook.github.io/jest/):
+Testing them is easy with [Jest](https://jestjs.io/):
 
 ```js
 // module.test.js
@@ -71,7 +71,7 @@ const main = {
 export default main;
 ```
 
-Now you can [spy on](https://facebook.github.io/jest/docs/en/jest-object.html#jestspyonobject-methodname) the function in your test:
+Now you can [spy on](https://jestjs.io/docs/jest-object#jestspyonobject-methodname) the function in your test:
 
 ```js
 // module.test.js
