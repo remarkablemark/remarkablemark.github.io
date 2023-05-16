@@ -24,5 +24,4 @@ categories: javascript regex
 Sources:
 
 - [A guide to JavaScript Regular Expressions](https://flaviocopes.com/javascript-regular-expressions/#meta-characters)
-- [A Practical Guide to Regular Expressions (RegEx) In JavaScript](https://blog.bitsrc.io/a-beginners-guide-to-regular-expressions-regex-in-javascript-9c58feb27eb4#e7de)
 - [RegExr](https://regexr.com/)
