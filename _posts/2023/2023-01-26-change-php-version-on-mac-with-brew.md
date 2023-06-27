@@ -77,7 +77,7 @@ And link the version:
 brew link php@7.4
 ```
 
-Update your `PATH` in `.zshrc`:
+Update your `PATH` in `~/.zshrc`:
 
 ```bash
 echo 'export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"' >> ~/.zshrc
@@ -85,7 +85,7 @@ echo 'export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"' >> ~/.zshrc
 source ~/.zshrc
 ```
 
-Or `.bashrc`:
+Or `~/.bashrc`:
 
 ```bash
 echo 'export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"' >> ~/.bashrc
