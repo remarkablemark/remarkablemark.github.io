@@ -2,11 +2,17 @@
 layout: post
 title: Change PHP version on Mac with Brew
 date: 2023-01-26 16:59:29
+updated: 2023-06-27 21:40:33
 excerpt: How to change PHP version on macOS with Homebrew.
 categories: php mac brew
 ---
 
-This post goes over how to change PHP version on macOS with Homebrew.
+This post goes over how to change PHP version on macOS with Homebrew:
+
+- [Prerequisites](#prerequisites)
+- [Latest](#latest)
+- [Version](#version)
+- [Revert](#revert)
 
 ## Prerequisites
 
@@ -104,4 +110,21 @@ PHP 7.4.33 (cli) (built: Jan 21 2023 06:43:54) ( NTS )
 Copyright (c) The PHP Group
 Zend Engine v3.4.0, Copyright (c) Zend Technologies
     with Zend OPcache v7.4.33, Copyright (c), by Zend Technologies
+```
+
+## Revert
+
+Change back to the latest PHP version:
+
+```sh
+brew unlink php@7.4 && brew link php
+```
+
+Update your `~/.zshrc` or `~/.bashrc`:
+
+```diff
+-export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
+-export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"
++export PATH="/opt/homebrew/opt/php/bin:$PATH"
++export PATH="/opt/homebrew/opt/php/sbin:$PATH"
 ```
