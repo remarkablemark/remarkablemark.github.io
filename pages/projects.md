@@ -11,6 +11,7 @@ permalink: /projects/
 | ----------------------------- | ----------------------------------------------------- |
 | [remarkablegames]             | Games that are remarkable                             |
 | [Lilboards]                   | Create boards, columns, and items                     |
+| [Encrypit]                    | Securely encrypt and decrypt files                    |
 | [Remarkable Podcast]          | Podcast on technology and programming                 |
 | [html-react-parser]           | HTML to React parser                                  |
 | [npm packages]                | npm packages authored by remarkablemark               |
@@ -28,6 +29,7 @@ permalink: /projects/
 
 [remarkablegames]: https://b.remarkabl.org/games
 [lilboards]: https://b.remarkabl.org/lilboards-site
+[encrypit]: https://b.remarkabl.org/encrypit
 [remarkable podcast]: https://b.remarkabl.org/remarkable-podcast
 [html-react-parser]: https://b.remarkabl.org/html-react-parser
 [npm packages]: https://b.remarkabl.org/npm
