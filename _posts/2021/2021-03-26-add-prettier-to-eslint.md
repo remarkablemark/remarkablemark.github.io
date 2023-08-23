@@ -20,7 +20,7 @@ Save [`prettier`](https://www.npmjs.com/package/prettier) and [`eslint-plugin-pr
 npm install --save-dev prettier eslint-plugin-prettier
 ```
 
-Or with [Yarn](https://yarnpkg.com/package/eslint-plugin-prettier):
+Or with [Yarn](https://yarnpkg.com/package/?name=eslint-plugin-prettier):
 
 ```sh
 yarn add --dev prettier eslint-plugin-prettier

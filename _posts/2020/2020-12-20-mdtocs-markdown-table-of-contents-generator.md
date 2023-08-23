@@ -20,7 +20,7 @@ This project was inspired by the blog post ["Markdown Table of Contents Generato
 npm install mdtocs
 ```
 
-[Yarn](https://yarnpkg.com/package/mdtocs):
+[Yarn](https://yarnpkg.com/package/?name=mdtocs):
 
 ```sh
 yarn add mdtocs

@@ -58,6 +58,6 @@ See [standard-version > First Release](https://github.com/conventional-changelog
 You can find `conventional-release-setup` on:
 
 - [npm](https://www.npmjs.com/package/conventional-release-setup)
-- [yarn](https://yarnpkg.com/package/conventional-release-setup)
+- [yarn](https://yarnpkg.com/package/?name=conventional-release-setup)
 
 Feel free to check out the [GitHub repository](https://github.com/remarkablemark/conventional-release-setup).

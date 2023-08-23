@@ -21,7 +21,7 @@ You can download `phonetic-alphabet-converter` from:
 npm install phonetic-alphabet-converter
 ```
 
-[yarn](https://yarnpkg.com/package/phonetic-alphabet-converter)
+[yarn](https://yarnpkg.com/package/?name=phonetic-alphabet-converter)
 
 ```sh
 yarn add phonetic-alphabet-converter
