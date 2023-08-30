@@ -2,6 +2,7 @@
 layout: post
 title: How to install PHP 7 with Homebrew on macOS
 date: 2022-10-06 14:00:02
+updated: 2023-08-30 11:56:40
 excerpt: How to install PHP 7 with Homebrew on macOS.
 categories: mac php brew
 ---
@@ -10,6 +11,18 @@ Install PHP 7 with [Homebrew](https://brew.sh/):
 
 ```sh
 brew install php@7.4
+```
+
+If you get the error:
+
+```
+Error: php@7.4 has been disabled because it is a versioned formula!
+```
+
+Then run:
+
+```sh
+brew tap shivammathur/php && brew install shivammathur/php/php@7.4
 ```
 
 Symlink the formula:
