@@ -81,9 +81,9 @@ Or add `postinstall` script to `package.json` to enable Git hooks after `npm ins
     "postinstall": "husky install"
   },
   "devDependencies": {
-    "@commitlint/cli": "^13.1.0",
-    "@commitlint/config-conventional": "^13.1.0",
-    "husky": "^7.0.2"
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "husky": "latest"
   }
 }
 ```
