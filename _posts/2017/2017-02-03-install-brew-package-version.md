@@ -2,7 +2,7 @@
 layout: post
 title: How to install an older homebrew package
 date: 2017-02-03 23:53:00
-updated: 2021-11-05 21:00:34
+updated: 2023-10-28 17:46:20
 excerpt: How to install an older homebrew package or formula.
 categories: homebrew
 ---
@@ -34,9 +34,12 @@ Error: Calling Installation of <FORMULA> from a GitHub commit URL is disabled! U
 Now you need to replace the [core](https://github.com/Homebrew/homebrew-core/find/master) or [cask](https://github.com/Homebrew/homebrew-cask) formula before installing:
 
 ```bash
+export HOMEBREW_NO_AUTO_UPDATE=1
 pbpaste > $(find $(brew --repository) -name <FORMULA>.rb)
 brew install <FORMULA>
 ```
+
+> `HOMEBREW_NO_AUTO_UPDATE=1` ensures the downgraded formula is not overwritten. Thanks [Esteban Fallas](https://disq.us/p/2qbby4v) for the tip.
 
 ## Example
 
@@ -64,7 +67,7 @@ Find the formula in [homebrew-core](https://github.com/Homebrew/homebrew-core/fi
 
 The formula filename should be `composer.rb`.
 
-Open the [file](https://github.com/Homebrew/homebrew-core/blob/master/Formula/composer.rb) and click [History](https://github.com/Homebrew/homebrew-core/commits/eb56ac0aba935d203d0e5833e50f75360f3bf5be/Formula/composer.rb):
+Open the [file](https://github.com/Homebrew/homebrew-core/blob/master/Formula/c/composer.rb) and click [History](https://github.com/Homebrew/homebrew-core/commits/master/Formula/c/composer.rb):
 
 ![Click History]({{ "/images/2020/2020-11-04-homebrew-core-composer-history.png" | prepend: site.assets_path }})
 
@@ -85,6 +88,12 @@ Click [Raw](https://raw.githubusercontent.com/Homebrew/homebrew-core/9e6e6a1ca85
 Select and copy the raw formula:
 
 ![Copy code]({{ "/images/2020/2020-11-04-homebrew-core-composer-raw-select.png" | prepend: site.assets_path }})
+
+Disable auto update:
+
+```sh
+export HOMEBREW_NO_AUTO_UPDATE=1
+```
 
 Open the local formula on your machine:
 
