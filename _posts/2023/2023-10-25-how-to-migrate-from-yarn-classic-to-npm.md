@@ -2,6 +2,7 @@
 layout: post
 title: How to migrate from Yarn Classic to NPM
 date: 2023-10-25 19:15:14
+updated: 2023-10-28 12:20:42
 excerpt: How to migrate from Yarn Classic (v1) to NPM.
 categories: yarn npm
 ---
@@ -107,3 +108,9 @@ Then refactor `yarn` to `npm`. For example:
 - Documentation (e.g., README.md)
 - Scripts (e.g., Git hooks)
 - CI (e.g., GitHub Actions)
+
+## Examples
+
+- [remarkablemark/mui-template#495](https://github.com/remarkablemark/mui-template/pull/495)
+- [lilboards/lilboards#1464](https://github.com/lilboards/lilboards/pull/1464)
+- [encrypit/encrypit#304](https://github.com/encrypit/encrypit/pull/304)
