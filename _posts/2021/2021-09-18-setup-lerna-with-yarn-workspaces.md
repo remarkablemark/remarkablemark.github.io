@@ -10,7 +10,7 @@ This post goes over how to set up a [Lerna](https://lerna.js.org/) monorepo with
 
 ## Lerna
 
-Create a new Lerna monorepo with [`lerna init`](https://github.com/lerna/lerna/tree/main/libs/commands/init#readme):
+Create a new Lerna monorepo with [`lerna init`](https://github.com/lerna/lerna/tree/v6/libs/commands/init#readme):
 
 ```sh
 npx lerna init
@@ -28,7 +28,7 @@ tree
 1 directory, 2 files
 ```
 
-_Optional_: To enable [independent versioning mode](https://github.com/lerna/lerna#independent-mode) in `lerna.json`:
+_Optional_: To enable independent versioning mode in `lerna.json`:
 
 ```diff
  {
@@ -53,7 +53,7 @@ Enable Yarn workspaces in [`package.json`](https://classic.yarnpkg.com/en/docs/w
  }
 ```
 
-Then add `npmClient` and `useWorkspaces` to [`lerna.json`](https://github.com/lerna/lerna#lernajson):
+Then add `npmClient` and `useWorkspaces` to `lerna.json`:
 
 ```diff
  {
@@ -64,7 +64,7 @@ Then add `npmClient` and `useWorkspaces` to [`lerna.json`](https://github.com/le
  }
 ```
 
-Now when you run `yarn install`, Lerna [bootstraps](https://github.com/lerna/lerna/tree/main/libs/commands/bootstrap#readme) and [hoists](https://github.com/lerna/lerna/blob/main/doc/hoist.md#readme) node modules to the project root directory:
+Now when you run `yarn install`, Lerna [bootstraps](https://github.com/lerna/lerna/tree/v6/libs/commands/bootstrap#readme) and [hoists](https://github.com/lerna/lerna/blob/v6/doc/hoist.md) node modules to the project root directory:
 
 ```sh
 yarn
