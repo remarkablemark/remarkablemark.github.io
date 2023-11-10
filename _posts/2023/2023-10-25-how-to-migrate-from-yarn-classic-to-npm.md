@@ -111,6 +111,5 @@ Then refactor `yarn` to `npm`. For example:
 
 ## Examples
 
-- [remarkablemark/mui-template#495](https://github.com/remarkablemark/mui-template/pull/495)
+- [remarkablemark/lerna-template#929](https://github.com/remarkablemark/lerna-template/pull/929)
 - [lilboards/lilboards#1464](https://github.com/lilboards/lilboards/pull/1464)
-- [encrypit/encrypit#304](https://github.com/encrypit/encrypit/pull/304)
