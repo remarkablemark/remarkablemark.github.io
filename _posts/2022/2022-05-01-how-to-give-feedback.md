@@ -2,6 +2,7 @@
 layout: post
 title: How to give feedback
 date: 2022-05-01 23:35:35
+updated: 2023-11-20 14:12:13
 excerpt: How to give feedback to your direct report.
 categories: management communication psychology
 ---
@@ -26,9 +27,9 @@ Where should you give feedback? In public or private? It depends. Positive feedb
 
 ## How
 
-How should you give feedback? With clarity, objectivity, and compassion.
+How should you give feedback? With _clarity_, _objectivity_, and _compassion_.
 
-But before giving feedback, always ask for permission first. You can pose the question "_Can I give you feedback?_" or "_Can I make an observation?_" This ensures your direct is in the right mindset to receive feedback. If your direct is unable to receive feedback, delay giving it until he or she is receptive to it.
+Before giving feedback, ask for permission first. You can pose the question "_Can I give you feedback?_" or "_Can I make an observation?_" This ensures your direct is in the right mindset to receive feedback. If your direct is unable to receive feedback, delay giving it until he or she is receptive to it.
 
 Once your direct is ready, your feedback should be [SMART](https://wikipedia.org/wiki/SMART_criteria):
 
@@ -42,7 +43,7 @@ If your feedback is not specific, relevant, or timely, it can get lost. Saying, 
 
 Your feedback shouldn't criticize the person, but focus on the behavior. So make observations, not judgements. The goal of feedback is to encourage good behavior and discourage bad behavior. Thus focus on the action, and word the feedback as cause and effect. "_When you do X, it causes Y_" or "_When you don't speak up during meetings, the team loses a valuable voice._"
 
-Don't attack the person's ego or the receiver will respond defensively. To soften your statement, you can say, "_Correct me if I'm wrong, but it seems like you've been speaking up less during meetings. Is anything the matter?_"
+Don't attack the person's ego or the receiver will respond defensively. To soften your statement, say, "_Correct me if I'm wrong, but it seems like you've been speaking up less during meetings. Is anything the matter?_"
 
 For every negative feedback, provide three positive feedback or else your direct may lose motivation. You can use the **positive-negative-positive** approach, which is to give a positive compliment followed up by a negative feedback to another positive compliment. For example, "_You did a great job calling out risk to the project last week but it felt like you didn't say much during retro. I think if you spoke out more, the team would greatly value your insights._"
 
