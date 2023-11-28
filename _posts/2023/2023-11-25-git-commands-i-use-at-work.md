@@ -2,6 +2,7 @@
 layout: post
 title: Git commands I use at work
 date: 2023-11-25 11:22:14
+updated: 2023-11-27 19:42:38
 excerpt: The top 10 Git commands I use at my job.
 categories: git
 ---
@@ -25,6 +26,12 @@ Show the working status tree with [`git status`](https://git-scm.com/docs/git-st
 
 ```sh
 git status
+```
+
+Show changes in the working tree with [`git diff`](https://git-scm.com/docs/git-diff):
+
+```sh
+git diff
 ```
 
 ## git pull
