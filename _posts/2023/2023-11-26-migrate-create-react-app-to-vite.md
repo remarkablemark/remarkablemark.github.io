@@ -2,22 +2,24 @@
 layout: post
 title: Migrate Create React App to Vite
 date: 2023-11-26 22:18:36
+updated: 2023-11-27 19:45:39
 excerpt: How to migrate from Create React App (CRA) to Vite.
 categories: create react app cra vite
 ---
 
 This post goes over how to migrate from [Create React App](https://create-react-app.dev/) (CRA) to [Vite](https://vitejs.dev/) since the former is [deprecated](https://github.com/reactjs/react.dev/pull/5487#issuecomment-1409720741).
 
-1. [package.json](#packagejson)
-2. [Environment Variables](#environment-variables)
-3. [index.html](#indexhtml)
-4. [vite.config.mjs](#viteconfigmjs)
-5. [Jest](#jest)
-6. [ESLint](#eslint)
-7. [TypeScript](#typescript)
-8. [Port](#port)
-9. [CI](#ci)
-10. [Example](#example)
+- [package.json](#packagejson)
+- [Environment Variables](#environment-variables)
+- [index.html](#indexhtml)
+- [vite.config.mjs](#viteconfigmjs)
+- [manifest.json](#manifestjson)
+- [Jest](#jest)
+- [ESLint](#eslint)
+- [TypeScript](#typescript)
+- [Port](#port)
+- [CI](#ci)
+- [Example](#example)
 
 ## package.json
 
@@ -104,10 +106,10 @@ Move `public/index.html` to the root:
 mv public/index.html .
 ```
 
-Replace `%PUBLIC_URL%` with the correct path:
+Remove `%PUBLIC_URL%` since Vite serves static assets under the [public](https://vitejs.dev/guide/assets#the-public-directory) directory:
 
 ```sh
-sed -i '' -e 's/%PUBLIC_URL%/public/g' index.html
+sed -i '' -e 's/%PUBLIC_URL%//g' index.html
 ```
 
 Add the script tag to `src/index.js` before the closing body tag:
@@ -186,6 +188,56 @@ And update `vite.config.mjs`:
 -  plugins: [react()],
 +  plugins: [react(), commonjs()],
  });
+```
+
+## manifest.json
+
+If you see the error in your browser console:
+
+```
+Manifest: property 'start_url' ignored, URL is invalid.
+```
+
+Then replace `manifest.json` "start_url" with your [absolute or relative URL](https://developer.mozilla.org/docs/Web/Manifest/start_url).
+
+For example:
+
+```diff
+-  "start_url": ".",
++  "start_url": "https://example.com",
+```
+
+If you see the error in your browser console:
+
+```
+Manifest: property 'src' ignored, URL is invalid.
+```
+
+Then replace `manifest.json` "src" with your absolute or relative URL.
+
+For example:
+
+```diff
+   "icons": [
+     {
+-      "src": "favicon.ico",
++      "src": "https://example.com/favicon.ico",
+       "sizes": "64x64 32x32 24x24 16x16",
+       "type": "image/x-icon"
+     },
+     {
+-      "src": "/android-chrome-192x192.png",
++      "src": "https://example.com/android-chrome-192x192.png",
+       "type": "image/png",
+       "sizes": "192x192"
+     },
+     {
+-      "src": "/android-chrome-512x512.png",
++      "src": "https://example.com/android-chrome-512x512.png",
+       "type": "image/png",
+       "sizes": "512x512"
+     }
+   ],
 ```
 
 ## Jest
