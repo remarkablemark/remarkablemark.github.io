@@ -3,7 +3,7 @@ layout: post
 title: Migrate Create React App to Vite
 date: 2023-11-26 22:18:36
 updated: 2023-11-27 19:45:39
-excerpt: How to migrate from Create React App (CRA) to Vite.
+excerpt: Step-by-step instructions on how to migrate from Create React App (CRA) to Vite.
 categories: create react app cra vite
 ---
 
