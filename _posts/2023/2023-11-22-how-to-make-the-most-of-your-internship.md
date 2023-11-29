@@ -2,6 +2,7 @@
 layout: post
 title: How to make the most of your internship
 date: 2023-11-22 21:54:54
+updated: 2023-11-28 19:46:09
 excerpt: 10 ways to make the most out of your internship.
 categories: job career advice
 ---
@@ -53,10 +54,10 @@ Company events are paid events for employees, so go to them. Whether they're tal
 
 ## Network
 
-There's a saying, "It's not what you know, but who you know." Thus, it's important to network, make connections, and build relationships. You never know if one day the person you worked with becomes a referral or reference.
+There's a saying, "It's not what you know, but who you know." Thus, it's important to network, make connections, and build relationships. You never know if one day the person you worked with becomes a referral or a reference.
 
 ## Have fun!
 
 Time is short so have fun and enjoy the moment. Be thankful for the experience and use it as an opportunity to grow.
 
-What do you think? What else can do to make the most out of your internship?
+What did you think? Did I cover all the areas that you can do to make the most of your internship?
