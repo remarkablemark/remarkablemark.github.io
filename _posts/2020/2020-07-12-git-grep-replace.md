@@ -22,7 +22,7 @@ git grep -l -e "$MATCH" --and --not -e "$EXCLUDE" | xargs sed -i "" -e "/$EXCLUD
 
 Here's an example of how to replace `foo` with `bar` in your repository:
 
-```sh
+```bash
 MATCH="foo"
 REPLACE="bar"
 git grep -l "$MATCH" | xargs sed -i "" -e "s/$MATCH/$REPLACE/g"
@@ -30,7 +30,7 @@ git grep -l "$MATCH" | xargs sed -i "" -e "s/$MATCH/$REPLACE/g"
 
 Here's an example of how to replace `foo` with `bar` (but not `foobar`) in your repository:
 
-```sh
+```bash
 MATCH="foo"
 EXCLUDE="foobar"
 REPLACE="bar"
