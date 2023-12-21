@@ -30,7 +30,7 @@ function getEnv() {
   return PropertiesService.getScriptProperties().getProperties();
 }
 
-console.log(getEnv);
+console.log(getEnv());
 ```
 
 Get property value by name:
