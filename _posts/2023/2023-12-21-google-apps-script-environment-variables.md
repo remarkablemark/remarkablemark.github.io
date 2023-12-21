@@ -42,3 +42,32 @@ function getEnv(key) {
 
 console.log(getEnv('MY_SECRET_KEY'));
 ```
+
+## Script
+
+Here's a reusable script to fetch JSON:
+
+```js
+/**
+ * @param {string|undefined} key
+ * @returns {object|string}
+ */
+function getEnv(key) {
+  if (key) {
+    return PropertiesService.getScriptProperties().getProperty(key);
+  }
+  return PropertiesService.getScriptProperties().getProperties();
+}
+```
+
+And it can be called like so:
+
+```js
+// get all properties
+const properties = getEnv();
+console.log(properties);
+
+// get single property
+const value = getEnv('MY_SECRET_KEY');
+console.log(value);
+```
