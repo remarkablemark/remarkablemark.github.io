@@ -76,3 +76,33 @@ To properly POST JSON:
 The payload now shows up in the `data` field in the logs.
 
 Check out [`UrlFetchApp.fetch`](https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app) for more details.
+
+## Script
+
+Here's a reusable script to fetch JSON:
+
+```js
+/**
+ * @param {string} url
+ * @param {Record<string, any>|undefined} params
+ * @returns {any}
+ */
+function fetchJSON(url, params) {
+  const response = UrlFetchApp.fetch(url, {
+    contentType: 'application/json',
+    method: 'post',
+    ...params,
+    payload: JSON.stringify(params.payload),
+  });
+  return JSON.parse(response.getContentText());
+}
+```
+
+And it can be called like so:
+
+```js
+const json = fetchJSON('https://httpbin.org/anything', {
+  foo: 'bar',
+});
+console.log(json);
+```
