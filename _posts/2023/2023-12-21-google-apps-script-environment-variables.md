@@ -50,7 +50,7 @@ Here's a reusable script to fetch JSON:
 ```js
 /**
  * @param {string|undefined} key
- * @returns {object|string}
+ * @returns {string|null|object}
  */
 function getEnv(key) {
   if (key) {
