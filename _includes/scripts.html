@@ -1,10 +1,10 @@
 {% comment %}
 <!-- Google tag (gtag.js) -->
 {% endcomment %}
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2NYQESPF9Y"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-2NYQESPF9Y');
+  gtag('config', '{{ site.google_analytics_id }}');
 </script>
