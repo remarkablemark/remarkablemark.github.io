@@ -2,6 +2,7 @@
 layout: post
 title: How to migrate from Parcel to Vite
 date: 2023-12-24 18:05:49
+updated: 2023-12-25 17:41:07
 excerpt: Step-by-step instructions on how to migrate from Parcel to Vite.
 categories: parcel vite
 ---
@@ -138,7 +139,7 @@ Update your environment variables with the `VITE_` prefix.
 If you're using Parcel's `--public-url` option, replace it with Vite's `--base`:
 
 ```sh
-git grep -l '--public-url' | xargs sed -i '' -e 's/--public-url/--base/g'
+git grep -l '\-\-public-url' | xargs sed -i '' -e 's/--public-url/--base/g'
 ```
 
 If you're running a Vite server in CI, then you'll need to pass the `--host` option:
