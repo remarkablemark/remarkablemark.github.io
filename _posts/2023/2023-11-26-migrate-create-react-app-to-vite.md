@@ -2,7 +2,7 @@
 layout: post
 title: Migrate Create React App to Vite
 date: 2023-11-26 22:18:36
-updated: 2023-11-27 19:45:39
+updated: 2023-12-24 17:59:54
 excerpt: Step-by-step instructions on how to migrate from Create React App (CRA) to Vite.
 categories: create react app cra vite
 ---
@@ -29,13 +29,13 @@ Uninstall [react-scripts](https://www.npmjs.com/package/react-scripts):
 npm uninstall react-scripts
 ```
 
-Install [vite](https://www.npmjs.com/package/vite) dependencies:
+Install [vite](https://www.npmjs.com/package/vite):
 
 ```sh
 npm install --save-dev vite @vitejs/plugin-react-swc
 ```
 
-Update scripts in `package.json`:
+Update scripts:
 
 ```diff
  {
@@ -65,9 +65,14 @@ Then replace `REACT_APP` with `VITE_APP` in `.env`:
 git grep -l REACT_APP | xargs sed -i '' -e 's/REACT_APP/VITE_APP/g'
 ```
 
-You should also replace `process.env.NODE_ENV` checks with `import.meta.env.DEV`.
+Replace `process.env.NODE_ENV` checks with `import.meta.env.DEV`. For example:
 
-If you're using TypeScript, you can create a type declaration file:
+```diff
+-if (process.env.NODE_ENV === 'development') {
++if (import.meta.env.DEV) {
+```
+
+If you're using TypeScript, create a type declaration file:
 
 ```ts
 /// <reference types="vite/client" />
@@ -394,7 +399,7 @@ git grep -l 'localhost:3000' | xargs sed -i '' -e 's/localhost:3000/localhost:51
 
 ## CI
 
-If you're running Vite in CI, you may need to pass the `--host` option:
+If you're running the Vite server in CI, you'll need to pass the `--host` option:
 
 ```sh
 npx vite --host
