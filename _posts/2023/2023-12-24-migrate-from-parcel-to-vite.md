@@ -16,7 +16,7 @@ This post goes over how to migrate from [Parcel](https://parceljs.org/) to [Vite
 - [TypeScript](#typescript)
 - [Port](#port)
 - [CI](#ci)
-- [Example](#example)
+- [Examples](#examples)
 
 ## package.json
 
@@ -148,7 +148,7 @@ If you're running a Vite server in CI, then you'll need to pass the `--host` opt
 npx vite --host
 ```
 
-## Example
+## Examples
 
 - [remarkablegames/button-clicker](https://github.com/remarkablegames/button-clicker/pull/310)
 - [remarkablegames/phaser-template](https://github.com/remarkablegames/phaser-template/pull/432)
