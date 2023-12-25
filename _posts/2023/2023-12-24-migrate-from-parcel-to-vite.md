@@ -151,3 +151,4 @@ npx vite --host
 ## Example
 
 - [remarkablegames/button-clicker](https://github.com/remarkablegames/button-clicker/pull/310)
+- [remarkablegames/phaser-template](https://github.com/remarkablegames/phaser-template/pull/432)
