@@ -31,7 +31,7 @@ Install [vite](https://www.npmjs.com/package/vite):
 npm install --save-dev vite
 ```
 
-Remove "source" and update "scripts":
+Remove "source" and update npm "scripts":
 
 ```diff
  {
@@ -141,7 +141,7 @@ If you're using Parcel's `--public-url` option, replace it with Vite's `--base`:
 git grep -l '--public-url' | xargs sed -i '' -e 's/--public-url/--base/g'
 ```
 
-If you're running the Vite server in CI, you'll need to pass the `--host` option:
+If you're running a Vite server in CI, then you'll need to pass the `--host` option:
 
 ```sh
 npx vite --host

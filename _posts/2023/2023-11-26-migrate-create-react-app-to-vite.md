@@ -35,7 +35,7 @@ Install [vite](https://www.npmjs.com/package/vite):
 npm install --save-dev vite @vitejs/plugin-react-swc
 ```
 
-Update scripts:
+Update npm "scripts":
 
 ```diff
  {
@@ -399,7 +399,7 @@ git grep -l 'localhost:3000' | xargs sed -i '' -e 's/localhost:3000/localhost:51
 
 ## CI
 
-If you're running the Vite server in CI, you'll need to pass the `--host` option:
+If you're running a Vite server in CI, then you'll need to pass the `--host` option:
 
 ```sh
 npx vite --host
