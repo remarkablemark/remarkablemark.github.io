@@ -26,7 +26,7 @@ Create three columns:
 | -------------- | ---------------------- | ------------ |
 |                |                        |              |
 
-Or name it differently:
+Or with different names:
 
 | Hit | Miss | Question |
 | --- | ---- | -------- |
