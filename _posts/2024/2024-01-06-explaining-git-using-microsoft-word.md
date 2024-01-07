@@ -74,7 +74,7 @@ git push
 [Pulling from a remote repository and integrating the contents to your local repository](https://git-scm.com/docs/git-pull) is the same as syncing (downloading) your local Microsoft Word Document from the cloud (OneDrive):
 
 ```sh
-git push
+git pull
 ```
 
 ## Merge
@@ -101,7 +101,7 @@ Why does Git have so many steps? Because Git promotes **distributed workflows**.
 | Repository     | Document                   |
 | Origin         | OneDrive (Cloud)           |
 | Fork           | Duplicate on OneDrive      |
-| Clone          | Download                   |
+| Clone          | Download from OneDrive     |
 | Push           | Upload (Sync to Cloud)     |
 | Pull           | Download (Sync from Cloud) |
 | Commit         | Save                       |
