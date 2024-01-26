@@ -1,25 +1,23 @@
 ---
 layout: post
-title: Migrate husky 4 to 8
+title: Migrate husky 4 to 9
 date: 2021-02-28 16:16:29
-updated: 2023-04-12 00:00:57
-excerpt: How to migrate husky 4 to 8 using the npm package husky-4-to-5.
+updated: 2024-01-25 23:58:37
+excerpt: How to migrate husky 4 to 9 using the npm package husky-4-to-5.
 categories: npm npx cli husky migration
 ---
 
-> **TL;DR**: migrate husky from 4 to 8:
+> **TL;DR**: migrate husky from 4 to 9:
 >
 > ```sh
 > npx husky-4-to-5
 > ```
 
-This post goes over how to migrate [husky](https://github.com/typicode/husky) from 4 to 8 using the npm package [husky-4-to-5](https://github.com/remarkablemark/husky-4-to-5).
+This post goes over how to migrate [husky](https://github.com/typicode/husky) from 4 to 9 using the npm package [husky-4-to-5](https://github.com/remarkablemark/husky-4-to-5).
 
 ## Problem
 
-[Husky](https://typicode.github.io/husky/)'s [maintainer](https://github.com/typicode) created a migration tool [husky-4-to-5](https://github.com/typicode/husky-4-to-5) but it didn't suit my needs.
-
-It requires you to be on npm 7+ and there's a lot of manual work of updating scripts and removing leftover files:
+[Husky](https://typicode.github.io/husky/)'s [maintainer](https://github.com/typicode) created a migration tool [husky-4-to-8](https://github.com/typicode/husky-4-to-8) but it didn't suit my needs because there's a lot of manual work of updating scripts and removing leftover files:
 
 ```sh
 npm exec -- github:typicode/husky-4-to-5 --package-manager npm
