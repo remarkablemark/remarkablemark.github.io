@@ -6,22 +6,22 @@ excerpt: How to hover over an element with WebDriverJS (Selenium Webdriver for N
 categories: selenium webdriver webdriverjs nodejs javascript
 ---
 
-Assuming you have a [driver]({% post_url 2016/2016-11-25-webdriverjs-launch-browser %}) launched and found the following [WebElement](https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/lib/webdriver_exports_WebElement.html):
+Assuming you have a [driver]({% post_url 2016/2016-11-25-webdriverjs-launch-browser %}) launched and found the following [WebElement](https://www.selenium.dev/documentation/webdriver/elements/finders/):
 
 ```js
 const myElement = driver.findElement({ css: '#myElement' });
 ```
 
-You can hover over it using the [mouseMove](https://www.selenium.dev/selenium/docs/api/javascript/module/selenium-webdriver/lib/actions_exports_LegacyActionSequence.html#mouseMove) action sequence:
+You can hover over it using the [mouseMove](https://www.selenium.dev/documentation/webdriver/actions_api/mouse/) action sequence:
 
 ```js
 driver.actions().mouseMove(myElement).perform();
 ```
 
-Alternatively, you could move the mouse over the element [location](https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/lib/webdriver_exports_WebElement.html#getLocation):
+Alternatively, you could move the mouse over the element [location](https://www.selenium.dev/documentation/webdriver/actions_api/mouse/):
 
 ```js
-myElement.getLocation().then(location => {
+myElement.getLocation().then((location) => {
   driver.actions().mouseMove(location).perform();
 });
 ```

@@ -8,7 +8,7 @@ categories: async/await promise webdriverjs selenium webdriver nodejs javascript
 
 ## Promise manager
 
-Before async/await, the only way to use [WebDriverJS](https://github.com/SeleniumHQ/selenium/wiki/WebDriverJs) was through its [promise manager](https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/lib/promise.html).
+Before async/await, the only way to use [WebDriverJS](https://github.com/SeleniumHQ/selenium/wiki/WebDriverJs) was through its promise manager.
 
 The example below performs a Google search:
 
@@ -21,14 +21,14 @@ const driver = new Builder().forBrowser('chrome').build();
 
 // navigates to Google and then prints title
 driver.get('https://www.google.com/');
-driver.getTitle().then(title => console.log('getTitle:', title));
+driver.getTitle().then((title) => console.log('getTitle:', title));
 
 // enters `webdriver` in search input and then presses Enter key
 driver.findElement(By.name('q')).sendKeys('webdriver', Key.ENTER);
 
 // waits up to 1 second for title to change and then prints title
 driver.wait(until.titleContains('webdriver'), 1000);
-driver.getTitle().then(title => console.log('getTitle:', title));
+driver.getTitle().then((title) => console.log('getTitle:', title));
 
 // closes browser
 driver.quit();

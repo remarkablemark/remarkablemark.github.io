@@ -256,7 +256,7 @@ When('I search for {string}', async function (string) {
 });
 ```
 
-> It's recommended to use [wait until](https://www.selenium.dev/selenium/docs/api/javascript/module/selenium-webdriver/lib/until.html) instead of [sleep](https://www.selenium.dev/selenium/docs/api/javascript/module/selenium-webdriver/lib/webdriver_exports_WebDriver.html#sleep) so the test runs fast and doesn't become flaky.
+> It's recommended to use [wait](https://www.selenium.dev/documentation/webdriver/waits/) instead of sleep so the test runs fast and doesn't become flaky.
 
 ### Then
 
@@ -384,4 +384,4 @@ Check out [WebDriverJS recipes](https://github.com/remarkablemark/webdriverjs-re
 - [WebDriverJS: async/await]({% post_url 2019/2019-08-27-webdriverjs-async-await %})
 - [Using geckodriver with Selenium]({% post_url 2016/2016-11-06-selenium-geckodriver %})
 - [BrowserStack: Selenium with Cucumber JS](https://www.browserstack.com/docs/automate/selenium/getting-started/nodejs/cucumber-js)
-- [selenium-webdriver documentation](https://www.selenium.dev/selenium/docs/api/javascript/index.html)
+- [selenium-webdriver documentation](https://www.selenium.dev/documentation/)
