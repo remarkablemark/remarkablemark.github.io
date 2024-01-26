@@ -11,7 +11,7 @@ categories: webdriverjs selenium webdriver firefox binary nodejs javascript
 
 ## setBinary
 
-To initialize a browser with a _different_ binary, use [Options](https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/firefox_exports_Options.html) [`setBinary`](https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/firefox_exports_Options.html#setBinary).
+To initialize a browser with a _different_ binary, use [Options](https://www.selenium.dev/documentation/webdriver/browsers/firefox/#options) [`setBinary`](https://www.selenium.dev/documentation/webdriver/browsers/firefox/#start-browser-in-a-specified-location).
 
 The following example builds a _FirefoxDriver_ with a specified binary:
 

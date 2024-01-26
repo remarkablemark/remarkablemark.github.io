@@ -15,14 +15,14 @@ There are 2 ways to check if an element exists with [WebDriverJS](https://github
 
 ## findElement
 
-You can use [findElement](https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/chrome_exports_Driver.html#findElement) to check if `NoSuchElementError` is thrown:
+You can use [findElement](https://www.selenium.dev/documentation/webdriver/elements/finders/) to check if `NoSuchElementError` is thrown:
 
 ```js
 driver
   .findElement({
     className: 'nonexistent-class',
   })
-  .catch(error => {
+  .catch((error) => {
     if (error.name === 'NoSuchElementError') {
       // handle when element is not found
     }
@@ -36,7 +36,7 @@ driver
   .findElement({
     className: 'nonexistent-class',
   })
-  .then(null, error => {
+  .then(null, (error) => {
     if (error.name === 'NoSuchElementError') {
       // handle when element is not found
     }
@@ -45,14 +45,14 @@ driver
 
 ## findElements
 
-You can use [findElements](https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/chrome_exports_Driver.html#findElements) to check if the length of elements is 0:
+You can use [findElements](https://www.selenium.dev/documentation/webdriver/elements/finders/) to check if the length of elements is 0:
 
 ```js
 driver
   .findElements({
     className: 'nonexistent-class',
   })
-  .then(elements => {
+  .then((elements) => {
     if (elements.length === 0) {
       // handle when element is not found
     }

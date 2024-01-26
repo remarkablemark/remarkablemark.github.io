@@ -50,7 +50,7 @@ Check out article [WebDriverJS: Launch a browser]({% post_url 2016/2016-11-25-we
 
 ## Chrome options
 
-Before initializing the driver, add argument `user-data-dir` or `--user-data-dir` to [Chrome options](https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/chrome_exports_Options.html):
+Before initializing the driver, add argument `user-data-dir` or `--user-data-dir` to [Chrome options](https://www.selenium.dev/documentation/webdriver/browsers/chrome/#options):
 
 ```js
 const { Options } = require('selenium-webdriver/chrome');
