@@ -24,9 +24,8 @@ jobs:
 
       # https://github.com/gjtorikian/html-proofer
       - name: Run tests
-        run: |
-          bundle exec htmlproofer \
-            --check-external-hash false \
-            --ignore-status-codes '0,301,400,401,403,429,999' \
-            --ignore-urls '/img.shields.io/,regexr.com/,/vagrantup.com/' \
-            ./_site/
+        run: >
+          bundle exec htmlproofer _site
+            --check-external-hash false
+            --ignore-status-codes '0,301,400,401,403,429,999'
+            --ignore-urls '/img.shields.io/,regexr.com/,/vagrantup.com/'
