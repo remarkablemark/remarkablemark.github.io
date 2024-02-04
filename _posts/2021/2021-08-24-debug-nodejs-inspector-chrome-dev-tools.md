@@ -39,7 +39,3 @@ Similar to [`--inspect`](#--inspect) except it breaks before the user code start
 ```sh
 node --inspect-brk <file>
 ```
-
-## Resources
-
-- [Node.js Debugging Guide](https://nodejs.org/en/docs/guides/debugging-getting-started/)
