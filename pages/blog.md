@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Blog
-excerpt: remarkablemark's blog.
+# excerpt: remarkablemark's blog.
 permalink: /blog/
 ---
 
