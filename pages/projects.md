@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Projects
-# excerpt: remarkablemark projects.
+excerpt: remarkablemark projects.
 permalink: /projects/
 ---
 
