@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Support
-# excerpt: Support remarkablemark via Patreon, Ko-fi, Liberapay, Teespring, and GitHub Sponsors.
+excerpt: Support remarkablemark via Patreon, Ko-fi, Liberapay, Teespring, and GitHub Sponsors.
 permalink: /support/
 ---
 

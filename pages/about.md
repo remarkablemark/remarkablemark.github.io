@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-# excerpt: About remarkablemark.
+excerpt: About remarkablemark.
 permalink: /about/
 ---
 
