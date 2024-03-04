@@ -10,7 +10,7 @@ categories: npm cli binary
 Run [`conventional-release-setup`](https://www.npmjs.com/package/conventional-release-setup) in your command-line to enable your project to be released with [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```sh
-npx conventional-release-setup
+npx conventional-release-setup@latest
 ```
 
 ## Motivation
