@@ -6,7 +6,7 @@ excerpt: How to fix React Native Redux Toolkit error.
 categories: react native redux toolkit
 ---
 
-This post goes over how to fix [React Native](https://reactnative.dev/) [Redux Toolkit](https://redux-toolkit.js.org/) error.
+This post goes over how to fix [React Native](https://reactnative.dev/) [Redux Toolkit](https://redux-toolkit.js.org/) error (see [#4324](https://github.com/reduxjs/redux-toolkit/issues/4324)).
 
 ## Error
 
