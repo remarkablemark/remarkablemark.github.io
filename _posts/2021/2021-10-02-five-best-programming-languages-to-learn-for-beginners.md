@@ -26,7 +26,7 @@ Computer programmers are responsible for your reliable and favorite mobile appli
 
 ## Python
 
-Python, according to the [Stack Overflow Developer Survey (2020)](https://insights.stackoverflow.com/survey/2020/), is incredibly one of the most common programming languages in the world today. Because of its readability, many beginner programmers lean on this as their entryway to other languages. Python is free and is open-source. As a result, it has an array of packages to use and a large community. Programmers also find it user-friendly since it allows easy integration with web services, has simple data structures, and works with GUI-based desktop applications. It’s also used for machine learning and data science. Python is highly popular to the gaming developers community as it can be used to create video games through its 2D imaging and 3D animation packages.
+Python, according to the [Stack Overflow Developer Survey (2020)](https://survey.stackoverflow.co/2020#most-popular-technologies), is incredibly one of the most common programming languages in the world today. Because of its readability, many beginner programmers lean on this as their entryway to other languages. Python is free and is open-source. As a result, it has an array of packages to use and a large community. Programmers also find it user-friendly since it allows easy integration with web services, has simple data structures, and works with GUI-based desktop applications. It’s also used for machine learning and data science. Python is highly popular to the gaming developers community as it can be used to create video games through its 2D imaging and 3D animation packages.
 
 ## JavaScript
 
