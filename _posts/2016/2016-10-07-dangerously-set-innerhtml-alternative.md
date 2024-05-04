@@ -1,21 +1,25 @@
 ---
 layout: post
 title: Dangerously set innerHTML alternative
-date: 2016-10-07 13:36:00 -4000
+date: 2016-10-07 13:36:00
 excerpt: An alternative to React's dangerouslySetInnerHTML is html-react-parser, which converts an HTML string to React elements.
 categories: react javascript babel html npm
 ---
 
 There may be an occasion that you need to render an HTML string when using [React](https://facebook.github.io/react/).
 
-In most situations, [dangerouslySetInnerHTML](https://facebook.github.io/react/docs/dom-elements.html#dangerouslysetinnerhtml) should suffice:
+In most situations, [dangerouslySetInnerHTML](https://react.dev/reference/react-dom/components/common#dangerously-setting-the-inner-html) should suffice:
 
 {% raw %}
+
 ```js
-<div dangerouslySetInnerHTML={{
-    __html: '<em>foo</em>'
-}} />
+<div
+  dangerouslySetInnerHTML={{
+    __html: '<em>foo</em>',
+  }}
+/>
 ```
+
 {% endraw %}
 
 But are there any other alternatives?
@@ -33,11 +37,7 @@ npm install html-react-parser react react-dom
 Now you can do something like this:
 
 ```js
-<div>
-    {require('html-react-parser')(
-        '<em>foo</em>'
-    )}
-</div>
+<div>{require('html-react-parser')('<em>foo</em>')}</div>
 ```
 
 When parsing the HTML string, you can even replace HTML elements with your own custom React elements:
@@ -46,14 +46,14 @@ When parsing the HTML string, you can even replace HTML elements with your own c
 import Parser from 'html-react-parser';
 
 <div>
-    {Parser('<em>foo</em>', {
-        replace: (domNode) => {
-            if (domNode.name === 'em') {
-                return <strong>bar</strong>;
-            }
-        }
-    })}
-</div>
+  {Parser('<em>foo</em>', {
+    replace: (domNode) => {
+      if (domNode.name === 'em') {
+        return <strong>bar</strong>;
+      }
+    },
+  })}
+</div>;
 ```
 
 Want to play with it some more? Check out the [repository](https://github.com/remarkablemark/html-react-parser) and this [fiddle](https://jsfiddle.net/remarkablemark/7v86d800/):

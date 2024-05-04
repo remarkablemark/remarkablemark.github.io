@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Enzyme: get root DOM node"
-date: 2017-05-02 21:55:00 -4000
+title: 'Enzyme: get root DOM node'
+date: 2017-05-02 21:55:00
 excerpt: How to get the root or outer DOM node of a React component with enzyme.
 categories: react enzyme test
 ---
@@ -41,7 +41,7 @@ const wrapper = mount(<FunctionalComponent />);
 wrapper.getDOMNode(); // throws an error
 ```
 
-You'll need to use [findDOMNode](https://facebook.github.io/react/docs/react-dom.html#finddomnode) on the wrapper's node:
+You'll need to use [findDOMNode](https://react.dev/reference/react-dom/findDOMNode) on the wrapper's node:
 
 ```js
 import { findDOMNode } from 'react-dom';
