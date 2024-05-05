@@ -36,11 +36,12 @@ I did a recursive search for `UIGraphicsBeginImageContext` in my working directo
 grep -r UIGraphicsBeginImageContext
 ```
 
-I located the dependency from `node_modules` that caused the error:
+I located the files from `node_modules` that used the deprecated function:
 
 ```
-Binary file ./node_modules/react-native-image-crop-picker/ios/src/.Compression.m matches
+./node_modules/react-native-image-crop-picker/ios/QBImagePicker/QBImagePicker/QBAlbumsViewController.m:    UIGraphicsBeginImageContext(size);
 ./node_modules/react-native-image-crop-picker/ios/src/Compression.m:    UIGraphicsBeginImageContext(newSize);
+./node_modules/react-native-image-crop-picker/ios/src/UIImage+Resize.m:   UIGraphicsBeginImageContextWithOptions(dstSize, NO, self.scale);
 ```
 
 These were the offending lines of code:
