@@ -8,7 +8,7 @@ categories: ios react-native mobile error bug
 
 ## Problem
 
-I upgraded a React Native mobile app to iOS 17 and encountered a crash while testing in BrowserStack:
+I upgraded a React Native mobile app to [iOS 17](https://developer.apple.com/news/upcoming-requirements/?id=04292024a) and encountered a crash while testing in BrowserStack:
 
 ```
 Terminating app due to uncaught exception 'NSInternalInconsistencyException'
