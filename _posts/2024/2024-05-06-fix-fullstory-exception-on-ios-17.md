@@ -50,4 +50,11 @@ Then ran `pod install` so `ios/Podfile.lock` is updated:
 bundle exec pod install --project-directory=ios # cd ios; pod install; cd -
 ```
 
+I also updated `android/build.gradle` to be consistent:
+
+```groovy
+-        classpath 'com.fullstory:gradle-plugin-local:1.42.0'
++        classpath 'com.fullstory:gradle-plugin-local:1.48.0'
+```
+
 After restarting the React Native app, the error no longer showed up.
