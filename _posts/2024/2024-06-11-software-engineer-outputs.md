@@ -2,7 +2,7 @@
 layout: post
 title: Software Engineer Outputs
 date: 2024-06-11 19:49:41
-excerpt: A software engineer's outputs are work-related and non-work related.
+excerpt: "A software engineer's outputs can be described by 2 parts: work related and non-work related."
 categories: software engineer work management business organization
 ---
 
@@ -30,6 +30,6 @@ Non-work related outputs include:
 
 - HR tasks like quarterly review cycles and 360 reviews
 - Training and certification
-- Non-work meetings like teambuilding and company events
+- Non-work meetings like team building and company events
 
 Non-work related outputs do not deliver value to the user but they help the business and employees improve their functions. If non-work related matters are done correctly, it should enhance the work-related outputs. For example, getting certified in AWS can make the engineer more effective at releasing software.
