@@ -2,6 +2,7 @@
 layout: post
 title: Software Engineer Outputs
 date: 2024-06-11 19:49:41
+updated: 2024-06-13 23:51:55
 excerpt: "A software engineer's outputs can be described by 2 parts: work related and non-work related."
 categories: software engineer work management business organization
 ---
@@ -20,9 +21,9 @@ Work-related outputs include:
 - Interactions in project management tools like GitHub, Jira, and Slack\*
 - Activities like standup, planning, retrospective, and pairing\*
 
-_\*Communication and collaboration can be considered as an output._
+_\*Communication and collaboration can be considered as outputs._
 
-Work-related outputs should deliver value to the end user that helps the business make money, save money, and/or improve processes. For example, building a feature that allows the user to purchase a product on the platform is a unit of work that improves the business's bottom line.
+Work-related outputs should deliver value to the end user that helps the business make money, save money, and/or improve processes. For example, building a feature that allows the user to purchase a product from the platform is a unit of work that improves the business's bottom line.
 
 ## Non-work related
 
