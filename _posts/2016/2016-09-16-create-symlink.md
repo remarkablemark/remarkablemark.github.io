@@ -2,19 +2,20 @@
 layout: post
 title: How to create a symlink
 date: 2016-09-16 22:29:00
-excerpt: How to create a symbolic link or symlink.
-categories: symlink symbolic link
+updated: 2024-06-14 11:50:59
+excerpt: How to create a symbolic link (symlink).
+categories: symlink symbolic link bash
 ---
 
-Create a **symlink** (symbolic link) to reference another file or directory:
+Create a **symlink** (symbolic link) to alias another file or directory:
 
 ```sh
 ln -s <source> <destination>
 ```
 
-## Example
+## Usage
 
-Given the following directory structure:
+Given the directory structure:
 
 ```
 .
@@ -29,7 +30,7 @@ You can create a symlink like below:
 ln -s path/to/source path/to/target
 ```
 
-You will now have the following:
+You'll now have the following:
 
 ```
 .
@@ -61,9 +62,15 @@ Also, if you don't want the symlink to be relative, then make the path absolute:
 ln -s "$(pwd)/path/to/source" path/to/target
 ```
 
+Or use `realpath`:
+
+```sh
+ln -s "$(realpath path/to/source)" path/to/target
+```
+
 This ensures the symlink still points to the expected location even if it's moved.
 
-For more information, check out the manual page for the `ln` command:
+Check out the manual page for more information:
 
 ```sh
 man ln
