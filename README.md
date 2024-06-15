@@ -3,7 +3,7 @@
 [![build](https://github.com/remarkablemark/remarkablemark.github.io/actions/workflows/build.yml/badge.svg)](https://github.com/remarkablemark/remarkablemark.github.io/actions/workflows/build.yml)
 ![GitHub last commit](https://badgen.net/github/last-commit/remarkablemark/remarkablemark.github.io)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/remarkablemark/remarkablemark.github.io)
-[![Discord](https://img.shields.io/discord/422421589582282752.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://b.remarkabl.org/discord)
+[![Discord](https://badgen.net/discord/online-members/zkS3QDV?cache=300&icon=discord)](https://b.remarkabl.org/discord)
 
 [Site](https://b.remarkabl.org/mark) of [remarkablemark](https://b.remarkabl.org/github). Built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/).
 
