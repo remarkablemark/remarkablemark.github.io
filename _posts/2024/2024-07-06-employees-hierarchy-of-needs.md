@@ -37,7 +37,7 @@ Safety and security needs are important but not as vital as physiological needs.
 Also known as social needs, these include a desire to be loved, to belong, to feel accepted, and not to be lonely. These needs can be satisfied by:
 
 - Workplace relationships
-- Teambuilding activities
+- Team-building activities
 - Social events
 - Company meetings
 
