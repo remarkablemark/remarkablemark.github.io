@@ -18,7 +18,7 @@ You must have an insatiable thirst for knowledge since you're constantly consumi
 
 ## Scientific
 
-Programmers spend a good amount of time troubleshooting their code. Thus, those who use the [scientific method](https://wikipedia.org/wiki/Scientific_method) will have a better time getting their programs to run. So what does this entail? Well, you'll need to form hypotheses and test them. You must also have patience since the act of [debugging](https://p5js.org/learn/debugging.html) can be an agonizing experience. If you give up easily and aren't unwilling to persevere until you find a solution, then programming may not be for you.
+Programmers spend a good amount of time troubleshooting their code. Thus, those who use the [scientific method](https://wikipedia.org/wiki/Scientific_method) will have a better time getting their programs to run. So what does this entail? Well, you'll need to form hypotheses and test them. You must also have patience since the act of [debugging](https://p5js.org/tutorials/field-guide-to-debugging/) can be an agonizing experience. If you give up easily and aren't unwilling to persevere until you find a solution, then programming may not be for you.
 
 ## Disciplined
 
