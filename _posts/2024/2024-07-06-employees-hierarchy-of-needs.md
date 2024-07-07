@@ -45,6 +45,7 @@ Also known as social needs, these include a desire to be loved, to belong, to fe
 
 All employees have a need to be respected, valued by their colleagues, and have a sense that they're contributing to the organization. High self-esteem leads to confidence, whereas low self-esteem leads to feelings of inferiority. Employees can feel valued and have high self-esteem by:
 
+- Getting bonuses, promotions, and/or salary increases
 - Receiving praise from their manager/coworkers
 - Hitting their goals
 - Being on top of the leaderboard (performance)
