@@ -8,7 +8,7 @@ categories: help communication
 
 How to know when you should ask for help?
 
-Given your work is estimated on a [Fibonacci scale](<https://wikipedia.org/wiki/Fibonacci_scale_(agile)>). For example:
+Given your work is estimated on a [Fibonacci sequence](https://wikipedia.org/wiki/Planning_poker). For example:
 
 - 1 point = making a copy change
 - 2 points = updating a small section
