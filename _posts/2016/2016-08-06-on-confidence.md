@@ -1,7 +1,7 @@
 ---
 layout: post
 title: On confidence
-date: 2016-08-06 08:26:00 -4000
+date: 2016-08-06 08:26:00
 excerpt: Where does confidence come from? Does it come from mastery or does it come from a perception of ourself?
 categories: confidence philosophy psychology reflection essay
 ---
