@@ -83,7 +83,7 @@ Fullstack JavaScript saves developers the cost of context switching between the 
 
 Node.js has many capabilities that fulfill the goals of businesses. If you’re looking to hire developers, why hire multiple developers across the stack when you can hire a single fullstack JavaScript developer that does everything?
 
-These are the ten best Node.js development trends for the year 2022. As time passes, we see that [startups continue to use Node.js](https://trio.dev/blog/companies-use-node-js) because of the flexibility and ease that it provides. As a result, we’ll continue to see trends develop as the JavaScript environment continues to grow and progress.
+These are the ten best Node.js development trends for the year 2022. As time passes, we see that startups continue to use Node.js because of the flexibility and ease that it provides. As a result, we’ll continue to see trends develop as the JavaScript environment continues to grow and progress.
 
 > About the Author:
 >
