@@ -2,6 +2,7 @@
 layout: post
 title: Release Please manifest config
 date: 2023-12-20 19:31:26
+updated: 2024-08-28 10:20:34
 excerpt: How to migrate to the Release Please manifest config.
 categories: release please manifest config github actions
 ---
@@ -10,7 +11,7 @@ This post goes over how to migrate to the [Release Please](https://github.com/go
 
 ## Problem
 
-In [Release Please Action](https://github.com/google-github-actions/release-please-action) v3 and below, advanced options can be configured via GitHub Actions inputs in the workflow:
+In [Release Please Action](https://github.com/googleapis/release-please-action) v3 and below, advanced options can be configured via GitHub Actions inputs in the workflow:
 
 ```yml
 # .github/workflows/release-please.yml
@@ -24,7 +25,7 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: google-github-actions/release-please-action@v3
+      - uses: googleapis/release-please-action@v3
         with:
           release-type: node
           pull-request-title-pattern: 'build${scope}: release${component} ${version}'
@@ -32,7 +33,7 @@ jobs:
             README.md
 ```
 
-But in [v4](https://github.com/google-github-actions/release-please-action#upgrading-from-v3-to-v4), the GitHub Actions inputs were deprecated and moved to the config file.
+But in [v4](https://github.com/googleapis/release-please-action#upgrading-from-v3-to-v4), the GitHub Actions inputs were deprecated and moved to the config file.
 
 ## Solution
 
@@ -79,7 +80,7 @@ Add the [`$schema`](https://raw.githubusercontent.com/googleapis/release-please/
 }
 ```
 
-> If your monorepo has different configurations for each package, then update the `packages` field. See the [documentation](https://github.com/google-github-actions/release-please-action#package-options) for more details.
+> If your monorepo has different configurations for each package, then update the `packages` field. See the [documentation](https://github.com/googleapis/release-please-action#package-options) for more details.
 
 Upgrade the action to v4 and remove the options from the GitHub Actions workflow:
 
@@ -95,7 +96,7 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: google-github-actions/release-please-action@v4
+      - uses: googleapis/release-please-action@v4
 ```
 
 ## Example
