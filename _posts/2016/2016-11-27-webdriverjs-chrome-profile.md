@@ -18,7 +18,7 @@ But did you know, there's a way to initialize a driver _with_ a browser profile.
 You need the following installed:
 
 - [Chrome browser](https://www.google.com/chrome/)
-- [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
+- [ChromeDriver](https://developer.chrome.com/docs/chromedriver/downloads)
 
 Install Chrome browser with Homebrew:
 
