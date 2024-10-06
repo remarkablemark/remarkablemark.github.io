@@ -29,7 +29,7 @@ Safety and security needs are important but not as vital as physiological needs.
 
 - [Psychological safety](https://wikipedia.org/wiki/Psychological_safety)
 - [HR](https://wikipedia.org/wiki/Human_resources)
-- Workplace security (if working at an office)
+- Workplace security (if working in an office)
 - Neighborhood security
 
 ## Love and Belonging
