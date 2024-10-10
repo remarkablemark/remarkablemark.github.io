@@ -2,7 +2,7 @@
 layout: post
 title: Expectations of my direct reports
 date: 2021-08-01 23:38:57
-updated: 2021-08-05 23:11:10
+updated: 2024-10-10 15:11:38
 excerpt: I expect my direct reports to be coachable, direct, and committed.
 categories: philosophy management
 ---
@@ -21,13 +21,13 @@ Coachable people are receptive to **feedback**. They understand that feedback is
 
 ## Direct
 
-I want my directs to be **honest** and **transparent** with me. I want my directs to share their motivations and goals with me. I want to know what makes them happy and what makes them sad.
+I want my directs to be **honest** and **transparent** with me. I want them to share their goals and aspirations with me. I want to know what makes them happy, what makes them sad, and what makes them tick.
 
-Accordingly, I want to be told what _I need to hear_ rather than what _I want to hear_. When things are going well, tell me. When things aren't going well, tell me. If my directs are willing to be vulnerable and share their issues with me, I can make their issues my problem and find ways to solve them.
+Accordingly, I want to be told what _I need to hear_ rather than what _I want to hear_. When things are going well, tell me. When things aren't going well, tell me. If my directs are willing to be vulnerable and share their issues with me, I can make their issues _my_ problem and find ways to solve them.
 
 I'm not perfect and I can't guarantee that I can solve every problem that comes my way, but calling them out and creating awareness will help me understand their perspectives.
 
-Lastly, I want my directs to have the **courage** to tell me when I'm doing a bad job. Being able to give good [feedback]({% post_url 2022/2022-05-01-how-to-give-feedback %}) is another trait I look for in people.
+Lastly, I want my directs to have the **courage** to tell me when I'm not doing a good job. Being able to give solid [feedback]({% post_url 2022/2022-05-01-how-to-give-feedback %}) is another trait I look for in people.
 
 ## Committed
 
