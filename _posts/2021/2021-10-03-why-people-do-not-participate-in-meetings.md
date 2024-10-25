@@ -22,8 +22,8 @@ A lack of context means participants aren't familiar with the topic. The moderat
 
 ## Lack trust
 
-A lack of trust means participants don't feel safe talking about the topic. The moderator should create a secure environment so people feel protected from embarrassment and risks. Here, it's about "how" the meeting is conducted that ensures [psychological safety](https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/).
+A lack of trust means participants don't feel safe talking about the topic. The moderator should create a secure environment so people feel protected from embarrassment and risks. Here, it's about "how" the meeting is conducted that ensures [psychological safety](https://www.thinkwithgoogle.com/intl/en-emea/future-of-marketing/management-and-culture/five-dynamics-effective-team/).
 
 ## Conclusion
 
-Once you have all three ingredients, you can achieve [productive meetings](https://rework.withgoogle.com/guides/understanding-team-effectiveness/steps/identify-dynamics-of-effective-teams/). Do you agree or disagree with the reasons above? Let me know in the comment section below.
+Once you have all three ingredients, you can achieve [productive meetings](https://www.thinkwithgoogle.com/intl/en-emea/future-of-marketing/management-and-culture/five-dynamics-effective-team/). Do you agree or disagree with the reasons above? Let me know in the comment section below.
