@@ -67,6 +67,7 @@ module.exports = {
           ),
         };
       }
+      return context.resolveRequest(context, moduleName, platform);
     },
   },
 };
