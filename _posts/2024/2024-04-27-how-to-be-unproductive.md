@@ -28,7 +28,7 @@ Hence, to sabotage this phase, one needs to make the planning of work as complex
 - Force approvals to go up the bureaucratic chain.
 - Spread fear and toxicity within the working environment.
 
-You can find more examples in ["Simple Sabotage Field Manual"](https://www.gutenberg.org/ebooks/26184) under _General Interference with Organizations and Production_.
+You can find more examples in ["Simple Sabotage Field Manual"](https://www.gutenberg.org/files/26184/26184-h/26184-h.htm) under _General Interference with Organizations and Production_.
 
 ## Implementation
 
@@ -45,4 +45,4 @@ Here are some examples:
 - Be someone difficult to work with.
 - Share incorrect information with your coworkers.
 
-You can find more examples in ["Simple Sabotage Field Manual"](https://www.gutenberg.org/ebooks/26184) under _Office Workers_ and _Employees_.
+You can find more examples in ["Simple Sabotage Field Manual"](https://www.gutenberg.org/files/26184/26184-h/26184-h.htm) under _Office Workers_ and _Employees_.
