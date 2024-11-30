@@ -63,7 +63,7 @@ See the [Cypress docs](https://docs.cypress.io/app/continuous-integration/github
 
 ## Shard
 
-You can shard the Cypress specs with [Bash](https://www.gnu.org/software/bash/) using [GitHub Actions](Run Cypress tests in parallel with Cypress Cloud or shard tests with GitHub Actions.):
+You can shard the Cypress specs with [Bash](https://www.gnu.org/software/bash/) using [GitHub Actions](https://github.com/features/actions):
 
 {% raw %}
 
