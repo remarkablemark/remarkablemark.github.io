@@ -2,7 +2,8 @@
 layout: post
 title: How to shard Cypress specs on GitHub Actions
 date: 2024-11-28 22:58:26
-excerpt: How to shard Cypress specs on GitHub Actions.
+updated: 2024-11-30 16:01:11
+excerpt: How to run Cypress tests in parallel with Cypress Cloud or shard tests with GitHub Actions.
 categories: cypress specs github actions ci
 ---
 
@@ -62,7 +63,7 @@ See the [Cypress docs](https://docs.cypress.io/app/continuous-integration/github
 
 ## Shard
 
-You can shard the Cypress specs yourself using Bash in GitHub Actions:
+You can shard the Cypress specs with [Bash](https://www.gnu.org/software/bash/) using [GitHub Actions](Run Cypress tests in parallel with Cypress Cloud or shard tests with GitHub Actions.):
 
 {% raw %}
 
