@@ -2,7 +2,7 @@
 layout: post
 title: 3 interview questions you should ask
 date: 2025-01-08 17:50:55
-excerpt: Three interview questions that improve my hiring success rate.
+excerpt: Three interview questions that can improve your hiring success rate.
 categories: hiring interview
 ---
 
