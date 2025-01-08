@@ -56,7 +56,7 @@ For employers, remote work has become the new norm and companies who embrace it 
 
 > Photo by [Tim Mossholder](https://unsplash.com/@timmossholder) on [Unsplash](https://unsplash.com/photos/WE_Kv_ZB1l0)
 
-To engage employees, one must make learning a part of the company's brand. It’s never too early or too late to invest in your employees. For tech workers, learning new skills, knowledge, and behaviors are essential. You can provide or sponsor on-site training, [online courses](https://onlinedegreehero.com/), and/or coding bootcamps to help them master new skills.
+To engage employees, one must make learning a part of the company's brand. It’s never too early or too late to invest in your employees. For tech workers, learning new skills, knowledge, and behaviors are essential. You can provide or sponsor on-site training, online courses, and/or coding bootcamps to help them master new skills.
 
 With a tuition reimbursement program, employees can enroll in workshops and attend conferences. [Coding schools](https://careerkarma.com/locations/) and bootcamps are also an option to pick up skills like cloud computing.
 
