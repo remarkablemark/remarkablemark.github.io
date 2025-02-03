@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Fix Jest errors in React Router 7 upgrade
-date: 2025-02-02 17:21:30
+date: 2025-02-02 19:08:11
 excerpt: How to fix Jest test errors when upgrading React Router from version 6 to 7.
 categories: jest test react router upgrade
 ---
@@ -13,29 +13,35 @@ This post goes over how to fix [Jest](https://jestjs.io/) test errors when [upgr
 
 ## TextEncoder is not defined
 
-If you see the Jest error when [`react-router-dom`](https://www.npmjs.com/package/react-router-dom) is bumped from version 6 to 7:
+This error occurs when you bump [`react-router-dom`](https://www.npmjs.com/package/react-router-dom) from version 6 to 7 (see [remix-run/react-router#12363](https://github.com/remix-run/react-router/issues/12363)):
 
 ```
 ReferenceError: TextEncoder is not defined
 ```
 
-The fix is to install [`text-encoding`](https://www.npmjs.com/package/text-encoding) and polyfill `TextEncoder` in the Node.js environment:
+The fix is to polyfill `TextEncoder` in the Node.js environment:
+
+```js
+// test/setupFiles.js
+import { TextEncoder } from 'util';
+
+global.TextEncoder = TextEncoder;
+```
+
+If your Node.js version does not support this, then install [`text-encoding`](https://www.npmjs.com/package/text-encoding):
 
 ```sh
 npm install --dev text-encoding
 ```
 
-Then add it to your Jest [setupFiles](https://jestjs.io/docs/configuration#setupfiles-array):
-
 ```js
 // test/setupFiles.js
-import { TextDecoder, TextEncoder } from 'text-encoding';
+import { TextEncoder } from 'text-encoding';
 
 global.TextEncoder = TextEncoder;
-global.TextDecoder = TextDecoder;
 ```
 
-And update your Jest config:
+Update your Jest config with [setupFiles](https://jestjs.io/docs/configuration#setupfiles-array):
 
 ```js
 // jest.config.js
@@ -49,7 +55,7 @@ See [example](https://github.com/lilboards/lilboards/pull/2373/files).
 
 ## Cannot destructure property 'basename' of 'React10.useContext(...)'
 
-If you see the error:
+If you see this error:
 
 ```
 Cannot destructure property 'basename' of 'React10.useContext(...)' as it is null.
@@ -62,6 +68,6 @@ Then you should replace:
 +import { RouterProvider } from "react-router";
 ```
 
-This is because you need to use a top-level import for non-DOM contexts.
+This occurs because you need to use a top-level import for non-DOM contexts (e.g., Jest).
 
 See [example](https://github.com/lilboards/lilboards/pull/2373/files).
