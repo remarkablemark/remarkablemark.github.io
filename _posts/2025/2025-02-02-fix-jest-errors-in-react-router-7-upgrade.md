@@ -51,7 +51,7 @@ module.exports = {
 };
 ```
 
-See [example](https://github.com/lilboards/lilboards/pull/2373/files).
+See [example](https://github.com/remarkablemark/mui-template/pull/1168/files).
 
 ## Cannot destructure property 'basename' of 'React10.useContext(...)'
 
@@ -70,4 +70,4 @@ Then you should replace:
 
 This occurs because you need to use a top-level import for non-DOM contexts (e.g., Jest).
 
-See [example](https://github.com/lilboards/lilboards/pull/2373/files).
+See [example](https://github.com/remarkablemark/mui-template/pull/1168/files).
