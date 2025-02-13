@@ -2,7 +2,7 @@
 layout: post
 title: How to shard Cypress specs on GitHub Actions
 date: 2024-11-28 22:58:26
-updated: 2024-11-30 16:01:11
+updated: 2025-02-13 00:00:08
 excerpt: How to run Cypress tests in parallel with Cypress Cloud or shard tests with GitHub Actions.
 categories: cypress specs github actions ci
 ---
@@ -87,9 +87,9 @@ jobs:
       - name: Split specs
         id: specs
         run: |
-          # find and save all spec paths to a file
+          # find, sort, and save all spec paths to a file
           SPECS=specs.txt
-          find cypress/e2e -type f -name '*.cy.*' > $SPECS
+          find cypress/e2e -type f -name '*.cy.*' | sort > $SPECS
 
           # count the total number of spec files
           SPECS_COUNT=$(wc -l < $SPECS)
@@ -119,3 +119,44 @@ jobs:
 You can see that the Cypress specs were split into 3 shards and passed into the [GitHub Action](https://github.com/cypress-io/github-action#specs) via an [output parameter](https://docs.github.com/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#setting-an-output-parameter). Alternatively, you can store the specs in an [environment variable](https://docs.github.com/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables).
 
 See example [remarkablemark/cypress-cucumber-steps#979](https://github.com/remarkablemark/cypress-cucumber-steps/pull/979).
+
+Alternatively, you can use [remarkablemark/find-and-split](https://github.com/remarkablemark/find-and-split) GitHub Action:
+
+{% raw %}
+
+```yml
+# .github/workflows/cypress.yml
+name: Shard Cypress Tests
+on: push
+
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        shard: [1/3, 2/3, 3/3]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Find and split specs
+        uses: remarkablemark/find-and-split@v1
+        id: specs
+        with:
+          chunk: ${{ matrix.shard }}
+          delimiter: '\n'
+          directory: 'cypress/e2e'
+          pattern: '*.cy.*'
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          spec: |
+            ${{ steps.specs.outputs.SPECS }}
+```
+
+{% endraw %}
+
+See example [remarkablemark/cypress-cucumber-steps#1044](https://github.com/remarkablemark/cypress-cucumber-steps/pull/1044).
