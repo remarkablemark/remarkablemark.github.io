@@ -2,7 +2,7 @@
 layout: post
 title: How to shard Cypress specs on GitHub Actions
 date: 2024-11-28 22:58:26
-updated: 2025-02-13 00:00:08
+updated: 2025-02-16 18:50:14
 excerpt: How to run Cypress tests in parallel with Cypress Cloud or shard tests with GitHub Actions.
 categories: cypress specs github actions ci
 ---
@@ -116,11 +116,9 @@ jobs:
 
 {% endraw %}
 
-You can see that the Cypress specs were split into 3 shards and passed into the [GitHub Action](https://github.com/cypress-io/github-action#specs) via an [output parameter](https://docs.github.com/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#setting-an-output-parameter). Alternatively, you can store the specs in an [environment variable](https://docs.github.com/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables).
+The Cypress specs were split into 3 shards and passed into the [Cypress action](https://github.com/cypress-io/github-action#specs) via an [output parameter](https://docs.github.com/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#setting-an-output-parameter). See PR [remarkablemark/cypress-cucumber-steps#979](https://github.com/remarkablemark/cypress-cucumber-steps/pull/979).
 
-See example [remarkablemark/cypress-cucumber-steps#979](https://github.com/remarkablemark/cypress-cucumber-steps/pull/979).
-
-Alternatively, you can use [remarkablemark/find-and-split](https://github.com/remarkablemark/find-and-split) GitHub Action:
+Alternatively, you can use the [find-and-split](https://github.com/marketplace/actions/find-and-split) action:
 
 {% raw %}
 
@@ -159,4 +157,4 @@ jobs:
 
 {% endraw %}
 
-See example [remarkablemark/cypress-cucumber-steps#1044](https://github.com/remarkablemark/cypress-cucumber-steps/pull/1044).
+See PR [remarkablemark/cypress-cucumber-steps#1044](https://github.com/remarkablemark/cypress-cucumber-steps/pull/1044).
