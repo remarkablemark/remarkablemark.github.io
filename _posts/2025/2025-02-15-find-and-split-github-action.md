@@ -6,7 +6,7 @@ excerpt: GitHub Action to find and split files.
 categories: github actions find split bash composite
 ---
 
-[`remarkablemark/find-and-split`](https://github.com/marketplace/actions/find-and-split) is a GitHub Action that finds and splits files:
+[`find-and-split`](https://github.com/marketplace/actions/find-and-split) is a GitHub Action that finds and splits files:
 
 {% raw %}
 
@@ -44,7 +44,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Find and split files
-        uses: remarkablemark/find-and-split@v1.0.4
+        uses: remarkablemark/find-and-split@v1
         id: tests
         with:
           chunk: ${{ matrix.shard }}
