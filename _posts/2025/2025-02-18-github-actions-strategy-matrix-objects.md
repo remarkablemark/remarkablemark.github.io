@@ -10,7 +10,7 @@ This post goes over how to pass objects to [GitHub Actions strategy matrix](http
 
 ## Strings
 
-You can pass primitive values to matrix strategies:
+You can pass primitive values to matrix strategy:
 
 {% raw %}
 
@@ -31,7 +31,7 @@ jobs:
 
 ## Objects
 
-To pass objects to matrix strategies:
+To pass objects to matrix strategy:
 
 {% raw %}
 
