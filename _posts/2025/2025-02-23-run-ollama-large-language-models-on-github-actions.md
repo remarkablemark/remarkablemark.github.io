@@ -124,4 +124,4 @@ jobs:
 
 {% endraw %}
 
-See [ollama-github-action-demo](https://github.com/ai-action/ollama-github-action-demo) for more details.
+See the [example](https://github.com/ai-action/ollama-github-action-demo/pull/1) for more details.
