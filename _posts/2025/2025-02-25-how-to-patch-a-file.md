@@ -65,3 +65,9 @@ patch -R < patch.diff
 ```
 This is an old file.
 ```
+
+Apply a patch without reversing or creating a reject:
+
+```sh
+patch -NC < patch.diff
+```
