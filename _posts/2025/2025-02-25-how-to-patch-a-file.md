@@ -45,7 +45,7 @@ See `patch.diff`:
 Apply a patch:
 
 ```sh
-patch < patch.diff
+patch < patch.diff # patch file.old < patch.diff
 ```
 
 `file.old` becomes:
@@ -57,7 +57,7 @@ This is a new file.
 Reverse a patch:
 
 ```sh
-patch -R < patch.diff
+patch -R < patch.diff # patch -R file.old < patch.diff
 ```
 
 `file.old` becomes:
@@ -69,5 +69,5 @@ This is an old file.
 Apply a patch without reversing or creating a reject:
 
 ```sh
-patch -NC < patch.diff
+patch -NC < patch.diff # patch -NC file.old < patch.diff
 ```
