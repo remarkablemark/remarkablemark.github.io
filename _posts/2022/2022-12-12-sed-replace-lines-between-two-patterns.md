@@ -11,7 +11,7 @@ This post goes over how to replace lines between two patterns with [sed](https:/
 - [Inclusive](#inclusive)
 - [Exclusive](#exclusive)
 
-This post was inspired by [Sed: Mutli-Line Replacement Between Two Patterns](https://fahdshariff.blogspot.com/2012/12/sed-mutli-line-replacement-between-two.html). See related post [Sed delete lines between two patterns]({% post_url 2022/2022-12-12-sed-delete-lines-between-two-patterns %})
+This post was inspired by [Sed: Mutli-Line Replacement Between Two Patterns](https://fahdshariff.blogspot.com/2012/12/sed-mutli-line-replacement-between-two.html). See related post [Sed delete lines between two patterns]({% post_url 2022/2022-12-12-sed-delete-lines-between-two-patterns %}).
 
 ## Inclusive
 
@@ -33,7 +33,7 @@ p
 
 Run sed command to replace lines between 2 patterns (inclusive):
 
-```
+```sh
 sed -nf command_file $FILE
 ```
 
