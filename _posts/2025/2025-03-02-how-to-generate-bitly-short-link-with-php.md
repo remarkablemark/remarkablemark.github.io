@@ -20,7 +20,7 @@ Generate a Bitly [access token](https://app.bitly.com/settings/api/).
 
 ## Composer
 
-Install with [Composer](http://getcomposer.org/):
+Install with [Composer](https://getcomposer.org/):
 
 ```sh
 composer require bitly-api/sdk php-http/guzzle7-adapter
