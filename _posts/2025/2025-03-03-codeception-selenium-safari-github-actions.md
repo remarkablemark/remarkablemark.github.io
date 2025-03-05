@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Run Codeception Selenium tests on Safari browser in GitHub Actions
+title: Run Codeception Selenium on Safari with GitHub Actions
 date: 2025-03-03 20:50:11
 excerpt: How to run Codeception Selenium tests on Safari browser in GitHub Actions.
 categories: codeception selenium safari test github actions
 ---
 
-How to run [Codeception](https://codeception.com/) [Selenium](https://www.selenium.dev/) tests on [Safari](https://www.apple.com/safari/) browser in [GitHub Actions](https://github.com/features/actions).
+This post goes over how to run [Codeception](https://codeception.com/) [Selenium](https://www.selenium.dev/) tests on [Safari](https://www.apple.com/safari/) browser in [GitHub Actions](https://github.com/features/actions).
 
 ## Prerequisites
 
