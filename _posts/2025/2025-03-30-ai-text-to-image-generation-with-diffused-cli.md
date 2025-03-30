@@ -42,6 +42,12 @@ Generate an image with [model](https://huggingface.co/OFA-Sys/small-stable-diffu
 diffused OFA-Sys/small-stable-diffusion-v0 "cartoon of a cat" --output cat.jpg
 ```
 
+Generate an image with a specified size:
+
+```sh
+diffused OFA-Sys/small-stable-diffusion-v0 "drawing of a cat" --width 1024 --height 1024
+```
+
 See help for more info:
 
 ```sh
