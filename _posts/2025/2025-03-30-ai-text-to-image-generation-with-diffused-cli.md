@@ -1,12 +1,13 @@
 ---
 layout: post
-title: AI text-to-image generation with diffused CLI
+title: AI image generation with diffused
 date: 2025-03-30 14:53:29
-excerpt: How to perform AI text-to-image generation with diffused CLI.
-categories: ai text-to-image cli diffused diffusion huggingface
+updated: 2025-04-07 12:06:43
+excerpt: How to perform AI image generation with diffused CLI.
+categories: ai image cli diffused diffusion huggingface
 ---
 
-This post goes over how to perform AI text-to-image generation with [diffused](https://github.com/ai-action/diffused) CLI.
+This post goes over how to perform AI image generation with [diffused](https://github.com/ai-action/diffused) CLI.
 
 ## Prerequisites
 
@@ -30,28 +31,28 @@ Install the [CLI](https://pypi.org/project/diffused/):
 pipx install diffused
 ```
 
-Generate an image with [model](https://huggingface.co/segmind/tiny-sd) and prompt:
+[Text-to-image](https://huggingface.co/docs/diffusers/using-diffusers/conditional_image_generation):
 
 ```sh
-diffused segmind/tiny-sd "portrait of a cat"
+diffused segmind/tiny-sd "red apple"
 ```
 
-Generate an image with [model](https://huggingface.co/OFA-Sys/small-stable-diffusion-v0), prompt, and filename:
+[Image-to-image](https://huggingface.co/docs/diffusers/using-diffusers/img2img):
 
 ```sh
-diffused OFA-Sys/small-stable-diffusion-v0 "cartoon of a cat" --output cat.jpg
+diffused OFA-Sys/small-stable-diffusion-v0 "cat wizard" --image=https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/diffusers/cat.png
 ```
 
-Generate an image with a specified size:
+[Inpainting](https://huggingface.co/docs/diffusers/en/using-diffusers/inpaint):
 
 ```sh
-diffused OFA-Sys/small-stable-diffusion-v0 "drawing of a cat" --width 1024 --height 1024
+diffused kandinsky-community/kandinsky-2-2-decoder-inpaint "black cat" --image=https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/diffusers/inpaint.png --mask-image=https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/diffusers/inpaint_mask.png
 ```
 
-See help for more info:
+Show the help message and exit:
 
 ```sh
-diffused --help
+diffused --help # diffused -h
 ```
 
 ## Script
@@ -80,8 +81,8 @@ Generate an image with [model](https://huggingface.co/segmind/tiny-sd) and promp
 # script.py
 from diffused import generate
 
-image = generate(model="segmind/tiny-sd", prompt="apple")
-image.save("apple.png")
+images = generate(model="segmind/tiny-sd", prompt="red apple")
+images[0].save("apple.png")
 ```
 
 Run the script:
@@ -90,7 +91,15 @@ Run the script:
 python script.py
 ```
 
+Open the image:
+
+```sh
+open apple.png
+```
+
+See the [API documentation](https://ai-action.github.io/diffused/diffused/generate.html).
+
 ## Resources
 
-- For more models, see [Hugging Face](https://huggingface.co/models?pipeline_tag=text-to-image).
+- For more models, see [Hugging Face](https://huggingface.co/models).
 - The package is open source and on [GitHub](https://github.com/ai-action/diffused).
