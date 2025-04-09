@@ -54,4 +54,4 @@ Read more on [optimizing dyno usage](https://devcenter.heroku.com/articles/optim
 
 Enable visibility into memory usage with Heroku Labs [log-runtime-metrics](https://devcenter.heroku.com/articles/log-runtime-metrics).
 
-[Librato](https://elements.heroku.com/addons/librato) is an add-on for performance monitoring.
+[Librato](https://devcenter.heroku.com/articles/librato) is an add-on for performance monitoring.
