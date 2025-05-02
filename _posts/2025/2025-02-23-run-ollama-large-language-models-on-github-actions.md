@@ -2,11 +2,12 @@
 layout: post
 title: How to run Ollama LLM on GitHub Actions
 date: 2025-02-23 14:00:53
-excerpt: How to run Ollama large language models (LLM) on GitHub Actions for free.
+updated: 2025-05-01 22:43:16
+excerpt: How to run Ollama large language models (LLM) on GitHub Actions.
 categories: github actions ollama llm ai ci
 ---
 
-This post goes over how to run [Ollama](https://ollama.com/) large language models (LLM) on [GitHub Actions](https://github.com/features/actions) for free.
+This post goes over how to run [Ollama](https://ollama.com/) large language models (LLM) on [GitHub Actions](https://github.com/features/actions).
 
 ## Ollama
 
@@ -47,17 +48,17 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: Run LLM
+      - name: Run model
         uses: ai-action/ollama-action@v1
-        id: llm
+        id: model
         with:
           model: llama3.2
           prompt: What is a large language model?
 
       - name: Print response
-        env:
-          response: ${{ steps.llm.outputs.response }}
         run: echo "$response"
+        env:
+          response: ${{ steps.model.outputs.response }}
 ```
 
 {% endraw %}
@@ -118,10 +119,10 @@ jobs:
           RESPONSE=$(ollama run codellama "$PROMPT\n$(gh pr diff $PR_NUMBER)")
           gh pr comment $PR_NUMBER --body "$RESPONSE"
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
 ```
 
 {% endraw %}
 
-See the [example](https://github.com/ai-action/ollama-github-action-demo/pull/1) for more details.
+Check out the [example](https://github.com/ai-action/ollama-github-action-demo/pull/1).
