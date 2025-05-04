@@ -71,3 +71,4 @@ echo $response->link;
 ## Resources
 
 - [Bitly PHP SDK](https://github.com/bitly-community/bitly-php)
+- [Bitly API](https://dev.bitly.com/api-reference/)
