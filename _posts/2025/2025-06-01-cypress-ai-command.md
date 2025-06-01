@@ -57,10 +57,13 @@ If you're running Chrome, disable `chromeWebSecurity` so the LLM requests aren't
 
 ```js
 // cypress.config.js
-import { defineConfig } from 'cypress';
-
-export default defineConfig({
+module.exports = defineConfig({
   chromeWebSecurity: false,
+  e2e: {
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
+  },
 });
 ```
 
