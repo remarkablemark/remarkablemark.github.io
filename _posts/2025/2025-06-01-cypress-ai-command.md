@@ -2,6 +2,7 @@
 layout: post
 title: Cypress AI command
 date: 2025-06-01 19:14:20
+updated: 2025-06-02 15:16:36
 excerpt: How to generate E2E tests with the Cypress AI command.
 categories: cypress e2e test cypress ai llm ollama
 ---
@@ -95,3 +96,4 @@ To regenerate a step, enable the [regenerate](https://github.com/ai-action/cy-ai
 
 - [GitHub](https://github.com/ai-action/cy-ai)
 - [Documentation](https://ai-action.github.io/cy-ai/)
+- [Demo](https://github.com/ai-action/cypress-ai-demo)
