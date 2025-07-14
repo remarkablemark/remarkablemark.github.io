@@ -54,4 +54,3 @@ Adding `Shift` navigates in reverse.
 ## Resources
 
 - [VoiceOver User Guide](https://support.apple.com/guide/voiceover/welcome/mac)
-- [Commands and Gestures](https://www.apple.com/voiceover/info/guide/_1131.html)
