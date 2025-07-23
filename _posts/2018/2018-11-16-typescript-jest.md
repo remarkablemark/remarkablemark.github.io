@@ -75,7 +75,7 @@ error Command failed with exit code 1.
 info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
 ```
 
-To fix this, you'll need to create a [configuration file](https://kulshekhar.github.io/ts-jest/docs/getting-started/installation/#jest-config-file):
+To fix this, you'll need to create a configuration file:
 
 ```sh
 yarn ts-jest config:init
