@@ -2,11 +2,20 @@
 layout: post
 title: Set up Code Climate with GitHub Actions
 date: 2023-10-14 12:23:37
+updated: 2025-07-23 11:50:09
 excerpt: How to set up Code Climate test reporter with GitHub Actions.
 categories: github action codeclimate
 ---
 
 <!--email_off-->
+
+> The Code Climate API has been disabled on `July 18th, 2025`.
+>
+> Any attempts to upload coverage to the Code Climate API (via the `cc-test-reporter`) will result in failed CI builds.
+>
+> To avoid disruption, you must remove (or comment out) any remaining references to the old `cc-test-reporter` within your CI scripts.
+>
+> See the [migration guide](https://docs.qlty.sh/migration/guide).
 
 This post goes over how to set up [Code Climate test reporter](https://github.com/codeclimate/test-reporter) with [GitHub Actions](https://github.com/features/actions).
 
