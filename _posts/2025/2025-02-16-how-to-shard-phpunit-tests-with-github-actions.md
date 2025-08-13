@@ -33,7 +33,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Install dependencies
         run: composer install
@@ -62,7 +62,7 @@ With [find-and-split](https://github.com/marketplace/actions/find-and-split) and
 
      steps:
        - name: Checkout repository
-         uses: actions/checkout@v4
+         uses: actions/checkout@v5
 
        - name: Install dependencies
          run: composer install

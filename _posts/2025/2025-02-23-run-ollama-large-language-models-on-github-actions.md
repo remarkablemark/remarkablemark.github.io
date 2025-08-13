@@ -111,7 +111,7 @@ jobs:
         uses: ai-action/setup-ollama@v1
 
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Code review comment
         run: |

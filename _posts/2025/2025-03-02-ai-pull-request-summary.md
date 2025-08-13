@@ -41,7 +41,7 @@ To create a custom workflow, set up [Ollama](https://github.com/marketplace/acti
 
 ```yml
 - uses: ai-action/setup-ollama@v1
-- uses: actions/checkout@v4
+- uses: actions/checkout@v5
 ```
 
 {% endraw %}
@@ -80,7 +80,7 @@ jobs:
 
     steps:
       - uses: ai-action/setup-ollama@v1
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - run: |
           PROMPT=$(printf 'Summarize code diff below:\n%s' $(gh pr diff $PR_NUMBER))
           LLM='codellama'
