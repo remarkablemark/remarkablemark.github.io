@@ -84,7 +84,7 @@ Execute the `eslint` binary with [npx](https://www.npmjs.com/package/npx):
 npx eslint .
 ```
 
-Or create a `package.json` [script](https://docs.npmjs.com/cli/run-script):
+Or create a `package.json` [script](https://docs.npmjs.com/cli/commands/npm-run):
 
 ```json
 {

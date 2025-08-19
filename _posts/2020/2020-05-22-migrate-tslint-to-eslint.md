@@ -81,7 +81,7 @@ Add [`env`](https://eslint.org/docs/user-guide/configuring#specifying-environmen
 
 ## Script
 
-Update your `lint` [script](https://docs.npmjs.com/cli/run-script) in `package.json`:
+Update your `lint` [script](https://docs.npmjs.com/cli/commands/npm-run) in `package.json`:
 
 ```diff
  {

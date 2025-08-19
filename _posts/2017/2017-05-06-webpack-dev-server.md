@@ -66,7 +66,7 @@ Run the server with `npx`:
 npx webpack serve
 ```
 
-Or create an [npm script](https://docs.npmjs.com/cli/run-script):
+Or create an [npm script](https://docs.npmjs.com/cli/commands/npm-run):
 
 ```json
 {

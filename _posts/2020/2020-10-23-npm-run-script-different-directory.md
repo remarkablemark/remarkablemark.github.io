@@ -8,7 +8,7 @@ categories: npm yarn script nodejs cli
 
 ## npm
 
-To run an [npm script](https://docs.npmjs.com/cli-commands/run-script.html) from another directory, use `--prefix`:
+To run an [npm script](https://docs.npmjs.com/cli/commands/npm-run) from another directory, use `--prefix`:
 
 ```sh
 npm --prefix <path> run <command>

@@ -18,7 +18,7 @@ node index.js --arg
 [ '--arg' ]
 ```
 
-But how do we pass our arguments to an [npm script](https://docs.npmjs.com/cli/run-script)?
+But how do we pass our arguments to an [npm script](https://docs.npmjs.com/cli/commands/npm-run)?
 
 Given the following `package.json`:
 

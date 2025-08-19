@@ -58,7 +58,7 @@ You won't see anything logged to the console.
 
 That's because npm environment variables are only available via npm.
 
-So create an [npm script](https://docs.npmjs.com/cli/run-script) in your `package.json`:
+So create an [npm script](https://docs.npmjs.com/cli/commands/npm-run) in your `package.json`:
 
 ```json
 {
