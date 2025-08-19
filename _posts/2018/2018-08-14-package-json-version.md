@@ -39,7 +39,7 @@ Print out all the package.json vars:
 npm run env | grep npm_package_
 ```
 
-Get the "version" using a [run-script](https://docs.npmjs.com/cli/commands/npm-run-script):
+Get the "version" using a [run-script](https://docs.npmjs.com/cli/commands/npm-run):
 
 ```js
 // package.json
@@ -69,7 +69,7 @@ jq -r .version package.json
 
 > The `-r` option outputs the **raw** string (so it's `1.2.3` instead of `"1.2.3"`).
 
-To get the "version" using a [run-script](https://docs.npmjs.com/cli/commands/npm-run-script):
+To get the "version" using a [run-script](https://docs.npmjs.com/cli/commands/npm-run):
 
 ```js
 // package.json
@@ -97,7 +97,7 @@ Pass the [`-p`](https://nodejs.org/api/cli.html#cli_p_print_script) option to pr
 node -p "require('./package').version"
 ```
 
-To get the "version" using a [run-script](https://docs.npmjs.com/cli/commands/npm-run-script):
+To get the "version" using a [run-script](https://docs.npmjs.com/cli/commands/npm-run):
 
 ```js
 // package.json
@@ -119,7 +119,7 @@ To match `package.json` against the regex pattern `/"version": ".+"/` and print 
 awk -F'"' '/"version": ".+"/{ print $4; exit; }' package.json
 ```
 
-To get the "version" using a [run-script](https://docs.npmjs.com/cli/commands/npm-run-script):
+To get the "version" using a [run-script](https://docs.npmjs.com/cli/commands/npm-run):
 
 ```js
 // package.json

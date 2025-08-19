@@ -182,7 +182,7 @@ steps:
 
 ### steps.run
 
-[`steps.run`](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsrun) runs the commands. The commands can be [npm scripts](https://docs.npmjs.com/cli/v6/commands/npm-run-script/) from `package.json` or other bash commands.
+[`steps.run`](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idstepsrun) runs the commands. The commands can be [npm scripts](https://docs.npmjs.com/cli/commands/npm-run) from `package.json` or other bash commands.
 
 ```yml
 steps:
