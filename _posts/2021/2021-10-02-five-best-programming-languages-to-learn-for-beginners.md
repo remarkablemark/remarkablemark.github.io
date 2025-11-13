@@ -46,7 +46,7 @@ According to Statista (2021), Android held a smartphone operating system market 
 
 ## Conclusion
 
-Whether you're an adult or a kid, there are other [programming languages](https://junilearning.com/blog/guide/best-programming-languages-kids/) to check out. But it will be safe to say that you can start your tech career with these. Your mastery in all these will be your cutting-edge in the competitive IT job market, and since many IT companies require you to have more than just one, you can start honing your skills with this list. It will take some time and money to be fully educated with one programming language, but your future salary will make all efforts worth your while and pay the capital off.
+Whether you're an adult or a kid, there are other programming languages to check out. But it will be safe to say that you can start your tech career with these. Your mastery in all these will be your cutting-edge in the competitive IT job market, and since many IT companies require you to have more than just one, you can start honing your skills with this list. It will take some time and money to be fully educated with one programming language, but your future salary will make all efforts worth your while and pay the capital off.
 
 > About The Author:
 >

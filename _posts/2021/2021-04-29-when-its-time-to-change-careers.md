@@ -12,7 +12,7 @@ image: /assets/images/2021/2021-04-29-business-woman-glancing-sideways.jpg
 
 {:.credit-image}
 
-> Photo by [Magnet.me](https://unsplash.com/@magnetme) on [Unsplash](https://unsplash.com/photos/LDcC7aCWVlo)
+> Photo by [Magnet.me](https://unsplash.com/@magnetme) on [Unsplash](https://unsplash.com)
 
 There are signs, feelings, and thoughts that occur when your career is no longer satisfying you. You may be bored and daydreaming of other exciting challenges, or you may be unhappy and dreading to go to work. Whatever the case may be, you should evaluate your situation and decide if you want to make changes to your life.
 

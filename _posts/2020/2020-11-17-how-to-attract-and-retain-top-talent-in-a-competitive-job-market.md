@@ -32,7 +32,7 @@ Employers will need to come up with strategies to not only attract prospects, bu
 
 {:.credit-image}
 
-> Photo by [Aleks Marinkovic](https://unsplash.com/@aleks_marinkovic) on [Unsplash](https://unsplash.com/)
+> Photo by Aleks Marinkovic on [Unsplash](https://unsplash.com/)
 
 Flexibility is a perk that can help employees:
 
