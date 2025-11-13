@@ -11,10 +11,14 @@ Please [support](#support) this site and join the [Discord](https://b.remarkabl.
 
 ## Prerequisites
 
-[Ruby](https://www.ruby-lang.org/en/downloads/) 3.1.2:
+[Ruby](https://www.ruby-lang.org/en/downloads/):
 
 ```sh
 ruby --version
+```
+
+```sh
+cat .ruby-version
 ```
 
 If your version is behind, you can install ruby with [rbenv](https://github.com/rbenv/rbenv) or [RVM](https://rvm.io/).
@@ -31,7 +35,12 @@ rbenv init
 Reload or open a new shell:
 
 ```sh
-curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+source ~/.zshrc
+```
+
+Install Ruby:
+
+```sh
 rbenv install
 rbenv local
 ```
@@ -69,6 +78,7 @@ To switch the git submodule remote URL from HTTPS to SSH:
 ```sh
 cd assets
 git remote set-url origin git@github.com:remarkablemark/assets.git
+cd -
 ```
 
 Install the dependencies:
