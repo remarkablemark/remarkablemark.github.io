@@ -136,8 +136,10 @@ bundle exec htmlproofer --http-status-ignore '0,301,400,401,429,999' ./_site/
 - [Patreon](https://b.remarkabl.org/patreon)
 - [Ko-fi](https://b.remarkabl.org/ko-fi)
 - [Liberapay](https://b.remarkabl.org/liberapay)
+- [Buy Me a Coffee](https://buymeacoffee.com/remarkablemark)
+- [thanks.dev](https://thanks.dev/u/gh/remarkablemark)
 - [Teepsring](https://b.remarkabl.org/teespring)
 
 ## License
 
-Copyright © Menglin "Mark" Xu.
+Copyright © remarkablemark
