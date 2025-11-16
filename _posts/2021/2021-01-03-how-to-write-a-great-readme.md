@@ -2,7 +2,7 @@
 layout: post
 title: How to write a great README
 date: 2021-01-03 18:32:20
-updated: 2023-06-24 18:43:30
+updated: 2025-11-16 12:17:58
 excerpt: How to write a great README for your project.
 categories: readme writing documentation docs
 ---
@@ -25,8 +25,7 @@ Explain in 1-2 sentences _what_ your project does and _why_ someone should care.
 
 There's a direct correlation between how easy it is to use the project and how many people are using it, so provide a quickstart demo:
 
-- [Replit](https://replit.com/)
-- [CodeSandbox](https://codesandbox.io/)
+- [StackBlitz](https://stackblitz.com/)
 - [JSFiddle](https://jsfiddle.net/)
 
 ## Badges
@@ -42,7 +41,7 @@ Badges provide metadata and signals that can help someone decide whether to use 
 - Version
 - Activity (e.g., last commit)
 
-See [Badgen](https://badgen.net/), [Shields.io](https://shields.io/), and [Naereen/badges](https://naereen.github.io/badges/).
+See [Shields.io](https://shields.io/) and [Naereen/badges](https://naereen.github.io/badges/).
 
 ## Prerequisites
 
