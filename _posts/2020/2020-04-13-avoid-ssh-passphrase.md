@@ -1,54 +1,61 @@
 ---
 layout: post
-title: Avoid SSH passphrase
+title: Avoid SSH passphrase for Git
 date: 2020-04-13 20:27:17
-updated: 2020-06-28 17:59:25
-excerpt: How to avoid entering a passphrase when performing an SSH operation.
+updated: 2025-11-18 19:41:07
+excerpt: How to avoid entering a passphrase when performing an SSH operation with Git on macOS.
 categories: ssh mac passphrase keychain git
 ---
 
+- [Problem](#problem)
+- [Check SSH key](#check-ssh-key)
+- [Generate SSH key](#generate-ssh-key)
+- [Add SSH key to agent](#add-ssh-key-to-agent)
+- [SSH config](#ssh-config)
+- [Check SSH connection](#check-ssh-connection)
+
 <!--email_off-->
 
-I recently upgraded my macOS but when I tried to perform an SSH operation, I was asked to enter a passphrase:
+## Problem
+
+I was denied access after running the Git command on a repository I owned:
 
 ```sh
 git pull
 ```
 
 ```
-Enter passphrase for key '/Users/remarkablemark/.ssh/id_rsa':
-git@github.com: Permission denied (publickey).
 fatal: Could not read from remote repository.
 
 Please make sure you have the correct access rights
 and the repository exists.
 ```
 
-I took the following steps to resolve this issue.
+This turned out to be an SSH issue so I took the following steps to fix it.
 
 ## Check SSH key
 
-First, check if you have a key pair:
+First, I checked if I had a valid SSH key pair:
 
 ```sh
 ls -a ~/.ssh/
 ```
 
-If you don't see the following files:
+I didn't see the following:
 
 ```
-id_rsa
-id_rsa.pub
+id_ed25519
+id_ed25519.pub
 ```
 
-Then you'll need to generate a new SSH key.
+So I had to generate a new SSH key.
 
 ## Generate SSH key
 
-To [generate an SSH key](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key):
+To [generate an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key):
 
 ```sh
-ssh-keygen -t rsa -b 4096 -C "your.email@example.com"
+ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
 ## Add SSH key to agent
@@ -73,18 +80,17 @@ ssh-add -l
 The agent has no identities.
 ```
 
-Since there are no keys, [add your key to the `ssh-agent`](https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent) (hit _Enter_ when asked to enter a passphrase):
+Since there are no keys, [add your key to the `ssh-agent`](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent) (hit **Enter** when asked to enter a passphrase):
 
 ```sh
-ssh-add -K ~/.ssh/id_rsa
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 ```
 
 ```
-Enter passphrase for /Users/remarkablemark/.ssh/id_rsa:
-Identity added: /Users/remarkablemark/.ssh/id_rsa (/Users/remarkablemark/.ssh/id_rsa)
+Identity added: /Users/remarkablemark/.ssh/id_ed25519 (your_email@example.com)
 ```
 
-> The `-K` stores the passphrase in your keychain.
+Then [add your new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
 
 Now you should be able to perform SSH operations without being asked for a passphrase:
 
@@ -98,13 +104,38 @@ Already up to date.
 
 ## SSH config
 
-To prevent having to enter a passphrase even after a restart, add the following to your SSH config file `~/.ssh/config`:
+To prevent having to enter a passphrase after restart, add the following to your SSH config file `~/.ssh/config`:
 
 ```
 Host *
-  UseKeychain yes
   AddKeysToAgent yes
-  IdentityFile ~/.ssh/id_rsa
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+```
+
+Or run this command:
+
+```bash
+cat > ~/.ssh/config << EOF
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+EOF
+```
+
+## Check SSH connection
+
+Check your SSH connection with GitHub:
+
+```sh
+ssh -vT git@github.com
+```
+
+You should see:
+
+```
+Hi remarkablemark! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
 <!--/email_off-->
