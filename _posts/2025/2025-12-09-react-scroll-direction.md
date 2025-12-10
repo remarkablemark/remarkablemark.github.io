@@ -57,10 +57,10 @@ function App() {
   const scrollDirection = useScrollDirection();
 
   return (
-    <div>
-      <p>Scroll direction: {scrollDirection}</p>
-      /* ... */
-    </div>
+    <p>
+      Scroll direction: {scrollDirection}
+      {/* ... */}
+    </p>
   );
 }
 ```
@@ -78,7 +78,7 @@ function App() {
         event.deltaY > 0 ? console.log('down') : console.log('up');
       }}
     >
-      /* ... */
+      {/* ... */}
     </div>
   );
 }
