@@ -24,10 +24,11 @@ The steps to save SVG to image are:
 
 ### Improvements
 
-The improvements made in my example are:
+The improvements in my example are:
 
-- Added the ability to resize SVG in canvas
+- Added the ability to resize the SVG in the canvas
 - Added the option to update the filename
+- Tried to retrieve the filename from the SVG `<title>`
 - Added the option to change the file extension from `png` to `jpeg`
 - Used [HTML5 form validation](https://developer.mozilla.org/docs/Learn/Forms/Form_validation#Using_built-in_form_validation)
 - Prevented memory leaks by cleaning up event listeners
