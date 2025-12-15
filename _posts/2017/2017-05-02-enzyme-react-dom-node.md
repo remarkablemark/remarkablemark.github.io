@@ -41,7 +41,7 @@ const wrapper = mount(<FunctionalComponent />);
 wrapper.getDOMNode(); // throws an error
 ```
 
-You'll need to use [findDOMNode](https://react.dev/reference/react-dom/findDOMNode) on the wrapper's node:
+You'll need to use `findDOMNode` (available in React 18 and below) on the wrapper's node:
 
 ```js
 import { findDOMNode } from 'react-dom';
