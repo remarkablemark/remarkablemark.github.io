@@ -10,7 +10,7 @@ This post goes over how to fetch [Amplitude taxonomy](https://amplitude.com/docs
 
 ## Keys
 
-Find your [keys](https://amplitude.com/docs/apis/authentication) in [**Organization settings**](http://analytics.amplitude.com/amp-dev-docs/settings/projects) > **Projects**:
+Find your [keys](https://amplitude.com/docs/apis/authentication) in [**Organization settings**](https://analytics.amplitude.com/amp-dev-docs/settings/projects) > **Projects**:
 
 - API Key
 - Secret Key
