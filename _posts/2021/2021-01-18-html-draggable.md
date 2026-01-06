@@ -89,9 +89,9 @@ document
 
 ## Demo
 
-[Repl.it](https://repl.it/@remarkablemark/HTML-draggable):
+[Repl.it](https://replit.com/@remarkablemark/HTML-draggable):
 
-<iframe height="600px" width="100%" src="https://repl.it/@remarkablemark/HTML-draggable?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="600px" width="100%" src="https://replit.com/@remarkablemark/HTML-draggable?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ## Links
 

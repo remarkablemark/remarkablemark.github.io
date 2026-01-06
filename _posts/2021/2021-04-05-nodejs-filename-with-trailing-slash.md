@@ -45,6 +45,6 @@ require('fs').writeFileSync(filename);
 
 ## Demo
 
-[Repl.it](https://repl.it/@remarkablemark/Nodejs-filename-with-trailing-slash):
+[Repl.it](https://replit.com/@remarkablemark/Nodejs-filename-with-trailing-slash):
 
-<iframe height="400px" width="100%" src="https://repl.it/@remarkablemark/Nodejs-filename-with-trailing-slash?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/Nodejs-filename-with-trailing-slash?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

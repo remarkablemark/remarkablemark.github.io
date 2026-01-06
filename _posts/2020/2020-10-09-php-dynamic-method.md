@@ -41,6 +41,6 @@ $instance->sayHello('world'); // 'Hello, world!'
 
 ## Demo
 
-[Repl.it](https://repl.it/@remarkablemark/PHP-dynamic-method):
+[Repl.it](https://replit.com/@remarkablemark/PHP-dynamic-method):
 
-<iframe height="750px" width="100%" src="https://repl.it/@remarkablemark/PHP-dynamic-method?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="750px" width="100%" src="https://replit.com/@remarkablemark/PHP-dynamic-method?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

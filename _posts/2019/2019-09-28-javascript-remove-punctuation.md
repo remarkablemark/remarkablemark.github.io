@@ -80,9 +80,9 @@ function removePunctuation(string) {
 
 ## Demo
 
-See [Repl.it](https://repl.it/@remarkablemark/Remove-punctuation) demo:
+See [Repl.it](https://replit.com/@remarkablemark/Remove-punctuation) demo:
 
-<iframe height="400px" width="100%" src="https://repl.it/@remarkablemark/Remove-punctuation?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/Remove-punctuation?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 You can also find the code in this [Gist](https://gist.github.com/remarkablemark/6ef2779bee9d98bcfdc1fef2300f0476).
 

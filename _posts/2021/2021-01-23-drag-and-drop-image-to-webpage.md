@@ -112,6 +112,6 @@ The `dragenter` and `dragleave` events aren't required for drag and drop to work
 
 ## Demo
 
-[Repl.it](https://repl.it/@remarkablemark/HTML-drag-and-drop-image):
+[Repl.it](https://replit.com/@remarkablemark/HTML-drag-and-drop-image):
 
-<iframe height="600px" width="100%" src="https://repl.it/@remarkablemark/HTML-drag-and-drop-image?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="600px" width="100%" src="https://replit.com/@remarkablemark/HTML-drag-and-drop-image?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

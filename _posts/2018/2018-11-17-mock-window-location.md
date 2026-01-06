@@ -99,6 +99,6 @@ The [gist](https://gist.github.com/remarkablemark/5cb571a13a6635ab89cf2bb47dc004
 
 ### Repl.it
 
-Run the test in this [repl.it](https://repl.it/@remarkablemark/Jest-mock-windowlocation):
+Run the test in this [replit.com](https://replit.com/@remarkablemark/Jest-mock-windowlocation):
 
-<iframe height="400px" width="100%" src="https://repl.it/@remarkablemark/Jest-mock-windowlocation?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/Jest-mock-windowlocation?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

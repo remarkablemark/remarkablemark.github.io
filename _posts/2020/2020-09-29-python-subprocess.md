@@ -68,6 +68,6 @@ print(outs.decode("ascii"))
 
 ## Demo
 
-[Repl.it](https://repl.it/@remarkablemark/Python-subprocess):
+[Repl.it](https://replit.com/@remarkablemark/Python-subprocess):
 
-<iframe height="500px" width="100%" src="https://repl.it/@remarkablemark/Python-subprocess?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="500px" width="100%" src="https://replit.com/@remarkablemark/Python-subprocess?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

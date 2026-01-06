@@ -71,6 +71,6 @@ serialize((object) ['key' => 'value', 1 => 1]); // O:8:"stdClass":2:{s:3:"key";s
 
 ## Demo
 
-[Repl.it](https://repl.it/@remarkablemark/PHP-serialize):
+[Repl.it](https://replit.com/@remarkablemark/PHP-serialize):
 
-<iframe height="800px" width="100%" src="https://repl.it/@remarkablemark/PHP-serialize?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="800px" width="100%" src="https://replit.com/@remarkablemark/PHP-serialize?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

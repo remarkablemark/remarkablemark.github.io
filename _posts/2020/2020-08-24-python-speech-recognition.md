@@ -72,9 +72,9 @@ See [guide](https://realpython.com/python-speech-recognition/) for more details.
 
 ### Demo
 
-[Repl.it](https://repl.it/@remarkablemark/Speech-Recognition):
+[Repl.it](https://replit.com/@remarkablemark/Speech-Recognition):
 
-<iframe height="550px" width="100%" src="https://repl.it/@remarkablemark/Speech-Recognition?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="550px" width="100%" src="https://replit.com/@remarkablemark/Speech-Recognition?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 See [GitHub repository](https://github.com/remarkablemark/speech-recognition-demo) for more details.
 

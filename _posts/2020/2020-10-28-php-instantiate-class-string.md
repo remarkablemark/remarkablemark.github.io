@@ -20,6 +20,6 @@ $classInstance = new $className();
 
 ## Demo
 
-[Repl.it](https://repl.it/@remarkablemark/PHP-instantiate-class-string):
+[Repl.it](https://replit.com/@remarkablemark/PHP-instantiate-class-string):
 
-<iframe height="500px" width="100%" src="https://repl.it/@remarkablemark/PHP-instantiate-class-string?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="500px" width="100%" src="https://replit.com/@remarkablemark/PHP-instantiate-class-string?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

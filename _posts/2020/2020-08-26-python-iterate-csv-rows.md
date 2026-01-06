@@ -39,9 +39,9 @@ Output:
 ['baz', 'qux']
 ```
 
-[Repl.it](https://repl.it/@remarkablemark/csvreader) demo:
+[Repl.it](https://replit.com/@remarkablemark/csvreader) demo:
 
-<iframe height="500px" width="100%" src="https://repl.it/@remarkablemark/csvreader?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="500px" width="100%" src="https://replit.com/@remarkablemark/csvreader?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ## pandas
 
@@ -74,6 +74,6 @@ column2    qux
 Name: 1, dtype: object
 ```
 
-[Repl.it](https://repl.it/@remarkablemark/pandasreadcsv) demo:
+[Repl.it](https://replit.com/@remarkablemark/pandasreadcsv) demo:
 
-<iframe height="500px" width="100%" src="https://repl.it/@remarkablemark/pandasreadcsv?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="500px" width="100%" src="https://replit.com/@remarkablemark/pandasreadcsv?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

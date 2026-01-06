@@ -17,9 +17,9 @@ Comparison between [React](https://reactjs.org/), [Vue 2](https://vuejs.org/), a
 
 ## Demo
 
-[Repl.it](https://repl.it/@remarkablemark/React-versus-Vue):
+[Repl.it](https://replit.com/@remarkablemark/React-versus-Vue):
 
-<iframe height="400px" width="100%" src="https://repl.it/@remarkablemark/React-versus-Vue?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/React-versus-Vue?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ## Component
 

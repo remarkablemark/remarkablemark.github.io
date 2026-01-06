@@ -88,6 +88,6 @@ echo (new DateTime())->format('r'); // RFC2822
 
 ## Demo
 
-Check out the following [Repl.it](https://repl.it/@remarkablemark/PHP-date):
+Check out the following [Repl.it](https://replit.com/@remarkablemark/PHP-date):
 
-<iframe height="800px" width="100%" src="https://repl.it/@remarkablemark/PHP-date?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<iframe height="800px" width="100%" src="https://replit.com/@remarkablemark/PHP-date?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
