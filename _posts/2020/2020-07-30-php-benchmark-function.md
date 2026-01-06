@@ -89,6 +89,6 @@ echo number_format(benchmark('myFunction', true), 3); // 0.000
 
 ## Demo
 
-Check out the [Repl.it](https://replit.com/@remarkablemark/PHP-benchmark-function) of the advanced function:
+Check out the [Replit](https://replit.com/@remarkablemark/PHP-benchmark-function) of the advanced function:
 
 <iframe height="800px" width="100%" src="https://replit.com/@remarkablemark/PHP-benchmark-function?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

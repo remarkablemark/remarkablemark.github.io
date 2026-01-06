@@ -39,7 +39,7 @@ Output:
 ['baz', 'qux']
 ```
 
-[Repl.it](https://replit.com/@remarkablemark/csvreader) demo:
+[Replit](https://replit.com/@remarkablemark/csvreader) demo:
 
 <iframe height="500px" width="100%" src="https://replit.com/@remarkablemark/csvreader?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
@@ -74,6 +74,6 @@ column2    qux
 Name: 1, dtype: object
 ```
 
-[Repl.it](https://replit.com/@remarkablemark/pandasreadcsv) demo:
+[Replit](https://replit.com/@remarkablemark/pandasreadcsv) demo:
 
 <iframe height="500px" width="100%" src="https://replit.com/@remarkablemark/pandasreadcsv?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

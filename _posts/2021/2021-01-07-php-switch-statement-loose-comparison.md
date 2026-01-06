@@ -79,6 +79,6 @@ Because PHP switch/case does [loose comparison](https://www.php.net/manual/en/ty
 
 This is due to PHP's implicit casting or [type juggling](https://www.php.net/manual/en/language.types.type-juggling.php).
 
-See [Repl.it](https://replit.com/@remarkablemark/PHP-switch-statement-loose-comparison):
+See [Replit](https://replit.com/@remarkablemark/PHP-switch-statement-loose-comparison):
 
 <iframe height="600px" width="100%" src="https://replit.com/@remarkablemark/PHP-switch-statement-loose-comparison?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

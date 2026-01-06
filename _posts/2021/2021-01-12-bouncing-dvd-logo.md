@@ -15,7 +15,7 @@ The site is built with:
 
 ## Code
 
-- [Repl.it demo](https://replit.com/@remarkablemark/Bouncing-DVD-Logo)
+- [Replit demo](https://replit.com/@remarkablemark/Bouncing-DVD-Logo)
 - [GitHub repository](https://github.com/remarkablemark/Bouncing-DVD-Logo)
 
 ## Explanation

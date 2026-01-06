@@ -92,6 +92,6 @@ print(output) # {'baz': 'qux'}
 
 ## Demo
 
-[Repl.it](https://replit.com/@remarkablemark/Python-phpserialize):
+[Replit](https://replit.com/@remarkablemark/Python-phpserialize):
 
 <iframe height="800px" width="100%" src="https://replit.com/@remarkablemark/Python-phpserialize?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

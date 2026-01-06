@@ -97,7 +97,7 @@ The [gist](https://gist.github.com/remarkablemark/5cb571a13a6635ab89cf2bb47dc004
 
 {% gist 5cb571a13a6635ab89cf2bb47dc004a3 %}
 
-### Repl.it
+### Replit
 
 Run the test in this [replit.com](https://replit.com/@remarkablemark/Jest-mock-windowlocation):
 
