@@ -13,7 +13,6 @@ url: https://remarkablemark.org # the base hostname & protocol for your site, e.
 github_username: remarkablemark
 repository: remarkablemark/remarkablemark.github.io
 google_analytics_id: G-2NYQESPF9Y
-disqus_shortname: remarkablemark
 assets_path: /assets
 
 # Build settings

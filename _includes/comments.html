@@ -1,0 +1,40 @@
+{% if page.layout == "post" %}
+  <script src="https://giscus.app/client.js"
+    data-repo="remarkablemark/remarkablemark.github.io"
+    data-repo-id="MDEwOlJlcG9zaXRvcnkyOTk5MDExMQ=="
+    data-category="Comments"
+    data-category-id="DIC_kwDOAcmc384C24zo"
+    data-mapping="pathname"
+    data-strict="1"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+  {% assign post_date = page.date | date: "%s" %}
+  {% assign disqus_date_cutoff = "2021-01-13" | date: "%s" %}
+  {% if post_date < disqus_date_cutoff %}
+    <button id="disqus_button" style="margin-bottom: 2rem">Disqus</button>
+    <div id="disqus_thread"></div>
+    <script>
+      window.disqus_config = function () {
+        this.page.url = '{{ page.url | prepend: site.url }}';
+        this.page.identifier = '{{ page.id | remove_first: "/blog/" | replace: "/", "-" }}';
+      };
+      var disqusButton = document.getElementById('disqus_button');
+      disqusButton.addEventListener('click', function () {
+        disqusButton.remove();
+        var script = document.createElement('script');
+        script.src = '//remarkablemark.disqus.com/embed.js';
+        script.async = true;
+        script.setAttribute('data-timestamp', +new Date());
+        document.head.appendChild(script);
+      });
+    </script>
+  {% endif %}
+{% endif %}
