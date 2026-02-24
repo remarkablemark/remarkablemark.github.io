@@ -65,8 +65,15 @@ The output should look like:
 }
 ```
 
-To get just the ID token:
+To get just ID token from the headers:
 
 ```js
 console.log(headers.Authorization.split(' ')[1]);
+```
+
+Or simply fetch the token:
+
+```js
+const token = await client.idTokenProvider.fetchIdToken(targetAudience);
+console.log(token);
 ```
