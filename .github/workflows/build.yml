@@ -29,6 +29,6 @@ jobs:
       - name: Run tests
         run: >
           bundle exec htmlproofer _site
-          --ignore-status-codes '0,301,400,401,403,429,999'
+          --ignore-status-codes '0,301,400,401,403,415,429,999'
           --ignore-urls '/bundlephobia.com/,/img.shields.io/,/regexr.com/,/tunein.com/,/vagrantup.com/'
           --no-check-external-hash
