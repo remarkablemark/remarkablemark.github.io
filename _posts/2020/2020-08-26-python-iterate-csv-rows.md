@@ -51,7 +51,7 @@ Install [pandas](https://pypi.org/project/pandas/):
 pip install pandas
 ```
 
-Using [`pandas.read_csv`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html#pandas-read-csv) and [`pandas.DataFrame.iterrows`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iterrows.html#pandas-dataframe-iterrows):
+Using `pandas.read_csv` and `pandas.DataFrame.iterrows`:
 
 ```py
 import pandas as pd
