@@ -6,7 +6,7 @@ excerpt: AI won't replace engineers—but it will transform what they do.
 categories: ai engineering philosophy management
 ---
 
-AI will change engineering, but I don't think it will _replace_ strong engineers. Instead, it will _shift_ what engineers spend their time doing.
+AI will change engineering, but I don't think it will _replace_ good engineers. Instead, it will _shift_ what engineers spend their time doing.
 
 As AI continues to get better, engineers will have to rethink how they use AI and the changes to the software development lifecycle.
 
