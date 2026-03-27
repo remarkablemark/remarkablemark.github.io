@@ -78,5 +78,3 @@ All Sass [variables](https://sass-lang.com/guide#topic-2), [mixins](https://sass
 Unfortunately, importing a partial _multiple times_ means that it's included _multiple times_.
 
 That's why it's good practice to do all imports in a **_single_** file.
-
-For more information about importing Sass partials, [Zurb](https://zurb.com) has a nice [introduction](https://zurb.com/university/lessons/wrangling-sass-import-files).
