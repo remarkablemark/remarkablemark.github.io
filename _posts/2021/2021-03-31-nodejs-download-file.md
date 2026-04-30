@@ -47,9 +47,3 @@ Run the script to download the MP4:
 ```sh
 node index.js
 ```
-
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/node-fetch-mp4#index.js):
-
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/node-fetch-mp4?lite=true#index.js" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

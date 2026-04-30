@@ -62,7 +62,3 @@ SHEET_ID='1OiuuC_WrDCRfhnYX9i9BJ75-F0frFuSkAIYOgf-Qf6I'
 URL="https://docs.google.com/spreadsheets/d/$SHEET_ID/export?exportFormat=csv"
 curl -L $URL -o my_sheet.csv
 ```
-
-[Replit](https://replit.com/@remarkablemark/Bash-cURL-Google-Sheets#main.sh):
-
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/Bash-cURL-Google-Sheets?lite=true#main.sh" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
