@@ -48,4 +48,3 @@ open docs/index.html
 ## Links
 
 - [Demo](https://b.remarkabl.org/typedoc-plugin-copy-code-to-clipboard)
-- [Prototype](https://replit.com/@remarkablemark/Copy-code-to-clipboard)

@@ -37,12 +37,6 @@ print(random_words.get_random_word())
 
 See the [package documentation](https://pypi.org/project/Random-Word/) for more information.
 
-### Demo
-
-[Replit](https://replit.com/@remarkablemark/random-word#main.py):
-
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/random-word?lite=true#main.py" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
 ## Random Letter
 
 Get a random letter from the alphabet:
@@ -53,9 +47,3 @@ from random import randrange
 
 print(ascii_lowercase[randrange(len(ascii_lowercase))])
 ```
-
-### Demo
-
-[Replit](https://replit.com/@remarkablemark/random-alphabet-letter#main.py):
-
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/random-alphabet-letter?lite=true#main.py" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

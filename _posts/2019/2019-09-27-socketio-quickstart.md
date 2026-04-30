@@ -11,7 +11,6 @@ This post goes over how to get started with [Socket.IO](https://socket.io/):
 
 - [Express](#express)
 - [Socket.IO](#socketio)
-- [Demo](#demo)
 
 ## Express
 
@@ -114,9 +113,3 @@ node index.js
 Refresh the page to see messages show up in your browser and terminal console.
 
 You can start [sending and receiving events](https://socket.io/docs/v4/emitting-events/)!
-
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/socketio-quickstart#package.json) example:
-
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/socketio-quickstart?lite=true#package.json" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

@@ -43,33 +43,3 @@ Output:
 ```
 
 See [README](https://github.com/remarkablemark/style-to-js#readme).
-
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/style-to-js):
-
-<iframe height="600px" width="100%" src="https://replit.com/@remarkablemark/style-to-js?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
-## Misc
-
-Use [`style-to-object`](https://b.remarkabl.org/style-to-object) to parse a CSS inline style to a JavaScript object that's kebab-cased.
-
-```sh
-npm install style-to-object
-```
-
-Parse:
-
-```js
-const styleToObject = require('style-to-object');
-
-styleToObject('background-color: #BADA55');
-```
-
-Output:
-
-```json
-{ "background-color": "#BADA55" }
-```
-
-See [README](https://github.com/remarkablemark/style-to-object#readme).

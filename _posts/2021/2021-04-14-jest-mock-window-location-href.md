@@ -43,7 +43,7 @@ Full test example:
 // jest-mock-window-location-href.test.js
 const { location } = window;
 const getHrefSpy = jest.fn(() => 'example.com');
-const setHrefSpy = jest.fn(href => href);
+const setHrefSpy = jest.fn((href) => href);
 
 beforeAll(() => {
   delete window.location;
@@ -64,9 +64,3 @@ afterAll(() => {
   window.location = location;
 });
 ```
-
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/Jest-mock-windowlocationhref#jest-mock-window-location-href.test.js):
-
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/Jest-mock-windowlocationhref?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

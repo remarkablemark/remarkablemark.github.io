@@ -33,9 +33,3 @@ As you can tell in both examples, the `<script>` tag must have the attribute `ty
 ## Browser Support
 
 You can find the browser support [here](https://caniuse.com/#feat=es6-module).
-
-## Demo
-
-See the [Replit](https://replit.com/@remarkablemark/ES-modules) demo:
-
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/ES-modules?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

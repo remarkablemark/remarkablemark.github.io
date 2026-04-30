@@ -64,9 +64,3 @@ const argv = yargs(hideBin(process.argv))
 
 console.log('1st positional argument:', argv._[0]);
 ```
-
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/yargs-command-with-positional-argument#index.js):
-
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/yargs-command-with-positional-argument?lite=true#index.js" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

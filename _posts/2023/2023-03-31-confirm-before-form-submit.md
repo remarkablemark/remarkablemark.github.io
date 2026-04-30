@@ -60,9 +60,3 @@ For multiple forms, use [`document.querySelectorAll`](https://developer.mozilla.
   });
 </script>
 ```
-
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/Confirm-before-form-submit#index.html):
-
-<iframe height="500px" width="100%" src="https://replit.com/@remarkablemark/Confirm-before-form-submit?lite=true#index.html" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

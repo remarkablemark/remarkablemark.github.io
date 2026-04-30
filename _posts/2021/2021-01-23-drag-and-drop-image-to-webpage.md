@@ -44,7 +44,7 @@ Highlight the dropzone when the [`dragenter`](https://developer.mozilla.org/docs
 
 <script>
   // ...
-  dropzone.addEventListener('dragenter', event => {
+  dropzone.addEventListener('dragenter', (event) => {
     event.preventDefault();
     dropzone.classList.add('active');
   });
@@ -58,7 +58,7 @@ Remove the dropzone highlight when the [`dragleave`](https://developer.mozilla.o
 ```html
 <script>
   // ...
-  dropzone.addEventListener('dragleave', event => {
+  dropzone.addEventListener('dragleave', (event) => {
     event.preventDefault();
     dropzone.classList.remove('active');
   });
@@ -70,7 +70,7 @@ It's necessary to handle the [`dragover`](https://developer.mozilla.org/docs/Web
 ```html
 <script>
   // ...
-  dropzone.addEventListener('dragover', event => {
+  dropzone.addEventListener('dragover', (event) => {
     event.preventDefault();
   });
 </script>
@@ -81,7 +81,7 @@ Now handle the [`drop`](https://developer.mozilla.org/docs/Web/API/Document/drop
 ```html
 <script>
   // ...
-  dropzone.addEventListener('drop', event => {
+  dropzone.addEventListener('drop', (event) => {
     event.preventDefault();
     dropzone.classList.remove('active');
 
@@ -109,9 +109,3 @@ Here's a breakdown of what's happening:
 ### Note
 
 The `dragenter` and `dragleave` events aren't required for drag and drop to work. They are simply there to improve user experience.
-
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/HTML-drag-and-drop-image):
-
-<iframe height="600px" width="100%" src="https://replit.com/@remarkablemark/HTML-drag-and-drop-image?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
