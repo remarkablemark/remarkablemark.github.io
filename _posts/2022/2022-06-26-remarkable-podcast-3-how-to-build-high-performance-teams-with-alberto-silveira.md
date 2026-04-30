@@ -17,7 +17,7 @@ Listen on [Spotify](https://open.spotify.com/episode/1pZpPc7OxdPH4cbMJSLgwv) or 
 
 ## Description
 
-This is the third episode of the ["Remarkable Podcast"](https://soundcloud.com/remarkablemark/sets/remarkable-podcast) with host [Mark](https://b.remarkabl.org/mark) and guest [Alberto Silveira](https://www.linkedin.com/in/asilveira/).
+This is the third episode of the ["Remarkable Podcast"](https://soundcloud.com/remarkablemark/sets/remarkable-podcast) with host [Mark](https://b.remarkabl.org/mark) and guest [Alberto Silveira](https://crossingtheequator.com/).
 
 Alberto is the author of ["Building and Managing High-Performance Distributed Teams"](https://crossingtheequator.com/) and has led multiple product engineering teams.
 
@@ -166,7 +166,7 @@ We talk about Alberto's lessons and experience working in those teams and shares
 
 **MARK**: And if people wanted to learn more about what Alberto’s up to, how can they do that?
 
-**ALBERTO**: I’m always open to new connections on [LinkedIn](https://www.linkedin.com/in/asilveira/). I also have my own website [crossingtheequator.com](https://crossingtheequator.com/). Just [reach out](https://twitter.com/asilveir81) and I’m more than happy to talk and learn from the community and share with the community so feel free to reach out to me.
+**ALBERTO**: I’m always open to new connections on LinkedIn. I also have my own website [crossingtheequator.com](https://crossingtheequator.com/). Just [reach out](https://twitter.com/asilveir81) and I’m more than happy to talk and learn from the community and share with the community so feel free to reach out to me.
 
 **MARK**: Awesome. Thank you so much for joining this podcast.
 
