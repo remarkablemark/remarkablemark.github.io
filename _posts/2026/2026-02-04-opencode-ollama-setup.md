@@ -1,20 +1,15 @@
 ---
 layout: post
-title: How to set up OpenCode with Ollama
+title: How to use OpenCode with Ollama
 date: 2026-02-04 14:22:24
+updated: 2026-05-02 19:41:41
 excerpt: How to set up OpenCode IDE with an Ollama coding model.
 categories: opencode ollama ai
 ---
 
 This post goes over how to set up [OpenCode](https://opencode.ai/) with [Ollama](https://ollama.com/).
 
-## Prerequisites
-
-[OpenCode](https://opencode.ai/):
-
-```sh
-brew install opencode
-```
+## Install
 
 [Ollama](https://ollama.com/):
 
@@ -22,55 +17,73 @@ brew install opencode
 brew install ollama
 ```
 
+[OpenCode](https://opencode.ai/):
+
+```sh
+brew install opencode
+```
+
 ## Ollama
 
-Start Ollama:
+Start the server in a separate terminal:
 
 ```sh
 ollama serve
 ```
 
-Ollama by default uses a [context window size](https://docs.ollama.com/context-length) of 4096 tokens. For tasks that require large context like web search, agents, and coding tools, set the [context window](https://docs.ollama.com/faq#how-can-i-specify-the-context-window-size) to at least 64000 tokens:
+Install [gemma4](https://ollama.com/library/gemma4):
 
 ```sh
-OLLAMA_CONTEXT_LENGTH=64000 ollama serve
+ollama pull gemma4
 ```
 
-Install [qwen2.5-coder](https://ollama.com/library/qwen2.5-coder):
+Confirm it's downloaded:
 
 ```sh
-ollama pull qwen2.5-coder:latest
+ollama ls gemma4
+```
+
+You should see:
+
+```sh
+NAME             ID              SIZE      MODIFIED
+gemma4:latest    c6eb396dbd59    9.6 GB    5 seconds ago
+```
+
+Check the model's context length:
+
+```sh
+ollama show gemma4
+```
+
+You should see:
+
+```
+  Model
+    architecture        gemma4
+    parameters          8.0B
+    context length      131072
+    embedding length    2560
+    quantization        Q4_K_M
+    requires            0.20.0
+```
+
+Restart the server with the context length (to maximize memory):
+
+```sh
+OLLAMA_CONTEXT_LENGTH=131072 ollama serve
+```
+
+Check the performance of the model:
+
+```sh
+ollama run gemma4 "ping" && ollama ps
 ```
 
 ## OpenCode
 
-Open **OpenCode** > ⌘P > **Settings** (⌘,) > **Providers** > **Custom provider** > **+ Connect**.
+Launch opencode with [gemma4](https://ollama.com/library/gemma4):
 
-Fill out the custom provider fields:
-
-- Provider ID:
-  ```
-  ollama
-  ```
-- Display name:
-  ```
-  Ollama
-  ```
-- Base URL:
-  ```
-  http://localhost:11434/v1
-  ```
-- Model ID:
-  ```
-  qwen2.5-coder:latest
-  ```
-- Model Display Name:
-  ```
-  Qwen2.5 Coder
-  ```
-
-Click **Submit**.
-
-> To delete a manually configured model, edit the global config `~/.config/opencode/opencode.jsonc`.
-
-Ollama is connected and the model is ready for use!
+```sh
+ollama launch opencode --model gemma4
+```
