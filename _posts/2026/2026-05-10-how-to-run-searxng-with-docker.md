@@ -10,7 +10,7 @@ This post goes over how to install and run [SearXNG](https://github.com/searxng/
 
 ## Install
 
-[Install Docker](https://docs.docker.com/engine/install/):
+Install [Docker](https://docs.docker.com/engine/install/):
 
 ```sh
 brew install --cask docker
