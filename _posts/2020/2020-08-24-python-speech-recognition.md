@@ -68,15 +68,7 @@ python speech_to_text.py # hello world
 | Fairly accurate | Transcript can be off                                                |
 |                 | No punctuation marks                                                 |
 
-See [guide](https://realpython.com/python-speech-recognition/) for more details.
-
-### Demo
-
-[Replit](https://replit.com/@remarkablemark/Speech-Recognition):
-
-<iframe height="550px" width="100%" src="https://replit.com/@remarkablemark/Speech-Recognition?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
-See [GitHub repository](https://github.com/remarkablemark/speech-recognition-demo) for more details.
+See [guide](https://realpython.com/python-speech-recognition/) and [GitHub repository](https://github.com/remarkablemark/speech-recognition-demo) for more details.
 
 ## Web Speech API
 

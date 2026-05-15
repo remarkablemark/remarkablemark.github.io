@@ -58,9 +58,3 @@ else
   echo 'no'
 fi
 ```
-
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/Bash-prompt):
-
-<iframe height="500px" width="100%" src="https://replit.com/@remarkablemark/Bash-prompt?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

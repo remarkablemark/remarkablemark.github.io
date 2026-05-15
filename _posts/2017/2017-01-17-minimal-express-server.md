@@ -89,13 +89,3 @@ app.get('/', (req, res, next) => {
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}`));
 ```
-
-## Demo
-
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/express?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
-The [Replit](https://replit.com/@remarkablemark/express) demo includes:
-
-- [morgan](https://www.npmjs.com/package/morgan) (HTTP request logger)
-- route not found (404 error)
-- error handling (500 internal server error)

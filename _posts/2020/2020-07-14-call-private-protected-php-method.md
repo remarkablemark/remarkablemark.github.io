@@ -72,9 +72,3 @@ This means you can call `Foo::bar`:
 ```php
 callObjectMethod(new Foo(), 'bar'); // 'baz'
 ```
-
-## Demo
-
-See [Replit](https://replit.com/@remarkablemark/PHP-call-private-method):
-
-<iframe height="800px" width="100%" src="https://replit.com/@remarkablemark/PHP-call-private-method?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

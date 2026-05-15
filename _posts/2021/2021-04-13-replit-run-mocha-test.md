@@ -6,13 +6,9 @@ excerpt: How to run Mocha tests on Replit.
 categories: replit mocha nodejs
 ---
 
-Did you know you can run [Mocha](https://mochajs.org/) tests in [Replit](https://replit.com/)?
-
-Create a Node.js repl with a `.replit` file that contains:
+To run [Mocha](https://mochajs.org/) tests, create a `.replit` file that contains:
 
 ```
 language = "nodejs"
 run = "npx mocha"
 ```
-
-Click `Run` to run your Mocha tests!

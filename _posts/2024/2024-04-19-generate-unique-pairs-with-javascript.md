@@ -64,15 +64,9 @@ function uniquePairs(array) {
   return array.reduce(
     (previousValue, currentValue, index) =>
       previousValue.concat(
-        array.slice(index + 1).map((value) => [currentValue, value])
+        array.slice(index + 1).map((value) => [currentValue, value]),
       ),
-    []
+    [],
   );
 }
 ```
-
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/Generate-unique-pairs-with-JavaScript):
-
-<iframe height="600px" width="100%" src="https://replit.com/@remarkablemark/Generate-unique-pairs-with-JavaScript?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

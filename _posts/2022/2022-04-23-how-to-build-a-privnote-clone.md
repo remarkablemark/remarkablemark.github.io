@@ -6,7 +6,7 @@ excerpt: How to build a Privnote clone using JavaScript.
 categories: privnote express nodejs javascript web
 ---
 
-This article goes over how to build a [Privnote](https://privnote.com/) clone. See [Replit](https://replit.com/@remarkablemark/Privnote) or [repository](https://b.remarkabl.org/37Dpsbu).
+This article goes over how to build a [Privnote](https://privnote.com/) clone. See the [repository](https://b.remarkabl.org/37Dpsbu).
 
 ## Privnote
 
@@ -49,7 +49,7 @@ const form = document.querySelector('form');
 
 const ciphertext = window.CryptoJS.AES.encrypt(
   textarea.value,
-  generateSecret()
+  generateSecret(),
 );
 
 textarea.value = ciphertext;
@@ -90,9 +90,3 @@ const bytes = window.CryptoJS.AES.decrypt(textarea.value, secret);
 const decryptedNote = bytes.toString(window.CryptoJS.enc.Utf8);
 textarea.value = decryptedNote;
 ```
-
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/Privnote):
-
-<iframe height="800px" width="100%" src="https://replit.com/@remarkablemark/Privnote?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

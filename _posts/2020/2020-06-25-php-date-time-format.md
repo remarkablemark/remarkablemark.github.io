@@ -85,9 +85,3 @@ Here are some examples of using shorthand constants:
 echo date('c', strtotime('now')); // ISO8601
 echo (new DateTime())->format('r'); // RFC2822
 ```
-
-## Demo
-
-Check out the following [Replit](https://replit.com/@remarkablemark/PHP-date):
-
-<iframe height="800px" width="100%" src="https://replit.com/@remarkablemark/PHP-date?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

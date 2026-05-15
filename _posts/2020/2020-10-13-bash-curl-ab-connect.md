@@ -97,12 +97,6 @@ curl --get --silent \
   | jq
 ```
 
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/AB-Connect-Bash):
-
-<iframe height="800px" width="100%" src="https://replit.com/@remarkablemark/AB-Connect-Bash?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
 ## Resources
 
 - [Documentation](https://abconnect.docs.apiary.io/)

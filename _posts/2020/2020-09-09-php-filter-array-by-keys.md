@@ -65,9 +65,3 @@ function filterArrayByKeys(array $array, array $keys): array
     return array_intersect_key($array, array_flip($keys));
 }
 ```
-
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/PHP-filter-array-by-keys):
-
-<iframe height="800px" width="100%" src="https://replit.com/@remarkablemark/PHP-filter-array-by-keys?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

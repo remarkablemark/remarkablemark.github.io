@@ -123,20 +123,6 @@ Full example:
 </script>
 ```
 
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/record-microphone-audio#script.js):
-
-<p>
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/record-microphone-audio?lite=true#script.js" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-</p>
-
-You will get `Permission denied` when running the Replit in an `<iframe>`. You can check out the [demo webpage](https://record-microphone-audio--remarkablemark.repl.co/) instead:
-
-<p>
-<iframe height="100px" width="100%" src="https://record-microphone-audio--remarkablemark.repl.co/" allow="microphone" frameborder="no" scrolling="no"></iframe>
-</p>
-
 ## Resources
 
 - [Using the MediaStream Recording API](https://developer.mozilla.org/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)

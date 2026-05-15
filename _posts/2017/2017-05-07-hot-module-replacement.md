@@ -108,12 +108,6 @@ Run `webpack-dev-server` without passing any options:
 npx webpack serve
 ```
 
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/webpack-dev-server-hot-module-replacement):
-
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/webpack-dev-server-hot-module-replacement?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
 ## Resources
 
 - [Hot Module Replacement](https://survivejs.com/webpack/appendices/hmr/)

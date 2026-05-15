@@ -126,9 +126,3 @@ Load module with [script tag](https://www.html5rocks.com/en/tutorials/speed/scri
   });
 </script>
 ```
-
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/webpack-umd):
-
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/webpack-umd?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

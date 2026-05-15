@@ -65,9 +65,3 @@ Decode the binary and print the string:
 ```py
 print(outs.decode("ascii"))
 ```
-
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/Python-subprocess):
-
-<iframe height="500px" width="100%" src="https://replit.com/@remarkablemark/Python-subprocess?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

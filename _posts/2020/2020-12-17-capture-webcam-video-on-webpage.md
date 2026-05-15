@@ -45,13 +45,7 @@ Full example:
 </script>
 ```
 
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/webcam-video#script.js):
-
-<p>
-<iframe height="400px" width="100%" src="https://replit.com/@remarkablemark/webcam-video?lite=true#script.js" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-</p>
+## FAQ
 
 If you get `Requested device not found`, this is because:
 
@@ -61,10 +55,6 @@ If you get `Permission denied`, this is because:
 
 - the `<iframe>` isn't able to call `getUserMedia()` due to security permissions, or
 - you [blocked the site from accessing your camera](https://support.google.com/chrome/answer/2693767).
-
-Check out the [demo webpage](https://webcam-video.remarkablemark.repl.co/) instead:
-
-<iframe height="500px" width="100%" src="https://webcam-video.remarkablemark.repl.co/" allow="camera" frameborder="no"></iframe>
 
 ## Resources
 

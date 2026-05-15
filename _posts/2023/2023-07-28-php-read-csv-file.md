@@ -136,9 +136,3 @@ Array
 
 )
 ```
-
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/PHP-read-CSV#main.php):
-
-<iframe height="600px" width="100%" src="https://replit.com/@remarkablemark/PHP-read-CSV?lite=true#main.php" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>

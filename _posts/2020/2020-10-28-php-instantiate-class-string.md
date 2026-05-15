@@ -17,9 +17,3 @@ You can use the variable to instantiate the class:
 ```php
 $classInstance = new $className();
 ```
-
-## Demo
-
-[Replit](https://replit.com/@remarkablemark/PHP-instantiate-class-string):
-
-<iframe height="500px" width="100%" src="https://replit.com/@remarkablemark/PHP-instantiate-class-string?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
