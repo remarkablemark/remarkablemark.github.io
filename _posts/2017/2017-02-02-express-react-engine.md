@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Express template engine based on React
-date: 2017-02-02 23:36:00 -4000
+date: 2017-02-02 23:36:00
 excerpt: Developing an Express template engine based on React.
 categories: express template react
 ---
 
-Since [Express](https://b.remarkabl.org/express-js) allows you to [build your own templating engine](https://expressjs.com/advanced/developing-template-engines.html), I was curious if one could be developed with vanilla [React](https://b.remarkabl.org/react-site).
+Since [Express](https://b.remarkabl.org/express-js) allows you to build your own templating engine, I was curious if one could be developed with vanilla [React](https://b.remarkabl.org/react-site).
 
 Here are the steps that I took to build one.
 
@@ -36,15 +36,15 @@ var renderToString = require('react-dom/server').renderToString;
  * @param {Function} callback
  */
 function engine(filepath, props, callback) {
-    try {
-        var Component = require(filepath);
+  try {
+    var Component = require(filepath);
 
-        // first argument is the error
-        // second argument is the rendered view (html)
-        callback(null, renderToString(createElement(Component, props)));
-    } catch (error) {
-        callback(error);
-    }
+    // first argument is the error
+    // second argument is the rendered view (html)
+    callback(null, renderToString(createElement(Component, props)));
+  } catch (error) {
+    callback(error);
+  }
 }
 
 module.exports = engine;
@@ -73,9 +73,9 @@ Create a view:
 
 var React = require('react');
 var App = React.createClass({
-    render: function() {
-        return React.createElement('h1', {}, 'Hello, ' + this.props.name + '!');
-    }
+  render: function () {
+    return React.createElement('h1', {}, 'Hello, ' + this.props.name + '!');
+  },
 });
 module.exports = App;
 ```
@@ -85,8 +85,8 @@ Update the index route to render the view:
 ```js
 // server.js
 
-app.get('/', function(request, response, next) {
-    response.render('App', { name: 'world' });
+app.get('/', function (request, response, next) {
+  response.render('App', { name: 'world' });
 });
 ```
 
@@ -95,7 +95,6 @@ Run the server to see it working at <a href="http://localhost:3000" target="_bla
 ```sh
 node server.js
 ```
-
 
 Success!
 
