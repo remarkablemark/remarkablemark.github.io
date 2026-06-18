@@ -6,7 +6,7 @@ excerpt: Developing an Express template engine based on React.
 categories: express template react
 ---
 
-Since [Express](https://b.remarkabl.org/express-js) allows you to build your own templating engine, I was curious if one could be developed with vanilla [React](https://b.remarkabl.org/react-site).
+Since [Express](https://b.remarkabl.org/express-js) allows you to build your own templating engine, I was curious if one could be developed with vanilla [React](https://react.dev/).
 
 Here are the steps that I took to build one.
 

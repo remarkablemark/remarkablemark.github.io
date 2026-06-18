@@ -6,7 +6,7 @@ excerpt: An alternative to React's dangerouslySetInnerHTML is html-react-parser,
 categories: react javascript babel html npm
 ---
 
-There may be an occasion that you need to render an HTML string when using [React](https://facebook.github.io/react/).
+There may be an occasion that you need to render an HTML string when using [React](https://react.dev/).
 
 In most situations, [dangerouslySetInnerHTML](https://react.dev/reference/react-dom/components/common#dangerously-setting-the-inner-html) should suffice:
 
