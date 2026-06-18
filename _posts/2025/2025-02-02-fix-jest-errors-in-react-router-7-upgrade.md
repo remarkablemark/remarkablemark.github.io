@@ -6,7 +6,7 @@ excerpt: How to fix Jest test errors when upgrading React Router from version 6 
 categories: jest test react router upgrade
 ---
 
-This post goes over how to fix [Jest](https://jestjs.io/) test errors when [upgrading React Router from version 6 to 7](https://reactrouter.com/upgrading/v6):
+This post goes over how to fix [Jest](https://jestjs.io/) test errors when upgrading React Router from version 6 to 7:
 
 - [TextEncoder is not defined](#textencoder-is-not-defined)
 - [Cannot destructure property 'basename' of 'React10.useContext(...)'](#cannot-destructure-property-basename-of-react10usecontext)

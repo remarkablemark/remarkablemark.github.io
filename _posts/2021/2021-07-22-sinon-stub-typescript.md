@@ -12,7 +12,7 @@ This post goes over how to use Sinon stubs with TypeScript.
 
 ## Stub
 
-Given [`@types/sinon`](https://www.npmjs.com/package/@types/sinon) is installed, [stubs](https://sinonjs.org/releases/latest/stubs/) are automatically typed:
+Given [`@types/sinon`](https://www.npmjs.com/package/@types/sinon) is installed, [stubs](https://sinonjs.org/concepts/stubs/) are automatically typed:
 
 ```ts
 const object = {
