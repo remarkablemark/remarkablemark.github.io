@@ -1,14 +1,14 @@
 ---
 layout: post
 title: Using ES6 arrow functions in Mocha
-date: 2016-08-20 23:59:00 -4000
+date: 2016-08-20 23:59:00
 excerpt: Don't use ES6 arrow functions if you want to attach a property to Mocha's `this`.
 categories: mocha test testing nodejs javascript es6
 ---
 
-It's [recommended](https://mochajs.org/#arrow-functions) not to use [ES6 arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) if you want to use Mocha's `this`.
+It's recommended not to use [ES6 arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) if you want to use Mocha's `this`.
 
-Why? The reason is because [Mocha](https://mochajs.org/#interfaces) globals like `before`, `after`, and `it` are bound to the same context.
+Why? The reason is because Mocha globals like `before`, `after`, and `it` are bound to the same context.
 
 Using `function`, you would get the following:
 

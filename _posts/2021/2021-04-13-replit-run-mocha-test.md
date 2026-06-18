@@ -6,7 +6,7 @@ excerpt: How to run Mocha tests on Replit.
 categories: replit mocha nodejs
 ---
 
-To run [Mocha](https://mochajs.org/) tests, create a `.replit` file that contains:
+To run [Mocha](https://github.com/mochajs/mocha) tests, create a `.replit` file that contains:
 
 ```
 language = "nodejs"

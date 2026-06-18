@@ -18,7 +18,7 @@ require('./path/to/module');
 
 ## Mocha
 
-Applying this approach to my [Mocha](https://mochajs.org/) test:
+Applying this approach to my Mocha test:
 
 ```js
 const myModule = require('./my-module');

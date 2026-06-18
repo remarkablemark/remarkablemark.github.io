@@ -69,7 +69,7 @@ Click on the test so it runs in a new browser window:
 
 ![Cypress example test]({{ "/images/2021/2021-02-13-cypress-example-test.png" | prepend: site.assets_path }})
 
-Cypress uses [Mocha](https://mochajs.org/) as the test runner and [Chai](https://chaijs.github.io/) as the assertion library.
+Cypress uses [Mocha](https://github.com/mochajs/mocha) as the test runner and [Chai](https://chaijs.github.io/) as the assertion library.
 
 ## Google Search
 

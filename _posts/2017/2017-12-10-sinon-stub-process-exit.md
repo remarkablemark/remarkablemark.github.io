@@ -6,7 +6,7 @@ excerpt: How to test Node.js process.exit() with Sinon stubs.
 categories: sinon stub process nodejs test
 ---
 
-Install [Mocha](https://mochajs.org) and [Sinon.js](https://sinonjs.org):
+Install [Mocha](https://github.com/mochajs/mocha) and [Sinon.js](https://sinonjs.org):
 
 ```sh
 npm install mocha sinon

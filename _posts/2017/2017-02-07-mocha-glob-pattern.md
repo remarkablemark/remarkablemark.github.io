@@ -6,7 +6,7 @@ excerpt: How to specify a glob pattern for Mocha tests.
 categories: mocha glob test
 ---
 
-By default, [mocha](https://mochajs.org) looks for files in the `test` directory:
+By default, [Mocha](https://github.com/mochajs/mocha) looks for files in the `test` directory:
 
 ```sh
 tree

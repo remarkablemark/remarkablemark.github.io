@@ -6,7 +6,7 @@ excerpt: How to fix Mocha timeout errors for Sequelize integration tests.
 categories: mocha sequelize test postgres sql
 ---
 
-This post goes over how to fix [Mocha](https://mochajs.org/) timeout errors for [Sequelize](https://sequelize.org/) integration tests.
+This post goes over how to fix [Mocha](https://github.com/mochajs/mocha) timeout errors for [Sequelize](https://sequelize.org/) integration tests.
 
 ## Problem
 

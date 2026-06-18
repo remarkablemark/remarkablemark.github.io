@@ -6,26 +6,26 @@ excerpt: In order to write WebDriverJS tests with Mocha, the testing module from
 categories: webdriverjs mocha testing selenium nodejs
 ---
 
-Let's test your understanding of writing [WebDriverJS](https://github.com/SeleniumHQ/selenium/wiki/WebDriverJs) tests with [Mocha](https://mochajs.org).
+Let's test your understanding of writing [WebDriverJS](https://github.com/SeleniumHQ/selenium/wiki/WebDriverJs) tests with [Mocha](https://github.com/mochajs/mocha).
 
 Based on the following code, what do you think will happen?
 
 ```js
 var webdriver = require('selenium-webdriver');
 
-describe('webdriverjs test', function() {
-    before(function(done) {
-        this.driver = new webdriver.Builder().forBrowser('firefox').build();
-        done();
-    });
+describe('webdriverjs test', function () {
+  before(function (done) {
+    this.driver = new webdriver.Builder().forBrowser('firefox').build();
+    done();
+  });
 
-    it('should go to Google', function(done) {
-        this.driver.get('https://www.google.com');
-        this.driver.getTitle().then(function(title) {
-            require('assert').equal(title, 'Google');
-            done();
-        });
+  it('should go to Google', function (done) {
+    this.driver.get('https://www.google.com');
+    this.driver.getTitle().then(function (title) {
+      require('assert').equal(title, 'Google');
+      done();
     });
+  });
 });
 ```
 
@@ -38,7 +38,7 @@ Error: timeout of 2000ms exceeded.
 Ensure the done() callback is being called in this test.
 ```
 
-Okay, so you think to yourself, "All that's needed is to increase the [timeout](https://mochajs.org/#timeouts) and the test will pass."
+Okay, so you think to yourself, "All that's needed is to increase the timeout and the test will pass."
 
 You are _right_... but implementing that fix won't solve the _real_ problem; and hence, the flaky behavior will continue to occur as your test suite gets larger and more complex.
 
@@ -58,19 +58,19 @@ So let's fix the code and do things the right way:
 var webdriver = require('selenium-webdriver');
 var test = require('selenium-webdriver/testing');
 
-test.describe('webdriverjs test', function() {
-    test.before(function(done) {
-        this.driver = new webdriver.Builder().forBrowser('firefox').build();
-        done();
-    });
+test.describe('webdriverjs test', function () {
+  test.before(function (done) {
+    this.driver = new webdriver.Builder().forBrowser('firefox').build();
+    done();
+  });
 
-    test.it('should go to Google', function(done) {
-        this.driver.get('https://www.google.com');
-        this.driver.getTitle().then(function(title) {
-            require('assert').equal(title, 'Google');
-            done();
-        });
+  test.it('should go to Google', function (done) {
+    this.driver.get('https://www.google.com');
+    this.driver.getTitle().then(function (title) {
+      require('assert').equal(title, 'Google');
+      done();
     });
+  });
 });
 ```
 
