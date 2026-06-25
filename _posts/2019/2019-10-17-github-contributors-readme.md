@@ -2,33 +2,24 @@
 layout: post
 title: Display GitHub contributors in README
 date: 2019-10-17 21:22:42
+updated: 2026-06-24 21:48:13
 excerpt: How to display GitHub contributors in README.
-categories: github contributors readme avatar image html markdown opencollective
+categories: github contributors readme avatar image html markdown
 ---
 
-## Open Collective
+## contrib.rocks
 
-[Open Collective](https://opencollective.com/) has an embed for displaying contributors, which is pretty cool.
+[contrib.rocks](https://contrib.rocks/) has an embed for displaying contributors.
 
 The following embed is for [html-react-parser](https://github.com/remarkablemark/html-react-parser):
 
-[![html-react-parser contributors](https://opencollective.com/html-react-parser/contributors.svg?width=890&button=false)](https://github.com/remarkablemark/html-react-parser/graphs/contributors)
+[![html-react-parser contributors](https://contrib.rocks/image?repo=remarkablemark/html-react-parser)](https://github.com/remarkablemark/html-react-parser/graphs/contributors)
 
-The HTML of the embed is:
-
-```html
-<a href="https://github.com/remarkablemark/html-react-parser/graphs/contributors">
-  <img src="https://opencollective.com/html-react-parser/contributors.svg?width=890&button=false">
-</a>
-```
-
-And the Markdown equivalent is:
+The Markdown embed is:
 
 ```md
-[![](https://opencollective.com/html-react-parser/contributors.svg?width=890&button=false)](https://github.com/remarkablemark/html-react-parser/graphs/contributors)
+[![Code Contributors](https://contrib.rocks/image?repo=remarkablemark/html-react-parser)](https://github.com/remarkablemark/html-react-parser/graphs/contributors)
 ```
-
-But for projects not on Open Collective, how can I display my contributors?
 
 ## Custom
 
@@ -65,7 +56,7 @@ This means you can add the following HTML to your `README.md`:
 
 ```html
 <a href="https://github.com/remarkablemark">
-  <img src="https://github.com/remarkablemark.png?size=50">
+  <img src="https://github.com/remarkablemark.png?size=50" />
 </a>
 ```
 
