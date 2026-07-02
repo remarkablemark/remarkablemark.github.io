@@ -6,11 +6,11 @@ excerpt: How to ensure React Native Paper Button doesn't take full width.
 categories: react-native react-native-paper button
 ---
 
-This post goes over how to ensure [React Native Paper](https://reactnativepaper.com/) [`<Button>`](https://callstack.github.io/react-native-paper/docs/components/Button/) doesn't take full width.
+This post goes over how to ensure [React Native Paper](https://reactnativepaper.com/) [`<Button>`](https://oss.callstack.com/react-native-paper/docs/components/Button/Button) doesn't take full width.
 
 ## View
 
-The simplest [solution](https://github.com/callstack/react-native-paper/issues/1979#issuecomment-654310158) is to wrap [`<Button>`](https://callstack.github.io/react-native-paper/docs/components/Button/) in [`<View>`](https://reactnative.dev/docs/view):
+The simplest [solution](https://github.com/callstack/react-native-paper/issues/1979#issuecomment-654310158) is to wrap [`<Button>`](https://oss.callstack.com/react-native-paper/docs/components/Button/Button) in [`<View>`](https://reactnative.dev/docs/view):
 
 {% raw %}
 
@@ -37,7 +37,7 @@ Make sure you set the `<View>` style:
 
 ## Card
 
-If rendered inside [`<Card.Actions>`](https://callstack.github.io/react-native-paper/docs/components/Card/CardActions/), [`<Button>`](https://callstack.github.io/react-native-paper/docs/components/Button/) won't take full-width:
+If rendered inside [`<Card.Actions>`](https://oss.callstack.com/react-native-paper/docs/components/Card/CardActions), [`<Button>`](https://oss.callstack.com/react-native-paper/docs/components/Button/Button) won't take full-width:
 
 ```tsx
 import { Button, Card } from 'react-native-paper';
