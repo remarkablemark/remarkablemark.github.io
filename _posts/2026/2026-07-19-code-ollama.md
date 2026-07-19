@@ -1,21 +1,21 @@
 ---
 layout: post
 title: How to use Code Ollama
-date: 2026-07-19 12:59:12
-excerpt: How to use Code Ollama as a local coding agent in your terminal.
+date: 2026-07-19 15:51:18
+excerpt: How to use Code Ollama, a free coding agent that runs in your terminal. The TUI has no per-token API cost, runs privately with local inference, works offline without internet, and uses open-weight models (Gemma, Qwen, DeepSeek).
 categories: code-ollama ollama ai agent tui cli llm
 ---
 
-This post goes over how to use [Code Ollama](https://github.com/ai-action/code-ollama), a coding agent that runs in your terminal with local [Ollama](https://ollama.com/) [models](https://ollama.com/search).
+This post goes over how to use [Code Ollama](https://github.com/ai-action/code-ollama), a free coding agent that runs in your terminal.
 
 ## Motivation
 
 Why use Code Ollama?
 
-- free (no per-token API cost)
-- private (local inference)
-- offline (run without internet)
-- open models (Gemma, Qwen, DeepSeek, etc.)
+- **free** (no per-token API cost)
+- **private** (local inference)
+- **offline** (run without internet)
+- **open models** (Gemma, Qwen, DeepSeek, etc.)
 
 ## Ollama
 
