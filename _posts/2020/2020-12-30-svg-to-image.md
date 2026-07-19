@@ -10,10 +10,6 @@ categories: svg image png jpeg jsfiddle javascript
 
 ## Overview
 
-### Inspiration
-
-The [JSFiddle](https://jsfiddle.net/remarkablemark/fxg4Lvdt/) is inspired by the article ["Convert SVG to PNG using your browser"](https://mybyways.com/blog/convert-svg-to-png-using-your-browser).
-
 ### Breakdown
 
 The steps to save SVG to image are:
