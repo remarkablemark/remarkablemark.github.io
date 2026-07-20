@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to use Code Ollama
-date: 2026-07-19 15:51:18
+date: 2026-07-19 22:30:50
 excerpt: How to use Code Ollama, a free coding agent that runs in your terminal. The TUI has no per-token API cost, runs privately with local inference, works offline without internet, and uses open-weight models (Gemma, Qwen, DeepSeek).
 categories: code-ollama ollama ai agent tui cli llm
 ---
@@ -136,4 +136,4 @@ Use `/mcp` in the TUI to inspect configured servers, loaded tools, permissions, 
 
 ## Resources
 
-Code Ollama is [open source](https://github.com/ai-action/code-ollama) and available for macOS, Linux, and Windows through [npm](https://www.npmjs.com/package/code-ollama) and [GitHub Releases](https://github.com/ai-action/code-ollama/releases). Check out the [wiki](https://github.com/ai-action/code-ollama/wiki) for more information!
+Code Ollama is [open source](https://github.com/ai-action/code-ollama) and available for macOS, Linux, and Windows through [npm](https://www.npmjs.com/package/code-ollama) and [GitHub Releases](https://github.com/ai-action/code-ollama/releases). Check out the [documentation](https://github.com/ai-action/code-ollama/tree/master/docs) for more information!
