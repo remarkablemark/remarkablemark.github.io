@@ -2,8 +2,9 @@
 layout: post
 title: How to set up trusted publishing for npm
 date: 2025-12-19 19:28:20
-excerpt: How to set up trusted publishing for npm packages on GitHub Actions.
-categories: npm publish oidc github actions
+updated: 2026-07-28 14:41:22
+excerpt: How to set up trusted publishing for npm packages on GitHub Actions CI.
+categories: npm publish oidc github actions ci
 ---
 
 This post goes over how to set up [trusted publishing for npm packages](https://docs.npmjs.com/trusted-publishers) on GitHub Actions.
@@ -21,6 +22,7 @@ Fill out the fields:
 - Organization or user
 - Repository
 - Workflow filename
+- Allowed actions
 
 For [example](https://github.com/remarkablemark/html-react-parser):
 
@@ -29,6 +31,7 @@ For [example](https://github.com/remarkablemark/html-react-parser):
 | Organization or user | [remarkablemark]     |
 | Repository           | [html-react-parser]  |
 | Workflow filename    | [release-please.yml] |
+| Allowed actions      | Allow `npm publish`  |
 
 [remarkablemark]: https://github.com/remarkablemark
 [html-react-parser]: https://github.com/remarkablemark/html-react-parser
@@ -36,7 +39,7 @@ For [example](https://github.com/remarkablemark/html-react-parser):
 
 Click **Set up connection**.
 
-_Optional:_ enable **Require two-factor authentication and disallow tokens (recommended)** for additional security.
+> Optional: enable **Require two-factor authentication and disallow tokens (recommended)** for additional security.
 
 ## Workflow
 
