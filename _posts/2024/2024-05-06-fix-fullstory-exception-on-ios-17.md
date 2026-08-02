@@ -8,7 +8,7 @@ categories: ios fullstory react-native exception
 
 ## Problem
 
-I upgraded a React Native mobile app to [iOS 17](https://developer.apple.com/news/upcoming-requirements/?id=04292024a) and encountered an app crash when uploading images:
+I upgraded a React Native mobile app to iOS 17 and encountered an app crash when uploading images:
 
 ```
 Terminating app due to uncaught exception 'NSInternalInconsistencyException'
