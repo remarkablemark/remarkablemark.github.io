@@ -119,7 +119,7 @@ The action outputs the path to the created bundle. Reference the packaging step 
 
 ## Signing
 
-The bundle is **unsigned**. Sign it with [`codesign`](https://developer.apple.com/documentation/security/signing-software-for-distribution) before distribution:
+The bundle is **unsigned**. Sign it with `codesign` before distribution:
 
 ```sh
 codesign --force --deep --sign - my-app.app
