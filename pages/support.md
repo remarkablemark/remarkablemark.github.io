@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Support
-excerpt: Support remarkablemark via Patreon, Ko-fi, Liberapay, Buy Me a Coffee, Teespring, and GitHub Sponsors.
+excerpt: Support remarkablemark via Patreon, Ko-fi, Liberapay, Buy Me a Coffee, and GitHub Sponsors.
 permalink: /support/
 ---
 
@@ -27,8 +27,6 @@ Here are some ways to support **remarkablemark**:
 [![Donate using Liberapay](https://liberapay.com/assets/widgets/donate.svg)](https://b.remarkabl.org/liberapay)
 
 [![Buy Me A Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com/remarkablemark)
-
-[![Get merch from Teespring](https://cdn.joinhoney.com/images/lp/store-logos/teespring-logo.png)](https://b.remarkabl.org/teespring)
 
 <iframe src="https://github.com/sponsors/remarkablemark/card" title="Sponsor remarkablemark" height="225" width="600" style="border: 0;"></iframe>
 

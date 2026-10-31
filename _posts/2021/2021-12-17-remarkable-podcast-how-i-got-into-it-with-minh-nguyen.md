@@ -164,7 +164,7 @@ We also share our thoughts on IT and where it is in the present to where it is h
 
 **MINH**: Thank you for having me. Thank you for inviting me, Mark. I hope you send me a new t-shirt soon because I got your first t-shirt and I love it and hopefully I can get a second t-shirt.
 
-**MARK**: That’s a good reminder, I’ll send you the next [remarkablemark t-shirt](https://b.remarkabl.org/teespring).
+**MARK**: That’s a good reminder, I’ll send you the next remarkablemark t-shirt.
 
 **MINH**: Thank you, thank you.
 
