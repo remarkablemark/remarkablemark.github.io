@@ -2,6 +2,7 @@
 layout: post
 title: How to install FFmpeg on macOS
 date: 2026-10-31 12:51:09
+updated: 2026-11-10 18:58:47
 excerpt: How to install FFmpeg on macOS.
 categories: ffmpeg binary install macos bash
 ---
@@ -55,3 +56,5 @@ Verify that it's working:
 ```sh
 ffmpeg -version
 ```
+
+> If [Audacity](https://support.audacityteam.org/basics/installing-ffmpeg#macos) reports that the shared library `libavformat.dylib` is missing, install [FFmpeg for Audacity](https://lame.buanzo.org/ffmpeg.php).
