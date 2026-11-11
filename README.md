@@ -94,7 +94,7 @@ Update the dependencies:
 ```sh
 git checkout master
 git pull
-bundle update
+bundle update --all
 ```
 
 ## Run
